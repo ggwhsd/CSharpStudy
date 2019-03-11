@@ -631,7 +631,7 @@
             this.button25.Name = "button25";
             this.button25.Size = new System.Drawing.Size(75, 25);
             this.button25.TabIndex = 26;
-            this.button25.Text = "String";
+            this.button25.Text = "常见工具类";
             this.button25.UseVisualStyleBackColor = true;
             this.button25.Click += new System.EventHandler(this.button25_Click);
             // 

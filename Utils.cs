@@ -70,5 +70,11 @@ namespace MarketRiskUI
             Console.WriteLine("{0}", dt3.ToShortTimeString());
 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            //播放系统声音
+            System.Media.SystemSounds.Beep.Play();
+        }
     }
 }

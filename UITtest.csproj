@@ -185,7 +185,6 @@
     <Content Include="Resources\d5.ico" />
     <Content Include="Resources\hp_chrome.ico" />
     <Content Include="Resources\hp_firefox.ico" />
-    <Content Include="Resources\小波.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
