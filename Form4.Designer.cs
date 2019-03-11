@@ -61,13 +61,13 @@
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
@@ -101,16 +101,15 @@
             // 
             // 关闭所有ToolStripMenuItem
             // 
-            this.关闭所有ToolStripMenuItem.Image = global::MarketRiskUI.Properties.Resources.scf;
             this.关闭所有ToolStripMenuItem.Name = "关闭所有ToolStripMenuItem";
-            this.关闭所有ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.关闭所有ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.关闭所有ToolStripMenuItem.Text = "关闭所有";
             this.关闭所有ToolStripMenuItem.Click += new System.EventHandler(this.关闭所有ToolStripMenuItem_Click);
             // 
             // 打卡ToolStripMenuItem
             // 
             this.打卡ToolStripMenuItem.Name = "打卡ToolStripMenuItem";
-            this.打卡ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.打卡ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.打卡ToolStripMenuItem.Text = "打开";
             this.打卡ToolStripMenuItem.Click += new System.EventHandler(this.打卡ToolStripMenuItem_Click);
             // 
@@ -132,44 +131,44 @@
             // m1ToolStripMenuItem
             // 
             this.m1ToolStripMenuItem.Name = "m1ToolStripMenuItem";
-            this.m1ToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.m1ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.m1ToolStripMenuItem.Text = "m1";
             // 
             // m2ToolStripMenuItem
             // 
             this.m2ToolStripMenuItem.Name = "m2ToolStripMenuItem";
-            this.m2ToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.m2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.m2ToolStripMenuItem.Text = "m2";
             // 
             // m3ToolStripMenuItem
             // 
             this.m3ToolStripMenuItem.Name = "m3ToolStripMenuItem";
-            this.m3ToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.m3ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.m3ToolStripMenuItem.Text = "m3";
             // 
             // m4ToolStripMenuItem
             // 
             this.m4ToolStripMenuItem.Name = "m4ToolStripMenuItem";
-            this.m4ToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.m4ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.m4ToolStripMenuItem.Text = "m4";
             // 
             // showdropdownToolStripMenuItem1
             // 
             this.showdropdownToolStripMenuItem1.Name = "showdropdownToolStripMenuItem1";
-            this.showdropdownToolStripMenuItem1.Size = new System.Drawing.Size(167, 22);
+            this.showdropdownToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.showdropdownToolStripMenuItem1.Text = "showdropdown";
             this.showdropdownToolStripMenuItem1.Click += new System.EventHandler(this.showdropdownToolStripMenuItem1_Click);
             // 
             // m5ToolStripMenuItem
             // 
             this.m5ToolStripMenuItem.Name = "m5ToolStripMenuItem";
-            this.m5ToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.m5ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.m5ToolStripMenuItem.Text = "m5";
             // 
             // m6ToolStripMenuItem
             // 
             this.m6ToolStripMenuItem.Name = "m6ToolStripMenuItem";
-            this.m6ToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.m6ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.m6ToolStripMenuItem.Text = "m6";
             // 
             // openFileDialog1
@@ -330,6 +329,14 @@
             this.splitContainer1.SplitterDistance = 97;
             this.splitContainer1.TabIndex = 10;
             // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(0, 22);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(80, 68);
+            this.listView1.TabIndex = 11;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(0, 0);
@@ -359,23 +366,15 @@
             this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // listView1
+            // button6
             // 
-            this.listView1.Location = new System.Drawing.Point(0, 22);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(80, 68);
-            this.listView1.TabIndex = 11;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(3, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "开始闪烁";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button6.Location = new System.Drawing.Point(3, 61);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 2;
+            this.button6.Text = "桌面大小";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -387,15 +386,15 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button6
+            // button4
             // 
-            this.button6.Location = new System.Drawing.Point(3, 61);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "桌面大小";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button4.Location = new System.Drawing.Point(3, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 0;
+            this.button4.Text = "开始闪烁";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Form4
             // 
