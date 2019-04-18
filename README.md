@@ -117,5 +117,6 @@ Encoding [示例](./Utils.cs)
 [示例](./GDI.cs)
 包含了画画基本线条，曲线，多变现，扇形，字符串，图像，圆形，贝塞尔曲线。
 
-
+* 常用数据集合List、ArrayList、HashTable等 
+[示例](./Utils.cs)
 

@@ -73,12 +73,13 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(396, 70);
+            this.button4.Location = new System.Drawing.Point(12, 128);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 1;
-            this.button4.Text = "button2";
+            this.button4.Text = "enum";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -92,48 +93,53 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(370, 165);
+            this.button6.Location = new System.Drawing.Point(12, 157);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 1;
-            this.button6.Text = "button2";
+            this.button6.Text = "ArrayList";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(299, 203);
+            this.button7.Location = new System.Drawing.Point(12, 186);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 23);
             this.button7.TabIndex = 1;
-            this.button7.Text = "button2";
+            this.button7.Text = "List";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(343, 267);
+            this.button8.Location = new System.Drawing.Point(12, 215);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(75, 23);
             this.button8.TabIndex = 1;
-            this.button8.Text = "button2";
+            this.button8.Text = "HashTable";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(288, 310);
+            this.button9.Location = new System.Drawing.Point(12, 244);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(75, 23);
             this.button9.TabIndex = 1;
-            this.button9.Text = "button2";
+            this.button9.Text = "Dictionary";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(361, 355);
+            this.button10.Location = new System.Drawing.Point(12, 273);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(75, 23);
             this.button10.TabIndex = 1;
             this.button10.Text = "button2";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button11
             // 

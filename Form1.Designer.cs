@@ -84,6 +84,8 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.button24 = new System.Windows.Forms.Button();
             this.button25 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button26 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.songsDataGridView)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -92,6 +94,7 @@
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // connect
@@ -217,12 +220,13 @@
             // 
             this.songsDataGridView.AllowUserToAddRows = false;
             this.songsDataGridView.AllowUserToDeleteRows = false;
+            this.songsDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.songsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.songsDataGridView.Location = new System.Drawing.Point(18, 261);
+            this.songsDataGridView.Location = new System.Drawing.Point(3, 18);
             this.songsDataGridView.Name = "songsDataGridView";
             this.songsDataGridView.ReadOnly = true;
             this.songsDataGridView.RowTemplate.Height = 23;
-            this.songsDataGridView.Size = new System.Drawing.Size(1233, 417);
+            this.songsDataGridView.Size = new System.Drawing.Size(942, 390);
             this.songsDataGridView.TabIndex = 10;
             // 
             // button1
@@ -635,11 +639,34 @@
             this.button25.UseVisualStyleBackColor = true;
             this.button25.Click += new System.EventHandler(this.button25_Click);
             // 
+            // panel1
+            // 
+            this.panel1.AutoSize = true;
+            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel1.Controls.Add(this.songsDataGridView);
+            this.panel1.Location = new System.Drawing.Point(113, 272);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(948, 411);
+            this.panel1.TabIndex = 27;
+            // 
+            // button26
+            // 
+            this.button26.Location = new System.Drawing.Point(1257, 539);
+            this.button26.Name = "button26";
+            this.button26.Size = new System.Drawing.Size(75, 23);
+            this.button26.TabIndex = 28;
+            this.button26.Text = "panel调整";
+            this.button26.UseVisualStyleBackColor = true;
+            this.button26.Click += new System.EventHandler(this.button26_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1368, 768);
+            this.Controls.Add(this.button26);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button25);
             this.Controls.Add(this.button24);
             this.Controls.Add(this.button19);
@@ -650,7 +677,6 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.songsDataGridView);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
@@ -667,7 +693,9 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -727,6 +755,8 @@
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.Button button24;
         private System.Windows.Forms.Button button25;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button26;
     }
 }
 

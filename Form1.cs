@@ -601,5 +601,11 @@ namespace MarketRiskUI
             Utils utils = new Utils();
             utils.Show();
         }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            PanelTest pl = new PanelTest();
+            pl.Show();
+        }
     }
 }
