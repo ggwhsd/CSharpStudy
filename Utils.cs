@@ -270,5 +270,14 @@ namespace MarketRiskUI
         {
           
         }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            DateTime dt,dt1;
+            dt = DateTime.Now;
+            dt1 = dt.AddSeconds(70);
+            MessageBox.Show("dt = DateTime.Now = "+ dt.ToLongTimeString()+ " \r\n dt.AddSeconds(70)=" + dt1.ToLongTimeString());
+            MessageBox.Show("dt.substratc = " + dt1.Subtract(dt).TotalSeconds);
+        }
     }
 }
