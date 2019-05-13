@@ -266,6 +266,12 @@ namespace MarketRiskUI
             }
         }
 
+        class test1
+        {
+            public int i;
+            public string str;
+
+        }
         private void button10_Click(object sender, EventArgs e)
         {
           

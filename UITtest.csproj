@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AsyncNetworkStream.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AsyncNetworkStream.Designer.cs">
+      <DependentUpon>AsyncNetworkStream.cs</DependentUpon>
+    </Compile>
     <Compile Include="ExcelOp.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -110,6 +116,9 @@
     <Compile Include="Utils.Designer.cs">
       <DependentUpon>Utils.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AsyncNetworkStream.resx">
+      <DependentUpon>AsyncNetworkStream.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

@@ -86,6 +86,8 @@
             this.button25 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button26 = new System.Windows.Forms.Button();
+            this.button27 = new System.Windows.Forms.Button();
+            this.button28 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.songsDataGridView)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -323,7 +325,7 @@
             this.tabControl1.Location = new System.Drawing.Point(565, 25);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(569, 145);
+            this.tabControl1.Size = new System.Drawing.Size(570, 230);
             this.tabControl1.TabIndex = 19;
             // 
             // tabPage1
@@ -342,7 +344,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(561, 119);
+            this.tabPage1.Size = new System.Drawing.Size(562, 204);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "读写文件";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -422,7 +424,7 @@
             this.txt_filecontext.Location = new System.Drawing.Point(63, 38);
             this.txt_filecontext.Multiline = true;
             this.txt_filecontext.Name = "txt_filecontext";
-            this.txt_filecontext.Size = new System.Drawing.Size(100, 75);
+            this.txt_filecontext.Size = new System.Drawing.Size(100, 159);
             this.txt_filecontext.TabIndex = 3;
             // 
             // label5
@@ -575,7 +577,7 @@
             // 
             // button16
             // 
-            this.button16.Location = new System.Drawing.Point(1257, 363);
+            this.button16.Location = new System.Drawing.Point(1257, 388);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(75, 23);
             this.button16.TabIndex = 21;
@@ -585,7 +587,7 @@
             // 
             // button17
             // 
-            this.button17.Location = new System.Drawing.Point(1257, 392);
+            this.button17.Location = new System.Drawing.Point(1257, 417);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(75, 23);
             this.button17.TabIndex = 22;
@@ -595,7 +597,7 @@
             // 
             // button18
             // 
-            this.button18.Location = new System.Drawing.Point(1257, 421);
+            this.button18.Location = new System.Drawing.Point(1257, 446);
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(75, 23);
             this.button18.TabIndex = 23;
@@ -605,7 +607,7 @@
             // 
             // button19
             // 
-            this.button19.Location = new System.Drawing.Point(1257, 450);
+            this.button19.Location = new System.Drawing.Point(1257, 475);
             this.button19.Name = "button19";
             this.button19.Size = new System.Drawing.Size(75, 23);
             this.button19.TabIndex = 24;
@@ -621,7 +623,7 @@
             // 
             // button24
             // 
-            this.button24.Location = new System.Drawing.Point(1257, 479);
+            this.button24.Location = new System.Drawing.Point(1257, 504);
             this.button24.Name = "button24";
             this.button24.Size = new System.Drawing.Size(75, 23);
             this.button24.TabIndex = 25;
@@ -631,7 +633,7 @@
             // 
             // button25
             // 
-            this.button25.Location = new System.Drawing.Point(1257, 508);
+            this.button25.Location = new System.Drawing.Point(1257, 533);
             this.button25.Name = "button25";
             this.button25.Size = new System.Drawing.Size(75, 25);
             this.button25.TabIndex = 26;
@@ -651,7 +653,7 @@
             // 
             // button26
             // 
-            this.button26.Location = new System.Drawing.Point(1257, 539);
+            this.button26.Location = new System.Drawing.Point(1257, 564);
             this.button26.Name = "button26";
             this.button26.Size = new System.Drawing.Size(75, 23);
             this.button26.TabIndex = 28;
@@ -659,12 +661,33 @@
             this.button26.UseVisualStyleBackColor = true;
             this.button26.Click += new System.EventHandler(this.button26_Click);
             // 
+            // button27
+            // 
+            this.button27.Location = new System.Drawing.Point(0, 0);
+            this.button27.Name = "button27";
+            this.button27.Size = new System.Drawing.Size(75, 23);
+            this.button27.TabIndex = 29;
+            this.button27.Text = "button27";
+            this.button27.UseVisualStyleBackColor = true;
+            // 
+            // button28
+            // 
+            this.button28.Location = new System.Drawing.Point(1257, 363);
+            this.button28.Name = "button28";
+            this.button28.Size = new System.Drawing.Size(75, 23);
+            this.button28.TabIndex = 30;
+            this.button28.Text = "异步通信";
+            this.button28.UseVisualStyleBackColor = true;
+            this.button28.Click += new System.EventHandler(this.button28_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1368, 768);
+            this.Controls.Add(this.button28);
+            this.Controls.Add(this.button27);
             this.Controls.Add(this.button26);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button25);
@@ -757,6 +780,8 @@
         private System.Windows.Forms.Button button25;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button26;
+        private System.Windows.Forms.Button button27;
+        private System.Windows.Forms.Button button28;
     }
 }
 

@@ -63,14 +63,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.textBoxString = new System.Windows.Forms.TextBox();
+            this.btnString = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.btnString = new System.Windows.Forms.Button();
-            this.textBoxString = new System.Windows.Forms.TextBox();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -425,6 +425,57 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "服务器ip";
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.textBoxString);
+            this.tabPage3.Controls.Add(this.btnString);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(630, 368);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "string";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // textBoxString
+            // 
+            this.textBoxString.Location = new System.Drawing.Point(94, 6);
+            this.textBoxString.Multiline = true;
+            this.textBoxString.Name = "textBoxString";
+            this.textBoxString.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxString.Size = new System.Drawing.Size(530, 352);
+            this.textBoxString.TabIndex = 1;
+            this.textBoxString.Text = "abcdefghi:1234";
+            // 
+            // btnString
+            // 
+            this.btnString.Location = new System.Drawing.Point(8, 6);
+            this.btnString.Name = "btnString";
+            this.btnString.Size = new System.Drawing.Size(75, 49);
+            this.btnString.TabIndex = 0;
+            this.btnString.Text = "字符串    操作";
+            this.btnString.UseVisualStyleBackColor = true;
+            this.btnString.Click += new System.EventHandler(this.btnString_Click);
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.textBox3);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(630, 368);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "说明";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(8, 6);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(619, 359);
+            this.textBox3.TabIndex = 0;
+            // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(193, 0);
@@ -455,62 +506,11 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.textBoxString);
-            this.tabPage3.Controls.Add(this.btnString);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(630, 368);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "string";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // btnString
-            // 
-            this.btnString.Location = new System.Drawing.Point(8, 6);
-            this.btnString.Name = "btnString";
-            this.btnString.Size = new System.Drawing.Size(75, 49);
-            this.btnString.TabIndex = 0;
-            this.btnString.Text = "字符串    操作";
-            this.btnString.UseVisualStyleBackColor = true;
-            this.btnString.Click += new System.EventHandler(this.btnString_Click);
-            // 
-            // textBoxString
-            // 
-            this.textBoxString.Location = new System.Drawing.Point(94, 6);
-            this.textBoxString.Multiline = true;
-            this.textBoxString.Name = "textBoxString";
-            this.textBoxString.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxString.Size = new System.Drawing.Size(530, 352);
-            this.textBoxString.TabIndex = 1;
-            this.textBoxString.Text = "abcdefghi:1234";
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.textBox3);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(630, 368);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "说明";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(8, 6);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(619, 359);
-            this.textBox3.TabIndex = 0;
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(689, 450);
+            this.ClientSize = new System.Drawing.Size(638, 450);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);

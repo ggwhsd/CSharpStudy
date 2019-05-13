@@ -607,5 +607,14 @@ namespace MarketRiskUI
             PanelTest pl = new PanelTest();
             pl.Show();
         }
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+            AsyncNetworkStream asyn = new AsyncNetworkStream()
+                 ;
+    
+            asyn.Show();
+
+        }
     }
 }
