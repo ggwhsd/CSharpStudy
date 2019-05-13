@@ -120,3 +120,7 @@ Encoding [示例](./Utils.cs)
 * 常用数据集合List、ArrayList、HashTable等 
 [示例](./Utils.cs)
 
+* 异步接收网络数据的示例
+[示例](./AsyncNetworkStream.cs)
+
+
