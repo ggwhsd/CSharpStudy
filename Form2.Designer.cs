@@ -71,6 +71,8 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -134,7 +136,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 58);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(638, 394);
+            this.tabControl1.Size = new System.Drawing.Size(638, 438);
             this.tabControl1.TabIndex = 5;
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
@@ -152,9 +154,11 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button8);
             this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Controls.Add(this.lbState);
             this.tabPage2.Controls.Add(this.btnStop);
+            this.tabPage2.Controls.Add(this.button7);
             this.tabPage2.Controls.Add(this.btnSend);
             this.tabPage2.Controls.Add(this.btnStartListen);
             this.tabPage2.Controls.Add(this.rtbSend);
@@ -169,7 +173,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(630, 368);
+            this.tabPage2.Size = new System.Drawing.Size(630, 412);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "socketTcp";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -372,6 +376,7 @@
             this.textBoxPort.Name = "textBoxPort";
             this.textBoxPort.Size = new System.Drawing.Size(100, 21);
             this.textBoxPort.TabIndex = 1;
+            this.textBoxPort.Text = "28888";
             // 
             // textBoxIP
             // 
@@ -379,6 +384,7 @@
             this.textBoxIP.Name = "textBoxIP";
             this.textBoxIP.Size = new System.Drawing.Size(100, 21);
             this.textBoxIP.TabIndex = 1;
+            this.textBoxIP.Text = "127.0.0.1";
             // 
             // label4
             // 
@@ -506,11 +512,31 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(112, 326);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(101, 23);
+            this.button7.TabIndex = 2;
+            this.button7.Text = "发送信息方式2";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.btnSendraw_Click);
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(112, 355);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(101, 23);
+            this.button8.TabIndex = 5;
+            this.button8.Text = "压力测试";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click_1);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(638, 450);
+            this.ClientSize = new System.Drawing.Size(638, 589);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -581,5 +607,7 @@
         private System.Windows.Forms.Button btnString;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
     }
 }

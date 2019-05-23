@@ -20,9 +20,12 @@ namespace MarketRiskUI
         private void button1_Click(object sender, EventArgs e)
         {
             byte[] byteArray = new byte[1024];
-            byteArray= System.Text.Encoding.Default.GetBytes("Hello");
+            byteArray= System.Text.Encoding.Default.GetBytes("Hellogod");
+            
             string str = System.Text.Encoding.Default.GetString(byteArray);
+
             Console.WriteLine(str);
+            Array.Clear(byteArray, 0, 8);
             byteArray = Encoding.ASCII.GetBytes("world");
             str = System.Text.Encoding.ASCII.GetString(byteArray);
             Console.WriteLine(str);

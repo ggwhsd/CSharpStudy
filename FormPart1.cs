@@ -161,8 +161,12 @@ namespace MarketRiskUI
             {
                 FileStream fs1 = new FileStream(str_filename, FileMode.Append, FileAccess.Write);//追加写入文件 
                 StreamWriter sw = new StreamWriter(fs1);
-                
-                sw.WriteLine("testCreated2");
+                int i = 1;
+                while (i < 100)
+                {
+                    sw.WriteLine("{0} {1} {2}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"), "input line ",i);
+                    i++;
+                }
                 sw.Close();
                 fs1.Close();
             }

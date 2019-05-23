@@ -123,4 +123,4 @@ Encoding [示例](./Utils.cs)
 * 异步接收网络数据的示例
 [示例](./AsyncNetworkStream.cs)
 
-
+* Form2中增加了一个压力测试用的功能，读取文件中的报文，构造简单格式进行发送。

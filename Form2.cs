@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 namespace MarketRiskUI
 {
@@ -433,6 +434,67 @@ namespace MarketRiskUI
                     "使用beginConnect和endConnect则可以实现异步方式，BeginConnect(remoteip,new AsyncCallback(ConnectServer),socket)"
                     + "则会发起连接，当连接返回信息后会回调ConnectServer方法，该方法中之行EndConnect，然后就可以之行发送和接收等下一步操作了。";
             }
+        }
+
+        private void btnSendraw_Click(object sender, EventArgs e)
+        {
+
+
+            string str = rtbSend.Text;
+            int i = str.Length;
+           
+            byte[] datasize = new byte[10];
+
+            datasize = System.Text.Encoding.ASCII.GetBytes(String.Format("{0:D10}",i));
+            byte[] sendbytes = System.Text.Encoding.ASCII.GetBytes(str);
+            try
+            {
+                NetworkStream netstream = new NetworkStream(newsocket);
+                netstream.Write(datasize, 0, datasize.Length);
+                netstream.Write(sendbytes, 0, sendbytes.Length);
+                netstream.Flush();
+                this.rtbSend.Text = "";
+            }
+            catch
+            {
+                MessageBox.Show("无法发送");
+            }
+
+        }
+
+        private void button8_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialog file = new OpenFileDialog();
+            file.ShowDialog();
+            string filename =file.FileName;
+
+            string inLine = null;
+
+           
+            if (File.Exists(filename) == false)
+            {
+                MessageBox.Show("error: file does not exist");
+                return;
+            }
+            else
+            {
+                int count = 0;
+                FileStream fs1 = new FileStream(filename, FileMode.Open, FileAccess.Read);
+                StreamReader sw = new StreamReader(fs1);
+                inLine = sw.ReadLine();
+                while (inLine != null)
+                {
+                    count++;
+                    rtbSend.Text = inLine;
+                    btnSendraw_Click(null, null);
+                    Thread.Sleep(3);
+                    inLine = sw.ReadLine();
+                }
+                sw.Close();
+                fs1.Close();
+                MessageBox.Show("done,total send message "+count);
+            }
+
         }
     }
 }
