@@ -128,3 +128,6 @@ Encoding [示例](./Utils.cs)
 * 拖拽鼠标改变控件的位置
 [示例](./PanelTest.cs)
 
+* 增加动画淡入淡出窗口
+[示例](./Form1.cs)
+

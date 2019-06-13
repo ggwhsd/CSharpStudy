@@ -33,7 +33,7 @@ namespace MarketRiskUI
 
                 //mouseOff = new Point(-e.X, -e.Y); //得到鼠标相对于按钮控件的位置，mouseOff此时的偏移量实际上时按钮的左上角位置;
                 mouseButton = ((Button)sender).Location;
-                mouseButton.Offset(-e.X, -e.Y);
+                mouseButton.Offset(-e.X, -e.Y); //按钮时相对于窗口程序的位置，而鼠标时相对于按钮的位置，所以要减去，以便后面直接可以加上鼠标的移动位置
                 textBox2.AppendText( "屏幕坐标"+ Form.MousePosition+"\r\n");
                 textBox2.AppendText(((Button)sender).Name + "被鼠标左键按下了" + "\r\n");
                 textBox2.AppendText(((Button)sender).Name + " 鼠标坐标" + e.X +","+e.Y+ "\r\n");
@@ -58,7 +58,7 @@ namespace MarketRiskUI
                 textBox2.AppendText(((Button)sender).Name + " 鼠标坐标" + e.Location + "\r\n");
 
                 mouseSet.Offset(mouseButton.X, mouseButton.Y);  //设置移动后的位置
-                //
+                
             }
         }
 
