@@ -86,7 +86,6 @@
             this.button25 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button26 = new System.Windows.Forms.Button();
-            this.button27 = new System.Windows.Forms.Button();
             this.button28 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.songsDataGridView)).BeginInit();
@@ -463,7 +462,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(561, 119);
+            this.tabPage2.Size = new System.Drawing.Size(562, 204);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "读写excel";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -530,7 +529,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(561, 119);
+            this.tabPage3.Size = new System.Drawing.Size(562, 204);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "读写xml";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -661,15 +660,6 @@
             this.button26.UseVisualStyleBackColor = true;
             this.button26.Click += new System.EventHandler(this.button26_Click);
             // 
-            // button27
-            // 
-            this.button27.Location = new System.Drawing.Point(0, 0);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(75, 23);
-            this.button27.TabIndex = 29;
-            this.button27.Text = "button27";
-            this.button27.UseVisualStyleBackColor = true;
-            // 
             // button28
             // 
             this.button28.Location = new System.Drawing.Point(1257, 363);
@@ -687,7 +677,6 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1368, 768);
             this.Controls.Add(this.button28);
-            this.Controls.Add(this.button27);
             this.Controls.Add(this.button26);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button25);
@@ -780,7 +769,6 @@
         private System.Windows.Forms.Button button25;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button26;
-        private System.Windows.Forms.Button button27;
         private System.Windows.Forms.Button button28;
     }
 }

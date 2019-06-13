@@ -134,7 +134,7 @@ namespace MarketRiskUI
                         { "Jess", 11926 }
                     };
 
-            string json = JsonConvert.SerializeObject(points, Formatting.Indented);
+            string json = JsonConvert.SerializeObject(points, Formatting.None);
             Console.WriteLine(json);
         }
     }

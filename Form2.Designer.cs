@@ -36,6 +36,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button8 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rtbSendC = new System.Windows.Forms.RichTextBox();
             this.lbStateC = new System.Windows.Forms.ListBox();
@@ -52,6 +53,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lbState = new System.Windows.Forms.ListBox();
             this.btnStop = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.btnSend = new System.Windows.Forms.Button();
             this.btnStartListen = new System.Windows.Forms.Button();
             this.rtbSend = new System.Windows.Forms.TextBox();
@@ -71,14 +73,18 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox_random = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -147,7 +153,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(630, 368);
+            this.tabPage1.Size = new System.Drawing.Size(630, 412);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "单个线程";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -177,6 +183,16 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "socketTcp";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(112, 355);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(101, 23);
+            this.button8.TabIndex = 5;
+            this.button8.Text = "压力测试";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click_1);
             // 
             // groupBox1
             // 
@@ -334,6 +350,16 @@
             this.btnStop.UseVisualStyleBackColor = true;
             this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(112, 326);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(101, 23);
+            this.button7.TabIndex = 2;
+            this.button7.Text = "发送信息方式2";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.btnSendraw_Click);
+            // 
             // btnSend
             // 
             this.btnSend.Location = new System.Drawing.Point(10, 283);
@@ -438,7 +464,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(630, 368);
+            this.tabPage3.Size = new System.Drawing.Size(630, 412);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "string";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -469,7 +495,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(630, 368);
+            this.tabPage4.Size = new System.Drawing.Size(630, 412);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "说明";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -512,31 +538,66 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button7
+            // radioButton1
             // 
-            this.button7.Location = new System.Drawing.Point(112, 326);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(101, 23);
-            this.button7.TabIndex = 2;
-            this.button7.Text = "发送信息方式2";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.btnSendraw_Click);
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(32, 24);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(53, 16);
+            this.radioButton1.TabIndex = 9;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "ascii";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // button8
+            // radioButton2
             // 
-            this.button8.Location = new System.Drawing.Point(112, 355);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(101, 23);
-            this.button8.TabIndex = 5;
-            this.button8.Text = "压力测试";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click_1);
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(101, 24);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(65, 16);
+            this.radioButton2.TabIndex = 9;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "unicode";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.radioButton1);
+            this.groupBox2.Controls.Add(this.radioButton2);
+            this.groupBox2.Location = new System.Drawing.Point(296, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(197, 62);
+            this.groupBox2.TabIndex = 10;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "groupBox2";
+            // 
+            // textBox_random
+            // 
+            this.textBox_random.Location = new System.Drawing.Point(569, 26);
+            this.textBox_random.Name = "textBox_random";
+            this.textBox_random.Size = new System.Drawing.Size(57, 21);
+            this.textBox_random.TabIndex = 11;
+            this.textBox_random.Text = "1,1";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(508, 29);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(53, 12);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "随机间隔";
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 589);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.textBox_random);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -558,7 +619,10 @@
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -609,5 +673,10 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox textBox_random;
+        private System.Windows.Forms.Label label11;
     }
 }

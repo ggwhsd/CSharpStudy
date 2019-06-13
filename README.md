@@ -124,3 +124,7 @@ Encoding [示例](./Utils.cs)
 [示例](./AsyncNetworkStream.cs)
 
 * Form2中增加了一个压力测试用的功能，读取文件中的报文，构造简单格式进行发送。
+
+* 拖拽鼠标改变控件的位置
+[示例](./PanelTest.cs)
+

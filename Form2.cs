@@ -88,8 +88,16 @@ namespace MarketRiskUI
             
             try
             {
-                byte[] sendBytes = Encoding.Unicode.GetBytes(message);
-                udp1.Send(sendBytes,sendBytes.Length, remoteip);
+                byte[] sendBytes;
+                if (isUnicode)
+                {
+                    sendBytes = Encoding.Unicode.GetBytes(message);
+                   
+                }
+                else
+                    sendBytes = Encoding.ASCII.GetBytes(message);
+
+                udp1.Send(sendBytes, sendBytes.Length, remoteip);
                 MessageBox.Show("udp1 send {0}", message);
                 if (message == "quit")
                 {
@@ -97,7 +105,15 @@ namespace MarketRiskUI
                 }
                
                 byte[] getBytes = udp1.Receive(ref remoteip);
-                string getString = Encoding.Unicode.GetString(getBytes);
+                string getString;
+                if (isUnicode)
+                {
+                    getString = Encoding.Unicode.GetString(getBytes);
+                }
+                else
+                {
+                    getString = Encoding.ASCII.GetString(getBytes);
+                }
                 MessageBox.Show("udp1 receive {0}", getString);
                 udp1.Close();
             }
@@ -119,7 +135,11 @@ namespace MarketRiskUI
                 {
                     Console.WriteLine("udpserver 等待接收");
                     byte[] getBytes = udpserver.Receive(ref myHost);
-                    string getString = Encoding.Unicode.GetString(getBytes, 0, getBytes.Length);
+                    string getString;
+                    if (isUnicode)
+                        getString = Encoding.Unicode.GetString(getBytes, 0, getBytes.Length);
+                    else
+                        getString = Encoding.ASCII.GetString(getBytes, 0, getBytes.Length);
                     Console.WriteLine("udpserver receive {0}", getString);
                     if (getString == "quit")
                     {
@@ -128,7 +148,11 @@ namespace MarketRiskUI
                     }
                     string sendString = "hello ,take care of yourself!";
                     Console.WriteLine("udpserver send {0}", sendString);
-                    byte[] sendBytes = Encoding.Unicode.GetBytes(sendString);
+                    byte[] sendBytes;
+                    if (isUnicode)
+                        sendBytes = Encoding.Unicode.GetBytes(sendString);
+                    else
+                        sendBytes = Encoding.ASCII.GetBytes(sendString);
                     udpserver.Send(sendBytes, sendBytes.Length, "127.0.0.1", myHost.Port);
                 }
                 udpserver.Close();
@@ -167,19 +191,34 @@ namespace MarketRiskUI
 
         }
 
-
+        bool first = true;
         private void StartTCPLinstener()
         {
-            btnStartListen.Enabled = false;
-            IPAddress ip = IPAddress.Parse(this.textBoxIP.Text);
-            IPEndPoint server = new IPEndPoint(ip, Int32.Parse(textBoxPort.Text));
-            socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            socket.Bind(server);
-            socket.Listen(10);
-            newsocket = socket.Accept(); //程序处于阻塞状态
-            lbState.Items.Add("客户" + newsocket.RemoteEndPoint.ToString() + "建立tcp连接");
-            thread3 = new Thread(new ThreadStart(AcceptMessage));
-            thread3.Start();
+            if (first)
+            {
+                btnStartListen.Enabled = false;
+                IPAddress ip = IPAddress.Parse(this.textBoxIP.Text);
+                IPEndPoint server = new IPEndPoint(ip, Int32.Parse(textBoxPort.Text));
+
+                socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                socket.Bind(server);
+                socket.Listen(10);
+                first = false;
+            }
+            try
+            {
+                newsocket = socket.Accept(); //程序处于阻塞状态
+                thread3 = new Thread(new ThreadStart(AcceptMessage));
+                thread3.Start();
+
+            }
+            catch (Exception err)
+            {
+                lbState.Items.Add("客户" + newsocket.RemoteEndPoint.ToString() + "建立tcp连接");
+            }
+            
+           
+
 
         }
         private void AcceptMessage()
@@ -201,7 +240,14 @@ namespace MarketRiskUI
                         start += recv;
                         dataleft -= recv;
                     }
-                    rtbAccept.Text = Encoding.Unicode.GetString(message);
+                    if (isUnicode)
+                    {
+                        rtbAccept.Text = Encoding.Unicode.GetString(message);
+                    }
+                    else
+                    {
+                        rtbAccept.Text = Encoding.ASCII.GetString(message);
+                    }
 
                 }
                 catch (Exception err)
@@ -223,12 +269,24 @@ namespace MarketRiskUI
             else
             {
                 //unicode 每个字占用两个字节
-                i *= 2;
+                if (isUnicode)
+                    i *= 2;
+                else
+                {
+                }
 
             }
             byte[] datasize = new byte[4];
             datasize = BitConverter.GetBytes(i);
-            byte[] sendbytes = System.Text.Encoding.Unicode.GetBytes(str);
+            byte[] sendbytes;
+            if (isUnicode)
+            {
+                sendbytes = System.Text.Encoding.Unicode.GetBytes(str);
+            }
+            else
+            {
+                sendbytes = System.Text.Encoding.ASCII.GetBytes(str);
+            }
             try
             {
                 NetworkStream netstream = new NetworkStream(newsocket);
@@ -250,21 +308,25 @@ namespace MarketRiskUI
             btnStartListen.Enabled = true;
             try
             {
-                socket.Shutdown(SocketShutdown.Both);
+               // socket.Disconnect(false);
+                //socket.Shutdown(SocketShutdown.Both);
+               
                 socket.Close();
+               
                 if (newsocket.Connected)
                 {
                     newsocket.Close();
-                    thread3.Abort();
+                   
                 }
+                thread3.Abort();
             }
             catch (ThreadAbortException err)
             {
                 MessageBox.Show("线程关闭！");
             }
-            catch
+            catch(Exception err)
             {
-                MessageBox.Show("监听尚未开始，关闭无效");
+                MessageBox.Show("监听尚未开始，关闭无效"+ err.Message);
             }
         }
 
@@ -330,11 +392,15 @@ namespace MarketRiskUI
                         start += recv;
                         dataleft -= recv;
                     }
-                    this.rtbReceC.Text = Encoding.Unicode.GetString(message);
+                    if (isUnicode)
+                        this.rtbReceC.Text = Encoding.Unicode.GetString(message);
+                    else
+                        this.rtbReceC.Text = Encoding.ASCII.GetString(message);
 
                 }
                 catch {
                     lbStateC.Items.Add("服务器断开连接");
+                    break;
                 }
             }
         }
@@ -349,12 +415,17 @@ namespace MarketRiskUI
             }
             else
             {
-                i *= 2;
+                if(isUnicode)
+                    i *= 2;
 
             }
             byte[] datasize = new byte[4];
             datasize = BitConverter.GetBytes(i);
-            byte[] sendbytes = System.Text.Encoding.Unicode.GetBytes(str);
+            byte[] sendbytes;
+            if (isUnicode)
+                sendbytes = System.Text.Encoding.Unicode.GetBytes(str);
+            else
+                sendbytes = System.Text.Encoding.ASCII.GetBytes(str);
             try
             {
                 NetworkStream netstream = new NetworkStream(socket);
@@ -478,16 +549,23 @@ namespace MarketRiskUI
             }
             else
             {
+                Random rd = new Random();
+
                 int count = 0;
                 FileStream fs1 = new FileStream(filename, FileMode.Open, FileAccess.Read);
                 StreamReader sw = new StreamReader(fs1);
                 inLine = sw.ReadLine();
+                string strRandomRange = textBox_random.Text;
+                string[] ranges = strRandomRange.Split(',');
+                int min = Int32.Parse(ranges[0]);
+                int max = Int32.Parse(ranges[1]);
+
                 while (inLine != null)
                 {
                     count++;
                     rtbSend.Text = inLine;
                     btnSendraw_Click(null, null);
-                    Thread.Sleep(3);
+                    Thread.Sleep(rd.Next(min, max));
                     inLine = sw.ReadLine();
                 }
                 sw.Close();
@@ -495,6 +573,19 @@ namespace MarketRiskUI
                 MessageBox.Show("done,total send message "+count);
             }
 
+        }
+        private bool isUnicode = true;
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked)
+                isUnicode = false;
+            if (radioButton2.Checked)
+                isUnicode = true;
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            radioButton1_CheckedChanged(sender, e);
         }
     }
 }
