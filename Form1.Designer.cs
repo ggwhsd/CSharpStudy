@@ -87,6 +87,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button26 = new System.Windows.Forms.Button();
             this.button28 = new System.Windows.Forms.Button();
+            this.button27 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.songsDataGridView)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -307,6 +308,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.button27);
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Location = new System.Drawing.Point(1141, 8);
@@ -670,6 +672,16 @@
             this.button28.UseVisualStyleBackColor = true;
             this.button28.Click += new System.EventHandler(this.button28_Click);
             // 
+            // button27
+            // 
+            this.button27.Location = new System.Drawing.Point(37, 38);
+            this.button27.Name = "button27";
+            this.button27.Size = new System.Drawing.Size(75, 23);
+            this.button27.TabIndex = 13;
+            this.button27.Text = "获取隐藏列的值";
+            this.button27.UseVisualStyleBackColor = true;
+            this.button27.Click += new System.EventHandler(this.button27_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -772,6 +784,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button26;
         private System.Windows.Forms.Button button28;
+        private System.Windows.Forms.Button button27;
     }
 }
 

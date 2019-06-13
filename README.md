@@ -131,3 +131,6 @@ Encoding [示例](./Utils.cs)
 * 增加动画淡入淡出窗口
 [示例](./Form1.cs)
 
+* datagridview的隐藏列，和访问隐藏列的数据
+[示例](./Form1.cs)
+

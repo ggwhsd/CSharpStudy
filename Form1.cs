@@ -289,6 +289,7 @@ namespace MarketRiskUI
 
             songsDataGridView.Columns[0].Name = "Release Date";
             songsDataGridView.Columns[1].Name = "Track";
+            songsDataGridView.Columns[1].Visible=false; //设置该列不显示，则后续数据绑定了，也不会显示出来。
             songsDataGridView.Columns[2].Name = "Title";
             songsDataGridView.Columns[3].Name = "Artist";
             songsDataGridView.Columns[4].Name = "Album";
@@ -643,6 +644,11 @@ namespace MarketRiskUI
         {
             AnimateWindow(this.Handle, 2000, AW_BLEND | AW_HIDE);
             
+        }
+
+        private void button27_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(songsDataGridView.Rows[1].Cells[1].Value.ToString());
         }
     }
 }
