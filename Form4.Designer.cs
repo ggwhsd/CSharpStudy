@@ -102,14 +102,14 @@
             // 关闭所有ToolStripMenuItem
             // 
             this.关闭所有ToolStripMenuItem.Name = "关闭所有ToolStripMenuItem";
-            this.关闭所有ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.关闭所有ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.关闭所有ToolStripMenuItem.Text = "关闭所有";
             this.关闭所有ToolStripMenuItem.Click += new System.EventHandler(this.关闭所有ToolStripMenuItem_Click);
             // 
             // 打卡ToolStripMenuItem
             // 
             this.打卡ToolStripMenuItem.Name = "打卡ToolStripMenuItem";
-            this.打卡ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.打卡ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.打卡ToolStripMenuItem.Text = "打开";
             this.打卡ToolStripMenuItem.Click += new System.EventHandler(this.打卡ToolStripMenuItem_Click);
             // 
@@ -131,44 +131,44 @@
             // m1ToolStripMenuItem
             // 
             this.m1ToolStripMenuItem.Name = "m1ToolStripMenuItem";
-            this.m1ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.m1ToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.m1ToolStripMenuItem.Text = "m1";
             // 
             // m2ToolStripMenuItem
             // 
             this.m2ToolStripMenuItem.Name = "m2ToolStripMenuItem";
-            this.m2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.m2ToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.m2ToolStripMenuItem.Text = "m2";
             // 
             // m3ToolStripMenuItem
             // 
             this.m3ToolStripMenuItem.Name = "m3ToolStripMenuItem";
-            this.m3ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.m3ToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.m3ToolStripMenuItem.Text = "m3";
             // 
             // m4ToolStripMenuItem
             // 
             this.m4ToolStripMenuItem.Name = "m4ToolStripMenuItem";
-            this.m4ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.m4ToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.m4ToolStripMenuItem.Text = "m4";
             // 
             // showdropdownToolStripMenuItem1
             // 
             this.showdropdownToolStripMenuItem1.Name = "showdropdownToolStripMenuItem1";
-            this.showdropdownToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.showdropdownToolStripMenuItem1.Size = new System.Drawing.Size(167, 22);
             this.showdropdownToolStripMenuItem1.Text = "showdropdown";
             this.showdropdownToolStripMenuItem1.Click += new System.EventHandler(this.showdropdownToolStripMenuItem1_Click);
             // 
             // m5ToolStripMenuItem
             // 
             this.m5ToolStripMenuItem.Name = "m5ToolStripMenuItem";
-            this.m5ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.m5ToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.m5ToolStripMenuItem.Text = "m5";
             // 
             // m6ToolStripMenuItem
             // 
             this.m6ToolStripMenuItem.Name = "m6ToolStripMenuItem";
-            this.m6ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.m6ToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.m6ToolStripMenuItem.Text = "m6";
             // 
             // openFileDialog1
@@ -205,6 +205,7 @@
             this.打开子窗口ToolStripMenuItem.Size = new System.Drawing.Size(80, 21);
             this.打开子窗口ToolStripMenuItem.Text = "打开子窗口";
             this.打开子窗口ToolStripMenuItem.ToolTipText = "aaaaaaaaaa";
+            this.打开子窗口ToolStripMenuItem.Click += new System.EventHandler(this.打开子窗口ToolStripMenuItem_Click);
             // 
             // notifyIcon1
             // 

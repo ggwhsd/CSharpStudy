@@ -209,5 +209,10 @@ namespace MarketRiskUI
             
             MessageBox.Show(Width+" "+height +"\r\n"+ Screen.AllScreens[1].WorkingArea.Width.ToString()+" "+ Screen.AllScreens[1].WorkingArea.Height.ToString());
         }
+
+        private void 打开子窗口ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -51,7 +51,10 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.txt_count = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.全选 = new System.Windows.Forms.CheckBox();
+            this.button30 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button27 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button14 = new System.Windows.Forms.Button();
@@ -87,7 +90,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button26 = new System.Windows.Forms.Button();
             this.button28 = new System.Windows.Forms.Button();
-            this.button27 = new System.Windows.Forms.Button();
+            this.button29 = new System.Windows.Forms.Button();
+            this.button31 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.songsDataGridView)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -226,10 +230,10 @@
             this.songsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.songsDataGridView.Location = new System.Drawing.Point(3, 18);
             this.songsDataGridView.Name = "songsDataGridView";
-            this.songsDataGridView.ReadOnly = true;
             this.songsDataGridView.RowTemplate.Height = 23;
             this.songsDataGridView.Size = new System.Drawing.Size(942, 390);
             this.songsDataGridView.TabIndex = 10;
+            this.songsDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.songsDataGridView_CellClick);
             // 
             // button1
             // 
@@ -295,6 +299,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.全选);
+            this.groupBox2.Controls.Add(this.button30);
             this.groupBox2.Controls.Add(this.txt_count);
             this.groupBox2.Controls.Add(this.button5);
             this.groupBox2.Controls.Add(this.button4);
@@ -305,6 +311,27 @@
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "view和数据对象";
+            // 
+            // 全选
+            // 
+            this.全选.AutoSize = true;
+            this.全选.Location = new System.Drawing.Point(20, 37);
+            this.全选.Name = "全选";
+            this.全选.Size = new System.Drawing.Size(48, 16);
+            this.全选.TabIndex = 18;
+            this.全选.Text = "全选";
+            this.全选.UseVisualStyleBackColor = true;
+            this.全选.CheckedChanged += new System.EventHandler(this.全选_CheckedChanged);
+            // 
+            // button30
+            // 
+            this.button30.Location = new System.Drawing.Point(23, 66);
+            this.button30.Name = "button30";
+            this.button30.Size = new System.Drawing.Size(110, 23);
+            this.button30.TabIndex = 17;
+            this.button30.Text = "选择第二行第三列";
+            this.button30.UseVisualStyleBackColor = true;
+            this.button30.Click += new System.EventHandler(this.button30_Click);
             // 
             // groupBox3
             // 
@@ -317,6 +344,16 @@
             this.groupBox3.TabIndex = 18;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "view和数组";
+            // 
+            // button27
+            // 
+            this.button27.Location = new System.Drawing.Point(37, 38);
+            this.button27.Name = "button27";
+            this.button27.Size = new System.Drawing.Size(75, 23);
+            this.button27.TabIndex = 13;
+            this.button27.Text = "获取隐藏列的值";
+            this.button27.UseVisualStyleBackColor = true;
+            this.button27.Click += new System.EventHandler(this.button27_Click);
             // 
             // tabControl1
             // 
@@ -672,15 +709,25 @@
             this.button28.UseVisualStyleBackColor = true;
             this.button28.Click += new System.EventHandler(this.button28_Click);
             // 
-            // button27
+            // button29
             // 
-            this.button27.Location = new System.Drawing.Point(37, 38);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(75, 23);
-            this.button27.TabIndex = 13;
-            this.button27.Text = "获取隐藏列的值";
-            this.button27.UseVisualStyleBackColor = true;
-            this.button27.Click += new System.EventHandler(this.button27_Click);
+            this.button29.Location = new System.Drawing.Point(1164, 564);
+            this.button29.Name = "button29";
+            this.button29.Size = new System.Drawing.Size(75, 23);
+            this.button29.TabIndex = 31;
+            this.button29.Text = "spliter";
+            this.button29.UseVisualStyleBackColor = true;
+            this.button29.Click += new System.EventHandler(this.button29_Click);
+            // 
+            // button31
+            // 
+            this.button31.Location = new System.Drawing.Point(18, 272);
+            this.button31.Name = "button31";
+            this.button31.Size = new System.Drawing.Size(75, 23);
+            this.button31.TabIndex = 32;
+            this.button31.Text = "显示背景颜色";
+            this.button31.UseVisualStyleBackColor = true;
+            this.button31.Click += new System.EventHandler(this.button31_Click);
             // 
             // Form1
             // 
@@ -688,6 +735,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1368, 768);
+            this.Controls.Add(this.button31);
+            this.Controls.Add(this.button29);
             this.Controls.Add(this.button28);
             this.Controls.Add(this.button26);
             this.Controls.Add(this.panel1);
@@ -785,6 +834,10 @@
         private System.Windows.Forms.Button button26;
         private System.Windows.Forms.Button button28;
         private System.Windows.Forms.Button button27;
+        private System.Windows.Forms.Button button29;
+        private System.Windows.Forms.Button button30;
+        private System.Windows.Forms.CheckBox 全选;
+        private System.Windows.Forms.Button button31;
     }
 }
 

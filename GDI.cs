@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using System.Collections;
 
 
 
@@ -18,6 +18,7 @@ namespace MarketRiskUI
         public GDI()
         {
             InitializeComponent();
+            this.DoubleBuffered = true;
         }
         /**
          * 绘图水平线
@@ -94,6 +95,9 @@ namespace MarketRiskUI
             Point p4 = new Point(Convert.ToInt32(textBox7.Text.Trim()), Convert.ToInt32(textBox8.Text.Trim()));
 
             g.DrawBezier(myPen,p1, p2,p3,p4);
+         
+
+
             Pen blackPen = new Pen(Color.Black, 3);
             g.DrawLine(blackPen, p2, p3);
         }
@@ -167,12 +171,77 @@ namespace MarketRiskUI
             p.X = e.X;
             p.Y = e.Y;
 
+           
+          
+            
+            if (Math.Abs(e.X) < 5)
+                this.Cursor = Cursors.VSplit;
+            else if (Math.Abs(e.Y) < 5)
+                this.Cursor = Cursors.HSplit;
+            else
+                this.Cursor = Cursors.Default;
+
+
+            Bitmap bit = new Bitmap(pictureBox2.Width, pictureBox2.Height);
+            Graphics gra = Graphics.FromImage(bit);
+          
+            Font myFont = new Font("华文行楷", 9);
+            SolidBrush myB = new SolidBrush(Color.Blue);
+          
+            gra.DrawString("" + p.ToString(), myFont, myB, 10, 30);
+
+            pictureBox2.Image = bit;
+            pictureBox2.Location = new Point(pictureBox1.Location.X+e.Location.X,pictureBox1.Location.Y + e.Location.Y);
+
+
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
           
        
+        }
+        private Point[] lineSPoint = new Point[100];
+        private Point[] lineDPoint= new Point[100];
+        private void button12_Click_1(object sender, EventArgs e)
+        {
+            Bitmap bit = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            Graphics gra = Graphics.FromImage(bit);
+            for (int i = 1; i < pictureBox1.Height / 50; i++)
+            {
+                Point source = new Point(0, i * 100);
+                Point dest = new Point(pictureBox1.Width, i * 100);
+                gra.DrawLine(Pens.Red, source ,dest);
+                lineSPoint[i-1]=(source);
+                lineDPoint[i-1]=(dest);
+                Font myFont = new Font("华文行楷", 20);
+                SolidBrush myB = new SolidBrush(Color.Blue);
+                gra.DrawString("线条高度:"+i*50, myFont, myB, 0, i * 50);
+            }
+            pictureBox1.Image = bit;
+        }
+
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (this.Cursor == Cursors.HSplit)
+            {
+                pictureBox1.Location = new Point(pictureBox1.Location.X, pictureBox1.Location.Y - 10);
+            }
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            Bitmap bit = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            Graphics gra = Graphics.FromImage(bit);
+            int i = 0;
+
+            for(;i<lineSPoint.Length;i++)
+            {
+                Point source = lineSPoint[i];
+                Point dest = lineDPoint[i];
+                gra.DrawLine(Pens.Transparent, source, dest);
+            }
+            pictureBox1.Image = bit;
         }
     }
 }

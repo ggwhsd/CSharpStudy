@@ -301,6 +301,13 @@ namespace MarketRiskUI
             //songsDataGridView.Dock = DockStyle.Fill;
 
             songsDataGridView.CellFormatting += new DataGridViewCellFormattingEventHandler(songsDataGridView_CellFormatting);
+
+            //设置以下列为只读，datagridview本身为可编辑
+            songsDataGridView.Columns[0].ReadOnly = true;
+            songsDataGridView.Columns[1].ReadOnly = true;
+            songsDataGridView.Columns[2].ReadOnly = true;
+            songsDataGridView.Columns[3].ReadOnly = true;
+            songsDataGridView.Columns[4].ReadOnly = true;
         }
 
         /// <summary>
@@ -360,6 +367,7 @@ namespace MarketRiskUI
             //创建一个名为"Table_New"的空表
 
             dt = new DataTable("test");
+            dt.Columns.Add("Choice", System.Type.GetType("System.String"));
             dt.Columns.Add("Name", System.Type.GetType("System.String"));
             dt.Columns.Add("Date", typeof(String));
             DataColumn dc = new DataColumn("Title", typeof(String));
@@ -368,17 +376,36 @@ namespace MarketRiskUI
             {
                 dt.Columns.Add("Column"+i, typeof(String));
             }
+
+            DataGridViewCheckBoxColumn CheckColunms = new DataGridViewCheckBoxColumn();
+            CheckColunms.Name = "Choice";
+            CheckColunms.HeaderText = "Choice";
+
+            CheckColunms.Width = 60;
+            CheckColunms.TrueValue = "1";
+            CheckColunms.FalseValue = "0";
             
+            CheckColunms.DataPropertyName = "Choice"; 
+
+            songsDataGridView.Columns.Insert(0,CheckColunms);
+
             DataRow dr = dt.NewRow();
             dt.Rows.Add(dr);
-            dt.Rows.Add("张三", DateTime.Now.ToShortDateString(),"大boss","AAAAAA","AAAAAAA","AAAAAAAA","AAAAAAAAA","AAAAAAAAA");//Add里面参数的数据顺序要和dt中的列的顺序对应 
-            dt.Rows.Add("张四", DateTime.Now.ToShortDateString(), "小boss", "AAAAAA", "AAAAAAA", "AAAAAAAA", "AAAAAAAAA", "AAAAAAAAA");//Add里面参数的数据顺序要和dt中的列的顺序对应 
-            for (int i = 0; i < 10000; i++)
+            dt.Rows.Add("0","张三", DateTime.Now.ToShortDateString(),"大boss","AAAAAA","AAAAAAA","AAAAAAAA","AAAAAAAAA","AAAAAAAAA");//Add里面参数的数据顺序要和dt中的列的顺序对应 
+            dt.Rows.Add("0","张四", DateTime.Now.ToShortDateString(), "小boss", "AAAAAA", "AAAAAAA", "AAAAAAAA", "AAAAAAAAA", "AAAAAAAAA");//Add里面参数的数据顺序要和dt中的列的顺序对应 
+            for (int i = 0; i < 10; i++)
             {
 
-                dt.Rows.Add("张四", DateTime.Now.ToShortDateString(), "小boss" + i, "AAAAAA", "AAAAAAA", "AAAAAAAA", "AAAAAAAAA", "AAAAAAAAA");//Add里面参数的数据顺序要和dt中的列的顺序对应 
+                dt.Rows.Add("1","张四", DateTime.Now.ToShortDateString(), "小boss" + i, "AAAAAA", "AAAAAAA", "AAAAAAAA", "AAAAAAAAA", "AAAAAAAAA");//Add里面参数的数据顺序要和dt中的列的顺序对应 
             }
             songsDataGridView.DataSource = dt;
+            //设置以下列为只读，datagridview本身为可编辑
+            songsDataGridView.Columns[1].ReadOnly = true;
+            songsDataGridView.Columns[2].ReadOnly = true;
+            songsDataGridView.Columns[3].ReadOnly = true;
+            songsDataGridView.Columns[4].ReadOnly = true;
+            songsDataGridView.Columns[5].ReadOnly = true;
+
 
         }
         /// <summary>
@@ -391,8 +418,7 @@ namespace MarketRiskUI
             
             songsDataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
             songsDataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            songsDataGridView.ColumnHeadersDefaultCellStyle.Font =
-            new Font(songsDataGridView.Font, FontStyle.Bold);
+            songsDataGridView.ColumnHeadersDefaultCellStyle.Font =new Font(songsDataGridView.Font, FontStyle.Bold);
             songsDataGridView.Name = "SongData";
             //songsDataGridView.Location = new Point(8, 8);
             //songsDataGridView.Size = new Size(500, 250);
@@ -637,18 +663,109 @@ namespace MarketRiskUI
             int y = Screen.PrimaryScreen.WorkingArea.Top + 96;
 
             this.Location = new Point(x, y);//设置窗体在屏幕右下角显示
-            AnimateWindow(this.Handle, 2000, AW_BLEND | AW_ACTIVE );
+            AnimateWindow(this.Handle, 300, AW_BLEND | AW_ACTIVE );
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            AnimateWindow(this.Handle, 2000, AW_BLEND | AW_HIDE);
+            AnimateWindow(this.Handle, 500, AW_BLEND | AW_HIDE);
             
         }
 
         private void button27_Click(object sender, EventArgs e)
         {
             MessageBox.Show(songsDataGridView.Rows[1].Cells[1].Value.ToString());
+        }
+
+        private void button29_Click(object sender, EventArgs e)
+        {
+            SpliterTest spl = new SpliterTest();
+            spl.Show();
+        }
+
+        private void button30_Click(object sender, EventArgs e)
+        {
+            List<String> arrs = new List<string>();
+
+         //   DataTable _dt = (songsDataGridView.DataSource as DataTable);
+
+
+            for (int i = 0; i < songsDataGridView.Rows.Count; i++)
+            {
+                if (Convert.ToBoolean(songsDataGridView.Rows[i].Cells[0].EditedFormattedValue) == true)
+                {
+                    arrs.Add(dt.Rows[i][0].ToString());
+                }
+            }
+            String str="";
+            foreach (string s in arrs)
+            {
+                str += s;
+            }
+            MessageBox.Show(str);
+
+        }
+
+        private void 全选_CheckedChanged(object sender, EventArgs e)
+        {
+            for (int i = 0; i < songsDataGridView.Rows.Count; i++)
+            {
+                if (Convert.ToBoolean(songsDataGridView.Rows[i].Cells[0].EditedFormattedValue) == true)
+                {
+                    songsDataGridView.Rows[i].Cells[0].Value = "0";
+                }
+                else
+                {
+                    songsDataGridView.Rows[i].Cells[0].Value = "1";
+                }
+            }
+        }
+
+        private void songsDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView tmp_DGV = (DataGridView)sender;
+      
+             if (tmp_DGV.Columns[e.ColumnIndex].Name == "Choice")
+            {
+                if (e.RowIndex >= 0)
+                {
+                    if (Convert.ToBoolean(tmp_DGV.Rows[e.RowIndex].Cells[0].EditedFormattedValue) == true)
+                    {
+                        tmp_DGV.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = "0";
+                    }
+                    else
+                    {
+                        tmp_DGV.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = "1";
+                    }
+                }
+            }
+        }
+
+        private void button31_Click(object sender, EventArgs e)
+        {
+            foreach (Control ctl in this.Controls)
+            {
+                Console.WriteLine("name "+ ctl.Name + " type "+ctl.GetType().Name + " BackColor " + ctl.BackColor + " ForeColor "+ ctl.ForeColor);
+
+                if (ctl.GetType().Name == "Panel")
+                {
+                    foreach (Control child in ctl.Controls)
+                    {
+                        Console.WriteLine("\t name " + child.Name + " type " + child.GetType().Name + " BackColor " + child.BackColor + " ForeColor " + child.ForeColor);
+                        if (child.GetType().Name == "DataGridView")
+                        {
+                            Console.WriteLine("BackgroundColor " + ((DataGridView)child).BackgroundColor);
+                            Console.WriteLine("EnableHeadersVisualStyles " + ((DataGridView)child).EnableHeadersVisualStyles);
+                            Console.WriteLine("ColumnHeadersDefaultCellStyle " + ((DataGridView)child).ColumnHeadersDefaultCellStyle);
+                            Console.WriteLine("RowsDefaultCellStyle " + ((DataGridView)child).RowsDefaultCellStyle);
+                            Console.WriteLine("DefaultCellStyle " + ((DataGridView)child).DefaultCellStyle);
+                           
+                           
+                        }
+                    }
+                    
+                }
+            }
         }
     }
 }

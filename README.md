@@ -134,3 +134,8 @@ Encoding [示例](./Utils.cs)
 * datagridview的隐藏列，和访问隐藏列的数据
 [示例](./Form1.cs)
 
+* spltieContianer 分割条与panel的使用
+[示例](./SpliterTest.cs)
+
+
+
