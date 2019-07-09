@@ -137,5 +137,8 @@ Encoding [示例](./Utils.cs)
 * spltieContianer 分割条与panel的使用
 [示例](./SpliterTest.cs)
 
+* 日志库，github上的C#语言开源项目Simple Logger，库文件为SimpleLogger.dll
+[示例](./LoggerTest.cs)
+
 
 

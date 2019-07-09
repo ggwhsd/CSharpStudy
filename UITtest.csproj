@@ -37,6 +37,9 @@
     <Reference Include="NPlot">
       <HintPath>..\nplot-master\bin\NPlot.dll</HintPath>
     </Reference>
+    <Reference Include="SimpleLogger">
+      <HintPath>.\SimpleLogger.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -101,6 +104,7 @@
     <Compile Include="JsonForm.Designer.cs">
       <DependentUpon>JsonForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoggerTest.cs" />
     <Compile Include="PanelTest.cs">
       <SubType>Form</SubType>
     </Compile>

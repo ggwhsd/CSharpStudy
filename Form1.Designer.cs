@@ -92,6 +92,7 @@
             this.button28 = new System.Windows.Forms.Button();
             this.button29 = new System.Windows.Forms.Button();
             this.button31 = new System.Windows.Forms.Button();
+            this.button32 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.songsDataGridView)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -729,12 +730,23 @@
             this.button31.UseVisualStyleBackColor = true;
             this.button31.Click += new System.EventHandler(this.button31_Click);
             // 
+            // button32
+            // 
+            this.button32.Location = new System.Drawing.Point(1164, 535);
+            this.button32.Name = "button32";
+            this.button32.Size = new System.Drawing.Size(75, 23);
+            this.button32.TabIndex = 33;
+            this.button32.Text = "日志类";
+            this.button32.UseVisualStyleBackColor = true;
+            this.button32.Click += new System.EventHandler(this.button32_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1368, 768);
+            this.Controls.Add(this.button32);
             this.Controls.Add(this.button31);
             this.Controls.Add(this.button29);
             this.Controls.Add(this.button28);
@@ -838,6 +850,7 @@
         private System.Windows.Forms.Button button30;
         private System.Windows.Forms.CheckBox 全选;
         private System.Windows.Forms.Button button31;
+        private System.Windows.Forms.Button button32;
     }
 }
 

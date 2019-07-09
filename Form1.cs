@@ -13,6 +13,9 @@ using System.IO;
 using System.Xml.Linq;
 using System.Runtime.InteropServices;
 
+
+
+
 namespace MarketRiskUI
 {
     
@@ -766,6 +769,11 @@ namespace MarketRiskUI
                     
                 }
             }
+        }
+
+        private void button32_Click(object sender, EventArgs e)
+        {
+            LoggerTest.TestLogOne();
         }
     }
 }
