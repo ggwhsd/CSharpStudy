@@ -6,7 +6,11 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
+using System.Speech;
+using System.Speech.Synthesis;
+using System.Globalization;
 
 namespace MarketRiskUI
 {
@@ -287,6 +291,61 @@ namespace MarketRiskUI
             dt1 = dt.AddSeconds(70);
             MessageBox.Show("dt = DateTime.Now = "+ dt.ToLongTimeString()+ " \r\n dt.AddSeconds(70)=" + dt1.ToLongTimeString());
             MessageBox.Show("dt.substratc = " + dt1.Subtract(dt).TotalSeconds);
+        }
+
+        class ShowParameter
+        {
+            public string name;
+            public string title;
+            public void show() {
+                MessageBox.Show(name,title,MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void button13_Click(object sender, EventArgs e)
+        {
+            ShowParameter sp = new ShowParameter();
+            sp.name = "xxx合约，成交记录xxx，报单编号xxx，报单编号xxx";
+            sp.title = "交易违规提醒";
+            Thread t = new Thread(new ThreadStart(sp.show));
+            t.Start();
+
+        }
+        private SpeechSynthesizer voice = new SpeechSynthesizer();
+        private void button15_Click(object sender, EventArgs e)
+        {
+            int voiceRate = Int32.Parse(textBox_voiceSpeed.Text);
+            if (voiceRate>=10)
+                voiceRate = 10;
+            if (voiceRate<=-10)
+                voiceRate = -10;
+            voice.Rate = voiceRate; //语速,[-10,10]
+            voice.Volume = 100; //音量,[0,100]
+            //voice.SelectVoice("Microsoft Lili");
+            //voice.SelectVoice("Microsoft Anna");
+            //voice.Speak("醒醒啦，有自成交");
+            voice.SpeakAsync("有自成交，合约名为，ag2002");
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            string phrase = "对不起，我是好人";
+            SpeechSynthesizer speech = new SpeechSynthesizer();
+            CultureInfo keyboardCulture = System.Windows.Forms.InputLanguage.CurrentInputLanguage.Culture;
+            InstalledVoice neededVoice = speech.GetInstalledVoices(keyboardCulture).FirstOrDefault();
+            if (neededVoice == null)
+            {
+                phrase = "Unsupported Language";
+            }
+            else if (!neededVoice.Enabled)
+            {
+                phrase = "Voice Disabled";
+            }
+            else
+            {
+                speech.SelectVoice(neededVoice.VoiceInfo.Name);
+            }
+
+            speech.Speak(phrase);
         }
     }
 }

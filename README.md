@@ -140,5 +140,8 @@ Encoding [示例](./Utils.cs)
 * 日志库，github上的C#语言开源项目Simple Logger，库文件为SimpleLogger.dll
 [示例](./LoggerTest.cs)
 
+* 语音库，调用微软语音输出。
+[示例](./Utils.cs)
+
 
 
