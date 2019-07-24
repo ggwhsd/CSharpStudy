@@ -78,11 +78,20 @@ namespace MarketRiskUI
             Console.WriteLine("{0}", dt3.ToShortTimeString());
 
         }
-
+        DateTime lastTime = DateTime.Now;
         private void button5_Click(object sender, EventArgs e)
         {
             //播放系统声音
-            System.Media.SystemSounds.Beep.Play();
+            
+           
+
+            DateTime lastTime2 = DateTime.Now;
+            TimeSpan t1 = new TimeSpan(lastTime.Ticks);
+            TimeSpan t2 = new TimeSpan(lastTime2.Ticks);
+            double diff = (t2 - t1).Duration().TotalMilliseconds;
+            if(diff>10000)
+                System.Media.SystemSounds.Beep.Play();
+            lastTime = lastTime2;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -313,7 +322,7 @@ namespace MarketRiskUI
         private SpeechSynthesizer voice = new SpeechSynthesizer();
         private void button15_Click(object sender, EventArgs e)
         {
-            int voiceRate = Int32.Parse(textBox_voiceSpeed.Text);
+            int voiceRate = 0;
             if (voiceRate>=10)
                 voiceRate = 10;
             if (voiceRate<=-10)
@@ -323,7 +332,8 @@ namespace MarketRiskUI
             //voice.SelectVoice("Microsoft Lili");
             //voice.SelectVoice("Microsoft Anna");
             //voice.Speak("醒醒啦，有自成交");
-            voice.SpeakAsync("有自成交，合约名为，ag2002");
+            
+            voice.SpeakAsync(textBox_voiceSpeed.Text.Replace("au","黄金").Replace("ag","白银"));
         }
 
         private void button16_Click(object sender, EventArgs e)

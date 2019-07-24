@@ -368,46 +368,48 @@ namespace MarketRiskUI
         private void button3_Click(object sender, EventArgs e)
         {
             //创建一个名为"Table_New"的空表
-
-            dt = new DataTable("test");
-            dt.Columns.Add("Choice", System.Type.GetType("System.String"));
-            dt.Columns.Add("Name", System.Type.GetType("System.String"));
-            dt.Columns.Add("Date", typeof(String));
-            DataColumn dc = new DataColumn("Title", typeof(String));
-            dt.Columns.Add(dc);
-            for (int i = 0; i < 5; i++)
+            if (dt == null)
             {
-                dt.Columns.Add("Column"+i, typeof(String));
+                dt = new DataTable("test");
+                dt.Columns.Add("Choice", System.Type.GetType("System.String"));
+                dt.Columns.Add("Name", System.Type.GetType("System.String"));
+                dt.Columns.Add("Date", typeof(String));
+                DataColumn dc = new DataColumn("Title", typeof(String));
+                dt.Columns.Add(dc);
+                for (int i = 0; i < 5; i++)
+                {
+                    dt.Columns.Add("Column" + i, typeof(String));
+                }
+
+                DataGridViewCheckBoxColumn CheckColunms = new DataGridViewCheckBoxColumn();
+                CheckColunms.Name = "Choice";
+                CheckColunms.HeaderText = "Choice";
+
+                CheckColunms.Width = 60;
+                CheckColunms.TrueValue = "1";
+                CheckColunms.FalseValue = "0";
+
+                CheckColunms.DataPropertyName = "Choice";
+
+                songsDataGridView.Columns.Insert(0, CheckColunms);
+                songsDataGridView.DataSource = dt;
+                //设置以下列为只读，datagridview本身为可编辑
+                songsDataGridView.Columns[1].ReadOnly = true;
+                songsDataGridView.Columns[2].ReadOnly = true;
+                songsDataGridView.Columns[3].ReadOnly = true;
+                songsDataGridView.Columns[4].ReadOnly = true;
+                songsDataGridView.Columns[5].ReadOnly = true;
             }
-
-            DataGridViewCheckBoxColumn CheckColunms = new DataGridViewCheckBoxColumn();
-            CheckColunms.Name = "Choice";
-            CheckColunms.HeaderText = "Choice";
-
-            CheckColunms.Width = 60;
-            CheckColunms.TrueValue = "1";
-            CheckColunms.FalseValue = "0";
-            
-            CheckColunms.DataPropertyName = "Choice"; 
-
-            songsDataGridView.Columns.Insert(0,CheckColunms);
-
             DataRow dr = dt.NewRow();
             dt.Rows.Add(dr);
             dt.Rows.Add("0","张三", DateTime.Now.ToShortDateString(),"大boss","AAAAAA","AAAAAAA","AAAAAAAA","AAAAAAAAA","AAAAAAAAA");//Add里面参数的数据顺序要和dt中的列的顺序对应 
             dt.Rows.Add("0","张四", DateTime.Now.ToShortDateString(), "小boss", "AAAAAA", "AAAAAAA", "AAAAAAAA", "AAAAAAAAA", "AAAAAAAAA");//Add里面参数的数据顺序要和dt中的列的顺序对应 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i <20; i++)
             {
 
                 dt.Rows.Add("1","张四", DateTime.Now.ToShortDateString(), "小boss" + i, "AAAAAA", "AAAAAAA", "AAAAAAAA", "AAAAAAAAA", "AAAAAAAAA");//Add里面参数的数据顺序要和dt中的列的顺序对应 
             }
-            songsDataGridView.DataSource = dt;
-            //设置以下列为只读，datagridview本身为可编辑
-            songsDataGridView.Columns[1].ReadOnly = true;
-            songsDataGridView.Columns[2].ReadOnly = true;
-            songsDataGridView.Columns[3].ReadOnly = true;
-            songsDataGridView.Columns[4].ReadOnly = true;
-            songsDataGridView.Columns[5].ReadOnly = true;
+            
 
 
         }
@@ -774,6 +776,11 @@ namespace MarketRiskUI
         private void button32_Click(object sender, EventArgs e)
         {
             LoggerTest.TestLogOne();
+        }
+
+        private void button33_Click(object sender, EventArgs e)
+        {
+            songsDataGridView.FirstDisplayedScrollingRowIndex = 1;
         }
     }
 }

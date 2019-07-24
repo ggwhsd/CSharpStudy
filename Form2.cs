@@ -216,10 +216,6 @@ namespace MarketRiskUI
             {
                 lbState.Items.Add("客户" + newsocket.RemoteEndPoint.ToString() + "建立tcp连接");
             }
-            
-           
-
-
         }
         private void AcceptMessage()
         {

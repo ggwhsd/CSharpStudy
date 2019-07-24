@@ -38,10 +38,8 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.textBox_voiceSpeed = new System.Windows.Forms.TextBox();
@@ -147,15 +145,6 @@
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(288, 385);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 23);
-            this.button11.TabIndex = 1;
-            this.button11.Text = "button2";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
             // button12
             // 
             this.button12.Location = new System.Drawing.Point(214, 99);
@@ -175,15 +164,6 @@
             this.button13.Text = "异步MessageBox";
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.button13_Click);
-            // 
-            // button14
-            // 
-            this.button14.Location = new System.Drawing.Point(0, 0);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(75, 23);
-            this.button14.TabIndex = 4;
-            this.button14.Text = "button14";
-            this.button14.UseVisualStyleBackColor = true;
             // 
             // button15
             // 
@@ -211,6 +191,7 @@
             this.textBox_voiceSpeed.Name = "textBox_voiceSpeed";
             this.textBox_voiceSpeed.Size = new System.Drawing.Size(73, 21);
             this.textBox_voiceSpeed.TabIndex = 7;
+            this.textBox_voiceSpeed.Text = "有自成交，合约名为，ag2002";
             // 
             // Utils
             // 
@@ -220,10 +201,8 @@
             this.Controls.Add(this.textBox_voiceSpeed);
             this.Controls.Add(this.button16);
             this.Controls.Add(this.button15);
-            this.Controls.Add(this.button14);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.button12);
-            this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
@@ -253,10 +232,8 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.TextBox textBox_voiceSpeed;

@@ -93,6 +93,7 @@
             this.button29 = new System.Windows.Forms.Button();
             this.button31 = new System.Windows.Forms.Button();
             this.button32 = new System.Windows.Forms.Button();
+            this.button33 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.songsDataGridView)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -300,6 +301,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button33);
             this.groupBox2.Controls.Add(this.全选);
             this.groupBox2.Controls.Add(this.button30);
             this.groupBox2.Controls.Add(this.txt_count);
@@ -308,7 +310,7 @@
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Location = new System.Drawing.Point(1141, 127);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(210, 128);
+            this.groupBox2.Size = new System.Drawing.Size(210, 206);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "view和数据对象";
@@ -606,7 +608,7 @@
             // 
             // button15
             // 
-            this.button15.Location = new System.Drawing.Point(1257, 261);
+            this.button15.Location = new System.Drawing.Point(1141, 373);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(62, 96);
             this.button15.TabIndex = 20;
@@ -740,6 +742,16 @@
             this.button32.UseVisualStyleBackColor = true;
             this.button32.Click += new System.EventHandler(this.button32_Click);
             // 
+            // button33
+            // 
+            this.button33.Location = new System.Drawing.Point(23, 127);
+            this.button33.Name = "button33";
+            this.button33.Size = new System.Drawing.Size(75, 22);
+            this.button33.TabIndex = 19;
+            this.button33.Text = "滚动条";
+            this.button33.UseVisualStyleBackColor = true;
+            this.button33.Click += new System.EventHandler(this.button33_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -851,6 +863,7 @@
         private System.Windows.Forms.CheckBox 全选;
         private System.Windows.Forms.Button button31;
         private System.Windows.Forms.Button button32;
+        private System.Windows.Forms.Button button33;
     }
 }
 
