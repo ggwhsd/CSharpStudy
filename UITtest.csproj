@@ -121,6 +121,12 @@
       <DependentUpon>SpliterTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Testdata.cs" />
+    <Compile Include="TreeListTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TreeListTest.Designer.cs">
+      <DependentUpon>TreeListTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </Compile>
     <EmbeddedResource Include="SpliterTest.resx">
       <DependentUpon>SpliterTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TreeListTest.resx">
+      <DependentUpon>TreeListTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Utils.resx">
       <DependentUpon>Utils.cs</DependentUpon>
