@@ -31,11 +31,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>.\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.4.5.1\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="NPlot">
       <HintPath>..\nplot-master\bin\NPlot.dll</HintPath>
+    </Reference>
+    <Reference Include="Redis, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Redis.1.0.3\lib\Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Common, Version=4.0.62.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\ServiceStack.Common.4.0.62\lib\net40\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces, Version=4.0.0.0, Culture=neutral, PublicKeyToken=e06fbc6124f57c43, processorArchitecture=MSIL">
+      <HintPath>packages\ServiceStack.Interfaces.4.0.62\lib\portable-wp80+sl5+net40+win8+wpa81+monotouch+monoandroid+xamarin.ios10\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Redis, Version=4.0.62.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\ServiceStack.Redis.4.0.62\lib\net40\ServiceStack.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text, Version=4.0.62.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\ServiceStack.Text.4.0.62\lib\net40\ServiceStack.Text.dll</HintPath>
     </Reference>
     <Reference Include="SimpleLogger">
       <HintPath>.\SimpleLogger.dll</HintPath>
@@ -114,6 +129,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RedisHelper.cs" />
+    <Compile Include="redisTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="redisTest.Designer.cs">
+      <DependentUpon>redisTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="SpliterTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +193,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="redisTest.resx">
+      <DependentUpon>redisTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SpliterTest.resx">
       <DependentUpon>SpliterTest.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,8 +205,10 @@
     <EmbeddedResource Include="Utils.resx">
       <DependentUpon>Utils.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Compile Include="Properties\Settings.Designer.cs">
