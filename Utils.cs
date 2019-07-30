@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Speech;
 using System.Speech.Synthesis;
 using System.Globalization;
+using System.Runtime.Remoting.Messaging;
 
 namespace MarketRiskUI
 {
@@ -288,10 +289,7 @@ namespace MarketRiskUI
             public string str;
 
         }
-        private void button10_Click(object sender, EventArgs e)
-        {
-          
-        }
+
 
         private void button12_Click(object sender, EventArgs e)
         {
@@ -356,6 +354,74 @@ namespace MarketRiskUI
             }
 
             speech.Speak(phrase);
+        }
+
+        public delegate int AddHandler(int a,int b);
+        public class 加法类
+        {
+            public static int Add(int a, int b)
+            {
+                Console.WriteLine("开始计算：" + a + "+" + b);
+                Thread.Sleep(3000);
+                Console.WriteLine("计算完成！");
+                return a + b;
+            }
+        }
+        public class 减法类
+        {
+            public  int substract(int a, int b)
+            {
+                Console.WriteLine("开始计算：" + a + "-" + b);
+                Thread.Sleep(3000);
+                Console.WriteLine("计算完成！");
+                return a - b;
+            }
+        }
+        private void button10_Click(object sender, EventArgs e)
+        {
+            //同步调用delegate
+            AddHandler handler = new AddHandler(加法类.Add);
+            int result = handler.Invoke(1, 2);
+            Console.WriteLine("做别的事情了");
+            Console.WriteLine("计算结果{0}",result);
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            //异步调用delegate
+            Console.WriteLine("异步调用");
+            AddHandler handler = new AddHandler(加法类.Add);
+            IAsyncResult result = handler.BeginInvoke(1, 2, null, null);
+            Console.WriteLine("继续别的事情");
+            Console.WriteLine(handler.EndInvoke(result));
+        }
+
+        private void callBack(IAsyncResult result)
+        {
+            Console.WriteLine("回调处理开始");
+            AddHandler handler = (AddHandler)((AsyncResult)result).AsyncDelegate;
+            Console.WriteLine(handler.EndInvoke(result));
+            Console.WriteLine(result.AsyncState);
+            Console.WriteLine("回调处理结束");
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            //异步回调delegate
+            Console.WriteLine("异步回调");
+            AddHandler handler = new AddHandler(加法类.Add);
+            IAsyncResult result = handler.BeginInvoke(1, 2, new AsyncCallback(callBack), "AsycState:OK");
+            Console.WriteLine("继续别的事情");
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            //同步调用delegate
+            减法类 sub = new 减法类();
+            AddHandler handler = new AddHandler(sub.substract);
+            int result = handler.Invoke(2, 1);
+            Console.WriteLine("做别的事情了");
+            Console.WriteLine("计算结果{0}", result);
         }
     }
 }

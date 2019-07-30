@@ -43,6 +43,9 @@
             this.button15 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.textBox_voiceSpeed = new System.Windows.Forms.TextBox();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -137,11 +140,11 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(12, 273);
+            this.button10.Location = new System.Drawing.Point(11, 273);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 23);
+            this.button10.Size = new System.Drawing.Size(75, 37);
             this.button10.TabIndex = 1;
-            this.button10.Text = "button2";
+            this.button10.Text = "delegate同步";
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
@@ -193,16 +196,49 @@
             this.textBox_voiceSpeed.TabIndex = 7;
             this.textBox_voiceSpeed.Text = "有自成交，合约名为，ag2002";
             // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(12, 316);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(75, 38);
+            this.button11.TabIndex = 1;
+            this.button11.Text = "delegate异步";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(12, 360);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(74, 42);
+            this.button14.TabIndex = 8;
+            this.button14.Text = "delegate异步回调";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(11, 408);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(75, 39);
+            this.button17.TabIndex = 9;
+            this.button17.Text = "delegate非静态方法";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
             // Utils
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button17);
+            this.Controls.Add(this.button14);
             this.Controls.Add(this.textBox_voiceSpeed);
             this.Controls.Add(this.button16);
             this.Controls.Add(this.button15);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.button12);
+            this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
@@ -237,5 +273,8 @@
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.TextBox textBox_voiceSpeed;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button button17;
     }
 }

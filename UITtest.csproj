@@ -247,6 +247,7 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="README.md" />
     <None Include="Resources\scf.JPG" />
   </ItemGroup>
   <ItemGroup>
