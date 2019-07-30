@@ -34,6 +34,7 @@ namespace MarketRiskUI
 
         private void BindTreeView()
         {
+            
             treeView2.LabelEdit = false;
             TreeNode root = new TreeNode();
             root.Text = "根节点";
