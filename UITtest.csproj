@@ -143,6 +143,12 @@
     <Compile Include="SpliterTest.Designer.cs">
       <DependentUpon>SpliterTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="tableLayOutTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tableLayOutTest.Designer.cs">
+      <DependentUpon>tableLayOutTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Testdata.cs" />
     <Compile Include="TreeListTest.cs">
       <SubType>Form</SubType>
@@ -198,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SpliterTest.resx">
       <DependentUpon>SpliterTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tableLayOutTest.resx">
+      <DependentUpon>tableLayOutTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TreeListTest.resx">
       <DependentUpon>TreeListTest.cs</DependentUpon>

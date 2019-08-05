@@ -548,6 +548,11 @@ namespace MarketRiskUI
                 Random rd = new Random();
 
                 int count = 0;
+                int index = 0;
+                if (filename.Contains("trade_Log") == true)
+                {
+                    index = 24;
+                }
                 FileStream fs1 = new FileStream(filename, FileMode.Open, FileAccess.Read);
                 StreamReader sw = new StreamReader(fs1);
                 inLine = sw.ReadLine();
@@ -559,8 +564,11 @@ namespace MarketRiskUI
                 while (inLine != null)
                 {
                     count++;
-                    rtbSend.Text = inLine;
-                    btnSendraw_Click(null, null);
+                    if (inLine.Length > index)
+                    {
+                        rtbSend.Text = inLine.Substring(index);
+                        btnSendraw_Click(null, null);
+                    }
                     Thread.Sleep(rd.Next(min, max));
                     inLine = sw.ReadLine();
                 }

@@ -423,5 +423,33 @@ namespace MarketRiskUI
             Console.WriteLine("做别的事情了");
             Console.WriteLine("计算结果{0}", result);
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboBox1.Enabled)
+                MessageBox.Show("text="+comboBox1.Text + "\r\nvalue=" + comboBox1.SelectedValue);
+        }
+
+        class orderType
+        {
+            public string orderName;
+            public string Type;
+
+            public string OrderName { get => orderName; set => orderName = value; }
+            public string OrderType { get => Type; set => Type = value; }
+        }
+        List<orderType> orders= new List<orderType>();
+        private void button18_Click(object sender, EventArgs e)
+        {
+            this.comboBox1.Enabled=false;
+            orders.Add(new orderType() { OrderName = "Quote", OrderType = "Q" });
+            orders.Add(new orderType() { OrderName = "ReQuote", OrderType = "R" });
+            orders.Add(new orderType() { OrderName = "order", OrderType = "O" });
+            comboBox1.DataSource = orders;
+            comboBox1.DisplayMember = "OrderName";
+            comboBox1.ValueMember = "OrderType";
+            comboBox1.Enabled = true;
+
+        }
     }
 }

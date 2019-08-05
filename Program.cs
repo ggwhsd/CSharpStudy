@@ -18,6 +18,7 @@ namespace MarketRiskUI
             Application.Run(new Form1());
             //Application.Run(new TreeListTest());
             //Application.Run(new redisTest());
+            //Application.Run(new tableLayOutTest());
         }
     }
 }

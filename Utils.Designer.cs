@@ -46,6 +46,8 @@
             this.button11 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button18 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -226,11 +228,32 @@
             this.button17.UseVisualStyleBackColor = true;
             this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(208, 282);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(81, 20);
+            this.comboBox1.TabIndex = 10;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // button18
+            // 
+            this.button18.Location = new System.Drawing.Point(208, 308);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(75, 23);
+            this.button18.TabIndex = 11;
+            this.button18.Text = "测试combo";
+            this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
+            // 
             // Utils
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button18);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button17);
             this.Controls.Add(this.button14);
             this.Controls.Add(this.textBox_voiceSpeed);
@@ -276,5 +299,7 @@
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button18;
     }
 }
