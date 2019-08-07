@@ -382,6 +382,7 @@ namespace MarketRiskUI
             //同步调用delegate
             AddHandler handler = new AddHandler(加法类.Add);
             int result = handler.Invoke(1, 2);
+            //int result = handler(1, 2);
             Console.WriteLine("做别的事情了");
             Console.WriteLine("计算结果{0}",result);
         }
@@ -450,6 +451,70 @@ namespace MarketRiskUI
             comboBox1.ValueMember = "OrderType";
             comboBox1.Enabled = true;
 
+        }
+
+        class Example
+        {
+            public event AddHandler event_addHander;
+            public void Test()
+            {
+                AddHandler handler = new AddHandler(加法类.Add);
+                event_addHander += new AddHandler(加法类.Add);   //添加委托
+                event_addHander += add;   //直接添加方法
+                event_addHander += 加法类.Add;   //直接添加方法
+                int result = event_addHander(1, 2);
+                MessageBox.Show("event result = " + result);
+            }
+            public int add(int i, int j)
+            {
+                return i + j;
+            }
+
+            public event EventHandler event_addHander2;   //EventHandler其实是一个委托
+            public void Test2()
+            {
+                object sender = 10;
+                MyEventArgs e = new MyEventArgs("hahaha");
+                event_addHander2 += Print;
+                event_addHander2 += Print2;
+                event_addHander2(sender, e);
+
+            }
+            void Print(object sender, EventArgs e)
+            {
+                Console.WriteLine(sender);
+            }
+            void Print2(object sender, EventArgs e)
+            {
+                MyEventArgs args = (MyEventArgs)(e);
+                Console.WriteLine(sender+ args.Message);
+            }
+        }
+
+        class MyEventArgs : EventArgs
+        {
+            private string message;
+            public MyEventArgs(string message)
+            {
+                this.message = message;
+            }
+            public string Message
+            {
+                get { return message; }
+            }
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            Example exa = new Example();
+            exa.Test();
+            
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            Example exa = new Example();
+            exa.Test2();
         }
     }
 }

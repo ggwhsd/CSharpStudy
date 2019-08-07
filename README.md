@@ -146,4 +146,6 @@ Encoding [示例](./Utils.cs)
 * 委托同步调用和异步调用，回调。
 [示例](./Utils.cs)
 
+* event事件+委托+EventArgs自定义事件参数。
+[示例](./Utils.cs)
 

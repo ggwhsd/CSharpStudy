@@ -48,6 +48,8 @@
             this.button17 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button18 = new System.Windows.Forms.Button();
+            this.button19 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -152,7 +154,7 @@
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(214, 99);
+            this.button12.Location = new System.Drawing.Point(93, 99);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(75, 23);
             this.button12.TabIndex = 2;
@@ -162,7 +164,7 @@
             // 
             // button13
             // 
-            this.button13.Location = new System.Drawing.Point(212, 130);
+            this.button13.Location = new System.Drawing.Point(91, 130);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(75, 46);
             this.button13.TabIndex = 3;
@@ -172,7 +174,7 @@
             // 
             // button15
             // 
-            this.button15.Location = new System.Drawing.Point(212, 185);
+            this.button15.Location = new System.Drawing.Point(91, 185);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(75, 23);
             this.button15.TabIndex = 5;
@@ -182,7 +184,7 @@
             // 
             // button16
             // 
-            this.button16.Location = new System.Drawing.Point(212, 242);
+            this.button16.Location = new System.Drawing.Point(91, 242);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(75, 25);
             this.button16.TabIndex = 6;
@@ -192,7 +194,7 @@
             // 
             // textBox_voiceSpeed
             // 
-            this.textBox_voiceSpeed.Location = new System.Drawing.Point(214, 215);
+            this.textBox_voiceSpeed.Location = new System.Drawing.Point(93, 215);
             this.textBox_voiceSpeed.Name = "textBox_voiceSpeed";
             this.textBox_voiceSpeed.Size = new System.Drawing.Size(73, 21);
             this.textBox_voiceSpeed.TabIndex = 7;
@@ -231,7 +233,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(208, 282);
+            this.comboBox1.Location = new System.Drawing.Point(87, 282);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(81, 20);
             this.comboBox1.TabIndex = 10;
@@ -239,7 +241,7 @@
             // 
             // button18
             // 
-            this.button18.Location = new System.Drawing.Point(208, 308);
+            this.button18.Location = new System.Drawing.Point(87, 308);
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(75, 23);
             this.button18.TabIndex = 11;
@@ -247,11 +249,33 @@
             this.button18.UseVisualStyleBackColor = true;
             this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
+            // button19
+            // 
+            this.button19.Location = new System.Drawing.Point(174, 99);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(75, 23);
+            this.button19.TabIndex = 12;
+            this.button19.Text = "event使用";
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
+            // 
+            // button20
+            // 
+            this.button20.Location = new System.Drawing.Point(174, 130);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(75, 23);
+            this.button20.TabIndex = 13;
+            this.button20.Text = "event使用2";
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
+            // 
             // Utils
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button20);
+            this.Controls.Add(this.button19);
             this.Controls.Add(this.button18);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button17);
@@ -301,5 +325,7 @@
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Button button20;
     }
 }
