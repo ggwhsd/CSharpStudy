@@ -123,6 +123,14 @@ namespace MarketRiskUI
                 return this.Age.CompareTo(other.Age);
             }
         }
+
+
+        class MyStruct
+        {
+            public int a;
+            public int b;
+            public string c;
+        };
         private void button6_Click(object sender, EventArgs e)
         {
             ArrayList list = new ArrayList();
@@ -134,6 +142,12 @@ namespace MarketRiskUI
             //list.RemoveAt(0);
             list.Insert(1,"wow");
             list.Contains("wow");
+
+
+          
+
+
+           
 
             
 
@@ -515,6 +529,39 @@ namespace MarketRiskUI
         {
             Example exa = new Example();
             exa.Test2();
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            
+            DateTime start = DateTime.Now;
+            DateTime end;
+            int count = 10000000;
+            MyStruct[] ss = new MyStruct[count];
+            for (int i = 0; i < count; i++)
+            {
+                MyStruct child = new MyStruct();
+                child.a = i;
+                child.b = 1;
+                child.c = "d";
+               end = DateTime.Now;
+                ss[i] = child;
+            }
+            end = DateTime.Now;
+            TimeSpan ts = end - start;
+            MessageBox.Show("timespan 生成" + count + "个元素，耗时毫秒 " + ts.TotalMilliseconds);
+
+            DateTime start1 = DateTime.Now;
+            for (int i = 0; i < count; i++)
+            {
+                if (ss[i].a == count)
+                    break;
+            }
+            DateTime end1 = DateTime.Now;
+            TimeSpan ts1 = end1 - start1;
+            MessageBox.Show("timespan 遍历" + count + "个元素，耗时毫秒 " + ts1.TotalMilliseconds);
+
+
         }
     }
 }
