@@ -41,11 +41,25 @@
             this.textBox_ip = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox_keys = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox_value = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.textBox_value);
+            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.textBox_keys);
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button_con);
             this.groupBox1.Controls.Add(this.label4);
@@ -58,7 +72,7 @@
             this.groupBox1.Controls.Add(this.textBox_ip);
             this.groupBox1.Location = new System.Drawing.Point(23, 19);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(176, 290);
+            this.groupBox1.Size = new System.Drawing.Size(176, 419);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -69,8 +83,9 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(60, 23);
             this.button2.TabIndex = 8;
-            this.button2.Text = "button2";
+            this.button2.Text = "Disconnect";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button_con
             // 
@@ -154,6 +169,7 @@
             this.textBox1.Location = new System.Drawing.Point(224, 19);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBox1.Size = new System.Drawing.Size(564, 122);
             this.textBox1.TabIndex = 1;
             // 
@@ -164,6 +180,68 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(564, 122);
             this.textBox2.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(11, 252);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(59, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "readString";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox_keys
+            // 
+            this.textBox_keys.Location = new System.Drawing.Point(66, 168);
+            this.textBox_keys.Name = "textBox_keys";
+            this.textBox_keys.Size = new System.Drawing.Size(95, 21);
+            this.textBox_keys.TabIndex = 10;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(76, 252);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(59, 23);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "setStr";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // textBox_value
+            // 
+            this.textBox_value.Location = new System.Drawing.Point(66, 195);
+            this.textBox_value.Name = "textBox_value";
+            this.textBox_value.Size = new System.Drawing.Size(89, 21);
+            this.textBox_value.TabIndex = 12;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(11, 171);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(23, 12);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Key";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(9, 204);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 12);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Value";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(13, 315);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(133, 23);
+            this.button4.TabIndex = 14;
+            this.button4.Text = "readmanyTimes";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // redisTest
             // 
@@ -197,5 +275,12 @@
         private System.Windows.Forms.TextBox textBox_ip;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox_keys;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox_value;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }

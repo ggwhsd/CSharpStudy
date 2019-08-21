@@ -149,3 +149,6 @@ Encoding [示例](./Utils.cs)
 * event事件+委托+EventArgs自定义事件参数。
 [示例](./Utils.cs)
 
+* 使用servicestack.redis库访问redis的示例。
+[示例](./redisTest.cs)
+
