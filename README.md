@@ -152,3 +152,5 @@ Encoding [示例](./Utils.cs)
 * 使用servicestack.redis库访问redis的示例。
 [示例](./redisTest.cs)
 
+# CSharp访问C++的dll的方法，参考[项目](./CSharpInvokeCPP/CSharpInvokeCPP.sln)
+

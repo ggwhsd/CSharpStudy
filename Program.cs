@@ -15,9 +15,9 @@ namespace MarketRiskUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
+            Application.Run(new Form1());
             //Application.Run(new TreeListTest());
-            Application.Run(new redisTest());
+            //Application.Run(new redisTest());
             //Application.Run(new tableLayOutTest());
            // Application.Run(new ListViewTest());
         }
