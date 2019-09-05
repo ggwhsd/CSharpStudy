@@ -70,5 +70,50 @@ namespace MarketRiskUI
                 leftFlag = false;//释放鼠标后标注为false;
             }
         }
+        class PricingType_ComboUI
+        {
+            string name;
+            string value;
+
+            public string Name { get => name; set => name = value; }
+            public string Value { get => value; set => this.value = value; }
+        }
+        List<PricingType_ComboUI> pricingTypes = new List<PricingType_ComboUI>();
+        private void button3_Click(object sender, EventArgs e)
+        {
+            pricingTypes.Add(new PricingType_ComboUI() { Name = "Tom", Value = "T" });
+            pricingTypes.Add(new PricingType_ComboUI() { Name = "Jack", Value = "J" });
+            pricingTypes.Add(new PricingType_ComboUI() { Name = "Willim", Value = "W" });
+            checkedListBox1.DataSource = pricingTypes;
+            checkedListBox1.DisplayMember = "Name";
+            checkedListBox1.ValueMember = "Value";
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+           
+         
+
+            for (int i = 0; i < checkedListBox1.CheckedItems.Count; i++)
+            {
+                MessageBox.Show(((PricingType_ComboUI)checkedListBox1.CheckedItems[i]).Value); 
+            }
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string choices = "TJ";
+            for (int i = 0; i < checkedListBox1.Items.Count; i++)
+            {            
+                foreach (char choice in choices)
+                {
+                    if (((PricingType_ComboUI)checkedListBox1.Items[i]).Value[0] == choice)
+                    {
+                        checkedListBox1.SetItemChecked(i, true);
+                    }
+                }
+            }
+        }
     }
 }
