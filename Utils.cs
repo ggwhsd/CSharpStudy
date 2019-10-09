@@ -97,7 +97,7 @@ namespace MarketRiskUI
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         class Student:IComparable<Student>
