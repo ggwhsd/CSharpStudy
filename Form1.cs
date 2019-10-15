@@ -782,5 +782,47 @@ namespace MarketRiskUI
         {
             songsDataGridView.FirstDisplayedScrollingRowIndex = 1;
         }
+
+        private void button34_Click(object sender, EventArgs e)
+        {
+            String str_filename;
+            if (txt_filename.Text.Trim() == "")
+            {
+                MessageBox.Show("error: filename is empty");
+                return;
+            }
+            else
+            {
+                str_filename = Environment.CurrentDirectory + "\\" + txt_filename.Text.Trim();
+            }
+            if (File.Exists(str_filename) == false)
+            {
+                MessageBox.Show("error: file does not exist");
+                return;
+            }
+            else
+            {
+                FileInfo fi = new FileInfo(str_filename);
+                string msg = "创建时间：" + fi.CreationTime.ToString() + "\r\n";
+                msg = msg +  "修改时间："+fi.LastWriteTime.ToString()+"\r\n";
+                msg = msg + "读取时间：" + fi.LastAccessTime.ToString() + "\r\n";
+                
+                msg = msg + "是否只读:" + fi.IsReadOnly + "\r\n";
+                msg = msg + "是否隐藏：" + (fi.Attributes & FileAttributes.Hidden).ToString()  + "\r\n";
+
+
+
+                MessageBox.Show("FileInfo类 \r\n"+msg);
+                
+                msg = "创建时间：" + File.GetCreationTime(str_filename).ToString() + "\r\n";
+                msg = msg + "修改时间：" + File.GetLastAccessTime(str_filename).ToString() + "\r\n";
+                msg = msg + "读取时间：" + File.GetLastWriteTime(str_filename).ToString() + "\r\n";
+
+                msg = msg + "是否只读:" + typeof(FileAttributes).GetEnumName(File.GetAttributes(str_filename) & FileAttributes.ReadOnly) + "\r\n";
+                msg = msg + "是否隐藏：" + (File.GetAttributes(str_filename) & FileAttributes.Hidden).ToString() + "\r\n";
+                MessageBox.Show("File类 \r\n"+msg);
+
+            }
+        }
     }
 }

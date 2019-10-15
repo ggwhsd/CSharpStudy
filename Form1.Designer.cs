@@ -51,6 +51,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.txt_count = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button33 = new System.Windows.Forms.Button();
             this.全选 = new System.Windows.Forms.CheckBox();
             this.button30 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -93,7 +94,7 @@
             this.button29 = new System.Windows.Forms.Button();
             this.button31 = new System.Windows.Forms.Button();
             this.button32 = new System.Windows.Forms.Button();
-            this.button33 = new System.Windows.Forms.Button();
+            this.button34 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.songsDataGridView)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -315,6 +316,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "view和数据对象";
             // 
+            // button33
+            // 
+            this.button33.Location = new System.Drawing.Point(23, 127);
+            this.button33.Name = "button33";
+            this.button33.Size = new System.Drawing.Size(75, 22);
+            this.button33.TabIndex = 19;
+            this.button33.Text = "滚动条";
+            this.button33.UseVisualStyleBackColor = true;
+            this.button33.Click += new System.EventHandler(this.button33_Click);
+            // 
             // 全选
             // 
             this.全选.AutoSize = true;
@@ -371,6 +382,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button34);
             this.tabPage1.Controls.Add(this.button14);
             this.tabPage1.Controls.Add(this.button11);
             this.tabPage1.Controls.Add(this.button10);
@@ -742,15 +754,15 @@
             this.button32.UseVisualStyleBackColor = true;
             this.button32.Click += new System.EventHandler(this.button32_Click);
             // 
-            // button33
+            // button34
             // 
-            this.button33.Location = new System.Drawing.Point(23, 127);
-            this.button33.Name = "button33";
-            this.button33.Size = new System.Drawing.Size(75, 22);
-            this.button33.TabIndex = 19;
-            this.button33.Text = "滚动条";
-            this.button33.UseVisualStyleBackColor = true;
-            this.button33.Click += new System.EventHandler(this.button33_Click);
+            this.button34.Location = new System.Drawing.Point(182, 80);
+            this.button34.Name = "button34";
+            this.button34.Size = new System.Drawing.Size(75, 23);
+            this.button34.TabIndex = 10;
+            this.button34.Text = "文件时间";
+            this.button34.UseVisualStyleBackColor = true;
+            this.button34.Click += new System.EventHandler(this.button34_Click);
             // 
             // Form1
             // 
@@ -864,6 +876,7 @@
         private System.Windows.Forms.Button button31;
         private System.Windows.Forms.Button button32;
         private System.Windows.Forms.Button button33;
+        private System.Windows.Forms.Button button34;
     }
 }
 
