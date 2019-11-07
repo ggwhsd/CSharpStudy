@@ -390,6 +390,7 @@ namespace MarketRiskUI
                 CheckColunms.FalseValue = "0";
 
                 CheckColunms.DataPropertyName = "Choice";
+                
 
                 songsDataGridView.Columns.Insert(0, CheckColunms);
                 songsDataGridView.DataSource = dt;
@@ -823,6 +824,43 @@ namespace MarketRiskUI
                 MessageBox.Show("File类 \r\n"+msg);
 
             }
+        }
+
+        private void songsDataGridView_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+            if (Char.IsWhiteSpace(e.KeyChar))
+            {
+                for (int i = 0; i < songsDataGridView.SelectedCells.Count; i++)
+                {
+                     DataGridViewCell dgr  = songsDataGridView.SelectedCells[i];
+                    if (dgr.ColumnIndex == songsDataGridView.Columns["Choice"].Index)
+                    {
+                        if (Convert.ToBoolean(dgr.EditedFormattedValue) == true)
+                        {
+                            dgr.Value = "0";
+                            dgr.Style.BackColor = Color.White;
+                        }
+                        else
+                        {
+                            dgr.Value = "1";
+                            dgr.Style.BackColor = Color.Green;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void button36_Click(object sender, EventArgs e)
+        {
+            Form_datagridview1 fdgd = new Form_datagridview1();
+            fdgd.Show();
+        }
+
+        private void button37_Click(object sender, EventArgs e)
+        {
+            Form_datagidview2 dgv = new Form_datagidview2();
+            dgv.Show();
         }
     }
 }

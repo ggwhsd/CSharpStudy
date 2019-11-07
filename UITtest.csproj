@@ -108,6 +108,18 @@
     <Compile Include="FormPart1.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form_datagidview2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_datagidview2.Designer.cs">
+      <DependentUpon>Form_datagidview2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_datagridview1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_datagridview1.Designer.cs">
+      <DependentUpon>Form_datagridview1.cs</DependentUpon>
+    </Compile>
     <Compile Include="GDI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +197,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form5.resx">
       <DependentUpon>Form5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_datagidview2.resx">
+      <DependentUpon>Form_datagidview2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_datagridview1.resx">
+      <DependentUpon>Form_datagridview1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GDI.resx">
       <DependentUpon>GDI.cs</DependentUpon>

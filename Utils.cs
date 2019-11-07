@@ -568,5 +568,17 @@ namespace MarketRiskUI
         {
             
         }
+
+        private void checkBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsWhiteSpace(e.KeyChar) == true)
+            {
+                MessageBox.Show("you press whitespace");
+            }
+            else
+            {
+                
+            }
+        }
     }
 }
