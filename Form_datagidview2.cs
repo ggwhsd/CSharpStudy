@@ -135,8 +135,10 @@ namespace MarketRiskUI
 
                 dgv1.Columns.Insert(0, CheckColunms);
 
-
+                //将数据表绑定
                 dgv1.DataSource = dt;
+               
+              
                 //设置以下列为只读，datagridview本身为可编辑
 
                 dgv1.Columns[4].ReadOnly = true;

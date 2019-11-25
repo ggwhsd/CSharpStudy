@@ -580,5 +580,104 @@ namespace MarketRiskUI
                 
             }
         }
+
+
+    
+        class WaitPulse
+        {
+            private int result = 0;
+            private Object lockObject;
+            private int id = 0;
+            public WaitPulse()
+            {
+            }
+
+            public WaitPulse(Object obj)
+            {
+                this.lockObject = obj;
+            }
+            public void SetId(int id)
+            {
+                this.id = id;
+            }
+
+
+            public void CriticalSection()
+            {
+                Monitor.Enter(this.lockObject);
+                
+                Console.WriteLine(id+": Entered Thread "  + Thread.CurrentThread.GetHashCode());
+
+                for (int i = 1; i <= 5; i++)
+                {
+                    Monitor.Wait(this.lockObject);  //释放当前锁，并进入等待锁状态
+
+                    Console.WriteLine(id+": WokeUp  Result = " + result++ + " ThreadID " + Thread.CurrentThread.GetHashCode());
+
+                    Monitor.Pulse(this.lockObject);   //唤醒等待锁进入待执行状态
+                }
+                Console.WriteLine(id+": Exiting Thread " + Thread.CurrentThread.GetHashCode());
+
+                
+                Monitor.Exit(this.lockObject);
+            }
+        }
+
+        class PulseWait
+        {
+            private int result = 0;
+            private Object lockObject;
+            private int id = 0;
+            public PulseWait()
+            {
+            }
+
+            public PulseWait(Object obj)
+            {
+                this.lockObject = obj;
+            }
+            public void SetId(int id)
+            {
+                this.id = id;
+            }
+
+
+            public void CriticalSection()
+            {
+                Monitor.Enter(this.lockObject);
+
+                Console.WriteLine(id + ": Entered Thread " + Thread.CurrentThread.GetHashCode());
+
+                for (int i = 1; i <= 5; i++)
+                {
+                    Monitor.Pulse(this.lockObject);   //唤醒等待锁进入待执行状态
+
+                    Monitor.Wait(this.lockObject);  //释放当前锁，并进入等待锁状态
+                    Console.WriteLine(id + ": WokeUp  Result = " + result++ + " ThreadID " + Thread.CurrentThread.GetHashCode());
+
+                }
+                Console.WriteLine(id + ": Exiting Thread " + Thread.CurrentThread.GetHashCode());
+
+
+                Monitor.Exit(this.lockObject);
+            }
+        }
+        private void buttonThread_Click(object sender, EventArgs e)
+        {
+            Object obj = new Object();
+            WaitPulse w1 = new WaitPulse(obj);
+            w1.SetId(1);
+            WaitPulse w2 = new WaitPulse(obj);
+            w2.SetId(2);
+            PulseWait p1 = new PulseWait(obj);
+            p1.SetId(3);
+            Thread t1 = new Thread(new ThreadStart(w1.CriticalSection));
+            Thread t2 = new Thread(new ThreadStart(w2.CriticalSection));
+            Thread t3 = new Thread(new ThreadStart(p1.CriticalSection));
+            t1.Start();
+            t2.Start();
+            t3.Start();
+
+        }
     }
 }

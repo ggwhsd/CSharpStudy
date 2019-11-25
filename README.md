@@ -154,5 +154,9 @@ Encoding [示例](./Utils.cs)
 
 * 使用datagridview的非绑定源示例，包含绘画单元格，设置错误提示等。
 [示例](./Form_datagridview1.cs)
+
+* 线程锁，以及线程的通知和等待
+[示例](./Utils.cs)
+
 # CSharp访问C++的dll的方法，参考[项目](./CSharpInvokeCPP/CSharpInvokeCPP.sln)
 

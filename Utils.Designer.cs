@@ -52,6 +52,7 @@
             this.button20 = new System.Windows.Forms.Button();
             this.button21 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.buttonThread = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -292,11 +293,22 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkBox1_KeyPress);
             // 
+            // buttonThread
+            // 
+            this.buttonThread.Location = new System.Drawing.Point(365, 12);
+            this.buttonThread.Name = "buttonThread";
+            this.buttonThread.Size = new System.Drawing.Size(136, 23);
+            this.buttonThread.TabIndex = 16;
+            this.buttonThread.Text = "线程同步+通知";
+            this.buttonThread.UseVisualStyleBackColor = true;
+            this.buttonThread.Click += new System.EventHandler(this.buttonThread_Click);
+            // 
             // Utils
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonThread);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button21);
             this.Controls.Add(this.button20);
@@ -354,5 +366,6 @@
         private System.Windows.Forms.Button button20;
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button buttonThread;
     }
 }
