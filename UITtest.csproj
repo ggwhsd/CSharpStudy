@@ -31,6 +31,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Apache.NMS">
+      <HintPath>otherPackages\Apache.NMS.dll</HintPath>
+    </Reference>
+    <Reference Include="Apache.NMS.ActiveMQ">
+      <HintPath>otherPackages\Apache.NMS.ActiveMQ.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.4.5.1\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -68,6 +74,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActiveMQ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActiveMQ.Designer.cs">
+      <DependentUpon>ActiveMQ.cs</DependentUpon>
+    </Compile>
     <Compile Include="AsyncNetworkStream.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +192,9 @@
     <Compile Include="Utils.Designer.cs">
       <DependentUpon>Utils.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ActiveMQ.resx">
+      <DependentUpon>ActiveMQ.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AsyncNetworkStream.resx">
       <DependentUpon>AsyncNetworkStream.cs</DependentUpon>
     </EmbeddedResource>

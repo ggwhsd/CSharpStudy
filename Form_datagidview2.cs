@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace MarketRiskUI
 {
@@ -122,7 +123,8 @@ namespace MarketRiskUI
                 {
                     dt.Columns.Add("Column" + i, typeof(String));
                 }
-
+                DataColumn[] cols = new DataColumn[] { dt.Columns["Name"] };
+                dt.PrimaryKey = cols;
                 DataGridViewCheckBoxColumn CheckColunms = new DataGridViewCheckBoxColumn();
                 CheckColunms.Name = "Choice";
                 CheckColunms.HeaderText = "Choice";
@@ -147,7 +149,7 @@ namespace MarketRiskUI
 
             }
             DataRow dr = dt.NewRow();
-            dt.Rows.Add(dr);
+          
             dt.Rows.Add("0", "张三", DateTime.Now.ToShortDateString(), "大boss", "AAAAAA", "AAAAAAA", "AAAAAAAA", "AAAAAAAAA", "AAAAAAAAA");//Add里面参数的数据顺序要和dt中的列的顺序对应 
             dt.Rows.Add("0", "张四", DateTime.Now.ToShortDateString(), "小boss", "AAAAAA", "AAAAAAA", "AAAAAAAA", "AAAAAAAAA", "AAAAAAAAA");//Add里面参数的数据顺序要和dt中的列的顺序对应 
 
@@ -193,7 +195,35 @@ namespace MarketRiskUI
         {
             dgv1.RowCount = 2;
         }
+        private int i = 1;
 
-  
+        private void button4_Click(object sender, EventArgs e)
+        {
+            timer1.Interval = 1000;
+            timer1.Enabled = true;
+            
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            i++;
+            DataRow dr = dt.Rows.Find("Add_2");
+            if (dr == null)
+            {
+
+                dr = dt.Rows.Add("0", "Add_" + i.ToString(), DateTime.Now.ToShortDateString(), "大boss", "AAAAAA", "AAAAAAA", "AAAAAAAA", "AAAAAAAAA", "AAAAAAAAA");//Add里面参数的数据顺序要和dt中的列的顺序对应 
+
+            }
+            else
+            {
+                dr[4] = "abcdefghigk" + i.ToString();
+            }
+            dgv1.InvalidateColumn(4);
+            dgv1.Update();
+
+
+
+        }
     }
 }

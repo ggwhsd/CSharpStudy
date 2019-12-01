@@ -862,5 +862,11 @@ namespace MarketRiskUI
             Form_datagidview2 dgv = new Form_datagidview2();
             dgv.Show();
         }
+
+        private void button38_Click(object sender, EventArgs e)
+        {
+            ActiveMQ mQ = new ActiveMQ();
+            mQ.Show();
+        }
     }
 }
