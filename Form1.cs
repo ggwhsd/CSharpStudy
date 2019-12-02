@@ -868,5 +868,10 @@ namespace MarketRiskUI
             ActiveMQ mQ = new ActiveMQ();
             mQ.Show();
         }
+
+        private void button35_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
