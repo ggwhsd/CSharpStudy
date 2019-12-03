@@ -158,5 +158,11 @@ Encoding [示例](./Utils.cs)
 * 线程锁，以及线程的通知和等待
 [示例](./Utils.cs)
 
+* ActiveMQ的Topic使用示例
+[示例](./ActiveMQ_TOPIC.cs)
+
+* ActiveMQ的Queue使用示例
+[示例](./ActiveMQ_QUEUE.cs)
+
 # CSharp访问C++的dll的方法，参考[项目](./CSharpInvokeCPP/CSharpInvokeCPP.sln)
 

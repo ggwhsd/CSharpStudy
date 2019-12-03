@@ -865,13 +865,19 @@ namespace MarketRiskUI
 
         private void button38_Click(object sender, EventArgs e)
         {
-            ActiveMQ mQ = new ActiveMQ();
+            ActiveMQ_TOPIC mQ = new ActiveMQ_TOPIC();
             mQ.Show();
         }
 
         private void button35_Click(object sender, EventArgs e)
         {
+            
+        }
 
+        private void button35_Click_1(object sender, EventArgs e)
+        {
+            ActiveMQ_QUEUE mQ_QUEUE = new ActiveMQ_QUEUE();
+            mQ_QUEUE.Show();
         }
     }
 }
