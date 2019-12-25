@@ -679,5 +679,10 @@ namespace MarketRiskUI
             t3.Start();
 
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

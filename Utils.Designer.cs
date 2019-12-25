@@ -291,6 +291,7 @@
             this.checkBox1.TabIndex = 15;
             this.checkBox1.Text = "空格控制";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             this.checkBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkBox1_KeyPress);
             // 
             // buttonThread
