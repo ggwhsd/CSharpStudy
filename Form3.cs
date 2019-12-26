@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using NPlot.Bitmap;
 
 namespace MarketRiskUI
 {
@@ -69,10 +70,6 @@ namespace MarketRiskUI
             pp.AbscissaData = b;
             pp.Label = "Random";
             myPlot.Add(pp);
-
-            myPlot.AddInteraction(new NPlot.Windows.PlotSurface2D.Interactions.HorizontalDrag());
-            myPlot.AddInteraction(new NPlot.Windows.PlotSurface2D.Interactions.VerticalDrag());
-            myPlot.AddInteraction(new NPlot.Windows.PlotSurface2D.Interactions.AxisDrag(true));
 
             myPlot.XAxis1.IncreaseRange(0.1);
             myPlot.YAxis1.IncreaseRange(0.1); //缩小到合适大小
@@ -318,6 +315,221 @@ namespace MarketRiskUI
         private void trackBar2_Scroll(object sender, EventArgs e)
         {
             myPlot.XAxis1.IncreaseRange(-1*(double)trackBar1.Value / trackBar1.Maximum);
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trackBar3_Scroll(object sender, EventArgs e)
+        {
+            TrackBar trackBar3 = (TrackBar)sender;
+            this.Opacity = (double)trackBar3.Value / trackBar1.Maximum;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            myPlot.Clear();             //清空
+            Grid mygrid = new Grid(); //加入网格 
+            myPlot.Add(mygrid);
+
+            int leng = 10;
+            int[] p = new int[10] { 1,2,3,4,5,6,7,8,9,10};
+            int[] X = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            string[] strLabel = new string[leng];
+            for (int i = 0; i < leng; i++)
+                strLabel[i] = Convert.ToString(p[i])+" label";
+
+            LabelPointPlot labp = new LabelPointPlot();
+            labp.AbscissaData = X ;
+            labp.OrdinateData = p;
+            labp.TextData = strLabel;
+            labp.LabelTextPosition = LabelPointPlot.LabelPositions.Above;
+            labp.Marker = new Marker(Marker.MarkerType.Square, 8);
+            labp.Marker.Color = Color.Blue;
+            myPlot.Add(labp);
+
+            myPlot.Refresh();
+        }
+        ///水平线，只有纵坐标，没有横坐标
+        private void button7_Click(object sender, EventArgs e)
+        {
+           
+            HorizontalLine line = new HorizontalLine(1.2);
+            line.LengthScale = 0.3f; ///长度与mplot长度的比例
+            this.myPlot.Add(line,-10);
+        }
+        ///垂直线:只有横坐标，没有纵坐标
+        private void button8_Click(object sender, EventArgs e)
+        {
+            
+            VerticalLine line2 = new VerticalLine(1.2);
+            line2.LengthScale = 0.89f;
+            this.myPlot.Add(line2);
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            LinePlot lp3 = new LinePlot();
+            int[] p = new int[10] { 1, 2, 3, 4, 5, 4, 3, 2, 1, 3 };
+            int[] X = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            lp3.OrdinateData = p;
+            lp3.AbscissaData = X;
+            lp3.Pen = new Pen(Color.Orange);
+            lp3.Pen.Width = 2;
+            lp3.Label = " 价格";
+            this.myPlot.Add(lp3);
+        }
+
+        private void checkBox10_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox cbx = (CheckBox)sender;
+            if (cbx.Checked == true)
+            {
+                LinearAxis linx = (LinearAxis)myPlot.XAxis1;
+                linx.Label = "时间";
+                linx.AxisColor = Color.Orange;
+                linx.LabelColor = Color.Orange;
+                linx.TickTextColor = Color.Orange;
+                this.myPlot.XAxis1 = linx;
+                LinearAxis liny = (LinearAxis)myPlot.YAxis1;
+                liny.Label = "价格";
+                liny.AxisColor = Color.Orange;
+                liny.LabelColor = Color.Orange;
+                liny.TickTextColor = Color.Orange;
+                this.myPlot.YAxis1 = liny;
+            }
+            else
+            {
+                LinearAxis linx = (LinearAxis)myPlot.XAxis1;
+                linx.Label = "时间";
+                linx.AxisColor = Color.Blue;
+                linx.LabelColor = Color.Blue;
+                linx.TickTextColor = Color.Blue;
+                this.myPlot.XAxis1 = linx;
+
+                LinearAxis liny = (LinearAxis)myPlot.YAxis1;
+                liny.Label = "价格";
+                liny.AxisColor = Color.Blue;
+                liny.LabelColor = Color.Blue;
+                liny.TickTextColor = Color.Blue;
+                this.myPlot.YAxis1 = liny;
+               
+            }
+            myPlot.Refresh();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            LinePlot lp2 = new LinePlot();
+            int[] p2 = new int[10] { 2, 4, 6, 8, 7, 3, 2, 1, 3, 1 };
+            int[] X = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            lp2.OrdinateData = p2;
+            lp2.AbscissaData = X;
+            lp2.Pen = new Pen(Color.Green);
+            lp2.Pen.Width = 2;
+            lp2.Label = "销售量";
+            //添加到第二横纵坐标轴上
+            // this.myPlot.Add(lp2, NPlot.PlotSurface2D.XAxisPosition.Top, NPlot.PlotSurface2D.YAxisPosition.Right);
+            //添加到第一横纵坐标轴
+            this.myPlot.Add(lp2, NPlot.PlotSurface2D.XAxisPosition.Bottom, NPlot.PlotSurface2D.YAxisPosition.Left);
+        }
+
+        private void checkBox11_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox cbx = (CheckBox)sender;
+            if (cbx.Checked == true)
+            {
+                LinearAxis liny2 = (LinearAxis)myPlot.YAxis2;
+                if (liny2 == null)
+                    liny2 = new LinearAxis();
+                liny2.WorldMax = 1.2;
+                liny2.WorldMin = 0;
+                liny2.Label = "销售量";
+                liny2.AxisColor = Color.Green;
+                liny2.LabelColor = Color.Green;
+                liny2.TickTextColor = Color.Green;
+                this.myPlot.YAxis2 = liny2;
+            }
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            this.myPlot.Legend = new Legend();
+            this.myPlot.Legend.AttachTo(NPlot.PlotSurface2D.XAxisPosition.Top, NPlot.PlotSurface2D.YAxisPosition.Right);
+            this.myPlot.Legend.NumberItemsHorizontally = 2;
+            this.myPlot.Legend.HorizontalEdgePlacement = Legend.Placement.Inside;
+            this.myPlot.Legend.VerticalEdgePlacement = Legend.Placement.Inside;
+            this.myPlot.Legend.YOffset = 5;
+            this.myPlot.Legend.XOffset = -5;
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            LabelAxis la1 = new LabelAxis(this.myPlot.XAxis1);
+            string[] sX = new string[5] { "a","b","c","d","e"};
+            for (int i = 0; i < 5; i++)
+            {
+                la1.AddLabel(sX[i].ToString(), i);
+            }
+            la1.Label = "时间";
+            la1.TickTextFont = new Font("Courier New", 10);
+            la1.TicksBetweenText = false;
+            this.myPlot.XAxis1 = la1;
+        }
+
+        private void checkBox12_CheckedChanged(object sender, EventArgs e)
+        {
+            // y axis
+            LogAxis logay = new LogAxis(myPlot.YAxis1);
+            logay.WorldMin = 1;
+            logay.WorldMax = 10;
+            logay.AxisColor = Color.Red;
+            logay.LabelColor = Color.Red;
+            logay.TickTextColor = Color.Red;
+            logay.LargeTickStep = 1.0f;
+            logay.Label = "x^2";
+            this.myPlot.YAxis1 = logay;
+        }
+
+        private void checkBox13_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox cbx = (CheckBox)sender;
+            if (cbx.Checked == true)
+            {
+                LinePlot lp3 = new LinePlot();
+                int[] p = new int[10] { 1, 2, 3, 4, 5, 4, 3, 2, 1, 3 };
+                int[] X = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+                lp3.OrdinateData = p;
+                lp3.AbscissaData = X;
+                lp3.Pen = new Pen(Color.Orange);
+                lp3.Pen.Width = 2;
+                lp3.Label = " 价格";
+
+                LinePlot lp4 = new LinePlot();
+                int[] p2 = new int[10] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
+              
+                lp4.OrdinateData = p2;
+                lp4.AbscissaData = X;
+                lp4.Pen = new Pen(Color.Orange);
+                lp4.Pen.Width = 2;
+                lp4.Label = " 价格";
+
+
+                fr = new FilledRegion(lp3, lp4);
+
+                fr.Brush = Brushes.BlanchedAlmond;
+                this.myPlot.Add(fr);
+            }
+            else
+            {
+                if (fr != null)
+                {
+                    this.myPlot.Remove(fr, false);
+                }
+            }
+            myPlot.Refresh();
         }
     }
 }
