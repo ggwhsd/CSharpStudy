@@ -12,6 +12,7 @@ using System.Speech;
 using System.Speech.Synthesis;
 using System.Globalization;
 using System.Runtime.Remoting.Messaging;
+using System.Text.RegularExpressions;
 
 namespace MarketRiskUI
 {
@@ -683,6 +684,21 @@ namespace MarketRiskUI
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button22_Click_1(object sender, EventArgs e)
+        {
+            List<string> inputs = new List<String> { "1851","1999","1950","1905","2003" };
+            string pattern = @"99";
+            foreach (string input in inputs)
+            {
+                foreach (Match match in Regex.Matches(input, pattern))
+                    Console.WriteLine(match.Value);
+            }
+
+            Match match1 = Regex.Match(textBox_content.Text,textBox_pattern.Text);
+            if (match1 != Match.Empty)
+                MessageBox.Show("正则表达式匹配成功:"+ match1.Value);
         }
     }
 }

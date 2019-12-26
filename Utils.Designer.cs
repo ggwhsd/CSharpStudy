@@ -53,6 +53,11 @@
             this.button21 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.buttonThread = new System.Windows.Forms.Button();
+            this.button22 = new System.Windows.Forms.Button();
+            this.textBox_content = new System.Windows.Forms.TextBox();
+            this.textBox_pattern = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -304,11 +309,58 @@
             this.buttonThread.UseVisualStyleBackColor = true;
             this.buttonThread.Click += new System.EventHandler(this.buttonThread_Click);
             // 
+            // button22
+            // 
+            this.button22.Location = new System.Drawing.Point(546, 60);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(134, 23);
+            this.button22.TabIndex = 17;
+            this.button22.Text = "正则表达式";
+            this.button22.UseVisualStyleBackColor = true;
+            this.button22.Click += new System.EventHandler(this.button22_Click_1);
+            // 
+            // textBox_content
+            // 
+            this.textBox_content.Location = new System.Drawing.Point(580, 89);
+            this.textBox_content.Name = "textBox_content";
+            this.textBox_content.Size = new System.Drawing.Size(100, 21);
+            this.textBox_content.TabIndex = 18;
+            // 
+            // textBox_pattern
+            // 
+            this.textBox_pattern.Location = new System.Drawing.Point(579, 122);
+            this.textBox_pattern.Name = "textBox_pattern";
+            this.textBox_pattern.Size = new System.Drawing.Size(100, 21);
+            this.textBox_pattern.TabIndex = 19;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(535, 94);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 12);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "内容";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(535, 125);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 12);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "规则";
+            // 
             // Utils
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox_pattern);
+            this.Controls.Add(this.textBox_content);
+            this.Controls.Add(this.button22);
             this.Controls.Add(this.buttonThread);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button21);
@@ -368,5 +420,10 @@
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button buttonThread;
+        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.TextBox textBox_content;
+        private System.Windows.Forms.TextBox textBox_pattern;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

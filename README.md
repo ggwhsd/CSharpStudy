@@ -168,5 +168,8 @@ Encoding [示例](./Utils.cs)
 * ActiveMQ的Queue使用示例
 [示例](./ActiveMQ_QUEUE.cs)
 
+* 正则表达式
+[示例](./Utils.cs)
+
 # CSharp访问C++的dll的方法，参考[项目](./CSharpInvokeCPP/CSharpInvokeCPP.sln)
 

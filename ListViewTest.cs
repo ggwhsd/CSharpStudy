@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -144,6 +145,50 @@ namespace MarketRiskUI
             {
                 listView1.SelectedItems[0].BackColor = Color.FromArgb(255,0,120,215); //第一个参数为透明度，越大越不透明。
             }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            ListViewItem lvItem = listView1.FindItemWithText(this.textBox1.Text);
+            if (lvItem != null)
+            {
+                MessageBox.Show(lvItem.SubItems[0].Text + lvItem.SubItems[1].Text);
+                lvItem.Selected=true;
+                listView1.Select();
+            }
+            else
+            {
+                MessageBox.Show("not find");
+            }
+        }
+
+        class ListViewComparer : IComparer
+        {
+            private int col;
+            public ListViewComparer(int col)
+            {
+                this.col = col;
+            }
+            ///从小到大排序
+            public int Compare(object x, object y)
+            {
+                int returnVal = -1;
+                returnVal = String.Compare(((ListViewItem)x).SubItems[col].Text,
+                ((ListViewItem)y).SubItems[col].Text);
+                return returnVal;
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            listView1.ListViewItemSorter = new ListViewComparer(1);
+            
+            listView1.Sort();
         }
     }
 }

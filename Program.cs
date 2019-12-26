@@ -20,7 +20,8 @@ namespace MarketRiskUI
             //Application.Run(new redisTest());
             //Application.Run(new tableLayOutTest());
             //Application.Run(new ListViewTest());
-            Application.Run(new Form3());
+            //Application.Run(new Form3());
+            Application.Run(new Utils());
         }
     }
 }
