@@ -171,5 +171,11 @@ Encoding [示例](./Utils.cs)
 * 正则表达式
 [示例](./Utils.cs)
 
+* List、arrayList、Dictionary集合以及自定义比较
+[示例](./Utils.cs)
+
+* 重写equals方法，用于集合查找自定义类的相等
+[示例](./Utils.cs)
+
 # CSharp访问C++的dll的方法，参考[项目](./CSharpInvokeCPP/CSharpInvokeCPP.sln)
 

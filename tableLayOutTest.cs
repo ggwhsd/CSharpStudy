@@ -24,5 +24,26 @@ namespace MarketRiskUI
             label1.Anchor = AnchorStyles.Left |AnchorStyles.Right;
             label1.BackColor = Color.Yellow;
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            if (btn.Text == "隐藏")
+            {
+                tableLayoutPanel1.ColumnStyles[1].Width = 0;
+                btn.Text = "显示";
+                
+            }
+            else
+            {
+                tableLayoutPanel1.ColumnStyles[1].Width = 25F;
+                btn.Text = "隐藏";
+            }
+        }
     }
 }

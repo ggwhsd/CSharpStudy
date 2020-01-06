@@ -125,12 +125,60 @@ namespace MarketRiskUI
             }
         }
 
-
-        class MyStruct
+        //重写equals方法
+        class MyStruct:IEquatable<MyStruct>
         {
+            private string _Id;
             public int a;
             public int b;
             public string c;
+            //重写equals
+            public bool Equals(MyStruct other)
+            {
+                if (ReferenceEquals(null, other))
+                    return false;
+                //如果为同一对象，必然相等
+                if (ReferenceEquals(this, other))
+                    return true;
+                if (a != other.a)
+                {
+                    return false;
+                }
+                else
+                {
+                    //如果基类不是从Object继承，需要调用base.Equals(other)
+                    //如果从Object继承，直接返回true
+                    return true;
+                }
+
+            }
+            //其他类型对象
+            public override bool Equals(object obj)
+            {
+                //this非空，obj如果为空，则返回false
+                if (ReferenceEquals(null, obj)) return false;
+                //如果为同一对象，必然相等
+                if (ReferenceEquals(this, obj)) return true;
+                //如果类型不同，则必然不相等
+                if (obj.GetType() != this.GetType()) return false;
+                //调用强类型对比
+                return Equals((MyStruct)obj);
+            }
+            //实现Equals重写同时，必须重写GetHashCode，一些使用hashcode的集合中会调用该方法计算key
+            public override int GetHashCode()
+            {
+                return (_Id != null ? StringComparer.InvariantCulture.GetHashCode(_Id) : 0);
+            }
+            //重写==操作符
+            public static bool operator ==(MyStruct left, MyStruct right)
+            {
+                return Equals(left, right);
+            }
+            //重写!=操作符
+            public static bool operator !=(MyStruct left, MyStruct right)
+            {
+                return !Equals(left, right);
+            }
         };
         private void button6_Click(object sender, EventArgs e)
         {
@@ -143,17 +191,34 @@ namespace MarketRiskUI
             //list.RemoveAt(0);
             list.Insert(1,"wow");
             list.Contains("wow");
+            MyStruct m1 = new MyStruct();
+            m1.a = 2;
+            m1.b = 2;
+            MyStruct m2 = new MyStruct();
+            m2.a = 1;
+            MessageBox.Show(m1.Equals(m2).ToString());
+
+            list.Add(m1);
+            if (list.Contains(m2) == true)
+                MessageBox.Show("contains");
+            else
+                MessageBox.Show("not contains");
+
+            if (list.IndexOf(m2) >-1)
+                MessageBox.Show("index");
+            else
+                MessageBox.Show("not index");
 
 
-          
 
 
-           
-
-            
 
 
-            
+
+
+
+
+
         }
         //排序方法一，采用Student:IComparable的方法，重写CompareTo。这种方法灵活性差点，但是一般都能用，sort方法默认就是调用该方法。
         //若是有特殊方法，则需要使用IComparer接口的Compare方法。
