@@ -64,6 +64,9 @@ UPD和TCP的服务端建立，客户端建立，互相之间发送消息等。[�
 * 系统声音 *
 `button5_Click`方法。 [示例](./Utils.cs)
 
+* 多媒体声音 *
+同步播放音乐，异步播放音乐，异步循环播放音乐，异步播放系统声音
+[示例](./SoundMediaTools.cs)
 
 * 时间 *
 DateTime [示例](./Utils.cs)
@@ -121,7 +124,7 @@ Encoding [示例](./Utils.cs)
 [示例](./GDI.cs)
 包含了画画基本线条，曲线，多变现，扇形，字符串，图像，圆形，贝塞尔曲线。
 
-* 常用数据集合List、ArrayList、HashTable等 
+* 常用数据集合List、ArrayList、HashTable等，LinkList，以及泛型集合自定义类型的查找和比较。
 [示例](./Utils.cs)
 
 * 异步接收网络数据的示例

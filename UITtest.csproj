@@ -173,6 +173,12 @@
       <DependentUpon>redisTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
+    <Compile Include="SoundMediaTools.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SoundMediaTools.Designer.cs">
+      <DependentUpon>SoundMediaTools.cs</DependentUpon>
+    </Compile>
     <Compile Include="SpliterTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +258,9 @@
     </Compile>
     <EmbeddedResource Include="redisTest.resx">
       <DependentUpon>redisTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SoundMediaTools.resx">
+      <DependentUpon>SoundMediaTools.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SpliterTest.resx">
       <DependentUpon>SpliterTest.cs</DependentUpon>

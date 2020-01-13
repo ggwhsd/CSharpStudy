@@ -118,7 +118,7 @@ namespace MarketRiskUI
                 this.Age = age;
                 this.Name = name;
             
-            }
+            }//默认比较函数
             public int CompareTo(Student other)
             {
                 return this.Age.CompareTo(other.Age);
@@ -764,6 +764,128 @@ namespace MarketRiskUI
             Match match1 = Regex.Match(textBox_content.Text,textBox_pattern.Text);
             if (match1 != Match.Empty)
                 MessageBox.Show("正则表达式匹配成功:"+ match1.Value);
+        }
+        class Person : IComparable<Person>
+        {
+            private string _name ;
+            private int _age;
+            public Person(string Name, int Age)
+            {
+                this._name = Name;
+                this._age = Age;
+            }
+            public string Name
+            {
+                get { return _name; }
+                set { _name = value; }
+            }
+            public int Age
+            {
+                get { return _age; }
+                set { _age = value; }
+            }
+            public void SayHi()
+            {
+                Console.WriteLine($"Name{_name},Age{_age}");
+            }
+            //按名称比较,用于sort会调用这个函数
+            public int CompareTo(Person p)
+            {
+                return this._name.CompareTo(p.Name);
+            }
+            //重写equals
+            public bool Equals(Person other)
+            {
+                if (ReferenceEquals(null, other))
+                    return false;
+                //如果为同一对象，必然相等
+                if (ReferenceEquals(this, other))
+                    return true;
+                if (Name != other.Name)
+                {
+                    return false;
+                }
+                else
+                {
+                    //如果基类不是从Object继承，需要调用base.Equals(other)
+                    //如果从Object继承，直接返回true
+                    return true;
+                }
+            }
+            //其他类型对象
+            public override bool Equals(object obj)
+            {
+                //this非空，obj如果为空，则返回false
+                if (ReferenceEquals(null, obj)) return false;
+                //如果为同一对象，必然相等
+                if (ReferenceEquals(this, obj)) return true;
+                //如果类型不同，则必然不相等
+                if (obj.GetType() != this.GetType()) return false;
+                //调用强类型对比
+                return Equals((Person)obj);
+            }
+            //实现Equals重写同时，必须重写GetHashCode，一些使用hashcode的集合中会调用该方法计算key
+            public override int GetHashCode()
+            {
+                return (Name != null ? StringComparer.InvariantCulture.GetHashCode(Name) : 0);
+            }
+            //重写==操作符
+            public static bool operator ==(Person left, Person right)
+            {
+                return Equals(left, right);
+            }
+            //重写!=操作符
+            public static bool operator !=(Person left, Person right)
+            {
+                return !Equals(left, right);
+            }
+        }
+        //定义方法，通过委托方式传递给List进行find查找
+        class PersonPredicate
+        {
+            public string Name;
+            public bool isMyPerson(Person p)
+            {
+                if(Name.Equals(p.Name)==true)
+                    return true;
+                else
+                    return false;
+            }
+        }
+        private void button23_Click(object sender, EventArgs e)
+        {
+            
+            LinkedList<Person> peoples = new LinkedList<Person>();
+            //新增
+            for (int i = 1; i < 10; i++)
+            {
+                peoples.AddLast(new Person($"程序员{i}", i + 18));
+
+            }
+            Console.WriteLine($"新增的总人数：{peoples.Count}");
+            Console.WriteLine("-------------------------------------------------------");
+            //遍历调用
+            LinkedListNode<Person> NodePerson = peoples.First;
+            NodePerson.Value.SayHi();
+            while (NodePerson.Next != null)
+            {
+                NodePerson = NodePerson.Next;
+                NodePerson.Value.SayHi();
+            }
+            Console.WriteLine("-------------------------------------------------------");
+            //查找
+            LinkedListNode<Person> findPerson = peoples.Find(new Person("程序员3", 21));
+            if (findPerson != null)
+                findPerson.Value.SayHi();
+            else
+                Console.WriteLine("not find");
+            //遍历删除
+            while (NodePerson.Value != null && peoples.Count > 0)
+            {
+                NodePerson = peoples.Last;
+                Console.Write($"当前总人数{peoples.Count},即将移除：{NodePerson.Value.Name}");
+                peoples.RemoveLast();
+            }
         }
     }
 }

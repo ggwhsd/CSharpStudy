@@ -549,7 +549,7 @@ namespace MarketRiskUI
 
                 int count = 0;
                 int index = 0;
-                if (filename.Contains("trade_Log") == true)
+                if (filename.ToLower().Contains("trade_log") == true)
                 {
                     index = 24;
                 }
