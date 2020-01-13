@@ -560,14 +560,20 @@ namespace MarketRiskUI
                 string[] ranges = strRandomRange.Split(',');
                 int min = Int32.Parse(ranges[0]);
                 int max = Int32.Parse(ranges[1]);
-
+                int maxCounts = Int32.Parse(textBox_Allcount.Text);
+                int startCounts = Int32.Parse(textBox_start.Text);
                 while (inLine != null)
                 {
                     count++;
-                    if (inLine.Length > index)
+                    if (maxCounts < count)
+                        break;
+                    else if (count > startCounts)
                     {
-                        rtbSend.Text = inLine.Substring(index);
-                        btnSendraw_Click(null, null);
+                        if (inLine.Length > index)
+                        {
+                            rtbSend.Text = inLine.Substring(index);
+                            btnSendraw_Click(null, null);
+                        }
                     }
                     Thread.Sleep(rd.Next(min, max));
                     inLine = sw.ReadLine();
@@ -590,6 +596,11 @@ namespace MarketRiskUI
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             radioButton1_CheckedChanged(sender, e);
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -78,6 +78,10 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox_random = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.textBox_Allcount = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox_start = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -139,10 +143,10 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(0, 58);
+            this.tabControl1.Location = new System.Drawing.Point(0, 124);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(638, 438);
+            this.tabControl1.Size = new System.Drawing.Size(638, 511);
             this.tabControl1.TabIndex = 5;
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
@@ -160,10 +164,16 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.textBox_start);
             this.tabPage2.Controls.Add(this.button8);
+            this.tabPage2.Controls.Add(this.textBox_Allcount);
             this.tabPage2.Controls.Add(this.groupBox1);
+            this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.lbState);
+            this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.btnStop);
+            this.tabPage2.Controls.Add(this.label11);
+            this.tabPage2.Controls.Add(this.textBox_random);
             this.tabPage2.Controls.Add(this.button7);
             this.tabPage2.Controls.Add(this.btnSend);
             this.tabPage2.Controls.Add(this.btnStartListen);
@@ -179,7 +189,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(630, 412);
+            this.tabPage2.Size = new System.Drawing.Size(630, 485);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "socketTcp";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -575,7 +585,7 @@
             // 
             // textBox_random
             // 
-            this.textBox_random.Location = new System.Drawing.Point(569, 26);
+            this.textBox_random.Location = new System.Drawing.Point(175, 390);
             this.textBox_random.Name = "textBox_random";
             this.textBox_random.Size = new System.Drawing.Size(57, 21);
             this.textBox_random.TabIndex = 11;
@@ -584,19 +594,53 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(508, 29);
+            this.label11.Location = new System.Drawing.Point(114, 393);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(53, 12);
             this.label11.TabIndex = 12;
             this.label11.Text = "随机间隔";
             // 
+            // textBox_Allcount
+            // 
+            this.textBox_Allcount.Location = new System.Drawing.Point(175, 444);
+            this.textBox_Allcount.Name = "textBox_Allcount";
+            this.textBox_Allcount.Size = new System.Drawing.Size(62, 21);
+            this.textBox_Allcount.TabIndex = 13;
+            this.textBox_Allcount.Text = "13000";
+            this.textBox_Allcount.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(114, 419);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(53, 12);
+            this.label12.TabIndex = 12;
+            this.label12.Text = "开始行数";
+            // 
+            // textBox_start
+            // 
+            this.textBox_start.Location = new System.Drawing.Point(175, 416);
+            this.textBox_start.Name = "textBox_start";
+            this.textBox_start.Size = new System.Drawing.Size(62, 21);
+            this.textBox_start.TabIndex = 13;
+            this.textBox_start.Text = "5500";
+            this.textBox_start.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(114, 447);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(53, 12);
+            this.label13.TabIndex = 12;
+            this.label13.Text = "结束行号";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(638, 589);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBox_random);
+            this.ClientSize = new System.Drawing.Size(638, 915);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -622,7 +666,6 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -678,5 +721,9 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox textBox_random;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox_Allcount;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox_start;
+        private System.Windows.Forms.Label label13;
     }
 }
