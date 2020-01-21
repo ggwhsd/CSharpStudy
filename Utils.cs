@@ -13,6 +13,8 @@ using System.Speech.Synthesis;
 using System.Globalization;
 using System.Runtime.Remoting.Messaging;
 using System.Text.RegularExpressions;
+using System.Security.Cryptography;
+using System.IO;
 
 namespace MarketRiskUI
 {
@@ -242,9 +244,12 @@ namespace MarketRiskUI
             }
             //使用排序方法二
             list2.Sort(new AgeDESC());
-            foreach (Student s in list2)
+            for (int i=list2.Count-1;i>=0;i-- )
             {
+                Student s = list2[i];
                 Console.WriteLine(s.ToString());
+                //list2.RemoveAt(i);
+                
             }
             //使用find
             Student s4 = list2.Find(
@@ -886,6 +891,131 @@ namespace MarketRiskUI
                 Console.Write($"当前总人数{peoples.Count},即将移除：{NodePerson.Value.Name}");
                 peoples.RemoveLast();
             }
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            //md5解密
+            string input = "Yoda said, Do or do not. There is no try.";
+
+            if (input == null)
+            {
+                return;
+            }
+
+            MD5 md5Hash = MD5.Create();
+
+            // 将输入字符串转换为字节数组并计算哈希数据 
+            byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
+
+            // 创建一个 Stringbuilder 来收集字节并创建字符串 
+            StringBuilder sBuilder = new StringBuilder();
+
+            // 循环遍历哈希数据的每一个字节并格式化为十六进制字符串 
+            for (int i = 0; i < data.Length; i++)
+            {
+                sBuilder.Append(data[i].ToString("x2"));
+            }
+
+            MessageBox.Show(sBuilder.ToString());
+        }
+
+        /* 加密
+            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+            byte[] encryptedBytes = md5.ComputeHash(Encoding.ASCII.GetBytes(inputString));
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < encryptedBytes.Length; i++)
+            {
+                sb.AppendFormat("{0:x2}", encryptedBytes[i]);
+            }
+            return sb.ToString();
+         */
+        private void button25_Click(object sender, EventArgs e)
+        {
+           
+            
+        }
+        //encryptedText假设为base64编码
+        public string Decrypt(string encryptedText, string pathToPrivateKey)
+        {
+            using (var rsa = new RSACryptoServiceProvider(1024))
+            {
+                try
+                {
+                    var privateXmlKey = File.ReadAllText(pathToPrivateKey);
+                    rsa.FromXmlString(privateXmlKey);
+                    //rsa.ImportCspBlob
+
+                    var bytesEncrypted = Convert.FromBase64String(encryptedText);
+
+                    var bytesPlainText = rsa.Decrypt(bytesEncrypted, false);
+
+                    return System.Text.Encoding.Unicode.GetString(bytesPlainText);
+                }
+                finally
+                {
+                    rsa.PersistKeyInCsp = false;
+                }
+            }
+        }
+       
+
+        public byte[] GetBytesFromHex(string hexString)
+        {
+            if (hexString == null)
+            {
+                throw new ArgumentException("hex is null!");
+            }
+
+            if (hexString.Length % 2 != 0)
+            {
+                hexString += "20";//空格
+                            //throw new ArgumentException("hex is not a valid number!", "hex");
+            }
+
+            // 需要将 hex 转换成 byte 数组。
+            byte[] bytes = new byte[hexString.Length / 2];
+
+            for (int i = 0; i < bytes.Length; i++)
+            {
+                try
+                {
+                    // 每两个字符是一个 byte。
+                    bytes[i] = byte.Parse(hexString.Substring(i * 2, 2),
+                    System.Globalization.NumberStyles.HexNumber);
+                }
+                catch
+                {
+                    // Rethrow an exception with custom message.
+                    throw new ArgumentException("hex is not a valid hex number!", "hex");
+                }
+            }
+
+            // 获得 GB2312，Chinese Simplified。
+            //Encoding chs = System.Text.Encoding.GetEncoding("GB2312");
+            //return chs.GetString(bytes);
+            return (bytes);
+
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            //方法一：
+            RSACryptoServiceProvider RSA = new RSACryptoServiceProvider(1024);
+            string public_Key = Convert.ToBase64String(RSA.ExportCspBlob(false));
+            string private_Key = Convert.ToBase64String(RSA.ExportCspBlob(true));
+            File.WriteAllText("./pub", public_Key);
+            File.WriteAllText("./pri",private_Key);
+
+        }
+
+        private void button27_Click(object sender, EventArgs e)
+        {
+            RSACryptoServiceProvider RSA = new RSACryptoServiceProvider(1024);
+            string public_Key = RSA.ToXmlString(false);
+            string private_Key = RSA.ToXmlString(true);
+            File.WriteAllText("./pub.xml", public_Key);
+            File.WriteAllText("./pri.xml", private_Key);
         }
     }
 }
