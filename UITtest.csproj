@@ -157,6 +157,12 @@
       <DependentUpon>ListViewTest.cs</DependentUpon>
     </Compile>
     <Compile Include="LoggerTest.cs" />
+    <Compile Include="MenuContext.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuContext.Designer.cs">
+      <DependentUpon>MenuContext.cs</DependentUpon>
+    </Compile>
     <Compile Include="PanelTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListViewTest.resx">
       <DependentUpon>ListViewTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuContext.resx">
+      <DependentUpon>MenuContext.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PanelTest.resx">
       <DependentUpon>PanelTest.cs</DependentUpon>

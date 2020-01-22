@@ -879,5 +879,16 @@ namespace MarketRiskUI
             ActiveMQ_QUEUE mQ_QUEUE = new ActiveMQ_QUEUE();
             mQ_QUEUE.Show();
         }
+
+        private void button39_Click(object sender, EventArgs e)
+        {
+            MenuContext mc = new MenuContext();
+            mc.Show();
+        }
+
+        private void button40_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

@@ -183,5 +183,8 @@ Encoding [示例](./Utils.cs)
 * MD5加密和解密，RSA
 [示例](./Utils.cs)
 
+* 菜单保留历史文件打开记录 
+[示例](./MenuContext.cs)
+
 # CSharp访问C++的dll的方法，参考[项目](./CSharpInvokeCPP/CSharpInvokeCPP.sln)
 

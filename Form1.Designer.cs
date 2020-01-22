@@ -99,6 +99,7 @@
             this.button37 = new System.Windows.Forms.Button();
             this.button38 = new System.Windows.Forms.Button();
             this.button35 = new System.Windows.Forms.Button();
+            this.button39 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.songsDataGridView)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -741,7 +742,7 @@
             // 
             // button29
             // 
-            this.button29.Location = new System.Drawing.Point(1164, 564);
+            this.button29.Location = new System.Drawing.Point(1164, 534);
             this.button29.Name = "button29";
             this.button29.Size = new System.Drawing.Size(75, 23);
             this.button29.TabIndex = 31;
@@ -761,7 +762,7 @@
             // 
             // button32
             // 
-            this.button32.Location = new System.Drawing.Point(1164, 535);
+            this.button32.Location = new System.Drawing.Point(1164, 504);
             this.button32.Name = "button32";
             this.button32.Size = new System.Drawing.Size(75, 23);
             this.button32.TabIndex = 33;
@@ -771,7 +772,7 @@
             // 
             // button36
             // 
-            this.button36.Location = new System.Drawing.Point(1161, 504);
+            this.button36.Location = new System.Drawing.Point(1161, 475);
             this.button36.Name = "button36";
             this.button36.Size = new System.Drawing.Size(75, 23);
             this.button36.TabIndex = 35;
@@ -781,7 +782,7 @@
             // 
             // button37
             // 
-            this.button37.Location = new System.Drawing.Point(1161, 593);
+            this.button37.Location = new System.Drawing.Point(1164, 564);
             this.button37.Name = "button37";
             this.button37.Size = new System.Drawing.Size(75, 23);
             this.button37.TabIndex = 36;
@@ -791,7 +792,7 @@
             // 
             // button38
             // 
-            this.button38.Location = new System.Drawing.Point(1161, 632);
+            this.button38.Location = new System.Drawing.Point(1161, 603);
             this.button38.Name = "button38";
             this.button38.Size = new System.Drawing.Size(148, 23);
             this.button38.TabIndex = 37;
@@ -801,7 +802,7 @@
             // 
             // button35
             // 
-            this.button35.Location = new System.Drawing.Point(1161, 661);
+            this.button35.Location = new System.Drawing.Point(1161, 632);
             this.button35.Name = "button35";
             this.button35.Size = new System.Drawing.Size(138, 23);
             this.button35.TabIndex = 38;
@@ -809,12 +810,23 @@
             this.button35.UseVisualStyleBackColor = true;
             this.button35.Click += new System.EventHandler(this.button35_Click_1);
             // 
+            // button39
+            // 
+            this.button39.Location = new System.Drawing.Point(12, 733);
+            this.button39.Name = "button39";
+            this.button39.Size = new System.Drawing.Size(75, 23);
+            this.button39.TabIndex = 39;
+            this.button39.Text = "历史菜单";
+            this.button39.UseVisualStyleBackColor = true;
+            this.button39.Click += new System.EventHandler(this.button39_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1368, 768);
+            this.Controls.Add(this.button39);
             this.Controls.Add(this.button35);
             this.Controls.Add(this.button38);
             this.Controls.Add(this.button37);
@@ -930,6 +942,7 @@
         private System.Windows.Forms.Button button37;
         private System.Windows.Forms.Button button38;
         private System.Windows.Forms.Button button35;
+        private System.Windows.Forms.Button button39;
     }
 }
 
