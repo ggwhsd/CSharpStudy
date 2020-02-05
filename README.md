@@ -183,6 +183,9 @@ Encoding [示例](./Utils.cs)
 * MD5加密和解密，RSA
 [示例](./Utils.cs)
 
+* LINQ的简单使用
+[示例](./Utils.cs)
+
 * 菜单保留历史文件打开记录 
 [示例](./MenuContext.cs)
 
@@ -192,4 +195,10 @@ Encoding [示例](./Utils.cs)
 
 * 屏幕保护程序原型，其实就是将exe改为scr后缀，放到windows/system32目录下面，就可以在屏幕保护中找到。
 [示例](./LittleExamples/ScreenProtectExample.cs)
+
+* 素数
+[示例](./LittleExamples/PrimeFilter.cs)
+
+* 排块游戏
+[示例](./LittleExamples/GridGame.cs)
 

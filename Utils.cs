@@ -467,6 +467,7 @@ namespace MarketRiskUI
             //同步调用delegate
             AddHandler handler = new AddHandler(加法类.Add);
             int result = handler.Invoke(1, 2);
+            
             //int result = handler(1, 2);
             Console.WriteLine("做别的事情了");
             Console.WriteLine("计算结果{0}",result);
@@ -1016,6 +1017,16 @@ namespace MarketRiskUI
             string private_Key = RSA.ToXmlString(true);
             File.WriteAllText("./pub.xml", public_Key);
             File.WriteAllText("./pri.xml", private_Key);
+        }
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+            int[] arr = new int[] { 8, 4, 5, 6, 3, 4, 3, 2, 1 };
+            var m = from n in arr where n < 5 orderby n select n*n;
+            foreach (var n in m)
+            {
+                Console.WriteLine(n);
+            }
         }
     }
 }

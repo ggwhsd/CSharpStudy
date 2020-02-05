@@ -156,6 +156,18 @@
     <Compile Include="ListViewTest.Designer.cs">
       <DependentUpon>ListViewTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="LittleExamples\GridGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LittleExamples\GridGame.Designer.cs">
+      <DependentUpon>GridGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LittleExamples\PrimeFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LittleExamples\PrimeFilter.Designer.cs">
+      <DependentUpon>PrimeFilter.cs</DependentUpon>
+    </Compile>
     <Compile Include="LittleExamples\ScreenProtectExample.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -260,6 +272,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListViewTest.resx">
       <DependentUpon>ListViewTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LittleExamples\GridGame.resx">
+      <DependentUpon>GridGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LittleExamples\PrimeFilter.resx">
+      <DependentUpon>PrimeFilter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LittleExamples\ScreenProtectExample.resx">
       <DependentUpon>ScreenProtectExample.cs</DependentUpon>

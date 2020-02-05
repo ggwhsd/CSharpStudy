@@ -28,5 +28,23 @@ namespace MarketRiskUI
             Form1 historyMain = new Form1();
             historyMain.Show();
         }
+
+        private void 素数计算使用bool方式ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PrimeFilter pf = new PrimeFilter();
+            pf.Show();
+        }
+
+        private void 排块游戏ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GridGame gg = new GridGame();
+            gg.Show();
+        }
+
+        private void 常用工具ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Utils tools = new Utils();
+            tools.Show();
+        }
     }
 }
