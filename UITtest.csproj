@@ -156,7 +156,19 @@
     <Compile Include="ListViewTest.Designer.cs">
       <DependentUpon>ListViewTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="LittleExamples\ScreenProtectExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LittleExamples\ScreenProtectExample.Designer.cs">
+      <DependentUpon>ScreenProtectExample.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoggerTest.cs" />
+    <Compile Include="MainFacade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFacade.Designer.cs">
+      <DependentUpon>MainFacade.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuContext.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -248,6 +260,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListViewTest.resx">
       <DependentUpon>ListViewTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LittleExamples\ScreenProtectExample.resx">
+      <DependentUpon>ScreenProtectExample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFacade.resx">
+      <DependentUpon>MainFacade.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuContext.resx">
       <DependentUpon>MenuContext.cs</DependentUpon>

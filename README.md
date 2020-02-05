@@ -188,3 +188,8 @@ Encoding [示例](./Utils.cs)
 
 # CSharp访问C++的dll的方法，参考[项目](./CSharpInvokeCPP/CSharpInvokeCPP.sln)
 
+# 一些小例子
+
+* 屏幕保护程序原型，其实就是将exe改为scr后缀，放到windows/system32目录下面，就可以在屏幕保护中找到。
+[示例](./LittleExamples/ScreenProtectExample.cs)
+
