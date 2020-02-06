@@ -156,12 +156,15 @@
     <Compile Include="ListViewTest.Designer.cs">
       <DependentUpon>ListViewTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="LittleExamples\AttributeExample.cs" />
     <Compile Include="LittleExamples\GridGame.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LittleExamples\GridGame.Designer.cs">
       <DependentUpon>GridGame.cs</DependentUpon>
     </Compile>
+    <Compile Include="LittleExamples\IOStudy.cs" />
+    <Compile Include="LittleExamples\NormalAlgorithms.cs" />
     <Compile Include="LittleExamples\PrimeFilter.cs">
       <SubType>Form</SubType>
     </Compile>
