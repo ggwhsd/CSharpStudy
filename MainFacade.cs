@@ -46,5 +46,11 @@ namespace MarketRiskUI
             Utils tools = new Utils();
             tools.Show();
         }
+
+        private void 复制文件删除注释ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IOStudy copyFile = new IOStudy();
+            copyFile.StreamInFileStream("./AttributeExample.cs", "./AttributeExample.txt");
+        }
     }
 }

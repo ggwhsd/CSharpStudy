@@ -211,5 +211,5 @@ Encoding [示例](./Utils.cs)
 * 按存储位置分，FileStream, MemoryStream, BufferedStream
 * 按读写方式,二进制流 BinaryReader和BinaryWriter； 
 * 字符流，用于处理文本文件。 抽象类TextReader和TextWriter，子类有StreamReader和StringReader等。
-[示例](./LittleExamples/IOStudy)
+[示例](./LittleExamples/IOStudy.cs)
 
