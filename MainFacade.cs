@@ -52,5 +52,11 @@ namespace MarketRiskUI
             IOStudy copyFile = new IOStudy();
             copyFile.StreamInFileStream("./AttributeExample.cs", "./AttributeExample.txt");
         }
+
+        private void 计算器ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CalcExample cal = new CalcExample();
+            cal.Show();
+        }
     }
 }

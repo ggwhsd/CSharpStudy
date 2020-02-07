@@ -157,6 +157,12 @@
       <DependentUpon>ListViewTest.cs</DependentUpon>
     </Compile>
     <Compile Include="LittleExamples\AttributeExample.cs" />
+    <Compile Include="LittleExamples\CalcExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LittleExamples\CalcExample.Designer.cs">
+      <DependentUpon>CalcExample.cs</DependentUpon>
+    </Compile>
     <Compile Include="LittleExamples\GridGame.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListViewTest.resx">
       <DependentUpon>ListViewTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LittleExamples\CalcExample.resx">
+      <DependentUpon>CalcExample.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LittleExamples\GridGame.resx">
       <DependentUpon>GridGame.cs</DependentUpon>

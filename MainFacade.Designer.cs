@@ -39,6 +39,7 @@
             this.jsonFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.常用工具ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.复制文件删除注释ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.计算器ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +60,8 @@
             this.屏幕保护ToolStripMenuItem,
             this.素数计算使用bool方式ToolStripMenuItem,
             this.排块游戏ToolStripMenuItem,
-            this.复制文件删除注释ToolStripMenuItem});
+            this.复制文件删除注释ToolStripMenuItem,
+            this.计算器ToolStripMenuItem});
             this.littleExamplesToolStripMenuItem.Name = "littleExamplesToolStripMenuItem";
             this.littleExamplesToolStripMenuItem.Size = new System.Drawing.Size(99, 21);
             this.littleExamplesToolStripMenuItem.Text = "littleExamples";
@@ -129,6 +131,13 @@
             this.复制文件删除注释ToolStripMenuItem.Text = "复制文件（删除注释）";
             this.复制文件删除注释ToolStripMenuItem.Click += new System.EventHandler(this.复制文件删除注释ToolStripMenuItem_Click);
             // 
+            // 计算器ToolStripMenuItem
+            // 
+            this.计算器ToolStripMenuItem.Name = "计算器ToolStripMenuItem";
+            this.计算器ToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.计算器ToolStripMenuItem.Text = "计算器";
+            this.计算器ToolStripMenuItem.Click += new System.EventHandler(this.计算器ToolStripMenuItem_Click);
+            // 
             // MainFacade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -158,5 +167,6 @@
         private System.Windows.Forms.ToolStripMenuItem 素数计算使用bool方式ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 排块游戏ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 复制文件删除注释ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 计算器ToolStripMenuItem;
     }
 }
