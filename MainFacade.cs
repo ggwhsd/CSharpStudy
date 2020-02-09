@@ -86,7 +86,14 @@ namespace MarketRiskUI
 
         private void getGoldPriceToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            GetGoldPrice gold = new GetGoldPrice();
+            gold.Show();
+        }
 
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Crawler cl = new Crawler();
+            cl.Show();
         }
     }
 }

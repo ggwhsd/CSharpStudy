@@ -1,6 +1,9 @@
 # CSharpStudy
 How to use C# to develop different kinds of desktop application
 
+WeChat:ggwhsd
+email:738257101@qq.com
+
 * delegate *
 跟C++的指针相似，用以代替某个具体的执行方法。效果类似于回调函数。
 我觉得最大的好处是，不同线程之间可以使用委托的方式。比如A线程是程序主线程，负责界面更新，B线程是数据处理，处理完了，调用A线程的方法A1来执行委托更新，将方法的执行权限交给线程A来执行，而不是调用者B线程。
@@ -193,7 +196,7 @@ Encoding [示例](./Utils.cs)
 
 # CSharp访问C++的dll的方法，参考[项目](./CSharpInvokeCPP/CSharpInvokeCPP.sln)
 
-# 一些小例子
+# 一些小例子,以下代码的例子都是来自于 唐大仕 老师的关于C#的书中的例子。
 
 * 屏幕保护程序原型，其实就是将exe改为scr后缀，放到windows/system32目录下面，就可以在屏幕保护中找到。
 [示例](./LittleExamples/ScreenProtectExample.cs)
@@ -223,6 +226,18 @@ Encoding [示例](./Utils.cs)
 
 * WebClient的使用，当然，比较好的，还是用webbrowser，因为webbrowser几乎是一个浏览器。
 [示例](./WebExamples/WebClientExample.cs)
+
+* WebCLientExample中讲解webRequest的使用。
+[示例](./WebExamples/WebRequestAndResponse.cs)
+
+* 使用http的header字段，获取网页编码
+[示例](./WebExamples/GuessEnCode.cs)
+
+* 使用webclient爬取纸黄金的数据
+[示例](./WebExamples/GetGoldPrice.cs)
+
+* 爬取网页中多个链接的例子
+[示例]
 
 
 

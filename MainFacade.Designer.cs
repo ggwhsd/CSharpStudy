@@ -45,6 +45,7 @@
             this.webRequestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.getGoldPriceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -151,7 +152,8 @@
             this.webClientToolStripMenuItem,
             this.webRequestToolStripMenuItem,
             this.toolStripMenuItem1,
-            this.getGoldPriceToolStripMenuItem});
+            this.getGoldPriceToolStripMenuItem,
+            this.toolStripMenuItem2});
             this.webExamplesToolStripMenuItem.Name = "webExamplesToolStripMenuItem";
             this.webExamplesToolStripMenuItem.Size = new System.Drawing.Size(102, 21);
             this.webExamplesToolStripMenuItem.Text = "WebExamples";
@@ -183,6 +185,13 @@
             this.getGoldPriceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.getGoldPriceToolStripMenuItem.Text = "GetGoldPrice";
             this.getGoldPriceToolStripMenuItem.Click += new System.EventHandler(this.getGoldPriceToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Text = "Crawl";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // MainFacade
             // 
@@ -219,5 +228,6 @@
         private System.Windows.Forms.ToolStripMenuItem webRequestToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem getGoldPriceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
     }
 }
