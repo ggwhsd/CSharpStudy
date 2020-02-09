@@ -63,6 +63,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Speech" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -163,6 +164,9 @@
     <Compile Include="LittleExamples\CalcExample.Designer.cs">
       <DependentUpon>CalcExample.cs</DependentUpon>
     </Compile>
+    <Compile Include="LittleExamples\Explorer.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="LittleExamples\GridGame.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +247,24 @@
     <Compile Include="Utils.Designer.cs">
       <DependentUpon>Utils.cs</DependentUpon>
     </Compile>
+    <Compile Include="WebExamples\GuessEnCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WebExamples\GuessEnCode.Designer.cs">
+      <DependentUpon>GuessEnCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WebExamples\WebClientExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WebExamples\WebClientExample.Designer.cs">
+      <DependentUpon>WebClientExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WebExamples\WebRequestAndResponse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WebExamples\WebRequestAndResponse.Designer.cs">
+      <DependentUpon>WebRequestAndResponse.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ActiveMQ_QUEUE.resx">
       <DependentUpon>ActiveMQ_QUEUE.cs</DependentUpon>
     </EmbeddedResource>
@@ -285,6 +307,7 @@
     <EmbeddedResource Include="LittleExamples\CalcExample.resx">
       <DependentUpon>CalcExample.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LittleExamples\Explorer.resx" />
     <EmbeddedResource Include="LittleExamples\GridGame.resx">
       <DependentUpon>GridGame.cs</DependentUpon>
     </EmbeddedResource>
@@ -330,6 +353,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Utils.resx">
       <DependentUpon>Utils.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WebExamples\GuessEnCode.resx">
+      <DependentUpon>GuessEnCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WebExamples\WebClientExample.resx">
+      <DependentUpon>WebClientExample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WebExamples\WebRequestAndResponse.resx">
+      <DependentUpon>WebRequestAndResponse.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="packages.config" />

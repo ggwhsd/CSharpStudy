@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using MarketRiskUI.LittleExamples;
+using MarketRiskUI.WebExamples;
 
 namespace MarketRiskUI
 {
@@ -57,6 +58,30 @@ namespace MarketRiskUI
         {
             CalcExample cal = new CalcExample();
             cal.Show();
+        }
+
+        private void gDIToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GDI gdi = new GDI();
+            gdi.Show();
+        }
+
+        private void webClientToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WebClientExample wce = new WebClientExample();
+            wce.Show();
+        }
+
+        private void webRequestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WebRequestAndResponse req = new WebRequestAndResponse();
+            req.Show();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            GuessEnCode ge = new GuessEnCode();
+            ge.Show();
         }
     }
 }

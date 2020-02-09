@@ -33,13 +33,17 @@
             this.屏幕保护ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.素数计算使用bool方式ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.排块游戏ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.复制文件删除注释ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.计算器ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.form1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gDIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jsonFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.常用工具ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.复制文件删除注释ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.计算器ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.webExamplesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.webClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.webRequestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +51,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.littleExamplesToolStripMenuItem,
-            this.formsToolStripMenuItem});
+            this.formsToolStripMenuItem,
+            this.webExamplesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 25);
@@ -87,6 +92,20 @@
             this.排块游戏ToolStripMenuItem.Text = "排块游戏";
             this.排块游戏ToolStripMenuItem.Click += new System.EventHandler(this.排块游戏ToolStripMenuItem_Click);
             // 
+            // 复制文件删除注释ToolStripMenuItem
+            // 
+            this.复制文件删除注释ToolStripMenuItem.Name = "复制文件删除注释ToolStripMenuItem";
+            this.复制文件删除注释ToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.复制文件删除注释ToolStripMenuItem.Text = "复制文件（删除注释）";
+            this.复制文件删除注释ToolStripMenuItem.Click += new System.EventHandler(this.复制文件删除注释ToolStripMenuItem_Click);
+            // 
+            // 计算器ToolStripMenuItem
+            // 
+            this.计算器ToolStripMenuItem.Name = "计算器ToolStripMenuItem";
+            this.计算器ToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.计算器ToolStripMenuItem.Text = "计算器";
+            this.计算器ToolStripMenuItem.Click += new System.EventHandler(this.计算器ToolStripMenuItem_Click);
+            // 
             // formsToolStripMenuItem
             // 
             this.formsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -101,42 +120,60 @@
             // form1ToolStripMenuItem
             // 
             this.form1ToolStripMenuItem.Name = "form1ToolStripMenuItem";
-            this.form1ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.form1ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.form1ToolStripMenuItem.Text = "历史主窗口";
             this.form1ToolStripMenuItem.Click += new System.EventHandler(this.form1ToolStripMenuItem_Click);
             // 
             // gDIToolStripMenuItem
             // 
             this.gDIToolStripMenuItem.Name = "gDIToolStripMenuItem";
-            this.gDIToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gDIToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.gDIToolStripMenuItem.Text = "GDI";
+            this.gDIToolStripMenuItem.Click += new System.EventHandler(this.gDIToolStripMenuItem_Click);
             // 
             // jsonFormToolStripMenuItem
             // 
             this.jsonFormToolStripMenuItem.Name = "jsonFormToolStripMenuItem";
-            this.jsonFormToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.jsonFormToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.jsonFormToolStripMenuItem.Text = "json";
             // 
             // 常用工具ToolStripMenuItem
             // 
             this.常用工具ToolStripMenuItem.Name = "常用工具ToolStripMenuItem";
-            this.常用工具ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.常用工具ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.常用工具ToolStripMenuItem.Text = "常用工具";
             this.常用工具ToolStripMenuItem.Click += new System.EventHandler(this.常用工具ToolStripMenuItem_Click);
             // 
-            // 复制文件删除注释ToolStripMenuItem
+            // webExamplesToolStripMenuItem
             // 
-            this.复制文件删除注释ToolStripMenuItem.Name = "复制文件删除注释ToolStripMenuItem";
-            this.复制文件删除注释ToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
-            this.复制文件删除注释ToolStripMenuItem.Text = "复制文件（删除注释）";
-            this.复制文件删除注释ToolStripMenuItem.Click += new System.EventHandler(this.复制文件删除注释ToolStripMenuItem_Click);
+            this.webExamplesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.webClientToolStripMenuItem,
+            this.webRequestToolStripMenuItem,
+            this.toolStripMenuItem1});
+            this.webExamplesToolStripMenuItem.Name = "webExamplesToolStripMenuItem";
+            this.webExamplesToolStripMenuItem.Size = new System.Drawing.Size(102, 21);
+            this.webExamplesToolStripMenuItem.Text = "WebExamples";
             // 
-            // 计算器ToolStripMenuItem
+            // webClientToolStripMenuItem
             // 
-            this.计算器ToolStripMenuItem.Name = "计算器ToolStripMenuItem";
-            this.计算器ToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
-            this.计算器ToolStripMenuItem.Text = "计算器";
-            this.计算器ToolStripMenuItem.Click += new System.EventHandler(this.计算器ToolStripMenuItem_Click);
+            this.webClientToolStripMenuItem.Name = "webClientToolStripMenuItem";
+            this.webClientToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.webClientToolStripMenuItem.Text = "WebClient";
+            this.webClientToolStripMenuItem.Click += new System.EventHandler(this.webClientToolStripMenuItem_Click);
+            // 
+            // webRequestToolStripMenuItem
+            // 
+            this.webRequestToolStripMenuItem.Name = "webRequestToolStripMenuItem";
+            this.webRequestToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.webRequestToolStripMenuItem.Text = "WebRequest";
+            this.webRequestToolStripMenuItem.Click += new System.EventHandler(this.webRequestToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Text = "GuessEncode";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // MainFacade
             // 
@@ -168,5 +205,9 @@
         private System.Windows.Forms.ToolStripMenuItem 排块游戏ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 复制文件删除注释ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 计算器ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem webExamplesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem webClientToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem webRequestToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }

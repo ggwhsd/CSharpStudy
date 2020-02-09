@@ -122,7 +122,7 @@ Encoding [示例](./Utils.cs)
 
 * GDI绘图 *
 [示例](./GDI.cs)
-包含了画画基本线条，曲线，多变现，扇形，字符串，图像，圆形，贝塞尔曲线。
+包含了画画基本线条，曲线，多变现，扇形，字符串，图像，圆形，贝塞尔曲线。空心文字，渐变颜色的文字，渐变颜色的图形
 
 * 常用数据集合List、ArrayList、HashTable等，LinkList，以及泛型集合自定义类型的查找和比较。
 [示例](./Utils.cs)
@@ -215,4 +215,16 @@ Encoding [示例](./Utils.cs)
 
 * 计算器
 [示例](./LittleExamples/CalcExample.cs)
+
+* 文件浏览器,关于驱动器的获取，文件和文件夹的使用，listview，treeview，imagelist控件的综合使用。
+[示例](./LittleExamples/FileExplorer)
+
+# Web方面的代码
+
+* WebClient的使用，当然，比较好的，还是用webbrowser，因为webbrowser几乎是一个浏览器。
+[示例](./WebExamples/WebClientExample.cs)
+
+
+
+
 

@@ -7,8 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Collections;
-
-
+using System.Drawing.Drawing2D;
 
 namespace MarketRiskUI
 {
@@ -27,9 +26,17 @@ namespace MarketRiskUI
          * 
          */
         int i = 0;
+
         private void button1_Click(object sender, EventArgs e)
         {
             Pen blackPen = new Pen(Color.Black, 3);
+            if (isDot)
+                blackPen.DashStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            else
+                blackPen.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            blackPen.StartCap = System.Drawing.Drawing2D.LineCap.Round;
+            blackPen.EndCap = System.Drawing.Drawing2D.LineCap.Triangle;
+            
             Point point1 = new Point(10, 50);
             Point point2 = new Point(100, 50);
             Graphics g = this.CreateGraphics();
@@ -74,7 +81,7 @@ namespace MarketRiskUI
         private void button6_Click(object sender, EventArgs e)
         {
             Graphics g = this.CreateGraphics();
-            Image image = Image.FromFile(@"C:\Users\a\Pictures\小波.jpg");
+            Image image = Image.FromFile(@"./hp_firefox.ico");
             g.DrawImage(image, ((Button)sender).Left, ((Button)sender).Top - ((Button)sender).Width / 2 + ((Button)sender).Height / 2, ((Button)sender).Width, ((Button)sender).Width);
         }
 
@@ -176,7 +183,7 @@ namespace MarketRiskUI
             
             if (Math.Abs(e.X) < 5)
                 this.Cursor = Cursors.VSplit;
-            else if (Math.Abs(e.Y) < 5)
+            else if (e.Y < 5 && e.Y>0)
                 this.Cursor = Cursors.HSplit;
             else
                 this.Cursor = Cursors.Default;
@@ -242,6 +249,167 @@ namespace MarketRiskUI
                 gra.DrawLine(Pens.Transparent, source, dest);
             }
             pictureBox1.Image = bit;
+        }
+        private bool isDot = false;
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton rb = sender as RadioButton;
+
+            if (rb.Checked)
+            {
+                if (rb.Text == "虚线")
+                {
+                    isDot = true;
+                }
+                else
+                {
+                    isDot = false;
+                }
+            }
+            else
+            {
+
+            }
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            Graphics g = this.CreateGraphics();
+
+
+
+            Point point = new Point(10, 10);
+
+            Rectangle rect = new Rectangle(10, 10, 20, 150);
+
+            Point off = new Point(30, 0);
+
+
+
+
+
+            Brush brush;
+
+
+
+            brush = Brushes.Azure;
+
+            rect.Offset(off); g.FillRectangle(brush, rect);
+
+            brush = SystemBrushes.Desktop;
+
+            rect.Offset(off); g.FillRectangle(brush, rect);
+
+            brush = new SolidBrush(Color.FromArgb(100, 255, 0, 0));
+
+            rect.Offset(off); g.FillRectangle(brush, rect);
+
+
+
+            Image bm = Bitmap.FromFile(@"./hp_firefox.ico");
+
+            brush = new TextureBrush(bm);
+
+            rect.Offset(off); g.FillRectangle(brush, rect);
+
+
+            brush = new HatchBrush(
+
+                HatchStyle.Vertical,
+
+                Color.ForestGreen,
+
+                Color.Honeydew);
+
+            rect.Offset(off); g.FillRectangle(brush, rect);
+
+
+
+            brush = new LinearGradientBrush(
+
+                new PointF(50, 50), new PointF(200, 200),
+
+                Color.Red, Color.Yellow);
+
+            rect.Offset(off); g.FillRectangle(brush, rect);
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            Graphics g = this.CreateGraphics();
+
+
+            PointF[] cur1 = new PointF[150];
+
+            for (int i = 0; i < cur1.Length; i++)
+
+            {
+
+                double x = (double)i / 5;
+
+                double y = Math.Sin(x) * 3 + Math.Cos(3 * x);
+
+                cur1[i] = new PointF((float)i, (float)(y * 10 + 100));
+
+            }
+
+            g.DrawLines(Pens.Blue, cur1);
+
+
+
+            PointF[] cur2 = new PointF[100];
+
+            for (int i = 0; i < cur2.Length; i++)
+
+            {
+
+                double theta = Math.PI / 50 * i;
+
+                double r = Math.Cos(theta * 16);
+
+                cur2[i] = new PointF(
+
+                    (float)(r * Math.Cos(theta) * 50 + 230),
+
+                    (float)(r * Math.Sin(theta) * 50 + 100));
+
+            }
+
+            g.DrawLines(Pens.Blue, cur2);
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            //画轮廓，可以写字，也可以画其他形状
+            GraphicsPath gp = new GraphicsPath(FillMode.Winding);
+
+            gp.AddString(
+
+                "字体轮廓",
+
+                new FontFamily("方正舒体"),
+
+                (int)FontStyle.Regular,
+
+                100,
+
+                new PointF(10, 20),
+
+                new StringFormat());
+
+
+
+            Brush brush = new LinearGradientBrush(
+
+                    new PointF(0, 0), new PointF(Width, Height),
+
+                    Color.Yellow, Color.Blue);
+
+
+            Graphics gdi = this.CreateGraphics();
+            gdi.DrawPath(Pens.Black, gp);  //空心文字
+
+            gdi.FillPath(brush, gp);  //实心文字
         }
     }
 }
