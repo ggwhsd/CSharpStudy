@@ -237,7 +237,11 @@ Encoding [示例](./Utils.cs)
 [示例](./WebExamples/GetGoldPrice.cs)
 
 * 爬取网页中多个链接的例子
-[示例]
+[示例](./WebExamples/Crawler.cs)
+
+* 获取百度建议词，额外引入了system.web的dll
+[示例](./WebExamples/BaiduSuggest.cs)
+
 
 
 

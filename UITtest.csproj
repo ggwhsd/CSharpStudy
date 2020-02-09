@@ -65,6 +65,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
     <Reference Include="System.Speech" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -247,6 +248,12 @@
     <Compile Include="Utils.Designer.cs">
       <DependentUpon>Utils.cs</DependentUpon>
     </Compile>
+    <Compile Include="WebExamples\BaiduSuggest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WebExamples\BaiduSuggest.Designer.cs">
+      <DependentUpon>BaiduSuggest.cs</DependentUpon>
+    </Compile>
     <Compile Include="WebExamples\Crawler.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -365,6 +372,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Utils.resx">
       <DependentUpon>Utils.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WebExamples\BaiduSuggest.resx">
+      <DependentUpon>BaiduSuggest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WebExamples\Crawler.resx">
       <DependentUpon>Crawler.cs</DependentUpon>

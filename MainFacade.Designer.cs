@@ -46,6 +46,8 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.getGoldPriceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.getBaiduSuggestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -153,7 +155,9 @@
             this.webRequestToolStripMenuItem,
             this.toolStripMenuItem1,
             this.getGoldPriceToolStripMenuItem,
-            this.toolStripMenuItem2});
+            this.toolStripMenuItem2,
+            this.getBaiduSuggestToolStripMenuItem,
+            this.toolStripMenuItem3});
             this.webExamplesToolStripMenuItem.Name = "webExamplesToolStripMenuItem";
             this.webExamplesToolStripMenuItem.Size = new System.Drawing.Size(102, 21);
             this.webExamplesToolStripMenuItem.Text = "WebExamples";
@@ -193,6 +197,18 @@
             this.toolStripMenuItem2.Text = "Crawl";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
+            // getBaiduSuggestToolStripMenuItem
+            // 
+            this.getBaiduSuggestToolStripMenuItem.Name = "getBaiduSuggestToolStripMenuItem";
+            this.getBaiduSuggestToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.getBaiduSuggestToolStripMenuItem.Text = "GetBaiduSuggest";
+            this.getBaiduSuggestToolStripMenuItem.Click += new System.EventHandler(this.getBaiduSuggestToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            // 
             // MainFacade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -229,5 +245,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem getGoldPriceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem getBaiduSuggestToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
     }
 }

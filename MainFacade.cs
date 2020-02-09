@@ -95,5 +95,11 @@ namespace MarketRiskUI
             Crawler cl = new Crawler();
             cl.Show();
         }
+
+        private void getBaiduSuggestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BaiduSuggest bs = new BaiduSuggest();
+            bs.Show();
+        }
     }
 }
