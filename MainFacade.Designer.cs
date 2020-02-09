@@ -44,6 +44,7 @@
             this.webClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.webRequestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.getGoldPriceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -149,7 +150,8 @@
             this.webExamplesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.webClientToolStripMenuItem,
             this.webRequestToolStripMenuItem,
-            this.toolStripMenuItem1});
+            this.toolStripMenuItem1,
+            this.getGoldPriceToolStripMenuItem});
             this.webExamplesToolStripMenuItem.Name = "webExamplesToolStripMenuItem";
             this.webExamplesToolStripMenuItem.Size = new System.Drawing.Size(102, 21);
             this.webExamplesToolStripMenuItem.Text = "WebExamples";
@@ -174,6 +176,13 @@
             this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem1.Text = "GuessEncode";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // getGoldPriceToolStripMenuItem
+            // 
+            this.getGoldPriceToolStripMenuItem.Name = "getGoldPriceToolStripMenuItem";
+            this.getGoldPriceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.getGoldPriceToolStripMenuItem.Text = "GetGoldPrice";
+            this.getGoldPriceToolStripMenuItem.Click += new System.EventHandler(this.getGoldPriceToolStripMenuItem_Click);
             // 
             // MainFacade
             // 
@@ -209,5 +218,6 @@
         private System.Windows.Forms.ToolStripMenuItem webClientToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem webRequestToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem getGoldPriceToolStripMenuItem;
     }
 }

@@ -83,5 +83,10 @@ namespace MarketRiskUI
             GuessEnCode ge = new GuessEnCode();
             ge.Show();
         }
+
+        private void getGoldPriceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

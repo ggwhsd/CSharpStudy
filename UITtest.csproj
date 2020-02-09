@@ -247,6 +247,12 @@
     <Compile Include="Utils.Designer.cs">
       <DependentUpon>Utils.cs</DependentUpon>
     </Compile>
+    <Compile Include="WebExamples\GetGoldPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WebExamples\GetGoldPrice.Designer.cs">
+      <DependentUpon>GetGoldPrice.cs</DependentUpon>
+    </Compile>
     <Compile Include="WebExamples\GuessEnCode.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -353,6 +359,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Utils.resx">
       <DependentUpon>Utils.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WebExamples\GetGoldPrice.resx">
+      <DependentUpon>GetGoldPrice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WebExamples\GuessEnCode.resx">
       <DependentUpon>GuessEnCode.cs</DependentUpon>
