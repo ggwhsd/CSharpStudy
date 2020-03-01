@@ -50,10 +50,13 @@ namespace MarketRiskUI
 
         private void button3_Click(object sender, EventArgs e)
         {
+             
             string strDate = "2014-08-01";
             DateTime dt1 = Convert.ToDateTime(strDate);
             string strDateTime = "2014-08-01 10:57:31";
             DateTime dt2 = Convert.ToDateTime(strDateTime);
+            strDate = "10:30:00";
+            DateTime dtstr = DateTime.Parse(strDate);
 
             DateTime dt3 = DateTime.Parse(strDateTime);
 
@@ -80,6 +83,7 @@ namespace MarketRiskUI
             DateTime.TryParse(strDateTime, out dt3);
             Console.WriteLine("{0}",dt3.ToLongTimeString());
             Console.WriteLine("{0}", dt3.ToShortTimeString());
+            Console.WriteLine("{0}", DateTime.Now.ToString("hh:mm:ss"));
 
         }
         DateTime lastTime = DateTime.Now;
@@ -383,6 +387,11 @@ namespace MarketRiskUI
             dt1 = dt.AddSeconds(70);
             MessageBox.Show("dt = DateTime.Now = "+ dt.ToLongTimeString()+ " \r\n dt.AddSeconds(70)=" + dt1.ToLongTimeString());
             MessageBox.Show("dt.substratc = " + dt1.Subtract(dt).TotalSeconds);
+
+            DateTime dat1 = DateTime.Parse("10:35:21");
+            DateTime dat2 = DateTime.Parse("13:35:21");
+            TimeSpan ts = dat2 - dat1;
+            MessageBox.Show(Convert.ToString(ts.TotalSeconds));
         }
 
         class ShowParameter
