@@ -454,6 +454,7 @@ namespace MarketRiskUI
                 timer1.Enabled = false;
             }
             else {
+                timer1.Interval=Convert.ToInt32(txt_count.Text);
                 timer1.Enabled = true;
             }
         }
@@ -462,14 +463,15 @@ namespace MarketRiskUI
            
             try
             {
-                int i = 10;
+                int i = 20;
                 while (i>0)
                 {
                     i--;
                     
                     dt.Rows[i][2] = j;
                     dt.Rows[i][3] = j;
-                    dt.Rows[i][4] = j;
+                    dt.Rows[i][4] = DateTime.Now.Second.ToString() +":"+ DateTime.Now.Millisecond.ToString();
+                    dt.Rows[i][5] = "LLddd:" + (new Random()).Next().ToString();
 
                 }
             }
