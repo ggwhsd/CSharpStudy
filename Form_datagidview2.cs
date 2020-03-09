@@ -108,6 +108,7 @@ namespace MarketRiskUI
             dt.Rows.Add("0", "张四", DateTime.Now.ToShortDateString(), "小boss", "AAAAAA", "AAAAAAA", "AAAAAAAA", "AAAAAAAAA", "AAAAAAAAA");//Add里面参数的数据顺序要和dt中的列的顺序对应 
 
         }
+        //创建带有checkbox列的表，列名自定义
         private void PopulateGridView_noVirtualMode()
         {
             //创建一个名为"Table_New"的空表
@@ -126,14 +127,15 @@ namespace MarketRiskUI
                 DataColumn[] cols = new DataColumn[] { dt.Columns["Name"] };
                 dt.PrimaryKey = cols;
                 DataGridViewCheckBoxColumn CheckColunms = new DataGridViewCheckBoxColumn();
-                CheckColunms.Name = "Choice";
-                CheckColunms.HeaderText = "Choice";
+                CheckColunms.Name = "Choice";   //用于标识
+                CheckColunms.DataPropertyName = "Choice";  //用于跟绑定数据中的属性对应
+                CheckColunms.HeaderText = "Choice"; //用于显示，默认和Name一样。
 
                 CheckColunms.Width = 60;
                 CheckColunms.TrueValue = "1";
                 CheckColunms.FalseValue = "0";
 
-                CheckColunms.DataPropertyName = "Choice";
+               
 
                 dgv1.Columns.Insert(0, CheckColunms);
 

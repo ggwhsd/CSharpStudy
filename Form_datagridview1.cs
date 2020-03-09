@@ -10,6 +10,13 @@ using System.Windows.Forms;
 namespace MarketRiskUI
 {
     /*
+     * 交替行样式设计
+     * this.dataGridView1.RowsDefaultCellStyle.BackColor = Color.Bisque;
+this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor =
+    Color.Beige;
+     * /
+
+    /*
      * 创建未绑定的 Windows 窗体 DataGridView 控件，无需绑定数据源。用于数据量较小的时候使用比较好。
      */
     public partial class Form_datagridview1 : Form
@@ -218,6 +225,8 @@ namespace MarketRiskUI
      这会显示一个错误图标, 其中包含包含错误文本的工具提示。 
 
      在事件处理程序中, ErrorText将行上的属性设置为空字符串。 CellEndEdit 仅CellEndEdit当单元格退出编辑模式时, 才会发生此事件, 如果验证失败, 则无法执行此操作。
+
+     取消此事件将取消对当前单元格所做的更改。 如果在数据绑定模式下取消此事件，则不会将新值推送到基础数据源。 如果在虚拟模式下取消此事件，则不会引发 CellValuePushed 事件。
             */
             string headerText =
          songsDataGridView.Columns[e.ColumnIndex].HeaderText;

@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.addNewRowButton = new System.Windows.Forms.Button();
             this.deleteRowButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -74,10 +76,14 @@
             // 
             // songsDataGridView
             // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Beige;
+            this.songsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.songsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.songsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.songsDataGridView.Location = new System.Drawing.Point(0, 46);
             this.songsDataGridView.Name = "songsDataGridView";
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Bisque;
+            this.songsDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.songsDataGridView.RowTemplate.Height = 23;
             this.songsDataGridView.Size = new System.Drawing.Size(808, 393);
             this.songsDataGridView.TabIndex = 0;

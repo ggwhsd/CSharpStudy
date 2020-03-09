@@ -101,5 +101,17 @@ namespace MarketRiskUI
             BaiduSuggest bs = new BaiduSuggest();
             bs.Show();
         }
+
+        private void gridviewnodatabindToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_datagridview1 form_Datagridview1 = new Form_datagridview1();
+            form_Datagridview1.Show();
+        }
+
+        private void gridviewvirtualModeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_datagidview2 form_Datagidview2 = new Form_datagidview2();
+            form_Datagidview2.Show();
+        }
     }
 }

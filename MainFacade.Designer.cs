@@ -48,6 +48,8 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.getBaiduSuggestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.gridviewnodatabindToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gridviewvirtualModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -116,7 +118,9 @@
             this.form1ToolStripMenuItem,
             this.gDIToolStripMenuItem,
             this.jsonFormToolStripMenuItem,
-            this.常用工具ToolStripMenuItem});
+            this.常用工具ToolStripMenuItem,
+            this.gridviewnodatabindToolStripMenuItem,
+            this.gridviewvirtualModeToolStripMenuItem});
             this.formsToolStripMenuItem.Name = "formsToolStripMenuItem";
             this.formsToolStripMenuItem.Size = new System.Drawing.Size(56, 21);
             this.formsToolStripMenuItem.Text = "Forms";
@@ -124,27 +128,27 @@
             // form1ToolStripMenuItem
             // 
             this.form1ToolStripMenuItem.Name = "form1ToolStripMenuItem";
-            this.form1ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.form1ToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
             this.form1ToolStripMenuItem.Text = "历史主窗口";
             this.form1ToolStripMenuItem.Click += new System.EventHandler(this.form1ToolStripMenuItem_Click);
             // 
             // gDIToolStripMenuItem
             // 
             this.gDIToolStripMenuItem.Name = "gDIToolStripMenuItem";
-            this.gDIToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.gDIToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
             this.gDIToolStripMenuItem.Text = "GDI";
             this.gDIToolStripMenuItem.Click += new System.EventHandler(this.gDIToolStripMenuItem_Click);
             // 
             // jsonFormToolStripMenuItem
             // 
             this.jsonFormToolStripMenuItem.Name = "jsonFormToolStripMenuItem";
-            this.jsonFormToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.jsonFormToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
             this.jsonFormToolStripMenuItem.Text = "json";
             // 
             // 常用工具ToolStripMenuItem
             // 
             this.常用工具ToolStripMenuItem.Name = "常用工具ToolStripMenuItem";
-            this.常用工具ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.常用工具ToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
             this.常用工具ToolStripMenuItem.Text = "常用工具";
             this.常用工具ToolStripMenuItem.Click += new System.EventHandler(this.常用工具ToolStripMenuItem_Click);
             // 
@@ -209,6 +213,20 @@
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
             // 
+            // gridviewnodatabindToolStripMenuItem
+            // 
+            this.gridviewnodatabindToolStripMenuItem.Name = "gridviewnodatabindToolStripMenuItem";
+            this.gridviewnodatabindToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.gridviewnodatabindToolStripMenuItem.Text = "gridview_nodatabind";
+            this.gridviewnodatabindToolStripMenuItem.Click += new System.EventHandler(this.gridviewnodatabindToolStripMenuItem_Click);
+            // 
+            // gridviewvirtualModeToolStripMenuItem
+            // 
+            this.gridviewvirtualModeToolStripMenuItem.Name = "gridviewvirtualModeToolStripMenuItem";
+            this.gridviewvirtualModeToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.gridviewvirtualModeToolStripMenuItem.Text = "gridview_virtualMode";
+            this.gridviewvirtualModeToolStripMenuItem.Click += new System.EventHandler(this.gridviewvirtualModeToolStripMenuItem_Click);
+            // 
             // MainFacade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -247,5 +265,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem getBaiduSuggestToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem gridviewnodatabindToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gridviewvirtualModeToolStripMenuItem;
     }
 }

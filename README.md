@@ -162,7 +162,12 @@ Encoding [示例](./Utils.cs)
 * 使用servicestack.redis库访问redis的示例。
 [示例](./redisTest.cs)
 
-* 使用datagridview的非绑定源示例，包含绘画单元格，设置错误提示等。
+* 使用datagridview的非绑定源示例，包含绘画单元格，设置错误提示，输入校验等。
+[示例](./Form_datagridview1.cs)
+
+* 使用datagridview的绑定源示例，包含虚拟模式和绑定数据源模式的分别使用。虚拟模式是对非绑定列进行操作，比如点击控件某个单元格，此时触发cellValueneeded，传入控件的位置，我们就可以自己给该单元格赋值，如果对控件提交了修改，我们可以通过cellvaluepushed事件来保存控件提交上来的值到自己的数据结构中。这样可以做到用户看到什么就显示什么，而不用预期加载所有数据。
+交替行样式的使用。
+
 [示例](./Form_datagridview1.cs)
 
 * 线程锁，以及线程的通知和等待
