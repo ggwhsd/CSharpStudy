@@ -50,6 +50,12 @@ namespace MarketRiskUI
         public Form1()
         {
             InitializeComponent();
+
+            //设置datagridview的双缓冲
+            Type type = songsDataGridView.GetType();
+            System.Reflection.PropertyInfo pi = type.GetProperty("DoubleBuffered",
+            System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic);
+            pi.SetValue(songsDataGridView, true, null);
         }
 
         /// <summary>
@@ -405,7 +411,7 @@ namespace MarketRiskUI
             dt.Rows.Add(dr);
             dt.Rows.Add("0","张三", DateTime.Now.ToShortDateString(),"大boss","AAAAAA","AAAAAAA","AAAAAAAA","AAAAAAAAA","AAAAAAAAA");//Add里面参数的数据顺序要和dt中的列的顺序对应 
             dt.Rows.Add("0","张四", DateTime.Now.ToShortDateString(), "小boss", "AAAAAA", "AAAAAAA", "AAAAAAAA", "AAAAAAAAA", "AAAAAAAAA");//Add里面参数的数据顺序要和dt中的列的顺序对应 
-            for (int i = 0; i <20; i++)
+            for (int i = 0; i <2000; i++)
             {
 
                 dt.Rows.Add("1","张四", DateTime.Now.ToShortDateString(), "小boss" + i, "AAAAAA", "AAAAAAA", "AAAAAAAA", "AAAAAAAAA", "AAAAAAAAA");//Add里面参数的数据顺序要和dt中的列的顺序对应 
@@ -458,12 +464,14 @@ namespace MarketRiskUI
                 timer1.Enabled = true;
             }
         }
+        private bool isTimer = false;
         public void Display(string j)
         {
-           
+            if (isTimer)
+                return;
             try
             {
-                int i = 20;
+                int i = 2000;
                 while (i>0)
                 {
                     i--;
@@ -472,7 +480,11 @@ namespace MarketRiskUI
                     dt.Rows[i][3] = j;
                     dt.Rows[i][4] = DateTime.Now.Second.ToString() +":"+ DateTime.Now.Millisecond.ToString();
                     dt.Rows[i][5] = "LLddd:" + (new Random()).Next().ToString();
-
+                    if (i == 2)
+                    {
+                        Console.WriteLine(dt.Rows[i].RowState.ToString());
+                        dt.AcceptChanges();
+                    }
                 }
             }
             catch (Exception ex)

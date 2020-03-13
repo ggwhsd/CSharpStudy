@@ -257,5 +257,17 @@ this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor =
         {
             MessageBox.Show("CellEndEdit"+e.RowIndex);
         }
+
+        private void songsDataGridView_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            
+           Console.WriteLine(e.RowIndex.ToString());
+            
+        }
+
+        private void songsDataGridView_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+
+        }
     }
 }

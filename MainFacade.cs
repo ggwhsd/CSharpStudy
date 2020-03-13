@@ -113,5 +113,11 @@ namespace MarketRiskUI
             Form_datagidview2 form_Datagidview2 = new Form_datagidview2();
             form_Datagidview2.Show();
         }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            datagridviewBindList dvg = new datagridviewBindList();
+            dvg.Show();
+        }
     }
 }

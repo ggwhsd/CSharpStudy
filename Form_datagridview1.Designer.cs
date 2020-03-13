@@ -92,6 +92,8 @@
             this.songsDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.songsDataGridView_CellFormatting);
             this.songsDataGridView.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.songsDataGridView_CellPainting);
             this.songsDataGridView.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.songsDataGridView_CellValidating);
+            this.songsDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.songsDataGridView_RowPostPaint);
+            this.songsDataGridView.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.songsDataGridView_RowPrePaint);
             // 
             // onlySet
             // 

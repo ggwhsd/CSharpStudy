@@ -40,6 +40,9 @@
             this.gDIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jsonFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.常用工具ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gridviewnodatabindToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gridviewvirtualModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.webExamplesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.webClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.webRequestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,8 +51,6 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.getBaiduSuggestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.gridviewnodatabindToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gridviewvirtualModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -120,7 +121,8 @@
             this.jsonFormToolStripMenuItem,
             this.常用工具ToolStripMenuItem,
             this.gridviewnodatabindToolStripMenuItem,
-            this.gridviewvirtualModeToolStripMenuItem});
+            this.gridviewvirtualModeToolStripMenuItem,
+            this.toolStripMenuItem4});
             this.formsToolStripMenuItem.Name = "formsToolStripMenuItem";
             this.formsToolStripMenuItem.Size = new System.Drawing.Size(56, 21);
             this.formsToolStripMenuItem.Text = "Forms";
@@ -128,29 +130,50 @@
             // form1ToolStripMenuItem
             // 
             this.form1ToolStripMenuItem.Name = "form1ToolStripMenuItem";
-            this.form1ToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.form1ToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.form1ToolStripMenuItem.Text = "历史主窗口";
             this.form1ToolStripMenuItem.Click += new System.EventHandler(this.form1ToolStripMenuItem_Click);
             // 
             // gDIToolStripMenuItem
             // 
             this.gDIToolStripMenuItem.Name = "gDIToolStripMenuItem";
-            this.gDIToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.gDIToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.gDIToolStripMenuItem.Text = "GDI";
             this.gDIToolStripMenuItem.Click += new System.EventHandler(this.gDIToolStripMenuItem_Click);
             // 
             // jsonFormToolStripMenuItem
             // 
             this.jsonFormToolStripMenuItem.Name = "jsonFormToolStripMenuItem";
-            this.jsonFormToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.jsonFormToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.jsonFormToolStripMenuItem.Text = "json";
             // 
             // 常用工具ToolStripMenuItem
             // 
             this.常用工具ToolStripMenuItem.Name = "常用工具ToolStripMenuItem";
-            this.常用工具ToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.常用工具ToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.常用工具ToolStripMenuItem.Text = "常用工具";
             this.常用工具ToolStripMenuItem.Click += new System.EventHandler(this.常用工具ToolStripMenuItem_Click);
+            // 
+            // gridviewnodatabindToolStripMenuItem
+            // 
+            this.gridviewnodatabindToolStripMenuItem.Name = "gridviewnodatabindToolStripMenuItem";
+            this.gridviewnodatabindToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.gridviewnodatabindToolStripMenuItem.Text = "gridview_nodatabind";
+            this.gridviewnodatabindToolStripMenuItem.Click += new System.EventHandler(this.gridviewnodatabindToolStripMenuItem_Click);
+            // 
+            // gridviewvirtualModeToolStripMenuItem
+            // 
+            this.gridviewvirtualModeToolStripMenuItem.Name = "gridviewvirtualModeToolStripMenuItem";
+            this.gridviewvirtualModeToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.gridviewvirtualModeToolStripMenuItem.Text = "gridview_virtualMode";
+            this.gridviewvirtualModeToolStripMenuItem.Click += new System.EventHandler(this.gridviewvirtualModeToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(200, 22);
+            this.toolStripMenuItem4.Text = "gridview_list";
+            this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
             // webExamplesToolStripMenuItem
             // 
@@ -169,63 +192,49 @@
             // webClientToolStripMenuItem
             // 
             this.webClientToolStripMenuItem.Name = "webClientToolStripMenuItem";
-            this.webClientToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.webClientToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.webClientToolStripMenuItem.Text = "WebClient";
             this.webClientToolStripMenuItem.Click += new System.EventHandler(this.webClientToolStripMenuItem_Click);
             // 
             // webRequestToolStripMenuItem
             // 
             this.webRequestToolStripMenuItem.Name = "webRequestToolStripMenuItem";
-            this.webRequestToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.webRequestToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.webRequestToolStripMenuItem.Text = "WebRequest";
             this.webRequestToolStripMenuItem.Click += new System.EventHandler(this.webRequestToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(176, 22);
             this.toolStripMenuItem1.Text = "GuessEncode";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // getGoldPriceToolStripMenuItem
             // 
             this.getGoldPriceToolStripMenuItem.Name = "getGoldPriceToolStripMenuItem";
-            this.getGoldPriceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.getGoldPriceToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.getGoldPriceToolStripMenuItem.Text = "GetGoldPrice";
             this.getGoldPriceToolStripMenuItem.Click += new System.EventHandler(this.getGoldPriceToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(176, 22);
             this.toolStripMenuItem2.Text = "Crawl";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // getBaiduSuggestToolStripMenuItem
             // 
             this.getBaiduSuggestToolStripMenuItem.Name = "getBaiduSuggestToolStripMenuItem";
-            this.getBaiduSuggestToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.getBaiduSuggestToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.getBaiduSuggestToolStripMenuItem.Text = "GetBaiduSuggest";
             this.getBaiduSuggestToolStripMenuItem.Click += new System.EventHandler(this.getBaiduSuggestToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
-            // 
-            // gridviewnodatabindToolStripMenuItem
-            // 
-            this.gridviewnodatabindToolStripMenuItem.Name = "gridviewnodatabindToolStripMenuItem";
-            this.gridviewnodatabindToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
-            this.gridviewnodatabindToolStripMenuItem.Text = "gridview_nodatabind";
-            this.gridviewnodatabindToolStripMenuItem.Click += new System.EventHandler(this.gridviewnodatabindToolStripMenuItem_Click);
-            // 
-            // gridviewvirtualModeToolStripMenuItem
-            // 
-            this.gridviewvirtualModeToolStripMenuItem.Name = "gridviewvirtualModeToolStripMenuItem";
-            this.gridviewvirtualModeToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.gridviewvirtualModeToolStripMenuItem.Text = "gridview_virtualMode";
-            this.gridviewvirtualModeToolStripMenuItem.Click += new System.EventHandler(this.gridviewvirtualModeToolStripMenuItem_Click);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(176, 22);
             // 
             // MainFacade
             // 
@@ -267,5 +276,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem gridviewnodatabindToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gridviewvirtualModeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
     }
 }

@@ -301,6 +301,7 @@ namespace MarketRiskUI
 
         private void btnStop_Click(object sender, EventArgs e)
         {
+            first = false;
             btnStartListen.Enabled = true;
             try
             {
