@@ -119,5 +119,12 @@ namespace MarketRiskUI
             datagridviewBindList dvg = new datagridviewBindList();
             dvg.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Double d = 123.33332321231123;
+            
+            MessageBox.Show(d.ToString("f6"));
+        }
     }
 }

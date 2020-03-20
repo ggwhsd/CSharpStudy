@@ -559,6 +559,7 @@ namespace MarketRiskUI
                 event_addHander += 加法类.Add;   //直接添加方法
                 int result = event_addHander(1, 2);
                 MessageBox.Show("event result = " + result);
+                
             }
             public int add(int i, int j)
             {

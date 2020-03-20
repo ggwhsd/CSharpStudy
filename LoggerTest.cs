@@ -40,7 +40,6 @@ namespace MarketRiskUI
                 Logger.Log(exception);
                 Logger.Log<LoggerTest>(exception);
 
-
                 Logger.Debug.Log("Debug log");
                 Logger.Debug.Log<LoggerTest>("Debug log");
 
