@@ -43,6 +43,7 @@
             this.gridviewnodatabindToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridviewvirtualModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.log4NetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.webExamplesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.webClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.webRequestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,6 +53,7 @@
             this.getBaiduSuggestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
+            this.颜色ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -123,7 +125,9 @@
             this.常用工具ToolStripMenuItem,
             this.gridviewnodatabindToolStripMenuItem,
             this.gridviewvirtualModeToolStripMenuItem,
-            this.toolStripMenuItem4});
+            this.toolStripMenuItem4,
+            this.log4NetToolStripMenuItem,
+            this.颜色ToolStripMenuItem});
             this.formsToolStripMenuItem.Name = "formsToolStripMenuItem";
             this.formsToolStripMenuItem.Size = new System.Drawing.Size(56, 21);
             this.formsToolStripMenuItem.Text = "Forms";
@@ -175,6 +179,13 @@
             this.toolStripMenuItem4.Size = new System.Drawing.Size(200, 22);
             this.toolStripMenuItem4.Text = "gridview_list";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
+            // 
+            // log4NetToolStripMenuItem
+            // 
+            this.log4NetToolStripMenuItem.Name = "log4NetToolStripMenuItem";
+            this.log4NetToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.log4NetToolStripMenuItem.Text = "log4Net";
+            this.log4NetToolStripMenuItem.Click += new System.EventHandler(this.log4NetToolStripMenuItem_Click);
             // 
             // webExamplesToolStripMenuItem
             // 
@@ -247,6 +258,13 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // 颜色ToolStripMenuItem
+            // 
+            this.颜色ToolStripMenuItem.Name = "颜色ToolStripMenuItem";
+            this.颜色ToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.颜色ToolStripMenuItem.Text = "颜色";
+            this.颜色ToolStripMenuItem.Click += new System.EventHandler(this.颜色ToolStripMenuItem_Click);
+            // 
             // MainFacade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -290,5 +308,7 @@
         private System.Windows.Forms.ToolStripMenuItem gridviewvirtualModeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem log4NetToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 颜色ToolStripMenuItem;
     }
 }

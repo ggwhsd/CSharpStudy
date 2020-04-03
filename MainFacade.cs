@@ -123,8 +123,20 @@ namespace MarketRiskUI
         private void button1_Click(object sender, EventArgs e)
         {
             Double d = 123.33332321231123;
-            
+
             MessageBox.Show(d.ToString("f6"));
+        }
+
+        private void log4NetToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Log4NetDemo demo = new Log4NetDemo();
+            demo.Show();
+        }
+
+        private void 颜色ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorUI col = new ColorUI();
+            col.Show();
         }
     }
 }
