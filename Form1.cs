@@ -463,6 +463,9 @@ namespace MarketRiskUI
                 timer1.Interval=Convert.ToInt32(txt_count.Text);
                 timer1.Enabled = true;
             }
+            
+
+           
         }
         private bool isTimer = false;
         public void Display(string j)
@@ -484,7 +487,9 @@ namespace MarketRiskUI
                     {
                         Console.WriteLine(dt.Rows[i].RowState.ToString());
                         dt.AcceptChanges();
+                        
                     }
+                    txt_Msg.Text = i.ToString();
                 }
             }
             catch (Exception ex)
@@ -492,10 +497,13 @@ namespace MarketRiskUI
                 //MessageBox.Show("接收服务端发送的消息出错:" + ex.ToString());
             }
         }
-
+       
         private void timer1_Tick(object sender, EventArgs e)
         {
             Display(DateTime.Now.ToString());
+            
+
+            
         }
 
         /// <summary>

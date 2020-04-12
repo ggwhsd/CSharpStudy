@@ -14,6 +14,13 @@ namespace MarketRiskUI
 {
     public partial class Parallel : Form
     {
+        class OtherTask
+        {
+            public void ToolTip()
+            {
+
+            }
+        }
         public Parallel()
         {
             InitializeComponent();
@@ -25,6 +32,7 @@ namespace MarketRiskUI
 
         private void button2_Click(object sender, EventArgs e)
         {
+          
             Action[] actions = { new Action(DoSometing), DoSometing };
             System.Threading.Tasks.Parallel.Invoke(actions);
             Console.WriteLine("主函数所在线程" + Thread.CurrentThread.ManagedThreadId);
@@ -38,6 +46,11 @@ namespace MarketRiskUI
         private void button3_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
