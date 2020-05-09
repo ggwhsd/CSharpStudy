@@ -39,7 +39,7 @@ namespace MarketRiskUI
                 object missing = System.Reflection.Missing.Value;
                 app = new Application();
                 wbks = app.Workbooks;
-                wb = wbks.Open(filename, true, missing, missing, missing, missing, missing, missing, missing, missing, missing, missing, missing, missing, missing);
+                wb = wbks.Open(filename, true, false, missing, missing, missing, missing, missing, missing, missing, missing, missing, missing, missing, missing);
                 str_Filename = filename;
                 app.Visible = isDisplay;
             }
