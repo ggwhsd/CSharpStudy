@@ -138,5 +138,11 @@ namespace MarketRiskUI
             ColorUI col = new ColorUI();
             col.Show();
         }
+
+        private void redisTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            redisTest rt = new redisTest();
+            rt.Show();
+        }
     }
 }

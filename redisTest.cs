@@ -68,7 +68,7 @@ namespace MarketRiskUI
             if (client != null)
             {
                 DateTime start = DateTime.Now;
-                int count = 1000;
+                int count = 15000;
                 for(int i = 0; i < count; i++) {
                     //textBox1.Text += "\r\n" + i + " "+client.Get<string>(textBox_keys.Text);
                     client.Get<string>(textBox_keys.Text);

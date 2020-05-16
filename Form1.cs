@@ -463,6 +463,9 @@ namespace MarketRiskUI
                 timer1.Interval=Convert.ToInt32(txt_count.Text);
                 timer1.Enabled = true;
             }
+            
+
+           
         }
         private bool isTimer = false;
         public void Display(string j)
@@ -484,7 +487,9 @@ namespace MarketRiskUI
                     {
                         Console.WriteLine(dt.Rows[i].RowState.ToString());
                         dt.AcceptChanges();
+                        
                     }
+                    txt_Msg.Text = i.ToString();
                 }
             }
             catch (Exception ex)
@@ -492,10 +497,13 @@ namespace MarketRiskUI
                 //MessageBox.Show("接收服务端发送的消息出错:" + ex.ToString());
             }
         }
-
+       
         private void timer1_Tick(object sender, EventArgs e)
         {
             Display(DateTime.Now.ToString());
+            
+
+            
         }
 
         /// <summary>
@@ -522,7 +530,7 @@ namespace MarketRiskUI
         private void button13_Click(object sender, EventArgs e)
         {
             ExcelOp eop = new ExcelOp();
-            eop.Open(System.Environment.CurrentDirectory + "\\" + txt_excelfile.Text,false);
+            eop.Open(System.Environment.CurrentDirectory + "\\" + txt_excelfile.Text,true);
             int i = 1;
             while (i < 100)
             {
@@ -903,6 +911,49 @@ namespace MarketRiskUI
         private void button40_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void button40_Click_1(object sender, EventArgs e)
+        {
+            Thread th = new Thread(DisplayBack);
+            th.IsBackground = true;
+            th.Start();
+            
+        }
+
+        public void DisplayBack()
+        {
+
+            while (true)
+            {
+                try
+                {
+                    int i = 2000;
+                    while (i > 0)
+                    {
+                        i--;
+
+                        dt.Rows[i][2] = DateTime.Now.ToLongTimeString();
+                        dt.Rows[i][3] = DateTime.Now.ToLongDateString();
+                        dt.Rows[i][4] = DateTime.Now.Second.ToString() + ":" + DateTime.Now.Millisecond.ToString();
+                        dt.Rows[i][5] = "Wow:" + (new Random()).Next().ToString();
+                        if (i == 2)
+                        {
+                            Console.WriteLine(dt.Rows[i].RowState.ToString());
+                            dt.AcceptChanges();
+
+                        }
+                        
+                       
+                    }
+
+                    Thread.Sleep(100);
+                }
+                catch (Exception ex)
+                {
+                    //MessageBox.Show("接收服务端发送的消息出错:" + ex.ToString());
+                }
+            }
         }
     }
 }

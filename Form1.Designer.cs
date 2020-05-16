@@ -100,6 +100,7 @@
             this.button38 = new System.Windows.Forms.Button();
             this.button35 = new System.Windows.Forms.Button();
             this.button39 = new System.Windows.Forms.Button();
+            this.button40 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.songsDataGridView)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -286,11 +287,11 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(140, 96);
+            this.button5.Location = new System.Drawing.Point(116, 116);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(51, 23);
+            this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 15;
-            this.button5.Text = "refr2";
+            this.button5.Text = "timer_refr2";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -309,6 +310,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button40);
             this.groupBox2.Controls.Add(this.button33);
             this.groupBox2.Controls.Add(this.全选);
             this.groupBox2.Controls.Add(this.button30);
@@ -821,6 +823,16 @@
             this.button39.UseVisualStyleBackColor = true;
             this.button39.Click += new System.EventHandler(this.button39_Click);
             // 
+            // button40
+            // 
+            this.button40.Location = new System.Drawing.Point(116, 145);
+            this.button40.Name = "button40";
+            this.button40.Size = new System.Drawing.Size(75, 23);
+            this.button40.TabIndex = 20;
+            this.button40.Text = "后台线程刷新";
+            this.button40.UseVisualStyleBackColor = true;
+            this.button40.Click += new System.EventHandler(this.button40_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -944,6 +956,7 @@
         private System.Windows.Forms.Button button38;
         private System.Windows.Forms.Button button35;
         private System.Windows.Forms.Button button39;
+        private System.Windows.Forms.Button button40;
     }
 }
 
