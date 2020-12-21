@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4E0EBF85-A874-4F49-ACDC-3E3B1397246B}</ProjectGuid>
+    <ProjectGuid>{A4DACCD7-5439-4A55-BF15-D37284CDD537}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>CSharpDemo</RootNamespace>
-    <AssemblyName>CSharpDemo</AssemblyName>
+    <RootNamespace>ClassCompileLoad</RootNamespace>
+    <AssemblyName>ClassCompileLoad</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -42,18 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CPPDLL.cs" />
+    <Compile Include="CodeDomExample.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CSharpDLL\CSharpDLL.csproj">
-      <Project>{e946afcc-9e31-4cda-b4d5-3eca35bcbab0}</Project>
-      <Name>CSharpDLL</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

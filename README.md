@@ -248,5 +248,15 @@ Encoding [示例](./Utils.cs)
 [示例](./WebExamples/BaiduSuggest.cs)
 
 
+# 进阶使用知识：
+
+* 使用CodeDom技术 动态生成dll或者exe。(./DLLDynamic/ClassCompileLoad)
+
+* 动态加载dll，(./DLLDynamic/DllDynamicImport)
+
+
+
+
+
 
 

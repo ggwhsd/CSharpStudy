@@ -45,6 +45,7 @@
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.log4NetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.颜色ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.redisTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.webExamplesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.webClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.webRequestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,7 +55,6 @@
             this.getBaiduSuggestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
-            this.redisTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -196,6 +196,13 @@
             this.颜色ToolStripMenuItem.Text = "颜色";
             this.颜色ToolStripMenuItem.Click += new System.EventHandler(this.颜色ToolStripMenuItem_Click);
             // 
+            // redisTestToolStripMenuItem
+            // 
+            this.redisTestToolStripMenuItem.Name = "redisTestToolStripMenuItem";
+            this.redisTestToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.redisTestToolStripMenuItem.Text = "redisTest";
+            this.redisTestToolStripMenuItem.Click += new System.EventHandler(this.redisTestToolStripMenuItem_Click);
+            // 
             // webExamplesToolStripMenuItem
             // 
             this.webExamplesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -259,20 +266,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(128, 61);
+            this.button1.Location = new System.Drawing.Point(713, 415);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
+            this.button1.Text = "随性测试";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // redisTestToolStripMenuItem
-            // 
-            this.redisTestToolStripMenuItem.Name = "redisTestToolStripMenuItem";
-            this.redisTestToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.redisTestToolStripMenuItem.Text = "redisTest";
-            this.redisTestToolStripMenuItem.Click += new System.EventHandler(this.redisTestToolStripMenuItem_Click);
             // 
             // MainFacade
             // 

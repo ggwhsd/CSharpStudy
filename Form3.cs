@@ -157,7 +157,6 @@ namespace MarketRiskUI
             else
             {
                 myPlot.RemoveInteraction(hdrag);
-                
             }
         }
         NPlot.Windows.PlotSurface2D.Interactions.AxisDrag adray = new NPlot.Windows.PlotSurface2D.Interactions.AxisDrag(true);

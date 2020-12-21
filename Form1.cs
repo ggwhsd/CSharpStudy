@@ -12,9 +12,7 @@ using System.Threading;
 using System.IO;
 using System.Xml.Linq;
 using System.Runtime.InteropServices;
-
-
-
+using System.Diagnostics;
 
 namespace MarketRiskUI
 {
@@ -408,13 +406,14 @@ namespace MarketRiskUI
                 songsDataGridView.Columns[5].ReadOnly = true;
             }
             DataRow dr = dt.NewRow();
-            dt.Rows.Add(dr);
+            dt.PrimaryKey = new DataColumn[]{ dt.Columns["Name"]};
+            
             dt.Rows.Add("0","张三", DateTime.Now.ToShortDateString(),"大boss","AAAAAA","AAAAAAA","AAAAAAAA","AAAAAAAAA","AAAAAAAAA");//Add里面参数的数据顺序要和dt中的列的顺序对应 
             dt.Rows.Add("0","张四", DateTime.Now.ToShortDateString(), "小boss", "AAAAAA", "AAAAAAA", "AAAAAAAA", "AAAAAAAAA", "AAAAAAAAA");//Add里面参数的数据顺序要和dt中的列的顺序对应 
             for (int i = 0; i <2000; i++)
             {
 
-                dt.Rows.Add("1","张四", DateTime.Now.ToShortDateString(), "小boss" + i, "AAAAAA", "AAAAAAA", "AAAAAAAA", "AAAAAAAAA", "AAAAAAAAA");//Add里面参数的数据顺序要和dt中的列的顺序对应 
+                dt.Rows.Add("1",i.ToString(), DateTime.Now.ToShortDateString(), "小boss" + i, "AAAAAA", "AAAAAAA", "AAAAAAAA", "AAAAAAAAA", "AAAAAAAAA");//Add里面参数的数据顺序要和dt中的列的顺序对应 
             }
             
 
@@ -462,6 +461,7 @@ namespace MarketRiskUI
             else {
                 timer1.Interval=Convert.ToInt32(txt_count.Text);
                 timer1.Enabled = true;
+               
             }
             
 
@@ -474,11 +474,11 @@ namespace MarketRiskUI
                 return;
             try
             {
-                int i = 2000;
+                int i = 200;
                 while (i>0)
                 {
                     i--;
-                    
+                    DataRow dr = dt.Rows.Find(i.ToString());
                     dt.Rows[i][2] = j;
                     dt.Rows[i][3] = j;
                     dt.Rows[i][4] = DateTime.Now.Second.ToString() +":"+ DateTime.Now.Millisecond.ToString();
@@ -486,7 +486,7 @@ namespace MarketRiskUI
                     if (i == 2)
                     {
                         Console.WriteLine(dt.Rows[i].RowState.ToString());
-                        dt.AcceptChanges();
+                        //dt.AcceptChanges();
                         
                     }
                     txt_Msg.Text = i.ToString();
@@ -497,13 +497,49 @@ namespace MarketRiskUI
                 //MessageBox.Show("接收服务端发送的消息出错:" + ex.ToString());
             }
         }
-       
+
+        public void Display()
+        {
+            if (isTimer)
+                return;
+            try
+            {
+                int i = 200;
+                while (i > 0)
+                {
+                    i--;
+                    DataRow dr = dt.Rows.Find(i.ToString());
+                    songsDataGridView.Rows[i].Cells[2].Value = "test";
+                    songsDataGridView.Rows[i].Cells[3].Value = "test2";
+                    songsDataGridView.Rows[i].Cells[4].Value = DateTime.Now.Second.ToString() + ":" + DateTime.Now.Millisecond.ToString();
+                    songsDataGridView.Rows[i].Cells[5].Value =  "LLddd:" + (new Random()).Next().ToString();
+
+                    
+                    txt_Msg.Text = i.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("接收服务端发送的消息出错:" + ex.ToString());
+            }
+
+        }
+        Stopwatch performance = new Stopwatch();
+        long sumTime = 0;
+        int avgCount = 0;
         private void timer1_Tick(object sender, EventArgs e)
         {
+           
+            performance.Restart();
             Display(DateTime.Now.ToString());
-            
+            //Display();
+            performance.Stop();
+            avgCount++;
+            sumTime += performance.ElapsedMilliseconds;
+            txt_Log.Text = (sumTime /avgCount).ToString();
 
-            
+
+
         }
 
         /// <summary>

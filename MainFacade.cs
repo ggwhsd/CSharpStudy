@@ -144,5 +144,10 @@ namespace MarketRiskUI
             redisTest rt = new redisTest();
             rt.Show();
         }
+
+        private void 创建ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

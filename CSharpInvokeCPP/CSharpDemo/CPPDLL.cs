@@ -68,6 +68,20 @@ namespace CSharpDemo
         [DllImport("CSharpInvokeCPP.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.Cdecl)]
         public static extern void copyStructs(User[] user, [Out]User[] user2,int length);
 
+        [StructLayout(LayoutKind.Sequential)]
+        public struct DeviceInfo
+        {
+            [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 50)]
+            public string szDeviceName;
 
+            [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+            public string szMACAddress;
+
+            [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 17)]
+            public string szDeviceIP;
+
+
+        }
+      
     }
 }

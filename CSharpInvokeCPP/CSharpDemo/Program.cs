@@ -91,8 +91,12 @@ namespace CSharpDemo
             Console.WriteLine("调用 C#的dll结果：");
             CSharpDLL.Class1 dllTest = new CSharpDLL.Class1();
             Console.WriteLine(dllTest.Show());
+          
+            
+
 
             Console.ReadLine();
         }
+    
     }
 }
