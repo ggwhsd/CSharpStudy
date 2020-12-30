@@ -149,5 +149,11 @@ namespace MarketRiskUI
         {
 
         }
+
+        private void 拖拽ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DragExample de = new DragExample();
+            de.Show();
+        }
     }
 }

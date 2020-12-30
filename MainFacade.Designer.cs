@@ -55,6 +55,7 @@
             this.getBaiduSuggestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
+            this.拖拽ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,7 +130,8 @@
             this.toolStripMenuItem4,
             this.log4NetToolStripMenuItem,
             this.颜色ToolStripMenuItem,
-            this.redisTestToolStripMenuItem});
+            this.redisTestToolStripMenuItem,
+            this.拖拽ToolStripMenuItem});
             this.formsToolStripMenuItem.Name = "formsToolStripMenuItem";
             this.formsToolStripMenuItem.Size = new System.Drawing.Size(56, 21);
             this.formsToolStripMenuItem.Text = "Forms";
@@ -220,49 +222,49 @@
             // webClientToolStripMenuItem
             // 
             this.webClientToolStripMenuItem.Name = "webClientToolStripMenuItem";
-            this.webClientToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.webClientToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.webClientToolStripMenuItem.Text = "WebClient";
             this.webClientToolStripMenuItem.Click += new System.EventHandler(this.webClientToolStripMenuItem_Click);
             // 
             // webRequestToolStripMenuItem
             // 
             this.webRequestToolStripMenuItem.Name = "webRequestToolStripMenuItem";
-            this.webRequestToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.webRequestToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.webRequestToolStripMenuItem.Text = "WebRequest";
             this.webRequestToolStripMenuItem.Click += new System.EventHandler(this.webRequestToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(176, 22);
             this.toolStripMenuItem1.Text = "GuessEncode";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // getGoldPriceToolStripMenuItem
             // 
             this.getGoldPriceToolStripMenuItem.Name = "getGoldPriceToolStripMenuItem";
-            this.getGoldPriceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.getGoldPriceToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.getGoldPriceToolStripMenuItem.Text = "GetGoldPrice";
             this.getGoldPriceToolStripMenuItem.Click += new System.EventHandler(this.getGoldPriceToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(176, 22);
             this.toolStripMenuItem2.Text = "Crawl";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // getBaiduSuggestToolStripMenuItem
             // 
             this.getBaiduSuggestToolStripMenuItem.Name = "getBaiduSuggestToolStripMenuItem";
-            this.getBaiduSuggestToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.getBaiduSuggestToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.getBaiduSuggestToolStripMenuItem.Text = "GetBaiduSuggest";
             this.getBaiduSuggestToolStripMenuItem.Click += new System.EventHandler(this.getBaiduSuggestToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(176, 22);
             // 
             // button1
             // 
@@ -273,6 +275,13 @@
             this.button1.Text = "随性测试";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // 拖拽ToolStripMenuItem
+            // 
+            this.拖拽ToolStripMenuItem.Name = "拖拽ToolStripMenuItem";
+            this.拖拽ToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.拖拽ToolStripMenuItem.Text = "拖拽";
+            this.拖拽ToolStripMenuItem.Click += new System.EventHandler(this.拖拽ToolStripMenuItem_Click);
             // 
             // MainFacade
             // 
@@ -320,5 +329,6 @@
         private System.Windows.Forms.ToolStripMenuItem log4NetToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 颜色ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem redisTestToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 拖拽ToolStripMenuItem;
     }
 }
