@@ -88,5 +88,10 @@ namespace MarketRiskUI
                 e.Effect = DragDropEffects.None;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

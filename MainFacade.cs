@@ -155,5 +155,11 @@ namespace MarketRiskUI
             DragExample de = new DragExample();
             de.Show();
         }
+
+        private void csv文件读写库ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CsvHelperTest cht = new CsvHelperTest();
+            cht.Show();
+        }
     }
 }
