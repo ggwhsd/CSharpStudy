@@ -49,6 +49,8 @@ namespace MarketRiskUI
             cp.LowData = lows;
             cp.HighData = highs;
             cp.AbscissaData = times;
+            cp.BullishColor = Color.Red;
+            cp.BearishColor = Color.Green;
             this.myPlot.Add(cp);
 
             this.myPlot.Refresh();
@@ -530,5 +532,45 @@ namespace MarketRiskUI
             }
             myPlot.Refresh();
         }
+
+
+        HorizontalLine lineH2 = null;
+        VerticalLine lineV2 = null;
+        private void myPlot_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (myPlot.PhysicalYAxis1Cache == null || myPlot.PhysicalXAxis1Cache == null)
+            {
+                return;
+            }
+            ///////水平线//////////
+            if (lineH2 == null)
+            {
+                lineH2 = new HorizontalLine(10);
+
+                lineH2.LengthScale = 2.89f;
+                lineH2.OrdinateValue = 2;
+                this.myPlot.Add(lineH2, 10);
+            }
+
+            double Y = myPlot.PhysicalYAxis1Cache.PhysicalToWorld(e.Location, false);
+            double X = myPlot.PhysicalXAxis1Cache.PhysicalToWorld(e.Location, false);
+            toolTip1.SetToolTip(myPlot, X + "," + Y);
+
+            toolTip1.AutoPopDelay = 10 * 1000;
+            ///////垂直线///////////
+            if (lineV2 == null)
+            {
+                lineV2 = new VerticalLine(10);
+                lineV2.LengthScale = 0.89f;
+                lineV2.AbscissaValue = 2;
+                this.myPlot.Add(lineV2);
+            }
+
+            lineH2.OrdinateValue = Y;
+            lineV2.AbscissaValue = X;
+            myPlot.Refresh();
+        }
+
+      
     }
 }

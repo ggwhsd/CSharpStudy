@@ -161,5 +161,11 @@ namespace MarketRiskUI
             CsvHelperTest cht = new CsvHelperTest();
             cht.Show();
         }
+
+        private void gDIlineToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GDI_line gdline = new GDI_line();
+            gdline.Show();
+        }
     }
 }
