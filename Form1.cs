@@ -923,8 +923,7 @@ namespace MarketRiskUI
 
         private void button38_Click(object sender, EventArgs e)
         {
-            ActiveMQ_TOPIC mQ = new ActiveMQ_TOPIC();
-            mQ.Show();
+            
         }
 
         private void button35_Click(object sender, EventArgs e)
@@ -934,8 +933,7 @@ namespace MarketRiskUI
 
         private void button35_Click_1(object sender, EventArgs e)
         {
-            ActiveMQ_QUEUE mQ_QUEUE = new ActiveMQ_QUEUE();
-            mQ_QUEUE.Show();
+            
         }
 
         private void button39_Click(object sender, EventArgs e)
@@ -990,6 +988,21 @@ namespace MarketRiskUI
                     //MessageBox.Show("接收服务端发送的消息出错:" + ex.ToString());
                 }
             }
+        }
+        //标记表格行号
+        private void songsDataGridView_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            Color color = songsDataGridView.RowHeadersDefaultCellStyle.ForeColor;
+
+            if (songsDataGridView.Rows[e.RowIndex].Selected)
+                color = songsDataGridView.RowHeadersDefaultCellStyle.SelectionForeColor;
+            else
+                color = songsDataGridView.RowHeadersDefaultCellStyle.ForeColor;
+            using
+            (SolidBrush b = new SolidBrush(color))
+            {
+                e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, b, e.RowBounds.Location.X + 12, e.RowBounds.Location.Y + 6);
+            };
         }
     }
 }

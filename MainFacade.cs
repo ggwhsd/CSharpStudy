@@ -167,5 +167,96 @@ namespace MarketRiskUI
             GDI_line gdline = new GDI_line();
             gdline.Show();
         }
+
+        private void tPL并行编程ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TaskAsyncForm p = new TaskAsyncForm();
+            p.Show();
+        }
+
+        private void task基本使用ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+
+
+
+
+
+            
+            
+        }
+
+        private void action和FuncToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ActionExample ae = new ActionExample();
+            ae.TestDelegate();
+            ae.TestAction();
+            ae.TestFunc();
+            ae.TestActionLambda();
+        }
+
+        private void task1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TaskBaseExample tbe = new TaskBaseExample();
+            tbe.TestTask1_Start();
+        }
+
+        private void task2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TaskBaseExample tbe = new TaskBaseExample();
+            tbe.TestTask2_Create1();
+        }
+
+        private void taskToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TaskBaseExample tbe = new TaskBaseExample();
+            tbe.TestTask3_Create2();
+        }
+
+        private void task5ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TaskBaseExample tbe = new TaskBaseExample();
+            tbe.TestTask4_MultiTaskManage();
+        }
+
+        private void task5ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            TaskBaseExample tbe = new TaskBaseExample();
+            tbe.TestTask5_parentTask();
+        }
+
+        private void task6ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TaskBaseExample tbe = new TaskBaseExample();
+            tbe.TestTask6_multiTasksParalByparent();
+
+        }
+
+        private void task7多任务ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TaskBaseExample tbe = new TaskBaseExample();
+            tbe.TestTask6_UIupdate(textBox_test);
+        }
+
+        private void task8io型task返回ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TaskBaseExample tbe = new TaskBaseExample();
+            tbe.TestTask7_TaskCompletionSource();
+        }
+
+        private void activeMQToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+
+            ActiveMQ_TOPIC mQ = new ActiveMQ_TOPIC();
+            mQ.Show();
+        }
+
+        private void activeMQQueueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ActiveMQ_QUEUE mQ_QUEUE = new ActiveMQ_QUEUE();
+            mQ_QUEUE.Show();
+
+        }
     }
 }

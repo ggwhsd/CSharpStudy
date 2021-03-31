@@ -155,6 +155,31 @@ namespace MarketRiskUI
             textBox1.Text = "发送耗时" + producer.SendSelectorMsg(textBox_send.Text.ToString(), int.Parse(textBox2.Text)) + "秒";
 
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            timer1.Interval = 1000;
+            timer1.Start();
+            sendCycle = 0;
+
+
+        }
+
+        private int sendCycle = 0;
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+            if (Convert.ToInt32(textBox_cycle.Text) > sendCycle)
+            {
+                producer.SendSelectorMsg(textBox_send.Text.ToString(), int.Parse(textBox2.Text));
+            }
+            else
+            {
+                timer1.Enabled = false;
+            }
+            sendCycle++;
+
+        }
     }
     public class topicCfg 
         {
@@ -200,6 +225,13 @@ namespace MarketRiskUI
             prod = session.CreateProducer(dest);
             
         }
+
+        /// <summary>
+        /// 设置发送支持selector进行过滤的消息
+        /// </summary>
+        /// <param name="content"></param>
+        /// <param name="count"></param>
+        /// <returns></returns>
         public double SendSelectorMsg(string content, int count)
         {
             //定义topic名
@@ -211,12 +243,15 @@ namespace MarketRiskUI
             // IMessage msg = prod.CreateBytesMessage(bytes);
             TimeSpan ts = new TimeSpan();
             DateTime start = DateTime.Now;
-
+           
             for (int i = 0; i < count; i++)
             {
+                
                 IMessage msg = prod.CreateTextMessage(str);
                 msg.Properties.SetString("filter","demo");  //设置selector
                 msg.Properties.SetDouble("double", 1.11);
+                msg.Properties.SetInt("count", i);
+                msg.Properties.SetInt("sendTime", DateTime.Now.Millisecond);
                 prod.Send(msg, MsgDeliveryMode.NonPersistent, MsgPriority.Normal, TimeSpan.MinValue);
 
             }
@@ -224,13 +259,21 @@ namespace MarketRiskUI
             ts = end - start;
             return ts.TotalSeconds;
         }
+        /// <summary>
+        /// 发送普通消息
+        /// </summary>
+        /// <param name="content"></param>
+        /// <param name="count"></param>
+        /// <returns></returns>
         public double SendMsg(string content,int count)
         {
             //定义topic名
             CustomData message = new CustomData();
             message.desc = content;
             message.nameCode = 9527;
+            //字符串序列化
             string str = JsonConvert.SerializeObject(message);
+            //数组序列化
             byte[] bytes = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(message));
             // IMessage msg = prod.CreateBytesMessage(bytes);
             TimeSpan ts = new TimeSpan();
@@ -289,6 +332,7 @@ namespace MarketRiskUI
         public void CreateConsumer()
         {
             // cons = session.CreateConsumer(dest);
+            //持久，如果断开了，生产者将不会删除消息，而是等待该消费者恢复上线后，继续为其服务。
             cons = session.CreateDurableConsumer(new Apache.NMS.ActiveMQ.Commands.ActiveMQTopic(topicCfg.topicStr),"customer", selector, false);
             
             cons.Listener += new MessageListener(consumer_Listener);
@@ -305,6 +349,7 @@ namespace MarketRiskUI
         {
             isStart = false;
         }
+        private int send_receive = 0;
         void consumer_Listener(IMessage message)
         {
 
@@ -312,14 +357,18 @@ namespace MarketRiskUI
             {
                 start = DateTime.Now;
                 isStart = true;
+                send_receive = 0;
             }
             try
             {
                 ITextMessage msg = (ITextMessage)message;
-               
+               // Console.WriteLine(msg.Text+ " "+msg.NMSTimestamp);
+                
                 end = DateTime.Now;
                 ts = end - start;
-                Console.WriteLine("Receive: " + msg.Text + " span "+ ts.TotalSeconds);
+                send_receive += msg.NMSTimestamp.Millisecond - msg.Properties.GetInt("sendTime");
+                if (msg.Properties.GetInt("count")>=10000)
+                    Console.WriteLine("Receive: " + msg.Text + " span "+ ts.TotalSeconds + " "+(send_receive));
             }
             catch (System.Exception e)
             {
@@ -341,6 +390,10 @@ namespace MarketRiskUI
         }
 
     }
+
+    /// <summary>
+    /// 官方的示例
+    /// </summary>
     class AdvisoryExample
     {
         private IConnection connection;

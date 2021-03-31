@@ -28,17 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.textBox_cycle = new System.Windows.Forms.TextBox();
+            this.button9 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button8 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox_send = new System.Windows.Forms.TextBox();
@@ -51,6 +55,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBox_recv = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -115,11 +120,14 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.textBox_cycle);
+            this.splitContainer1.Panel1.Controls.Add(this.button9);
             this.splitContainer1.Panel1.Controls.Add(this.label6);
             this.splitContainer1.Panel1.Controls.Add(this.textBox2);
             this.splitContainer1.Panel1.Controls.Add(this.textBox1);
             this.splitContainer1.Panel1.Controls.Add(this.button8);
             this.splitContainer1.Panel1.Controls.Add(this.button6);
+            this.splitContainer1.Panel1.Controls.Add(this.label9);
             this.splitContainer1.Panel1.Controls.Add(this.label5);
             this.splitContainer1.Panel1.Controls.Add(this.label3);
             this.splitContainer1.Panel1.Controls.Add(this.textBox_send);
@@ -143,6 +151,24 @@
             this.splitContainer1.Size = new System.Drawing.Size(767, 761);
             this.splitContainer1.SplitterDistance = 324;
             this.splitContainer1.TabIndex = 6;
+            // 
+            // textBox_cycle
+            // 
+            this.textBox_cycle.Location = new System.Drawing.Point(532, 176);
+            this.textBox_cycle.Name = "textBox_cycle";
+            this.textBox_cycle.Size = new System.Drawing.Size(56, 21);
+            this.textBox_cycle.TabIndex = 14;
+            this.textBox_cycle.Text = "1";
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(372, 170);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(95, 52);
+            this.button9.TabIndex = 13;
+            this.button9.Text = "性能测试发送";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // label6
             // 
@@ -173,9 +199,9 @@
             // 
             this.button8.Location = new System.Drawing.Point(370, 80);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(95, 23);
+            this.button8.Size = new System.Drawing.Size(95, 60);
             this.button8.TabIndex = 9;
-            this.button8.Text = "send临时消息";
+            this.button8.Text = "send Selector消息";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
@@ -185,9 +211,19 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(95, 23);
             this.button6.TabIndex = 9;
-            this.button6.Text = "send持久消息";
+            this.button6.Text = "send消息";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(473, 179);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(53, 12);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "发送轮数";
+            this.label9.Click += new System.EventHandler(this.label5_Click);
             // 
             // label5
             // 
@@ -293,14 +329,18 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "消费者";
             // 
-            // ActiveMQ
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // ActiveMQ_TOPIC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(789, 809);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.button3);
-            this.Name = "ActiveMQ";
+            this.Name = "ActiveMQ_TOPIC";
             this.Text = "ActiveMQ";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
@@ -336,5 +376,9 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.TextBox textBox_selector;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox_cycle;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Timer timer1;
     }
 }

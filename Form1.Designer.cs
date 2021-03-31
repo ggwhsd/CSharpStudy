@@ -51,6 +51,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.txt_count = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button40 = new System.Windows.Forms.Button();
             this.button33 = new System.Windows.Forms.Button();
             this.全选 = new System.Windows.Forms.CheckBox();
             this.button30 = new System.Windows.Forms.Button();
@@ -100,7 +101,6 @@
             this.button38 = new System.Windows.Forms.Button();
             this.button35 = new System.Windows.Forms.Button();
             this.button39 = new System.Windows.Forms.Button();
-            this.button40 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.songsDataGridView)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -243,6 +243,7 @@
             this.songsDataGridView.Size = new System.Drawing.Size(942, 390);
             this.songsDataGridView.TabIndex = 10;
             this.songsDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.songsDataGridView_CellClick);
+            this.songsDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.songsDataGridView_RowPostPaint);
             this.songsDataGridView.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.songsDataGridView_KeyPress);
             // 
             // button1
@@ -324,6 +325,16 @@
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "view和数据对象";
+            // 
+            // button40
+            // 
+            this.button40.Location = new System.Drawing.Point(116, 145);
+            this.button40.Name = "button40";
+            this.button40.Size = new System.Drawing.Size(75, 23);
+            this.button40.TabIndex = 20;
+            this.button40.Text = "后台线程刷新";
+            this.button40.UseVisualStyleBackColor = true;
+            this.button40.Click += new System.EventHandler(this.button40_Click_1);
             // 
             // button33
             // 
@@ -822,16 +833,6 @@
             this.button39.Text = "历史菜单";
             this.button39.UseVisualStyleBackColor = true;
             this.button39.Click += new System.EventHandler(this.button39_Click);
-            // 
-            // button40
-            // 
-            this.button40.Location = new System.Drawing.Point(116, 145);
-            this.button40.Name = "button40";
-            this.button40.Size = new System.Drawing.Size(75, 23);
-            this.button40.TabIndex = 20;
-            this.button40.Text = "后台线程刷新";
-            this.button40.UseVisualStyleBackColor = true;
-            this.button40.Click += new System.EventHandler(this.button40_Click_1);
             // 
             // Form1
             // 
