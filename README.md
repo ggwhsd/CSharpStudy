@@ -77,6 +77,37 @@ DateTime [示例](./Utils.cs)
 * 编码 *
 Encoding [示例](./Utils.cs)
 
+* 线程锁，以及线程的通知和等待
+[示例](./Utils.cs)
+
+
+* 委托同步调用和异步调用，回调。
+[示例](./Utils.cs)
+
+* event事件+委托+EventArgs自定义事件参数。
+[示例](./Utils.cs)
+
+* 常用数据集合List、ArrayList、HashTable等，LinkList，以及泛型集合自定义类型的查找和比较。
+[示例](./Utils.cs)
+
+* 异步接收网络数据的示例
+[示例](./AsyncNetworkStream.cs)
+
+* Form2中增加了一个压力测试用的功能，读取文件中的报文，构造简单格式进行发送。
+
+
+* 正则表达式
+[示例](./Utils.cs)
+
+* List、arrayList、Dictionary集合以及自定义比较
+[示例](./Utils.cs)
+
+* 重写equals方法，用于集合查找自定义类的相等
+[示例](./Utils.cs)
+
+* LINQ的简单使用
+[示例](./Utils.cs)
+
 ## 界面 ##
 
 * datagridview界面 * 
@@ -127,13 +158,6 @@ Encoding [示例](./Utils.cs)
 [示例](./GDI.cs)
 包含了画画基本线条，曲线，多变现，扇形，字符串，图像，圆形，贝塞尔曲线。空心文字，渐变颜色的文字，渐变颜色的图形
 
-* 常用数据集合List、ArrayList、HashTable等，LinkList，以及泛型集合自定义类型的查找和比较。
-[示例](./Utils.cs)
-
-* 异步接收网络数据的示例
-[示例](./AsyncNetworkStream.cs)
-
-* Form2中增加了一个压力测试用的功能，读取文件中的报文，构造简单格式进行发送。
 
 * 拖拽鼠标改变控件的位置
 [示例](./PanelTest.cs)
@@ -147,20 +171,8 @@ Encoding [示例](./Utils.cs)
 * spltieContianer 分割条与panel的使用
 [示例](./SpliterTest.cs)
 
-* 日志库，github上的C#语言开源项目Simple Logger，库文件为SimpleLogger.dll
-[示例](./LoggerTest.cs)
 
-* 语音库，调用微软语音输出。
-[示例](./Utils.cs)
 
-* 委托同步调用和异步调用，回调。
-[示例](./Utils.cs)
-
-* event事件+委托+EventArgs自定义事件参数。
-[示例](./Utils.cs)
-
-* 使用servicestack.redis库访问redis的示例。
-[示例](./redisTest.cs)
 
 * 使用datagridview的非绑定源示例，包含绘画单元格，设置错误提示，输入校验等。
 [示例](./Form_datagridview1.cs)
@@ -170,32 +182,9 @@ Encoding [示例](./Utils.cs)
 
 [示例](./Form_datagridview1.cs)
 
-* 线程锁，以及线程的通知和等待
-[示例](./Utils.cs)
-
-* ActiveMQ的Topic使用示例
-[示例](./ActiveMQ_TOPIC.cs)
-
-* ActiveMQ的Queue使用示例
-[示例](./ActiveMQ_QUEUE.cs)
-
-* 正则表达式
-[示例](./Utils.cs)
-
-* List、arrayList、Dictionary集合以及自定义比较
-[示例](./Utils.cs)
-
-* 重写equals方法，用于集合查找自定义类的相等
-[示例](./Utils.cs)
-
-* MD5加密和解密，RSA
-[示例](./Utils.cs)
-
-* LINQ的简单使用
-[示例](./Utils.cs)
-
 * 菜单保留历史文件打开记录 
 [示例](./MenuContext.cs)
+
 
 
 
@@ -247,12 +236,39 @@ Encoding [示例](./Utils.cs)
 * 获取百度建议词，额外引入了system.web的dll
 [示例](./WebExamples/BaiduSuggest.cs)
 
+* webbrowser配合Echart.js进行图表展示
+[示例](./OtherProjects/EChartByOther/EChartByOther/Form1.cs)
+
 
 # 进阶使用知识：
 
 * 使用CodeDom技术 动态生成dll或者exe。(./DLLDynamic/ClassCompileLoad)
 
 * 动态加载dll，(./DLLDynamic/DllDynamicImport)
+
+* 调用线程新的方式，Task async wait （./TaskAsyncDemo.cs)
+
+* 语音库，调用微软语音输出。
+[示例](./Utils.cs)
+
+* 日志库，github上的C#语言开源项目Simple Logger，库文件为SimpleLogger.dll
+[示例](./LoggerTest.cs)
+
+* 使用servicestack.redis库访问redis的示例。
+[示例](./redisTest.cs)
+
+* ActiveMQ的Topic使用示例
+[示例](./ActiveMQ_TOPIC.cs)
+
+* ActiveMQ的Queue使用示例
+[示例](./ActiveMQ_QUEUE.cs)
+
+* MD5加密和解密，RSA
+[示例](./Utils.cs)
+
+* 字节编解码示例项目
+[示例](./EncodingsTools/EncodingsTools/Form1.cs)
+
 
 
 
