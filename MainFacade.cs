@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using MarketRiskUI.FluentScheduler;
 using MarketRiskUI.LittleExamples;
 using MarketRiskUI.WebExamples;
 
@@ -257,6 +258,14 @@ namespace MarketRiskUI
             ActiveMQ_QUEUE mQ_QUEUE = new ActiveMQ_QUEUE();
             mQ_QUEUE.Show();
 
+        }
+
+        private void fluentSchedulerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SchedulerHelloExample.Hello();
+            SchedulerHelloExample.AddJob();
+            SchedulerHelloExample.AddOnceJob();
+            SchedulerHelloExample.AddOnceJobAt();
         }
     }
 }

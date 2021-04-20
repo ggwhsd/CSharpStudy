@@ -4,6 +4,8 @@ How to use C# to develop different kinds of desktop application
 WeChat:ggwhsd
 email:738257101@qq.com
 
+MainFacade.cs为主入口程序
+
 * delegate *
 跟C++的指针相似，用以代替某个具体的执行方法。效果类似于回调函数。
 我觉得最大的好处是，不同线程之间可以使用委托的方式。比如A线程是程序主线程，负责界面更新，B线程是数据处理，处理完了，调用A线程的方法A1来执行委托更新，将方法的执行权限交给线程A来执行，而不是调用者B线程。
@@ -268,6 +270,9 @@ Encoding [示例](./Utils.cs)
 
 * 字节编解码示例项目
 [示例](./EncodingsTools/EncodingsTools/Form1.cs)
+
+* fluentScheduler 轻量级时间调度工具库
+[示例](./FluentScheduler/SchedulerHelloExample.cs)
 
 
 

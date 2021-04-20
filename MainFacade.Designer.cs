@@ -49,6 +49,8 @@
             this.redisTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.拖拽ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.csv文件读写库ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.activeMQToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.activeMQQueueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.webExamplesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.webClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.webRequestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,8 +73,8 @@
             this.action和FuncToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox_test = new System.Windows.Forms.TextBox();
-            this.activeMQToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.activeMQQueueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.其他库ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fluentSchedulerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,7 +84,8 @@
             this.littleExamplesToolStripMenuItem,
             this.formsToolStripMenuItem,
             this.webExamplesToolStripMenuItem,
-            this.cToolStripMenuItem});
+            this.cToolStripMenuItem,
+            this.其他库ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 25);
@@ -248,6 +251,20 @@
             this.csv文件读写库ToolStripMenuItem.Text = "csv文件读写库";
             this.csv文件读写库ToolStripMenuItem.Click += new System.EventHandler(this.csv文件读写库ToolStripMenuItem_Click);
             // 
+            // activeMQToolStripMenuItem
+            // 
+            this.activeMQToolStripMenuItem.Name = "activeMQToolStripMenuItem";
+            this.activeMQToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.activeMQToolStripMenuItem.Text = "activeMQ_topic";
+            this.activeMQToolStripMenuItem.Click += new System.EventHandler(this.activeMQToolStripMenuItem_Click);
+            // 
+            // activeMQQueueToolStripMenuItem
+            // 
+            this.activeMQQueueToolStripMenuItem.Name = "activeMQQueueToolStripMenuItem";
+            this.activeMQQueueToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.activeMQQueueToolStripMenuItem.Text = "activeMQ_Queue";
+            this.activeMQQueueToolStripMenuItem.Click += new System.EventHandler(this.activeMQQueueToolStripMenuItem_Click);
+            // 
             // webExamplesToolStripMenuItem
             // 
             this.webExamplesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -265,49 +282,49 @@
             // webClientToolStripMenuItem
             // 
             this.webClientToolStripMenuItem.Name = "webClientToolStripMenuItem";
-            this.webClientToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.webClientToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.webClientToolStripMenuItem.Text = "WebClient";
             this.webClientToolStripMenuItem.Click += new System.EventHandler(this.webClientToolStripMenuItem_Click);
             // 
             // webRequestToolStripMenuItem
             // 
             this.webRequestToolStripMenuItem.Name = "webRequestToolStripMenuItem";
-            this.webRequestToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.webRequestToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.webRequestToolStripMenuItem.Text = "WebRequest";
             this.webRequestToolStripMenuItem.Click += new System.EventHandler(this.webRequestToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(176, 22);
             this.toolStripMenuItem1.Text = "GuessEncode";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // getGoldPriceToolStripMenuItem
             // 
             this.getGoldPriceToolStripMenuItem.Name = "getGoldPriceToolStripMenuItem";
-            this.getGoldPriceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.getGoldPriceToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.getGoldPriceToolStripMenuItem.Text = "GetGoldPrice";
             this.getGoldPriceToolStripMenuItem.Click += new System.EventHandler(this.getGoldPriceToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(176, 22);
             this.toolStripMenuItem2.Text = "Crawl";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // getBaiduSuggestToolStripMenuItem
             // 
             this.getBaiduSuggestToolStripMenuItem.Name = "getBaiduSuggestToolStripMenuItem";
-            this.getBaiduSuggestToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.getBaiduSuggestToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.getBaiduSuggestToolStripMenuItem.Text = "GetBaiduSuggest";
             this.getBaiduSuggestToolStripMenuItem.Click += new System.EventHandler(this.getBaiduSuggestToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(176, 22);
             // 
             // cToolStripMenuItem
             // 
@@ -422,19 +439,20 @@
             this.textBox_test.Size = new System.Drawing.Size(100, 21);
             this.textBox_test.TabIndex = 2;
             // 
-            // activeMQToolStripMenuItem
+            // 其他库ToolStripMenuItem
             // 
-            this.activeMQToolStripMenuItem.Name = "activeMQToolStripMenuItem";
-            this.activeMQToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.activeMQToolStripMenuItem.Text = "activeMQ_topic";
-            this.activeMQToolStripMenuItem.Click += new System.EventHandler(this.activeMQToolStripMenuItem_Click);
+            this.其他库ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fluentSchedulerToolStripMenuItem});
+            this.其他库ToolStripMenuItem.Name = "其他库ToolStripMenuItem";
+            this.其他库ToolStripMenuItem.Size = new System.Drawing.Size(56, 21);
+            this.其他库ToolStripMenuItem.Text = "其他库";
             // 
-            // activeMQQueueToolStripMenuItem
+            // fluentSchedulerToolStripMenuItem
             // 
-            this.activeMQQueueToolStripMenuItem.Name = "activeMQQueueToolStripMenuItem";
-            this.activeMQQueueToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.activeMQQueueToolStripMenuItem.Text = "activeMQ_Queue";
-            this.activeMQQueueToolStripMenuItem.Click += new System.EventHandler(this.activeMQQueueToolStripMenuItem_Click);
+            this.fluentSchedulerToolStripMenuItem.Name = "fluentSchedulerToolStripMenuItem";
+            this.fluentSchedulerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fluentSchedulerToolStripMenuItem.Text = "fluentScheduler";
+            this.fluentSchedulerToolStripMenuItem.Click += new System.EventHandler(this.fluentSchedulerToolStripMenuItem_Click);
             // 
             // MainFacade
             // 
@@ -501,5 +519,7 @@
         private System.Windows.Forms.ToolStripMenuItem task8io型task返回ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem activeMQToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem activeMQQueueToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 其他库ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fluentSchedulerToolStripMenuItem;
     }
 }
