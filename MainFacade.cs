@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using MarketRiskUI.FluentScheduler;
 using MarketRiskUI.LittleExamples;
+
 using MarketRiskUI.WebExamples;
 
 namespace MarketRiskUI
@@ -267,5 +268,7 @@ namespace MarketRiskUI
             SchedulerHelloExample.AddOnceJob();
             SchedulerHelloExample.AddOnceJobAt();
         }
+
+       
     }
 }

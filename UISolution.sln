@@ -16,6 +16,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedMemory", "AdvancedM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EChartByOther", "OtherProjects\EChartByOther\EChartByOther\EChartByOther.csproj", "{E8A97D27-D7F6-4B2D-83AF-F891430063D7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveChartsTest", "OtherProjects\LiveChartsTest\LiveChartsTest.csproj", "{4BA9A3D0-1DE5-4AC4-AC22-C33124CB1080}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -74,6 +76,18 @@ Global
 		{E8A97D27-D7F6-4B2D-83AF-F891430063D7}.Release|x64.Build.0 = Release|Any CPU
 		{E8A97D27-D7F6-4B2D-83AF-F891430063D7}.Release|x86.ActiveCfg = Release|Any CPU
 		{E8A97D27-D7F6-4B2D-83AF-F891430063D7}.Release|x86.Build.0 = Release|Any CPU
+		{4BA9A3D0-1DE5-4AC4-AC22-C33124CB1080}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BA9A3D0-1DE5-4AC4-AC22-C33124CB1080}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BA9A3D0-1DE5-4AC4-AC22-C33124CB1080}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4BA9A3D0-1DE5-4AC4-AC22-C33124CB1080}.Debug|x64.Build.0 = Debug|Any CPU
+		{4BA9A3D0-1DE5-4AC4-AC22-C33124CB1080}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4BA9A3D0-1DE5-4AC4-AC22-C33124CB1080}.Debug|x86.Build.0 = Debug|Any CPU
+		{4BA9A3D0-1DE5-4AC4-AC22-C33124CB1080}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BA9A3D0-1DE5-4AC4-AC22-C33124CB1080}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BA9A3D0-1DE5-4AC4-AC22-C33124CB1080}.Release|x64.ActiveCfg = Release|Any CPU
+		{4BA9A3D0-1DE5-4AC4-AC22-C33124CB1080}.Release|x64.Build.0 = Release|Any CPU
+		{4BA9A3D0-1DE5-4AC4-AC22-C33124CB1080}.Release|x86.ActiveCfg = Release|Any CPU
+		{4BA9A3D0-1DE5-4AC4-AC22-C33124CB1080}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -71,10 +71,10 @@
             this.task7多任务ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.task8io型task返回ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.action和FuncToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox_test = new System.Windows.Forms.TextBox();
             this.其他库ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fluentSchedulerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox_test = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -339,7 +339,7 @@
             // tPL并行编程ToolStripMenuItem
             // 
             this.tPL并行编程ToolStripMenuItem.Name = "tPL并行编程ToolStripMenuItem";
-            this.tPL并行编程ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tPL并行编程ToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.tPL并行编程ToolStripMenuItem.Text = "异步编程/并发编程";
             this.tPL并行编程ToolStripMenuItem.Click += new System.EventHandler(this.tPL并行编程ToolStripMenuItem_Click);
             // 
@@ -355,7 +355,7 @@
             this.task7多任务ToolStripMenuItem,
             this.task8io型task返回ToolStripMenuItem});
             this.task基本使用ToolStripMenuItem.Name = "task基本使用ToolStripMenuItem";
-            this.task基本使用ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.task基本使用ToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.task基本使用ToolStripMenuItem.Text = "Task基本使用";
             this.task基本使用ToolStripMenuItem.Click += new System.EventHandler(this.task基本使用ToolStripMenuItem_Click);
             // 
@@ -418,9 +418,24 @@
             // action和FuncToolStripMenuItem
             // 
             this.action和FuncToolStripMenuItem.Name = "action和FuncToolStripMenuItem";
-            this.action和FuncToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.action和FuncToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.action和FuncToolStripMenuItem.Text = "Action和Func";
             this.action和FuncToolStripMenuItem.Click += new System.EventHandler(this.action和FuncToolStripMenuItem_Click);
+            // 
+            // 其他库ToolStripMenuItem
+            // 
+            this.其他库ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fluentSchedulerToolStripMenuItem});
+            this.其他库ToolStripMenuItem.Name = "其他库ToolStripMenuItem";
+            this.其他库ToolStripMenuItem.Size = new System.Drawing.Size(56, 21);
+            this.其他库ToolStripMenuItem.Text = "其他库";
+            // 
+            // fluentSchedulerToolStripMenuItem
+            // 
+            this.fluentSchedulerToolStripMenuItem.Name = "fluentSchedulerToolStripMenuItem";
+            this.fluentSchedulerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fluentSchedulerToolStripMenuItem.Text = "fluentScheduler";
+            this.fluentSchedulerToolStripMenuItem.Click += new System.EventHandler(this.fluentSchedulerToolStripMenuItem_Click);
             // 
             // button1
             // 
@@ -438,21 +453,6 @@
             this.textBox_test.Name = "textBox_test";
             this.textBox_test.Size = new System.Drawing.Size(100, 21);
             this.textBox_test.TabIndex = 2;
-            // 
-            // 其他库ToolStripMenuItem
-            // 
-            this.其他库ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fluentSchedulerToolStripMenuItem});
-            this.其他库ToolStripMenuItem.Name = "其他库ToolStripMenuItem";
-            this.其他库ToolStripMenuItem.Size = new System.Drawing.Size(56, 21);
-            this.其他库ToolStripMenuItem.Text = "其他库";
-            // 
-            // fluentSchedulerToolStripMenuItem
-            // 
-            this.fluentSchedulerToolStripMenuItem.Name = "fluentSchedulerToolStripMenuItem";
-            this.fluentSchedulerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.fluentSchedulerToolStripMenuItem.Text = "fluentScheduler";
-            this.fluentSchedulerToolStripMenuItem.Click += new System.EventHandler(this.fluentSchedulerToolStripMenuItem_Click);
             // 
             // MainFacade
             // 
