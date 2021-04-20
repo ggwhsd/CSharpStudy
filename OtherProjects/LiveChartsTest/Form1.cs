@@ -132,6 +132,7 @@ namespace LiveChartsTest
             e9.Show();
 
             //动态变化的时序图表数据（折线图）
+            //自定义类成员与X、Y也可以进行映射配置。
             Example10 e10 = new Example10();
             e10.Show();
 
@@ -142,6 +143,24 @@ namespace LiveChartsTest
             //折线图，支持移动按键和放大
             Example12 e12 = new Example12();
             e12.Show();
+            //一般一张图都是显示相同横坐标，不同纵坐标，点数相同。  这里是显示不同序列的不同个数的点，一条直线，一些柱状。
+            Example13 e13 = new Example13();
+            e13.Show();
+            //可以自由控制显示哪个折线。
+            Example14 e14 = new Example14();
+            e14.Show();
+
+            //使用图中的各种事件触发
+            Example15 e15 = new Example15();
+            e15.Show();
+
+            //金融ohlc线，蜡烛图
+            Example16 e16 = new Example16();
+            e16.Show();
+            //stepLine，可以用于金融中的tick数据。
+            Example17 e17 = new Example17();
+            e17.Show();
+
         }
 
         private void pieChart1_DataClick(object sender, ChartPoint chartPoint)
