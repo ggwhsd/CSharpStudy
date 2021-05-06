@@ -75,6 +75,7 @@
             this.fluentSchedulerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox_test = new System.Windows.Forms.TextBox();
+            this.iNI配置文件读写ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -156,7 +157,8 @@
             this.拖拽ToolStripMenuItem,
             this.csv文件读写库ToolStripMenuItem,
             this.activeMQToolStripMenuItem,
-            this.activeMQQueueToolStripMenuItem});
+            this.activeMQQueueToolStripMenuItem,
+            this.iNI配置文件读写ToolStripMenuItem});
             this.formsToolStripMenuItem.Name = "formsToolStripMenuItem";
             this.formsToolStripMenuItem.Size = new System.Drawing.Size(56, 21);
             this.formsToolStripMenuItem.Text = "Forms";
@@ -282,49 +284,49 @@
             // webClientToolStripMenuItem
             // 
             this.webClientToolStripMenuItem.Name = "webClientToolStripMenuItem";
-            this.webClientToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.webClientToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.webClientToolStripMenuItem.Text = "WebClient";
             this.webClientToolStripMenuItem.Click += new System.EventHandler(this.webClientToolStripMenuItem_Click);
             // 
             // webRequestToolStripMenuItem
             // 
             this.webRequestToolStripMenuItem.Name = "webRequestToolStripMenuItem";
-            this.webRequestToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.webRequestToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.webRequestToolStripMenuItem.Text = "WebRequest";
             this.webRequestToolStripMenuItem.Click += new System.EventHandler(this.webRequestToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(176, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem1.Text = "GuessEncode";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // getGoldPriceToolStripMenuItem
             // 
             this.getGoldPriceToolStripMenuItem.Name = "getGoldPriceToolStripMenuItem";
-            this.getGoldPriceToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.getGoldPriceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.getGoldPriceToolStripMenuItem.Text = "GetGoldPrice";
             this.getGoldPriceToolStripMenuItem.Click += new System.EventHandler(this.getGoldPriceToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(176, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem2.Text = "Crawl";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // getBaiduSuggestToolStripMenuItem
             // 
             this.getBaiduSuggestToolStripMenuItem.Name = "getBaiduSuggestToolStripMenuItem";
-            this.getBaiduSuggestToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.getBaiduSuggestToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.getBaiduSuggestToolStripMenuItem.Text = "GetBaiduSuggest";
             this.getBaiduSuggestToolStripMenuItem.Click += new System.EventHandler(this.getBaiduSuggestToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(176, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
             // 
             // cToolStripMenuItem
             // 
@@ -339,7 +341,7 @@
             // tPL并行编程ToolStripMenuItem
             // 
             this.tPL并行编程ToolStripMenuItem.Name = "tPL并行编程ToolStripMenuItem";
-            this.tPL并行编程ToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.tPL并行编程ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tPL并行编程ToolStripMenuItem.Text = "异步编程/并发编程";
             this.tPL并行编程ToolStripMenuItem.Click += new System.EventHandler(this.tPL并行编程ToolStripMenuItem_Click);
             // 
@@ -355,7 +357,7 @@
             this.task7多任务ToolStripMenuItem,
             this.task8io型task返回ToolStripMenuItem});
             this.task基本使用ToolStripMenuItem.Name = "task基本使用ToolStripMenuItem";
-            this.task基本使用ToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.task基本使用ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.task基本使用ToolStripMenuItem.Text = "Task基本使用";
             this.task基本使用ToolStripMenuItem.Click += new System.EventHandler(this.task基本使用ToolStripMenuItem_Click);
             // 
@@ -418,7 +420,7 @@
             // action和FuncToolStripMenuItem
             // 
             this.action和FuncToolStripMenuItem.Name = "action和FuncToolStripMenuItem";
-            this.action和FuncToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.action和FuncToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.action和FuncToolStripMenuItem.Text = "Action和Func";
             this.action和FuncToolStripMenuItem.Click += new System.EventHandler(this.action和FuncToolStripMenuItem_Click);
             // 
@@ -453,6 +455,13 @@
             this.textBox_test.Name = "textBox_test";
             this.textBox_test.Size = new System.Drawing.Size(100, 21);
             this.textBox_test.TabIndex = 2;
+            // 
+            // iNI配置文件读写ToolStripMenuItem
+            // 
+            this.iNI配置文件读写ToolStripMenuItem.Name = "iNI配置文件读写ToolStripMenuItem";
+            this.iNI配置文件读写ToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.iNI配置文件读写ToolStripMenuItem.Text = "INI配置文件读写";
+            this.iNI配置文件读写ToolStripMenuItem.Click += new System.EventHandler(this.iNI配置文件读写ToolStripMenuItem_Click);
             // 
             // MainFacade
             // 
@@ -521,5 +530,6 @@
         private System.Windows.Forms.ToolStripMenuItem activeMQQueueToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 其他库ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fluentSchedulerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem iNI配置文件读写ToolStripMenuItem;
     }
 }

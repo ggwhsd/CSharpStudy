@@ -269,6 +269,13 @@ namespace MarketRiskUI
             SchedulerHelloExample.AddOnceJobAt();
         }
 
-       
+        private void iNI配置文件读写ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine(INIHelper.getInstance().Get("test.ini", "test_key1", "test_value1"));
+            Console.WriteLine(INIHelper.getInstance().Get("test.ini", "test_key2", "test_value2"));
+            Console.WriteLine(INIHelper.getInstance().Get("test.ini", "test_key3", "test_value3"));
+            Console.WriteLine(INIHelper.getInstance().Set("test.ini", "test_key4", "test_value4"));
+            Console.WriteLine(INIHelper.getInstance().Set("test.ini", "test_key4", "test_value5"));
+        }
     }
 }

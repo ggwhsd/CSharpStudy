@@ -245,6 +245,7 @@
     <Compile Include="GDI_line.Designer.cs">
       <DependentUpon>GDI_line.cs</DependentUpon>
     </Compile>
+    <Compile Include="INIHelper.cs" />
     <Compile Include="JsonForm.cs">
       <SubType>Form</SubType>
     </Compile>
