@@ -110,6 +110,9 @@ Encoding [示例](./Utils.cs)
 * LINQ的简单使用
 [示例](./Utils.cs)
 
+* 简单配置ini文件读写，key=value
+[示例](./INIHelper.cs)
+
 ## 界面 ##
 
 * datagridview界面 * 
