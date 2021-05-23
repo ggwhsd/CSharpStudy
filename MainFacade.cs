@@ -277,5 +277,11 @@ namespace MarketRiskUI
             Console.WriteLine(INIHelper.getInstance().Set("test.ini", "test_key4", "test_value4"));
             Console.WriteLine(INIHelper.getInstance().Set("test.ini", "test_key4", "test_value5"));
         }
+
+        private void gDIRefreshAutoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UITest.GDITimerRefresh gdiTimer = new UITest.GDITimerRefresh();
+            gdiTimer.Show();
+        }
     }
 }

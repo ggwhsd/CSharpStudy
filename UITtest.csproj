@@ -239,6 +239,12 @@
     <Compile Include="GDI.Designer.cs">
       <DependentUpon>GDI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GDITimerRefresh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GDITimerRefresh.Designer.cs">
+      <DependentUpon>GDITimerRefresh.cs</DependentUpon>
+    </Compile>
     <Compile Include="GDI_line.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -323,6 +329,12 @@
       <DependentUpon>redisTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
+    <Compile Include="Snapshot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Snapshot.designer.cs">
+      <DependentUpon>Snapshot.cs</DependentUpon>
+    </Compile>
     <Compile Include="SoundMediaTools.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -355,6 +367,12 @@
     </Compile>
     <Compile Include="TreeListTest.Designer.cs">
       <DependentUpon>TreeListTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlTextBox.designer.cs">
+      <DependentUpon>UserControlTextBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils.cs">
       <SubType>Form</SubType>
@@ -443,6 +461,9 @@
     <EmbeddedResource Include="GDI.resx">
       <DependentUpon>GDI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GDITimerRefresh.resx">
+      <DependentUpon>GDITimerRefresh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GDI_line.resx">
       <DependentUpon>GDI_line.cs</DependentUpon>
     </EmbeddedResource>
@@ -490,6 +511,9 @@
     <EmbeddedResource Include="redisTest.resx">
       <DependentUpon>redisTest.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Snapshot.resx">
+      <DependentUpon>Snapshot.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SoundMediaTools.resx">
       <DependentUpon>SoundMediaTools.cs</DependentUpon>
     </EmbeddedResource>
@@ -504,6 +528,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TreeListTest.resx">
       <DependentUpon>TreeListTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlTextBox.resx">
+      <DependentUpon>UserControlTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Utils.resx">
       <DependentUpon>Utils.cs</DependentUpon>

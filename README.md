@@ -163,6 +163,19 @@ Encoding [示例](./Utils.cs)
 [示例](./GDI.cs)
 包含了画画基本线条，曲线，多变现，扇形，字符串，图像，圆形，贝塞尔曲线。空心文字，渐变颜色的文字，渐变颜色的图形
 
+* GDI利用定时器实现画动画的圆圈 *
+[示例](./GDITimerRefresh.cs)
+
+* GDI截屏幕图片并保存 *
+[示例](./GDITimerRefresh.cs)
+
+* GDI 自定义控件内部图像颜色 *
+[示例](./GDITimerRefresh.cs)
+
+* GDI 复制图片 *
+[示例](./GDITimerRefresh.cs)
+
+
 
 * 拖拽鼠标改变控件的位置
 [示例](./PanelTest.cs)

@@ -51,6 +51,7 @@
             this.csv文件读写库ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.activeMQToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.activeMQQueueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.iNI配置文件读写ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.webExamplesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.webClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.webRequestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,7 +76,7 @@
             this.fluentSchedulerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox_test = new System.Windows.Forms.TextBox();
-            this.iNI配置文件读写ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gDIRefreshAutoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -158,7 +159,8 @@
             this.csv文件读写库ToolStripMenuItem,
             this.activeMQToolStripMenuItem,
             this.activeMQQueueToolStripMenuItem,
-            this.iNI配置文件读写ToolStripMenuItem});
+            this.iNI配置文件读写ToolStripMenuItem,
+            this.gDIRefreshAutoToolStripMenuItem});
             this.formsToolStripMenuItem.Name = "formsToolStripMenuItem";
             this.formsToolStripMenuItem.Size = new System.Drawing.Size(56, 21);
             this.formsToolStripMenuItem.Text = "Forms";
@@ -266,6 +268,13 @@
             this.activeMQQueueToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.activeMQQueueToolStripMenuItem.Text = "activeMQ_Queue";
             this.activeMQQueueToolStripMenuItem.Click += new System.EventHandler(this.activeMQQueueToolStripMenuItem_Click);
+            // 
+            // iNI配置文件读写ToolStripMenuItem
+            // 
+            this.iNI配置文件读写ToolStripMenuItem.Name = "iNI配置文件读写ToolStripMenuItem";
+            this.iNI配置文件读写ToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.iNI配置文件读写ToolStripMenuItem.Text = "INI配置文件读写";
+            this.iNI配置文件读写ToolStripMenuItem.Click += new System.EventHandler(this.iNI配置文件读写ToolStripMenuItem_Click);
             // 
             // webExamplesToolStripMenuItem
             // 
@@ -435,7 +444,7 @@
             // fluentSchedulerToolStripMenuItem
             // 
             this.fluentSchedulerToolStripMenuItem.Name = "fluentSchedulerToolStripMenuItem";
-            this.fluentSchedulerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fluentSchedulerToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.fluentSchedulerToolStripMenuItem.Text = "fluentScheduler";
             this.fluentSchedulerToolStripMenuItem.Click += new System.EventHandler(this.fluentSchedulerToolStripMenuItem_Click);
             // 
@@ -456,12 +465,12 @@
             this.textBox_test.Size = new System.Drawing.Size(100, 21);
             this.textBox_test.TabIndex = 2;
             // 
-            // iNI配置文件读写ToolStripMenuItem
+            // gDIRefreshAutoToolStripMenuItem
             // 
-            this.iNI配置文件读写ToolStripMenuItem.Name = "iNI配置文件读写ToolStripMenuItem";
-            this.iNI配置文件读写ToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.iNI配置文件读写ToolStripMenuItem.Text = "INI配置文件读写";
-            this.iNI配置文件读写ToolStripMenuItem.Click += new System.EventHandler(this.iNI配置文件读写ToolStripMenuItem_Click);
+            this.gDIRefreshAutoToolStripMenuItem.Name = "gDIRefreshAutoToolStripMenuItem";
+            this.gDIRefreshAutoToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.gDIRefreshAutoToolStripMenuItem.Text = "GDI_RefreshAuto";
+            this.gDIRefreshAutoToolStripMenuItem.Click += new System.EventHandler(this.gDIRefreshAutoToolStripMenuItem_Click);
             // 
             // MainFacade
             // 
@@ -531,5 +540,6 @@
         private System.Windows.Forms.ToolStripMenuItem 其他库ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fluentSchedulerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem iNI配置文件读写ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gDIRefreshAutoToolStripMenuItem;
     }
 }
