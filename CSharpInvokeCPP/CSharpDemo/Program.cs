@@ -9,7 +9,7 @@ namespace CSharpDemo
 {
     class Program
     {
-        static void Main(string[] args)
+        static void TestOne()
         {
             Console.WriteLine("调用 Native C++的dll结果：");
             int result = CPPDLL.Add(10, 20);
@@ -38,7 +38,7 @@ namespace CSharpDemo
 
             Console.WriteLine("设置c++的字符串指针解析：");
             CPPDLL.setStringTest("asdfsdf");
-           
+
             Console.WriteLine("c++返回的字符串指针解析：");
             IntPtr tempPtr = CPPDLL.getStringTest("xxx", 32);
             Console.WriteLine("{0:10}", Marshal.PtrToStringAnsi(tempPtr));
@@ -46,18 +46,19 @@ namespace CSharpDemo
             Console.WriteLine("函数参数传出：");
             int i = 5;
             CPPDLL.setRef(ref i);
-            Console.WriteLine(" i = {0}",i);
+            Console.WriteLine(" i = {0}", i);
 
             Console.WriteLine("函数参数传入数组：");
-            int []sumArray = new int[10];
+            int[] sumArray = new int[10];
             sumArray[2] = 188;
             int sumA = CPPDLL.sumArray(sumArray, sumArray.Length);
             Console.WriteLine("数组求和{0}", sumA);
 
             Console.WriteLine("函数参数传出数组：");
             int[] sumArray2 = new int[10];
-             CPPDLL.copyArray(sumArray, sumArray.Length,sumArray2);
-            foreach(int value in sumArray2) {
+            CPPDLL.copyArray(sumArray, sumArray.Length, sumArray2);
+            foreach (int value in sumArray2)
+            {
                 Console.WriteLine("{0} ", value);
             }
 
@@ -66,24 +67,25 @@ namespace CSharpDemo
             user2.Name = "我们";
             user2.Age = 2;
             CPPDLL.setStruct(user2);
-           
+
             Console.WriteLine("函数参数传出struct数组：");
-            CPPDLL.User []user3 = new CPPDLL.User[3];
+            CPPDLL.User[] user3 = new CPPDLL.User[3];
             user3[0].Name = "老鹰一号";
             user3[0].Age = 1;
-            CPPDLL.getStruct(user3,3);
+            CPPDLL.getStruct(user3, 3);
 
             foreach (CPPDLL.User value in user3)
             {
                 Console.WriteLine("Name: {0}, Age: {1},", value.Name, value.Age);
             }
 
-                Console.WriteLine("函数参数传入传出struct数组：");
+            Console.WriteLine("函数参数传入传出struct数组：");
             CPPDLL.User[] user5 = new CPPDLL.User[3];
             user5[0].Name = "老鹰二号";
             user5[0].Age = 2;
-            CPPDLL.copyStructs(user5,user5, 3);
-            foreach (CPPDLL.User value in user5) { 
+            CPPDLL.copyStructs(user5, user5, 3);
+            foreach (CPPDLL.User value in user5)
+            {
                 Console.WriteLine("Name: {0}, Age: {1},", value.Name, value.Age);
             }
 
@@ -91,12 +93,32 @@ namespace CSharpDemo
             Console.WriteLine("调用 C#的dll结果：");
             CSharpDLL.Class1 dllTest = new CSharpDLL.Class1();
             Console.WriteLine(dllTest.Show());
-          
-            
 
+
+
+        }
+        static void Main(string[] args)
+        {
+
+            Demo1 d1 = new Demo1();
+            d1.Test();
+
+            Demo2 d2 = new Demo2();
+            //d2.Test();
+            d2.Test3();
+            GC.Collect();
+
+            Demo3 d3 = new Demo3();
+            d3.Test();
+
+            Demo4 d4 = new Demo4();
+            d4.Test();
 
             Console.ReadLine();
+
+
+
         }
-    
+
     }
 }
