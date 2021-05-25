@@ -114,11 +114,22 @@ namespace CSharpDemo
             Demo4 d4 = new Demo4();
             d4.Test();
 
+            Demo5 d5 = new Demo5();
+            d5.Test();
+
+            d5.Test2();
+            d5.Test3();
+
+            Demo6 d6 = new Demo6();
+            d6.Test();
+
+         
+
             Console.ReadLine();
 
 
 
         }
-
+    
     }
 }

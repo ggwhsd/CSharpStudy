@@ -21,14 +21,14 @@ namespace CSharpDemo
         {
             CallbackDelegate myDelegate = new CallbackDelegate(CallbackFunc);
             int i = 0;
-            while (i < 30)
+            while (i < 3)
             {
                 processCallback(25, myDelegate);
                 i++;
                 Thread.Sleep(1000);
             }
 
-
+   
         }
         public static void CallbackFunc(int a, string param)
         {

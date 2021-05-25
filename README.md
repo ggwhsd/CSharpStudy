@@ -206,7 +206,7 @@ Encoding [示例](./Utils.cs)
 
 
 
-# CSharp访问C++的dll的方法，参考[项目](./CSharpInvokeCPP/CSharpInvokeCPP.sln)
+# CSharp访问C++的dll的方法：Marsheling机制。指针、数组、回调等均有示例。参考[项目](./CSharpInvokeCPP/CSharpInvokeCPP.sln)
 
 # 一些小例子,以下代码的例子都是来自于 唐大仕 老师的关于C#的书中的例子。
 
