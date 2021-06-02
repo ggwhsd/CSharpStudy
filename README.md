@@ -291,6 +291,10 @@ Encoding [示例](./Utils.cs)
 [示例](./FluentScheduler/SchedulerHelloExample.cs)
 
 
+* 微软的workflow功能的使用，用于流程性的开发框架。
+
+* 进程启动，进程查看等
+
 
 
 

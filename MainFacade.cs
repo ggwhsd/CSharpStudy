@@ -283,5 +283,11 @@ namespace MarketRiskUI
             UITest.GDITimerRefresh gdiTimer = new UITest.GDITimerRefresh();
             gdiTimer.Show();
         }
+
+        private void 进程管理ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProcessForm pf = new ProcessForm();
+            pf.Show();
+        }
     }
 }
