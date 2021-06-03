@@ -124,10 +124,15 @@ Encoding [示例](./Utils.cs)
 `button3_Click`绑定datatable的方式更细数据。
 
 * datagridview界面 *
-datagridview控件自身的使用，比如添加行，添加列，设置格式，设置重绘单元格样式，错误提示样式的。[示例1](./Form_datagridview1.cs)
-datatable和datagridview的组合使用，datatable的数据源绑定方式，以及使用virtualMode+xxxNeeded的高效使用方式[示例2](./Form_datagridview2.cs)
-datagridview的bindlist使用。[示例3](./datagridviewBindList.cs)
-datagridview与list、datatable、普通变量等的绑定方式，BindList的使用，文本控件的数据源绑定等。[示例4](./datagridviewBindMethod.cs)
+
+* datagridview控件自身的使用，比如添加行，添加列，设置格式，使用datagridview的非绑定源示例，包含绘画单元格，设置错误提示，输入校验等。。[示例1](./Form_datagridview1.cs)
+
+* 使用datagridview的绑定源示例，包含虚拟模式和绑定数据源模式的分别使用。虚拟模式是对非绑定列进行操作，比如点击控件某个单元格，此时触发cellValueneeded，传入控件的位置，我们就可以自己给该单元格赋值，如果对控件提交了修改，我们可以通过cellvaluepushed事件来保存控件提交上来的值到自己的数据结构中。这样可以做到用户看到什么就显示什么，而不用预期加载所有数据。
+交替行样式的使用。
+[示例2](./Form_datagridview2.cs)
+
+* datagridview的bindlist使用。[示例3](./datagridviewBindList.cs)
+* datagridview与list、datatable、普通变量等的绑定方式，BindList的使用，文本控件的数据源绑定等。[示例4](./datagridviewBindMethod.cs)
 
 * 蜡烛图 *
 [示例](./Form3.cs)
@@ -195,16 +200,6 @@ datagridview与list、datatable、普通变量等的绑定方式，BindList的�
 * spltieContianer 分割条与panel的使用
 [示例](./SpliterTest.cs)
 
-
-
-
-* 使用datagridview的非绑定源示例，包含绘画单元格，设置错误提示，输入校验等。
-[示例](./Form_datagridview1.cs)
-
-* 使用datagridview的绑定源示例，包含虚拟模式和绑定数据源模式的分别使用。虚拟模式是对非绑定列进行操作，比如点击控件某个单元格，此时触发cellValueneeded，传入控件的位置，我们就可以自己给该单元格赋值，如果对控件提交了修改，我们可以通过cellvaluepushed事件来保存控件提交上来的值到自己的数据结构中。这样可以做到用户看到什么就显示什么，而不用预期加载所有数据。
-交替行样式的使用。
-
-[示例](./Form_datagridview1.cs)
 
 * 菜单保留历史文件打开记录 
 [示例](./MenuContext.cs)
@@ -296,11 +291,15 @@ datagridview与list、datatable、普通变量等的绑定方式，BindList的�
 * fluentScheduler 轻量级时间调度工具库
 [示例](./FluentScheduler/SchedulerHelloExample.cs)
 
+* LiveChart，一款非常好用的画图控件。在数据点特别多的时候，效率没有NPlot高。
+[示例](./OtherProjects/LiveChartsTest/Form1.cs)
 
 * 微软的workflow功能的使用，用于流程性的开发框架。
 
 * 进程启动，进程查看等
+[示例](./ProcessForm.cs)
 
+* 
 
 
 
