@@ -180,6 +180,7 @@
     <Compile Include="datagridviewBindList.Designer.cs">
       <DependentUpon>datagridviewBindList.cs</DependentUpon>
     </Compile>
+    <Compile Include="datagridviewBindMethod.cs" />
     <Compile Include="DragExample.cs">
       <SubType>Form</SubType>
     </Compile>

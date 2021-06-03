@@ -289,5 +289,11 @@ namespace MarketRiskUI
             ProcessForm pf = new ProcessForm();
             pf.Show();
         }
+
+        private void gridviewdatabindToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            datagridviewBindMethod dbl = new datagridviewBindMethod();
+            dbl.Show();
+        }
     }
 }

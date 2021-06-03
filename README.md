@@ -123,6 +123,12 @@ Encoding [示例](./Utils.cs)
 `PopulateDataGridView`方法设置不通过datatable的方式来更新数据，显示列的顺序位置。
 `button3_Click`绑定datatable的方式更细数据。
 
+* datagridview界面 *
+datagridview控件自身的使用，比如添加行，添加列，设置格式，设置重绘单元格样式，错误提示样式的。[示例1](./Form_datagridview1.cs)
+datatable和datagridview的组合使用，datatable的数据源绑定方式，以及使用virtualMode+xxxNeeded的高效使用方式[示例2](./Form_datagridview2.cs)
+datagridview的bindlist使用。[示例3](./datagridviewBindList.cs)
+datagridview与list、datatable、普通变量等的绑定方式，BindList的使用，文本控件的数据源绑定等。[示例4](./datagridviewBindMethod.cs)
+
 * 蜡烛图 *
 [示例](./Form3.cs)
 * 点状图 *

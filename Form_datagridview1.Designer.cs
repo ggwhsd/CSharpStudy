@@ -108,7 +108,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(122, 18);
+            this.checkBox1.Location = new System.Drawing.Point(89, 21);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(84, 16);
             this.checkBox1.TabIndex = 4;
@@ -119,7 +119,7 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(241, 17);
+            this.checkBox2.Location = new System.Drawing.Point(192, 15);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(108, 16);
             this.checkBox2.TabIndex = 5;
