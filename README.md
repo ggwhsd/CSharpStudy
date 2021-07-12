@@ -299,7 +299,8 @@ Encoding [示例](./Utils.cs)
 * 进程启动，进程查看等
 [示例](./ProcessForm.cs)
 
-* 
+* 通过日期判断所属周的开始和结束。
+[示例](./UserControls/CalenderWeek.cs)
 
 
 

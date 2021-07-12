@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using MarketRiskUI.FluentScheduler;
 using MarketRiskUI.LittleExamples;
-
+using MarketRiskUI.UserControls;
 using MarketRiskUI.WebExamples;
 
 namespace MarketRiskUI
@@ -294,6 +294,13 @@ namespace MarketRiskUI
         {
             datagridviewBindMethod dbl = new datagridviewBindMethod();
             dbl.Show();
+        }
+
+        private void 日历ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            CalenderWeek cweek = new CalenderWeek();
+            panel1.Controls.Add(cweek);
         }
     }
 }

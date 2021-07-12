@@ -382,14 +382,19 @@ namespace MarketRiskUI
 
         private void button12_Click(object sender, EventArgs e)
         {
+            //字符串转换日期
+            DateTime date = DateTime.ParseExact("2021/7/12", "yyyy/MM/dd", System.Globalization.CultureInfo.CurrentCulture);
+
             DateTime dt,dt1;
             dt = DateTime.Now;
             dt1 = dt.AddSeconds(70);
             MessageBox.Show("dt = DateTime.Now = "+ dt.ToLongTimeString()+ " \r\n dt.AddSeconds(70)=" + dt1.ToLongTimeString());
+            //时间加减
             MessageBox.Show("dt.substratc = " + dt1.Subtract(dt).TotalSeconds);
-
+            //字符串转换时间
             DateTime dat1 = DateTime.Parse("10:35:21");
             DateTime dat2 = DateTime.Parse("13:35:21");
+           
             TimeSpan ts = dat2 - dat1;
             MessageBox.Show(Convert.ToString(ts.TotalSeconds));
         }
@@ -1032,7 +1037,10 @@ namespace MarketRiskUI
         private void button28_Click(object sender, EventArgs e)
         {
             int[] arr = new int[] { 8, 4, 5, 6, 3, 4, 3, 2, 1 };
-            var m = from n in arr where n < 5 orderby n select n*n;
+            var m = from n in arr
+                    where n < 5
+                    orderby n
+                    select n*n;
             foreach (var n in m)
             {
                 Console.WriteLine(n);

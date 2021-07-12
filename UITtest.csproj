@@ -375,6 +375,12 @@
     <Compile Include="TreeListTest.Designer.cs">
       <DependentUpon>TreeListTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\CalenderWeek.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\CalenderWeek.Designer.cs">
+      <DependentUpon>CalenderWeek.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -538,6 +544,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TreeListTest.resx">
       <DependentUpon>TreeListTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\CalenderWeek.resx">
+      <DependentUpon>CalenderWeek.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlTextBox.resx">
       <DependentUpon>UserControlTextBox.cs</DependentUpon>

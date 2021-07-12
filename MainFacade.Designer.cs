@@ -54,6 +54,7 @@
             this.iNI配置文件读写ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gDIRefreshAutoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.进程管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gridviewdatabindToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.webExamplesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.webClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.webRequestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,10 +77,13 @@
             this.action和FuncToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.其他库ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fluentSchedulerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.formsExToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.日历ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox_test = new System.Windows.Forms.TextBox();
-            this.gridviewdatabindToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -89,7 +93,8 @@
             this.formsToolStripMenuItem,
             this.webExamplesToolStripMenuItem,
             this.cToolStripMenuItem,
-            this.其他库ToolStripMenuItem});
+            this.其他库ToolStripMenuItem,
+            this.formsExToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 25);
@@ -294,6 +299,13 @@
             this.进程管理ToolStripMenuItem.Text = "进程管理";
             this.进程管理ToolStripMenuItem.Click += new System.EventHandler(this.进程管理ToolStripMenuItem_Click);
             // 
+            // gridviewdatabindToolStripMenuItem
+            // 
+            this.gridviewdatabindToolStripMenuItem.Name = "gridviewdatabindToolStripMenuItem";
+            this.gridviewdatabindToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.gridviewdatabindToolStripMenuItem.Text = "gridview_databind";
+            this.gridviewdatabindToolStripMenuItem.Click += new System.EventHandler(this.gridviewdatabindToolStripMenuItem_Click);
+            // 
             // webExamplesToolStripMenuItem
             // 
             this.webExamplesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -466,9 +478,24 @@
             this.fluentSchedulerToolStripMenuItem.Text = "fluentScheduler";
             this.fluentSchedulerToolStripMenuItem.Click += new System.EventHandler(this.fluentSchedulerToolStripMenuItem_Click);
             // 
+            // formsExToolStripMenuItem
+            // 
+            this.formsExToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.日历ToolStripMenuItem});
+            this.formsExToolStripMenuItem.Name = "formsExToolStripMenuItem";
+            this.formsExToolStripMenuItem.Size = new System.Drawing.Size(74, 21);
+            this.formsExToolStripMenuItem.Text = "Forms_Ex";
+            // 
+            // 日历ToolStripMenuItem
+            // 
+            this.日历ToolStripMenuItem.Name = "日历ToolStripMenuItem";
+            this.日历ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.日历ToolStripMenuItem.Text = "日历";
+            this.日历ToolStripMenuItem.Click += new System.EventHandler(this.日历ToolStripMenuItem_Click);
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(713, 415);
+            this.button1.Location = new System.Drawing.Point(722, 399);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
@@ -478,31 +505,35 @@
             // 
             // textBox_test
             // 
-            this.textBox_test.Location = new System.Drawing.Point(289, 48);
+            this.textBox_test.Location = new System.Drawing.Point(12, 12);
             this.textBox_test.Name = "textBox_test";
             this.textBox_test.Size = new System.Drawing.Size(100, 21);
             this.textBox_test.TabIndex = 2;
             // 
-            // gridviewdatabindToolStripMenuItem
+            // panel1
             // 
-            this.gridviewdatabindToolStripMenuItem.Name = "gridviewdatabindToolStripMenuItem";
-            this.gridviewdatabindToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.gridviewdatabindToolStripMenuItem.Text = "gridview_databind";
-            this.gridviewdatabindToolStripMenuItem.Click += new System.EventHandler(this.gridviewdatabindToolStripMenuItem_Click);
+            this.panel1.Controls.Add(this.textBox_test);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 25);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(800, 425);
+            this.panel1.TabIndex = 3;
             // 
             // MainFacade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox_test);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainFacade";
             this.Text = "MainFacade";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -561,5 +592,8 @@
         private System.Windows.Forms.ToolStripMenuItem gDIRefreshAutoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 进程管理ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gridviewdatabindToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem formsExToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 日历ToolStripMenuItem;
+        private System.Windows.Forms.Panel panel1;
     }
 }
