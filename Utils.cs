@@ -912,40 +912,35 @@ namespace MarketRiskUI
         private void button24_Click(object sender, EventArgs e)
         {
             //md5解密
-            string input = "Yoda said, Do or do not. There is no try.";
+            string input = "Yoda said, Do or do not. There is no try. 信息摘要算法（英语：MD5 Message-Digest Algorithm），一种被广泛使用的密码散列函数，可以产生出一个128位（16字节）的散列值（hash value），用于确保信息传输完整一致。MD5由美国密码学家罗纳德·李维斯特（Ronald Linn Rivest）设计，于1992年公开，用以取代MD4算法。这套算法的程序在 RFC 1321 标准中被加以规范。1996年后该算法被证实存在弱点，可以被加以破解，对于需要高度安全性的数据，专家一般建议改用其他算法，如SHA-2。2004年，证实MD5算法无法防止碰撞（collision），因此不适用于安全性认证，如SSL公开密钥认证或是数字签名等用途。";
 
             if (input == null)
             {
                 return;
             }
 
-            MD5 md5Hash = MD5.Create();
+            MD5 md5Hash = MD5.Create(); //   等价于  MD5 md5Hash = new MD5CryptoServiceProvider()
 
             // 将输入字符串转换为字节数组并计算哈希数据 
-            byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
+            byte[] data = Encoding.UTF8.GetBytes(input);
+            byte[] encryptdata = md5Hash.ComputeHash(data);
+
+            MessageBox.Show(Convert.ToBase64String(encryptdata));
 
             // 创建一个 Stringbuilder 来收集字节并创建字符串 
             StringBuilder sBuilder = new StringBuilder();
-
             // 循环遍历哈希数据的每一个字节并格式化为十六进制字符串 
-            for (int i = 0; i < data.Length; i++)
+            for (int i = 0; i < encryptdata.Length; i++)
             {
-                sBuilder.Append(data[i].ToString("x2"));
+                sBuilder.Append(encryptdata[i].ToString("x2"));
             }
 
-            MessageBox.Show(sBuilder.ToString());
+            MessageBox.Show(sBuilder.ToString()+" 十六进制数字个数:"+ sBuilder.Length/2);
+
+
         }
 
-        /* 加密
-            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
-            byte[] encryptedBytes = md5.ComputeHash(Encoding.ASCII.GetBytes(inputString));
-            StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < encryptedBytes.Length; i++)
-            {
-                sb.AppendFormat("{0:x2}", encryptedBytes[i]);
-            }
-            return sb.ToString();
-         */
+   
         private void button25_Click(object sender, EventArgs e)
         {
            
@@ -1084,7 +1079,155 @@ namespace MarketRiskUI
 
             MessageBox.Show(sBuilder.ToString());
         }
+        private string des_encryptdata;
+        private void button31_Click(object sender, EventArgs e)
+        {
+            string data = "这是要加密的数据";
+            string key = "12345678";//8位字符的密钥字符串
+            string iv = "abcdefgd";//8位字符的初始化向量字符串
+            byte[] byKey = System.Text.Encoding.ASCII.GetBytes(key);
+            byte[] byIV = System.Text.Encoding.ASCII.GetBytes(iv);
+            DESCryptoServiceProvider cryptoProvider = new DESCryptoServiceProvider();
+            int i = cryptoProvider.KeySize;
+            MemoryStream ms = new MemoryStream();
+            CryptoStream cst = new CryptoStream(ms, cryptoProvider.CreateEncryptor(byKey, byIV), CryptoStreamMode.Write);
+            StreamWriter sw = new StreamWriter(cst);
+            sw.Write(data);
+            sw.Flush();
+            cst.FlushFinalBlock();
+            sw.Flush();
+            MessageBox.Show("加密后数据:"+Convert.ToBase64String(ms.GetBuffer(), 0, (int)ms.Length));
+            des_encryptdata = Convert.ToBase64String(ms.GetBuffer(), 0, (int)ms.Length);
+        }
 
-      
+        private void button32_Click(object sender, EventArgs e)
+        {
+            string key = "12345678";//8位字符的密钥字符串
+            string iv = "abcdefgd";//8位字符的初始化向量字符串
+            byte[] byKey = System.Text.Encoding.ASCII.GetBytes(key);
+            byte[] byIV = System.Text.Encoding.ASCII.GetBytes(iv);
+
+            try
+            {
+                byte[] byEnc = Convert.FromBase64String(des_encryptdata);
+                DESCryptoServiceProvider cryptoProvider = new DESCryptoServiceProvider();
+                MemoryStream ms = new MemoryStream(byEnc);
+                CryptoStream cst = new CryptoStream(ms, cryptoProvider.CreateDecryptor(byKey, byIV), CryptoStreamMode.Read);
+                StreamReader sr = new StreamReader(cst);
+                MessageBox.Show("解密数据:"+sr.ReadToEnd());
+            }
+
+            catch
+            {
+                MessageBox.Show("转换失败");
+            }
+        }
+        private string rsa_encryptdata;
+        private void button33_Click(object sender, EventArgs e)
+        {
+            string data = "abcdefgh";
+            System.Security.Cryptography.CspParameters param = new System.Security.Cryptography.CspParameters();
+            param.KeyContainerName = "keySeedCode"; //密匙容器的名称，保持加密解密一致才能解密成功
+            using (System.Security.Cryptography.RSACryptoServiceProvider rsa = new System.Security.Cryptography.RSACryptoServiceProvider(param))
+            {
+                byte[] plaindata = System.Text.Encoding.Default.GetBytes(data);
+                byte[] encryptdata = rsa.Encrypt(plaindata, false);
+                rsa_encryptdata = Convert.ToBase64String(encryptdata);
+                MessageBox.Show(rsa_encryptdata);
+            }
+        }
+
+        private void button25_Click_1(object sender, EventArgs e)
+        {
+            System.Security.Cryptography.CspParameters param = new System.Security.Cryptography.CspParameters();
+            param.KeyContainerName = "keySeedCode";//密匙容器的名称，保持加密解密一致才能解密成功
+            using (System.Security.Cryptography.RSACryptoServiceProvider rsa = new System.Security.Cryptography.RSACryptoServiceProvider(param))
+            {
+                byte[] encryptdata = Convert.FromBase64String(rsa_encryptdata);
+                byte[] decryptdata = rsa.Decrypt(encryptdata, false);
+                MessageBox.Show(System.Text.Encoding.Default.GetString(decryptdata));
+            }
+        }
+
+        private void button34_Click(object sender, EventArgs e)
+        {
+            string data = "跟md5一样是不可逆的算法，把原始数据转化为长度较短、位数固定的输出序列即散列值";
+            var bytes = System.Text.Encoding.Default.GetBytes(data);
+            var SHA = new System.Security.Cryptography.SHA1CryptoServiceProvider();
+            var encryptbytes = SHA.ComputeHash(bytes);
+            MessageBox.Show(Convert.ToBase64String(encryptbytes));
+        }
+
+        private void button35_Click(object sender, EventArgs e)
+        {
+            string data = "跟md5一样是不可逆的算法，把原始数据转化为长度较短、位数固定的输出序列即散列值";
+            var bytes = System.Text.Encoding.Default.GetBytes(data);
+            var SHA = new System.Security.Cryptography.SHA256CryptoServiceProvider();
+            var encryptbytes = SHA.ComputeHash(bytes);
+            MessageBox.Show(Convert.ToBase64String(encryptbytes));
+        }
+
+        private void button36_Click(object sender, EventArgs e)
+        {
+            string data = "跟md5一样是不可逆的算法，把原始数据转化为长度较短、位数固定的输出序列即散列值";
+            var bytes = System.Text.Encoding.Default.GetBytes(data);
+            var SHA = new System.Security.Cryptography.SHA384CryptoServiceProvider();
+            var encryptbytes = SHA.ComputeHash(bytes);
+            MessageBox.Show(Convert.ToBase64String(encryptbytes));
+        }
+
+        private void button37_Click(object sender, EventArgs e)
+        {
+            string data = "跟md5一样是不可逆的算法，把原始数据转化为长度较短、位数固定的输出序列即散列值";
+            var bytes = System.Text.Encoding.Default.GetBytes(data);
+            var SHA = new System.Security.Cryptography.SHA512CryptoServiceProvider();
+            var encryptbytes = SHA.ComputeHash(bytes);
+            MessageBox.Show(Convert.ToBase64String(encryptbytes));
+        }
+        private string aes_encryptdata = "";
+        private void button38_Click(object sender, EventArgs e)
+        {
+            string data = "高级加密标准（英语：Advanced Encryption Standard，缩写：AES）"+
+                "AES的CBC加密模式下的128位、192位、256位加密区别，" +
+                "参考 对称加密和分组加密中的四种模式(ECB、CBC、CFB、OFB) 。" +
+                "这三种的区别，主要来自于密钥的长度，16位密钥 = 128位，24位密钥 = 192位，32位密钥 = 256位。";
+
+
+            Byte[] plaindata = Encoding.UTF8.GetBytes(data);
+
+            string key = new string('a',16);
+
+            RijndaelManaged rm = new RijndaelManaged
+            {
+                IV = Encoding.UTF8.GetBytes("1234567890abcdef"),
+                Key = Encoding.UTF8.GetBytes(key),
+                Mode = CipherMode.CBC,
+                Padding = PaddingMode.PKCS7
+            };
+
+            ICryptoTransform cTransform = rm.CreateEncryptor();
+            Byte[] encryptbytes = cTransform.TransformFinalBlock(plaindata, 0, plaindata.Length);
+            MessageBox.Show(Convert.ToBase64String(encryptbytes));
+            aes_encryptdata = Convert.ToBase64String(encryptbytes);
+        }
+
+        private void button39_Click(object sender, EventArgs e)
+        {
+            
+            Byte[] encryptbytes = Convert.FromBase64String(aes_encryptdata);
+            string key = new string('a', 16);
+            RijndaelManaged rm = new RijndaelManaged
+            {
+                IV = Encoding.UTF8.GetBytes("1234567890abcdef"),
+                Key = Encoding.UTF8.GetBytes(key),
+                Mode = CipherMode.CBC,
+                Padding = PaddingMode.PKCS7
+            };
+
+            ICryptoTransform cTransform = rm.CreateDecryptor();
+            Byte[] plaindata = cTransform.TransformFinalBlock(encryptbytes, 0, encryptbytes.Length);
+
+            MessageBox.Show(Encoding.UTF8.GetString(plaindata));
+        }
     }
 }
