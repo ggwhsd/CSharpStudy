@@ -282,9 +282,6 @@ Encoding [示例](./Utils.cs)
 * ActiveMQ的Queue使用示例
 [示例](./ActiveMQ_QUEUE.cs)
 
-* MD5加密和解密，RSA
-[示例](./Utils.cs)
-
 * 字节编解码示例项目
 [示例](./EncodingsTools/EncodingsTools/Form1.cs)
 
@@ -301,6 +298,11 @@ Encoding [示例](./Utils.cs)
 
 * 通过日期判断所属周的开始和结束。
 [示例](./UserControls/CalenderWeek.cs)
+
+* MD5签名、SHA签名、DES加密和解密，RSA加密和解密，RSA生成公钥和私钥文件、AES加密和解密、Base64编码。
+[示例](./Utils.cs)
+
+
 
 
 
