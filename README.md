@@ -55,12 +55,11 @@ MainFacade.cs为主入口程序
 `button14_Click`方法，切换目录。
 
 * 网络编程 *
-UPD和TCP的服务端建立，客户端建立，互相之间发送消息等。[示例](./Form2.cs)
+UPDClient示例。 TCP的Socket的服务端建立，客户端建立，互相之间发送消息等。[示例](./NetworkSocket.cs)
 异步方法没有写示例代码。大致过程如下：异步socket，其实相比较于同步socket的方式，就是在发送、接收等过程中，使用了回调函数，
 比如connect过程，使用connect则必须要等到连接建立完成后，程序才能往下走；使用beginConnect和endConnect则可以实现异步方式，BeginConnect(remoteip,new AsyncCallback(ConnectServer),socket)，则会发起连接，当连接返回信息后会回调ConnectServer方法，该方法中之行EndConnect，然后就可以之行发送和接收等下一步操作了。
 
 * String *
-`btnString_Click`方法。[示例](./Form2.cs)
 [示例](./Utils.cs)
 
 * json读写 *
@@ -261,11 +260,11 @@ Encoding [示例](./Utils.cs)
 
 # 进阶使用知识：
 
-* 使用CodeDom技术 动态生成dll或者exe。(./DLLDynamic/ClassCompileLoad)
+* 使用CodeDom技术 动态生成dll或者exe。[示例](./DLLDynamic/ClassCompileLoad)
 
-* 动态加载dll，(./DLLDynamic/DllDynamicImport)
+* 动态加载dll，[示例](./DLLDynamic/DllDynamicImport)
 
-* 调用线程新的方式，Task async wait （./TaskAsyncDemo.cs)
+* 调用线程新的方式，Task async wait [示例]（./TaskAsyncDemo.cs)
 
 * 语音库，调用微软语音输出。
 [示例](./Utils.cs)

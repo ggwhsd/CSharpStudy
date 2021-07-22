@@ -66,19 +66,26 @@
             this.button29 = new System.Windows.Forms.Button();
             this.button30 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button39 = new System.Windows.Forms.Button();
+            this.button38 = new System.Windows.Forms.Button();
+            this.button37 = new System.Windows.Forms.Button();
+            this.button36 = new System.Windows.Forms.Button();
+            this.button35 = new System.Windows.Forms.Button();
+            this.button34 = new System.Windows.Forms.Button();
+            this.button25 = new System.Windows.Forms.Button();
+            this.button33 = new System.Windows.Forms.Button();
             this.button32 = new System.Windows.Forms.Button();
             this.button31 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button33 = new System.Windows.Forms.Button();
-            this.button25 = new System.Windows.Forms.Button();
-            this.button34 = new System.Windows.Forms.Button();
-            this.button35 = new System.Windows.Forms.Button();
-            this.button36 = new System.Windows.Forms.Button();
-            this.button37 = new System.Windows.Forms.Button();
-            this.button38 = new System.Windows.Forms.Button();
-            this.button39 = new System.Windows.Forms.Button();
+            this.textBoxString = new System.Windows.Forms.TextBox();
+            this.button40 = new System.Windows.Forms.Button();
+            this.button41 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -322,7 +329,7 @@
             // 
             // buttonThread
             // 
-            this.buttonThread.Location = new System.Drawing.Point(365, 12);
+            this.buttonThread.Location = new System.Drawing.Point(10, 20);
             this.buttonThread.Name = "buttonThread";
             this.buttonThread.Size = new System.Drawing.Size(136, 23);
             this.buttonThread.TabIndex = 16;
@@ -465,6 +472,86 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "加解密";
             // 
+            // button39
+            // 
+            this.button39.Location = new System.Drawing.Point(94, 215);
+            this.button39.Name = "button39";
+            this.button39.Size = new System.Drawing.Size(75, 23);
+            this.button39.TabIndex = 38;
+            this.button39.Text = "AES解密";
+            this.button39.UseVisualStyleBackColor = true;
+            this.button39.Click += new System.EventHandler(this.button39_Click);
+            // 
+            // button38
+            // 
+            this.button38.Location = new System.Drawing.Point(13, 215);
+            this.button38.Name = "button38";
+            this.button38.Size = new System.Drawing.Size(75, 23);
+            this.button38.TabIndex = 38;
+            this.button38.Text = "AES加密";
+            this.button38.UseVisualStyleBackColor = true;
+            this.button38.Click += new System.EventHandler(this.button38_Click);
+            // 
+            // button37
+            // 
+            this.button37.Location = new System.Drawing.Point(213, 178);
+            this.button37.Name = "button37";
+            this.button37.Size = new System.Drawing.Size(55, 23);
+            this.button37.TabIndex = 37;
+            this.button37.Text = "SHA512";
+            this.button37.UseVisualStyleBackColor = true;
+            this.button37.Click += new System.EventHandler(this.button37_Click);
+            // 
+            // button36
+            // 
+            this.button36.Location = new System.Drawing.Point(149, 178);
+            this.button36.Name = "button36";
+            this.button36.Size = new System.Drawing.Size(58, 23);
+            this.button36.TabIndex = 36;
+            this.button36.Text = "SHA384";
+            this.button36.UseVisualStyleBackColor = true;
+            this.button36.Click += new System.EventHandler(this.button36_Click);
+            // 
+            // button35
+            // 
+            this.button35.Location = new System.Drawing.Point(78, 178);
+            this.button35.Name = "button35";
+            this.button35.Size = new System.Drawing.Size(65, 23);
+            this.button35.TabIndex = 35;
+            this.button35.Text = "SHA256";
+            this.button35.UseVisualStyleBackColor = true;
+            this.button35.Click += new System.EventHandler(this.button35_Click);
+            // 
+            // button34
+            // 
+            this.button34.Location = new System.Drawing.Point(13, 178);
+            this.button34.Name = "button34";
+            this.button34.Size = new System.Drawing.Size(59, 23);
+            this.button34.TabIndex = 34;
+            this.button34.Text = "SHA1";
+            this.button34.UseVisualStyleBackColor = true;
+            this.button34.Click += new System.EventHandler(this.button34_Click);
+            // 
+            // button25
+            // 
+            this.button25.Location = new System.Drawing.Point(94, 91);
+            this.button25.Name = "button25";
+            this.button25.Size = new System.Drawing.Size(75, 23);
+            this.button25.TabIndex = 33;
+            this.button25.Text = "RSA解密";
+            this.button25.UseVisualStyleBackColor = true;
+            this.button25.Click += new System.EventHandler(this.button25_Click_1);
+            // 
+            // button33
+            // 
+            this.button33.Location = new System.Drawing.Point(13, 91);
+            this.button33.Name = "button33";
+            this.button33.Size = new System.Drawing.Size(75, 23);
+            this.button33.TabIndex = 32;
+            this.button33.Text = "RSA加密";
+            this.button33.UseVisualStyleBackColor = true;
+            this.button33.Click += new System.EventHandler(this.button33_Click);
+            // 
             // button32
             // 
             this.button32.Location = new System.Drawing.Point(94, 54);
@@ -499,97 +586,76 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "正则表达式";
             // 
-            // button33
+            // textBoxString
             // 
-            this.button33.Location = new System.Drawing.Point(13, 91);
-            this.button33.Name = "button33";
-            this.button33.Size = new System.Drawing.Size(75, 23);
-            this.button33.TabIndex = 32;
-            this.button33.Text = "RSA加密";
-            this.button33.UseVisualStyleBackColor = true;
-            this.button33.Click += new System.EventHandler(this.button33_Click);
+            this.textBoxString.Location = new System.Drawing.Point(644, 12);
+            this.textBoxString.Multiline = true;
+            this.textBoxString.Name = "textBoxString";
+            this.textBoxString.Size = new System.Drawing.Size(144, 96);
+            this.textBoxString.TabIndex = 32;
             // 
-            // button25
+            // button40
             // 
-            this.button25.Location = new System.Drawing.Point(94, 91);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(75, 23);
-            this.button25.TabIndex = 33;
-            this.button25.Text = "RSA解密";
-            this.button25.UseVisualStyleBackColor = true;
-            this.button25.Click += new System.EventHandler(this.button25_Click_1);
+            this.button40.Location = new System.Drawing.Point(578, 12);
+            this.button40.Name = "button40";
+            this.button40.Size = new System.Drawing.Size(60, 96);
+            this.button40.TabIndex = 33;
+            this.button40.Text = "string的功能";
+            this.button40.UseVisualStyleBackColor = true;
+            this.button40.Click += new System.EventHandler(this.button40_Click);
             // 
-            // button34
+            // button41
             // 
-            this.button34.Location = new System.Drawing.Point(13, 178);
-            this.button34.Name = "button34";
-            this.button34.Size = new System.Drawing.Size(59, 23);
-            this.button34.TabIndex = 34;
-            this.button34.Text = "SHA1";
-            this.button34.UseVisualStyleBackColor = true;
-            this.button34.Click += new System.EventHandler(this.button34_Click);
+            this.button41.Location = new System.Drawing.Point(10, 49);
+            this.button41.Name = "button41";
+            this.button41.Size = new System.Drawing.Size(138, 23);
+            this.button41.TabIndex = 34;
+            this.button41.Text = "线程优先级";
+            this.button41.UseVisualStyleBackColor = true;
+            this.button41.Click += new System.EventHandler(this.button41_Click);
             // 
-            // button35
+            // textBox1
             // 
-            this.button35.Location = new System.Drawing.Point(78, 178);
-            this.button35.Name = "button35";
-            this.button35.Size = new System.Drawing.Size(65, 23);
-            this.button35.TabIndex = 35;
-            this.button35.Text = "SHA256";
-            this.button35.UseVisualStyleBackColor = true;
-            this.button35.Click += new System.EventHandler(this.button35_Click);
+            this.textBox1.Location = new System.Drawing.Point(10, 78);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(138, 134);
+            this.textBox1.TabIndex = 35;
             // 
-            // button36
+            // textBox2
             // 
-            this.button36.Location = new System.Drawing.Point(149, 178);
-            this.button36.Name = "button36";
-            this.button36.Size = new System.Drawing.Size(58, 23);
-            this.button36.TabIndex = 36;
-            this.button36.Text = "SHA384";
-            this.button36.UseVisualStyleBackColor = true;
-            this.button36.Click += new System.EventHandler(this.button36_Click);
+            this.textBox2.Location = new System.Drawing.Point(181, 78);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(138, 134);
+            this.textBox2.TabIndex = 35;
             // 
-            // button37
+            // groupBox3
             // 
-            this.button37.Location = new System.Drawing.Point(213, 178);
-            this.button37.Name = "button37";
-            this.button37.Size = new System.Drawing.Size(55, 23);
-            this.button37.TabIndex = 37;
-            this.button37.Text = "SHA512";
-            this.button37.UseVisualStyleBackColor = true;
-            this.button37.Click += new System.EventHandler(this.button37_Click);
-            // 
-            // button38
-            // 
-            this.button38.Location = new System.Drawing.Point(13, 215);
-            this.button38.Name = "button38";
-            this.button38.Size = new System.Drawing.Size(75, 23);
-            this.button38.TabIndex = 38;
-            this.button38.Text = "AES加密";
-            this.button38.UseVisualStyleBackColor = true;
-            this.button38.Click += new System.EventHandler(this.button38_Click);
-            // 
-            // button39
-            // 
-            this.button39.Location = new System.Drawing.Point(94, 215);
-            this.button39.Name = "button39";
-            this.button39.Size = new System.Drawing.Size(75, 23);
-            this.button39.TabIndex = 38;
-            this.button39.Text = "AES解密";
-            this.button39.UseVisualStyleBackColor = true;
-            this.button39.Click += new System.EventHandler(this.button39_Click);
+            this.groupBox3.Controls.Add(this.buttonThread);
+            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.button41);
+            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Location = new System.Drawing.Point(12, 423);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(332, 246);
+            this.groupBox3.TabIndex = 36;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "线程Thread类";
             // 
             // Utils
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1081, 794);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.button40);
+            this.Controls.Add(this.textBoxString);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button29);
             this.Controls.Add(this.button28);
             this.Controls.Add(this.button23);
-            this.Controls.Add(this.buttonThread);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button21);
             this.Controls.Add(this.button20);
@@ -619,6 +685,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -675,5 +743,11 @@
         private System.Windows.Forms.Button button36;
         private System.Windows.Forms.Button button39;
         private System.Windows.Forms.Button button38;
+        private System.Windows.Forms.TextBox textBoxString;
+        private System.Windows.Forms.Button button40;
+        private System.Windows.Forms.Button button41;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }

@@ -579,7 +579,7 @@ namespace MarketRiskUI
 
         private void button15_Click(object sender, EventArgs e)
         {
-            Form2 f2 = new Form2();
+            NetworkSocket f2 = new NetworkSocket();
             
             f2.Show();
         }

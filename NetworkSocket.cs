@@ -13,9 +13,9 @@ using System.IO;
 
 namespace MarketRiskUI
 {
-    public partial class Form2 : Form
+    public partial class NetworkSocket : Form
     {
-        public Form2()
+        public NetworkSocket()
         {
             InitializeComponent();
             System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = false;
@@ -37,41 +37,13 @@ namespace MarketRiskUI
             Console.WriteLine("the addressfamily is:{0}",localEP.AddressFamily);
             
         }
-        Thread thread1;
-        Thread thread2;
+
         private void button3_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectTab(0);
-            thread1 = new Thread(new ThreadStart(method1));
-            thread2 = new Thread(new ThreadStart(method2));
-            thread1.Priority = ThreadPriority.Highest;
-            thread2.Priority = ThreadPriority.Normal;
-            thread1.Start();
-            thread2.Start();
+           
 
         }
-        public void method1()
-        {
-            for (int i = 0; i < 1000; i++)
-            {
-                if (i == 200)
-                    Thread.Sleep(30);
-                else
-                    textBox1.AppendText("#"+i.ToString());
-            }
-
-        }
-        public void method2()
-        {
-            for (int i = 0; i < 1000; i++)
-            {
-                if (i == 400)
-                    Thread.Sleep(5);
-                else
-                    textBox2.AppendText("*"+ i.ToString());
-            }
-        }
-
+      
         private void button4_Click(object sender, EventArgs e)
         {
             string sendString = "你好，继续努力啊";
@@ -165,6 +137,7 @@ namespace MarketRiskUI
             }
 
         }
+        private Thread thread1;
         private void button5_Click_1(object sender, EventArgs e)
         {
             thread1 = new Thread(new ThreadStart(StartLinstener));
@@ -207,7 +180,8 @@ namespace MarketRiskUI
             }
             try
             {
-                newsocket = socket.Accept(); //程序处于阻塞状态
+                
+                   newsocket = socket.Accept(); //程序处于阻塞状态
                 thread3 = new Thread(new ThreadStart(AcceptMessage));
                 thread3.Start();
 
@@ -472,21 +446,7 @@ namespace MarketRiskUI
 
         private void btnString_Click(object sender, EventArgs e)
         {
-            string str = textBoxString.Text;
-
-            textBoxString.AppendText("length:" + str.Length + "\r\n");
-            str = str.Trim();
-            textBoxString.AppendText("trim():" + str + "\r\n");
-            char[] trimChars = {' ', 'a', 'c' };
-            textBoxString.AppendText("trim(char[] ):" + str.Trim(trimChars)+"\r\n");
-            textBoxString.AppendText("upper:" + str.ToUpper() + "\r\n");
-            char[] split = {':',' '};
-            string[] nWords = str.Split(split, 2);
-            textBoxString.AppendText("split(\':\'):" + nWords[0] + " : "+nWords[1].PadLeft(10,'0') + "\r\n");
-            textBoxString.AppendText("Substring()"+str.Substring(0,5)+"\r\n");
-            textBoxString.AppendText("Replace(\"a\",\"b\")"+str.Replace('a','*')+"\r\n");
-            textBoxString.AppendText("ToCharArray()" + str.ToCharArray());
-            Console.WriteLine(sizeof(char));
+           
             
 
 
@@ -496,12 +456,7 @@ namespace MarketRiskUI
         {
             if (tabControl1.SelectedIndex == 3)
             {
-                textBox3.Text = "异步socket，其实相比较于同步socket的方式， " +
-                    "就是在发送、接收等过程中，使用了回调函数，" +
-                    "比如connect过程，使用connect则必须要等到连接建立完成后，程序才能往下走；" +
-                    "使用beginConnect和endConnect则可以实现异步方式，BeginConnect(remoteip,new AsyncCallback(ConnectServer),socket)"
-                    + "则会发起连接，当连接返回信息后会回调ConnectServer方法，该方法中之行EndConnect，然后就可以之行发送和接收等下一步操作了。";
-            }
+                textBox3.Text = "";           }
         }
 
         private void btnSendraw_Click(object sender, EventArgs e)
@@ -601,6 +556,16 @@ namespace MarketRiskUI
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            textBox3.Text = "异步socket，其实相比较于同步socket的方式， " +
+                    "就是在发送、接收等过程中，使用了回调函数，" +
+                    "比如connect过程，使用connect则必须要等到连接建立完成后，程序才能往下走；" +
+                    "使用beginConnect和endConnect则可以实现异步方式，BeginConnect(remoteip,new AsyncCallback(ConnectServer),socket)"
+                    + "则会发起连接，当连接返回信息后会回调ConnectServer方法，该方法中之行EndConnect，然后就可以之行发送和接收等下一步操作了。";
 
         }
     }

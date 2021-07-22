@@ -1229,5 +1229,57 @@ namespace MarketRiskUI
 
             MessageBox.Show(Encoding.UTF8.GetString(plaindata));
         }
+
+        private void button40_Click(object sender, EventArgs e)
+        {
+            string str = textBoxString.Text;
+
+            textBoxString.AppendText("length:" + str.Length + "\r\n");
+            str = str.Trim();
+            textBoxString.AppendText("trim():" + str + "\r\n");
+            char[] trimChars = { ' ', 'a', 'c' };
+            textBoxString.AppendText("trim(char[] ):" + str.Trim(trimChars) + "\r\n");
+            textBoxString.AppendText("upper:" + str.ToUpper() + "\r\n");
+            char[] split = { ':', ' ' };
+            string[] nWords = str.Split(split, 2);
+            textBoxString.AppendText("split(\':\'):" + nWords[0] + " : " + nWords[1].PadLeft(10, '0') + "\r\n");
+            textBoxString.AppendText("Substring()" + str.Substring(0, 5) + "\r\n");
+            textBoxString.AppendText("Replace(\"a\",\"b\")" + str.Replace('a', '*') + "\r\n");
+            textBoxString.AppendText("ToCharArray()" + str.ToCharArray());
+            Console.WriteLine(sizeof(char));
+        }
+        private Thread thread1;
+        private Thread thread2;
+        private void button41_Click(object sender, EventArgs e)
+        {
+            thread1 = new Thread(new ThreadStart(method1));
+            thread2 = new Thread(new ThreadStart(method2));
+            thread1.Priority = ThreadPriority.Highest;
+            thread2.Priority = ThreadPriority.Normal;
+            thread1.Start();
+            thread2.Start();
+        }
+        public void method1()
+        {
+            for (int i = 0; i < 1000; i++)
+            {
+                if (i == 200)
+                    Thread.Sleep(30);
+                else
+                    textBox1.AppendText("#" + i.ToString());
+            }
+
+        }
+        public void method2()
+        {
+            for (int i = 0; i < 1000; i++)
+            {
+                if (i == 400)
+                    Thread.Sleep(5);
+                else
+                    textBox2.AppendText("*" + i.ToString());
+            }
+        }
+
     }
 }
