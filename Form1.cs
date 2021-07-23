@@ -64,53 +64,13 @@ namespace MarketRiskUI
         private void button1_Click(object sender, EventArgs e)
         {
 
-            try
-            {
-                socketSend = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-                IPAddress ip = IPAddress.Parse(this.txt_IP.Text.Trim());
-                socketSend.Connect(ip, Convert.ToInt32(this.txt_Port.Text.Trim()));
-                //实例化回调
-                setCallBack = new SetTextCallBack(SetValue);
-                receiveCallBack = new ReceiveMsgCallBack(SetValue);
-                this.txt_Log.Invoke(setCallBack, "连接成功");
-
-                //开启一个新的线程不停的接收服务器发送消息的线程
-                threadReceive = new Thread(new ThreadStart(Receive));
-                //设置为后台线程
-                threadReceive.IsBackground = true;
-                threadReceive.Start();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("连接服务端出错:" + ex.ToString());
-            }
-
-            dt = new DataTable("c++");
-            dt.Columns.Add("seq", System.Type.GetType("System.String"));
-            dt.Columns.Add("name", typeof(String));
-            dt.Columns.Add("price", typeof(String));
-            dt.Columns.Add("volumn", typeof(String));
-            dt.Columns.Add("BidPrice", typeof(String));
-            dt.Columns.Add("AskPrice", typeof(String));
-            dt.Columns.Add("bidVolumn", typeof(String));
-            dt.Columns.Add("askVolumn", typeof(String));
-            dt.Columns.Add("m.ask", typeof(String));
-            dt.Columns.Add("m.bid", typeof(String));
-            dt.Columns.Add("m.askvolumn", typeof(String));
-            dt.Columns.Add("m.bidvolumn", typeof(String));
-            DataRow dr = dt.NewRow();
-            dt.Rows.Add(dr);
-            DataRow dr2 = dt.NewRow();
-            dt.Rows.Add(dr2);
-            dt.Rows[0][1] = "CF901";
-            dt.Rows[1][1] = "CF902";
-            songsDataGridView.DataSource = dt;
+            
 
         }
 
         private void SetValue(string strValue)
         {
-            this.txt_Log.AppendText(strValue + "\r \n");
+           
         }
      
         private void FrmClient_Load(object sender, EventArgs e)
@@ -120,132 +80,9 @@ namespace MarketRiskUI
 
 
 
-        private void Receive()
-        {
-            try
-            {
-                DateTime date_time = DateTime.Now;
+        
 
-                while (true)
-                {
-                    Thread.Sleep(1000);
-                    
-                    byte[] buffer = new byte[2048];
-                    //实际接收到的字节数
-                    int r = socketSend.Receive(buffer,38,SocketFlags.None);
-                    //NetworkStream netStream = new NetworkStream(socketSend);
-                    //byte[] datasize = new byte[4];
-                    //int r = netStream.Read(datasize, 0, 4);
-                    if (r == 0)
-                    {
-                        this.txt_Log.Invoke(receiveCallBack, "没有收到数据:" + socketSend.RemoteEndPoint);
-                        continue;
-                    }
-                    else
-                    {
-
-                        //string str = Encoding.Default.GetString(buffer, 0, r - 1);
-                        //this.txt_Log.Invoke(receiveCallBack, "接收远程服务器:" + socketSend.RemoteEndPoint + "发送的消息:" + str);
-
-                        string strRece = Encoding.ASCII.GetString(buffer);
-
-                        //判断发送的数据的类型
-                        if (strRece[0] == 0x01)//表示发送的是文字消息
-                        {
-                            string[] name = strRece.Split(',');
-                            int j = 0;
-                            while (j < dt.Rows.Count)
-                            {
-                                if (name[1] == (string)dt.Rows[j][1])
-                                    break;
-                                j++;
-                            }
-                            if (j >= dt.Rows.Count)
-                            {
-                                DataRow dr = dt.NewRow();
-                                dt.Rows.Add(dr);
-                                songsDataGridView.Invalidate();
-                            }
-                            
-                            //int port =BitConverter.ToInt32(buffer,6);
-                            for (int i = 0; i < name.Length; i++)
-                            {
-                                if (i > 3 && i < 6)
-                                {
-
-                                    //if(songsDataGridView.Rows[j].Cells[i].Style.BackColor == Color.Red)
-                                    //    songsDataGridView.Rows[j].Cells[i].Style.BackColor = Color.Green;
-                                    //else
-                                    //    songsDataGridView.Rows[j].Cells[i].Style.BackColor = Color.Red;
-                                    try
-                                    {
-                                        int oldValue = Convert.ToInt32(dt.Rows[j][i]);
-                                        int newValue = Convert.ToInt32(name[i]);
-                                        if (newValue > oldValue)
-                                            songsDataGridView.Rows[j].Cells[i].Style.BackColor = Color.Red;
-                                        else if (newValue < oldValue)
-                                            songsDataGridView.Rows[j].Cells[i].Style.BackColor = Color.Green;
-                                        else
-                                        { }
-                                    }
-                                    catch (Exception err)
-                                    {
-                                    }
-
-
-                                }
-
-                                dt.Rows[j][i] = name[i];
-                            }
-                            //this.txt_Log.Invoke(receiveCallBack, "1接收远程服务器:" + socketSend.RemoteEndPoint + "发送的消息:" + strRece);
-                        }
-                        else
-                        {
-                            this.txt_Log.Invoke(receiveCallBack, "0接收远程服务器:" + socketSend.RemoteEndPoint + "发送的消息:" + strRece);
-                        }
-                    }
-
-
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("接收服务端发送的消息出错:" + ex.ToString());
-            }
-        }
-
-        /// <summary>
-        /// disconnect按钮
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void StopListen_Click(object sender, EventArgs e)
-        {
-            //关闭socket
-            socketSend.Close();
-            //终止线程
-            threadReceive.Abort();
-        }
-        /// <summary>
-        /// 发送按钮
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void send_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string strMsg = this.txt_Msg.Text.Trim();
-                byte[] buffer = new byte[2048];
-                buffer = Encoding.Default.GetBytes(strMsg);
-                int receive = socketSend.Send(buffer);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("发送消息出错:" + ex.Message);
-            }
-
-        }
+       
 
         /// <summary>
         /// 表格里面的单元格点击事件
@@ -489,7 +326,7 @@ namespace MarketRiskUI
                         //dt.AcceptChanges();
                         
                     }
-                    txt_Msg.Text = i.ToString();
+                    
                 }
             }
             catch (Exception ex)
@@ -515,7 +352,7 @@ namespace MarketRiskUI
                     songsDataGridView.Rows[i].Cells[5].Value =  "LLddd:" + (new Random()).Next().ToString();
 
                     
-                    txt_Msg.Text = i.ToString();
+                    
                 }
             }
             catch (Exception ex)
@@ -536,7 +373,7 @@ namespace MarketRiskUI
             performance.Stop();
             avgCount++;
             sumTime += performance.ElapsedMilliseconds;
-            txt_Log.Text = (sumTime /avgCount).ToString();
+            Console.WriteLine((sumTime /avgCount).ToString());
 
 
 
@@ -586,7 +423,7 @@ namespace MarketRiskUI
 
         private void button16_Click(object sender, EventArgs e)
         {
-            Form3 f3 = new Form3();
+            NPlotTest f3 = new NPlotTest();
             f3.Show();
         }
 
@@ -594,7 +431,7 @@ namespace MarketRiskUI
         {
             Form4 f4 = new Form4();
 
-            f4.Hide();
+            //f4.Hide();
         }
 
         private void button18_Click(object sender, EventArgs e)

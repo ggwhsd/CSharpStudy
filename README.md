@@ -133,31 +133,17 @@ Encoding [示例](./Utils.cs)
 * datagridview的bindlist使用。[示例3](./datagridviewBindList.cs)
 * datagridview与list、datatable、普通变量等的绑定方式，BindList的使用，文本控件的数据源绑定等。[示例4](./datagridviewBindMethod.cs)
 
-* 蜡烛图 *
-[示例](./Form3.cs)
-* 点状图 *
-[示例](./Form3.cs)
-* 阶梯和柱状图 *
-[示例](./Form3.cs)
-* 图形上箭头指示 *
-[示例](./Form3.cs)
-* 滑动条 *
-[示例](./Form3.cs)
+* 蜡烛图 滑动条 点状图 阶梯和柱状图 图形上箭头指示*
+[示例](./NPlotTest.cs)
 
-* 窗口和新窗口的使用 *
+* 窗口和MDI子窗口的关系使用，获取屏幕 *
 [示例](./Form4.cs)
 
-* 菜单的使用 *
-[示例](./Form4.cs)
-
-* 状态栏的使用 *
+* 菜单的使用，状态栏的使用,利用按钮模拟菜单 *
 [示例](./Form4.cs)
  
 * 右下角系统托盘图标的使用 *
 右下角图标，以及图标的右键菜单
-[示例](./Form4.cs)
-
-* panel的使用 *
 [示例](./Form4.cs)
 
 * 窗口闪烁 *

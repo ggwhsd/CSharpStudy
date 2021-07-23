@@ -302,5 +302,11 @@ namespace MarketRiskUI
             CalenderWeek cweek = new CalenderWeek();
             panel1.Controls.Add(cweek);
         }
+
+        private void 子窗口ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form4 f = new Form4();
+            f.Show();
+        }
     }
 }

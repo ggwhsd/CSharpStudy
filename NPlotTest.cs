@@ -11,9 +11,9 @@ using NPlot.Bitmap;
 
 namespace MarketRiskUI
 {
-    public partial class Form3 : Form
+    public partial class NPlotTest : Form
     {
-        public Form3()
+        public NPlotTest()
         {
             InitializeComponent();
         }

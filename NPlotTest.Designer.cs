@@ -1,6 +1,6 @@
 ﻿namespace MarketRiskUI
 {
-    partial class Form3
+    partial class NPlotTest
     {
         /// <summary>
         /// Required designer variable.

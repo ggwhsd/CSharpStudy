@@ -30,18 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.connect = new System.Windows.Forms.Button();
-            this.txt_Log = new System.Windows.Forms.TextBox();
-            this.txt_Msg = new System.Windows.Forms.TextBox();
-            this.StopListen = new System.Windows.Forms.Button();
-            this.send = new System.Windows.Forms.Button();
-            this.txt_IP = new System.Windows.Forms.TextBox();
-            this.txt_Port = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button20 = new System.Windows.Forms.Button();
             this.songsDataGridView = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -101,7 +89,6 @@
             this.button38 = new System.Windows.Forms.Button();
             this.button35 = new System.Windows.Forms.Button();
             this.button39 = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.songsDataGridView)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -111,125 +98,6 @@
             this.tabPage3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // connect
-            // 
-            this.connect.Location = new System.Drawing.Point(344, 16);
-            this.connect.Name = "connect";
-            this.connect.Size = new System.Drawing.Size(75, 23);
-            this.connect.TabIndex = 2;
-            this.connect.Text = "connect";
-            this.connect.UseVisualStyleBackColor = true;
-            this.connect.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // txt_Log
-            // 
-            this.txt_Log.Location = new System.Drawing.Point(53, 68);
-            this.txt_Log.Multiline = true;
-            this.txt_Log.Name = "txt_Log";
-            this.txt_Log.Size = new System.Drawing.Size(457, 103);
-            this.txt_Log.TabIndex = 4;
-            // 
-            // txt_Msg
-            // 
-            this.txt_Msg.Location = new System.Drawing.Point(53, 177);
-            this.txt_Msg.Multiline = true;
-            this.txt_Msg.Name = "txt_Msg";
-            this.txt_Msg.Size = new System.Drawing.Size(183, 37);
-            this.txt_Msg.TabIndex = 6;
-            // 
-            // StopListen
-            // 
-            this.StopListen.Location = new System.Drawing.Point(435, 15);
-            this.StopListen.Name = "StopListen";
-            this.StopListen.Size = new System.Drawing.Size(75, 23);
-            this.StopListen.TabIndex = 3;
-            this.StopListen.Text = "disconnect";
-            this.StopListen.UseVisualStyleBackColor = true;
-            this.StopListen.Click += new System.EventHandler(this.StopListen_Click);
-            // 
-            // send
-            // 
-            this.send.Location = new System.Drawing.Point(257, 191);
-            this.send.Name = "send";
-            this.send.Size = new System.Drawing.Size(75, 23);
-            this.send.TabIndex = 5;
-            this.send.Text = "send";
-            this.send.UseVisualStyleBackColor = true;
-            this.send.Click += new System.EventHandler(this.send_Click);
-            // 
-            // txt_IP
-            // 
-            this.txt_IP.Location = new System.Drawing.Point(53, 16);
-            this.txt_IP.Name = "txt_IP";
-            this.txt_IP.Size = new System.Drawing.Size(100, 21);
-            this.txt_IP.TabIndex = 0;
-            this.txt_IP.Text = "192.168.0.241";
-            // 
-            // txt_Port
-            // 
-            this.txt_Port.Location = new System.Drawing.Point(205, 16);
-            this.txt_Port.Name = "txt_Port";
-            this.txt_Port.Size = new System.Drawing.Size(100, 21);
-            this.txt_Port.TabIndex = 1;
-            this.txt_Port.Text = "22222";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(17, 12);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "ip";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(170, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 12);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "port";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 68);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(23, 12);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "log";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.button20);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.send);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txt_Msg);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txt_Port);
-            this.groupBox1.Controls.Add(this.txt_IP);
-            this.groupBox1.Controls.Add(this.txt_Log);
-            this.groupBox1.Controls.Add(this.StopListen);
-            this.groupBox1.Controls.Add(this.connect);
-            this.groupBox1.Location = new System.Drawing.Point(18, 16);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(519, 228);
-            this.groupBox1.TabIndex = 9;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "连接服务器";
-            // 
-            // button20
-            // 
-            this.button20.Location = new System.Drawing.Point(376, 191);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(75, 23);
-            this.button20.TabIndex = 9;
-            this.button20.Text = "button20";
-            this.button20.UseVisualStyleBackColor = true;
-            this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
             // songsDataGridView
             // 
@@ -394,10 +262,10 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(565, 25);
+            this.tabControl1.Location = new System.Drawing.Point(18, 16);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(570, 230);
+            this.tabControl1.Size = new System.Drawing.Size(1117, 239);
             this.tabControl1.TabIndex = 19;
             // 
             // tabPage1
@@ -417,7 +285,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(562, 204);
+            this.tabPage1.Size = new System.Drawing.Size(1109, 213);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "读写文件";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -546,7 +414,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(562, 204);
+            this.tabPage2.Size = new System.Drawing.Size(1109, 213);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "读写excel";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -613,7 +481,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(562, 204);
+            this.tabPage3.Size = new System.Drawing.Size(1109, 213);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "读写xml";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -650,7 +518,7 @@
             // 
             // button15
             // 
-            this.button15.Location = new System.Drawing.Point(1141, 373);
+            this.button15.Location = new System.Drawing.Point(1164, 363);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(62, 96);
             this.button15.TabIndex = 20;
@@ -861,14 +729,11 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.songsDataGridView)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -886,18 +751,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button connect;
-        private System.Windows.Forms.TextBox txt_Log;
-        private System.Windows.Forms.TextBox txt_Msg;
-        private System.Windows.Forms.Button StopListen;
-        private System.Windows.Forms.Button send;
-        private System.Windows.Forms.TextBox txt_IP;
-        private System.Windows.Forms.TextBox txt_Port;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView songsDataGridView;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
@@ -933,7 +786,6 @@
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button20;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button button22;

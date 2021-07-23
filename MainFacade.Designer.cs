@@ -82,6 +82,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBox_test = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.子窗口ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -481,7 +482,8 @@
             // formsExToolStripMenuItem
             // 
             this.formsExToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.日历ToolStripMenuItem});
+            this.日历ToolStripMenuItem,
+            this.子窗口ToolStripMenuItem});
             this.formsExToolStripMenuItem.Name = "formsExToolStripMenuItem";
             this.formsExToolStripMenuItem.Size = new System.Drawing.Size(74, 21);
             this.formsExToolStripMenuItem.Text = "Forms_Ex";
@@ -519,6 +521,13 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 425);
             this.panel1.TabIndex = 3;
+            // 
+            // 子窗口ToolStripMenuItem
+            // 
+            this.子窗口ToolStripMenuItem.Name = "子窗口ToolStripMenuItem";
+            this.子窗口ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.子窗口ToolStripMenuItem.Text = "子窗口";
+            this.子窗口ToolStripMenuItem.Click += new System.EventHandler(this.子窗口ToolStripMenuItem_Click);
             // 
             // MainFacade
             // 
@@ -595,5 +604,6 @@
         private System.Windows.Forms.ToolStripMenuItem formsExToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 日历ToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolStripMenuItem 子窗口ToolStripMenuItem;
     }
 }

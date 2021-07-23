@@ -47,15 +47,23 @@ namespace MarketRiskUI
 
         private void 关闭所有ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            foreach(var Form in mdiForms)
+            {
+                Form.Close();
+                
+            }
+
+            mdiForms.Clear();
 
         }
-
+        private List<Form> mdiForms = new List<Form>();
         public void ShowWindows(string fileName)
         {
             Image p = Image.FromFile(fileName);
             Form f = new Form();
             f.MdiParent = this;
             f.BackgroundImage = p;
+            mdiForms.Add(f);
             f.Show();
         }
 
@@ -63,11 +71,14 @@ namespace MarketRiskUI
         {
             openFileDialog1.FileName = "";
             this.openFileDialog1.ShowDialog();
-            StreamWriter s= new StreamWriter(System.Environment.CurrentDirectory+"\\Menu.ini",true);
-            s.WriteLine(openFileDialog1.FileName);
-            s.Flush();
-            s.Close();
-            ShowWindows(openFileDialog1.FileName);
+            if (String.IsNullOrEmpty(openFileDialog1.FileName) != true)
+            {
+                StreamWriter s = new StreamWriter(System.Environment.CurrentDirectory + "\\Menu.ini", true);
+                s.WriteLine(openFileDialog1.FileName);
+                s.Flush();
+                s.Close();
+                ShowWindows(openFileDialog1.FileName);
+            }
 
         }
 
@@ -77,10 +88,14 @@ namespace MarketRiskUI
             int i = 文件ToolStripMenuItem.DropDownItems.Count - 1;
             while (sr.Peek() > 0)
             {
-                ToolStripMenuItem menuitem = new ToolStripMenuItem(sr.ReadLine());
-                this.文件ToolStripMenuItem.DropDownItems.Insert(i,menuitem);
-                i++;
-                menuitem.Click += new EventHandler(menuclick);
+                string filename = sr.ReadLine();
+                if (string.IsNullOrEmpty(filename) == false)
+                {
+                    ToolStripMenuItem menuitem = new ToolStripMenuItem(filename);
+                    this.文件ToolStripMenuItem.DropDownItems.Insert(i, menuitem);
+                    i++;
+                    menuitem.Click += new EventHandler(menuclick);
+                }
 
             }
             toolStripProgressBar1.Maximum = 10;
@@ -95,7 +110,8 @@ namespace MarketRiskUI
         }
         private void menuclick(object sender, EventArgs e)
         {
-            MessageBox.Show("hello"+e.ToString());
+            var btn = sender as ToolStripItem;
+            ShowWindows(btn.Text);
         }
 
         private void 打开子窗口ToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -110,14 +126,14 @@ namespace MarketRiskUI
             {
                 m5ToolStripMenuItem.Visible = false;
                 m6ToolStripMenuItem.Visible = false;
-                showdropdownToolStripMenuItem1.ShowDropDown();
+                //showdropdownToolStripMenuItem1.ShowDropDown();
                 i = 2;
             }
             else
             {
                 m5ToolStripMenuItem.Visible = true;
                 m6ToolStripMenuItem.Visible = true;
-                showdropdownToolStripMenuItem1.ShowDropDown();
+               // showdropdownToolStripMenuItem1.ShowDropDown();
                 i = 1;
             }
         }
@@ -131,7 +147,7 @@ namespace MarketRiskUI
         {
             if (this.Focused == false)
             {
-                this.Top = -30;
+                this.Top = 30;
             }
             if(toolStripProgressBar1.Value< toolStripProgressBar1.Maximum)
             {
@@ -145,10 +161,7 @@ namespace MarketRiskUI
 
         }
 
-        private void panel1_MouseClick(object sender, MouseEventArgs e)
-        {
-            this.Top = 60;
-        }
+    
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -167,12 +180,17 @@ namespace MarketRiskUI
         private void button1_Click(object sender, EventArgs e)
         {
             listView1.Dock = DockStyle.None;
-            button2.Dock = DockStyle.Top;
-            button1.SendToBack();
+            button1.Dock = DockStyle.None;
+            button2.Dock = DockStyle.None;
+            button3.Dock = DockStyle.None;
+
             button1.Dock = DockStyle.Top;
-           
-            button3.Dock = DockStyle.Bottom;
-            listView1.Dock = DockStyle.Bottom;
+            button2.Dock = DockStyle.Top;
+            //  button1.SendToBack();
+
+
+            button3.Dock = DockStyle.Top;
+            listView1.Dock = DockStyle.Top;
             listView1.Clear();
             listView1.Items.Add("plan", "近期计划", 0);
             listView1.Items.Add("record", "记录", 1);
@@ -181,8 +199,22 @@ namespace MarketRiskUI
 
         private void button2_Click(object sender, EventArgs e)
         {
-         
 
+            listView1.Dock = DockStyle.None;
+            button1.Dock = DockStyle.None;
+            button2.Dock = DockStyle.None;
+            button3.Dock = DockStyle.None;
+
+            button1.Dock = DockStyle.Top;
+            button2.Dock = DockStyle.Top;
+            //  button1.SendToBack();
+
+
+            button3.Dock = DockStyle.Top;
+            listView1.Dock = DockStyle.Top;
+            listView1.Clear();
+            listView1.Items.Add("plan", "近期计划", 0);
+            listView1.Items.Add("record", "记录", 1);
         }
 
         private void Form4_FormClosed(object sender, FormClosedEventArgs e)
@@ -207,17 +239,43 @@ namespace MarketRiskUI
             string Width = Screen.PrimaryScreen.WorkingArea.Width.ToString();
             string height = Screen.PrimaryScreen.WorkingArea.Height.ToString();
             
-            MessageBox.Show(Width+" "+height +"\r\n"+ Screen.AllScreens[1].WorkingArea.Width.ToString()+" "+ Screen.AllScreens[1].WorkingArea.Height.ToString());
+            MessageBox.Show(Width+" "+height +"\r\n"+ Screen.AllScreens[0].WorkingArea.Width.ToString()+" "+ Screen.AllScreens[0].WorkingArea.Height.ToString());
         }
 
-        private void 打开子窗口ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void m1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            listView1.Dock = DockStyle.None;
+            button1.Dock = DockStyle.None;
+            
+            button2.Dock = DockStyle.None;
+            button3.Dock = DockStyle.None;
+            
+            button1.Dock = DockStyle.Top;
+            button2.Dock = DockStyle.Top;
+          //  button1.SendToBack();
+            
+
+            button3.Dock = DockStyle.Top;
+            listView1.Dock = DockStyle.Top;
+            button1.BringToFront();
+            button2.BringToFront();
+            button3.BringToFront();
+            listView1.Clear();
+
+            listView1.Items.Add("plan", "近期计划", 0);
+            listView1.Items.Add("record", "记录", 1);
         }
     }
 }
