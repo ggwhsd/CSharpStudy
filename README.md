@@ -14,20 +14,9 @@ MainFacade.cs为主入口程序
 [示例](./Form1.cs)
 通过`this.txt_Log.Invoke(setCallBack, "连接成功");`的方式来调用委托，可以很好的解决不同线程之间更新导致主界面卡顿闪烁的问题。
 
-* Socket的发送和接收 *
-`button1_Click`方法，详见[示例](./Form1.cs)。
-由于要循环接收，因此单独开启了一个线程来接收数据。
 
+Stopwatch的耗时计算。[示例](./Form1.cs)。
 
-* Thread使用 *
-```
-				//开启一个新的线程不停的接收服务器发送消息的线程
-                threadReceive = new Thread(new ThreadStart(Receive));
-                //设置为后台线程
-                threadReceive.IsBackground = true;
-                threadReceive.Start();
-```
-`button1_Click`方法，详见[示例](./Form1.cs)。
 
 * 数组转String *
 ```
@@ -78,7 +67,7 @@ DateTime [示例](./Utils.cs)
 * 编码 *
 Encoding [示例](./Utils.cs)
 
-* 线程锁，以及线程的通知和等待
+* 线程锁，以及线程的通知和等待。线程使用Thread。
 [示例](./Utils.cs)
 
 
@@ -146,14 +135,12 @@ Encoding [示例](./Utils.cs)
 右下角图标，以及图标的右键菜单
 [示例](./Form4.cs)
 
-* 窗口闪烁 *
+系统托盘的闪烁提醒，窗口关闭事件的拦截，终止程序。
+[示例](./Form5.cs)
+
+* 窗口闪烁, 进度条,系统托盘通知 *
 [示例](./Form4.cs)
 
-* 进度条 *
-[示例](./Form4.cs)
-
-* 系统通知 *
-[示例](./Form4.cs)
 
 * GDI绘图 *
 [示例](./GDI.cs)
@@ -250,12 +237,12 @@ Encoding [示例](./Utils.cs)
 
 * 动态加载dll，[示例](./DLLDynamic/DllDynamicImport)
 
-* 调用线程新的方式，Task async wait [示例]（./TaskAsyncDemo.cs)
+* 调用线程新的方式，当前推荐的异步调用模式，Task async wait [示例]（./TaskAsyncDemo.cs)
 
 * 语音库，调用微软语音输出。
 [示例](./Utils.cs)
 
-* 日志库，github上的C#语言开源项目Simple Logger，库文件为SimpleLogger.dll
+* 日志库，github上的C#语言开源项目Simple Logger，库文件为SimpleLogger.dll。  一般用log4j的也很多。但是Simple这个代码较为简单。
 [示例](./LoggerTest.cs)
 
 * 使用servicestack.redis库访问redis的示例。
