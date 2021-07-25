@@ -274,6 +274,10 @@ Encoding [示例](./Utils.cs)
 * MD5签名、SHA签名、DES加密和解密，RSA加密和解密，RSA生成公钥和私钥文件、AES加密和解密、Base64编码。
 [示例](./Utils.cs)
 
+* window服务的开发，服务的安装工具
+[说明文档](./OtherProjects/DemoService1/c#windows服务开发说明文档.docx)
+[示例](./OtherProjects/DemoService1/DemoService1.sln)
+
 
 
 
