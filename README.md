@@ -207,6 +207,9 @@ Encoding [示例](./Utils.cs)
 * 文件浏览器,关于驱动器的获取，文件和文件夹的使用，listview，treeview，imagelist控件的综合使用。
 [示例](./LittleExamples/FileExplorer)
 
+* listView的使用。
+[示例](./ListViewTest.cs)
+
 # Web方面的代码
 
 * WebClient的使用，当然，比较好的，还是用webbrowser，因为webbrowser几乎是一个浏览器。

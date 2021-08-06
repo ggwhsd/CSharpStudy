@@ -195,6 +195,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListViewCommon.cs" />
     <Compile Include="NetworkSocket.cs">
       <SubType>Form</SubType>
     </Compile>

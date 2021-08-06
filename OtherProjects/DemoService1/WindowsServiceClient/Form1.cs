@@ -19,6 +19,9 @@ namespace WindowsServiceClient
         public Form1()
         {
             InitializeComponent();
+            this.listView1.ListViewItemSorter = new Common.ListViewColumnSorter();
+            this.listView1.ColumnClick += new ColumnClickEventHandler(Common.ListViewHelper.ListView_ColumnClick);
+
         }
 
         string serviceFilePath = $"{Application.StartupPath}\\DemoService1.exe";
@@ -108,6 +111,44 @@ namespace WindowsServiceClient
                 {
                     control.Stop();
                 }
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+             listView1.View = View.Details;
+            listView1.GridLines = true;
+            listView1.MultiSelect = false;
+            listView1.FullRowSelect = true;
+            listView1.Sorting = SortOrder.Ascending;
+            
+            listView1.Columns.Add("服务名称", 100);
+            listView1.Columns.Add("服务后台名", 200);
+            listView1.Columns.Add("状态", 50);
+
+            ServiceController[] services = ServiceController.GetServices();
+            listView1.BeginUpdate();
+            foreach (ServiceController sc in services)
+            {
+               
+                ListViewItem li = new ListViewItem(sc.DisplayName);
+                
+                li.SubItems.Add(sc.ServiceName);
+                li.SubItems.Add(sc.Status.ToString());
+
+                listView1.Items.Add(li);
+                
+            }
+            listView1.EndUpdate();
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+            foreach(ListViewItem item in listView1.Items)
+            {
+                Console.WriteLine(item.Text);
             }
         }
     }

@@ -186,9 +186,17 @@ namespace MarketRiskUI
 
         private void button7_Click(object sender, EventArgs e)
         {
+            //按第二列进行比较
             listView1.ListViewItemSorter = new ListViewComparer(1);
             
             listView1.Sort();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.listView1.ListViewItemSorter = new ListViewCommon.ListViewColumnSorter();
+            this.listView1.ColumnClick += new ColumnClickEventHandler(ListViewCommon.ListViewHelper.ListView_ColumnClick);
+
         }
     }
 }
