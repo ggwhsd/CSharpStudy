@@ -23,7 +23,7 @@ namespace MarketRiskUI
         {
             if(client==null)
                 client = new RedisClient(textBox_ip.Text.ToString(), Int32.Parse(textBox_port.Text.ToString()), textBox_passwd.Text.ToString());
-            //client = new RedisClient("192.168.0.233", 6379, "foobared");
+            
             
             client.Set<string>("username", "gugw");
             if (client.Exists("username")>0)
@@ -68,14 +68,17 @@ namespace MarketRiskUI
             if (client != null)
             {
                 DateTime start = DateTime.Now;
-                int count = 15000;
-                for(int i = 0; i < count; i++) {
+                int count = 7000;
+                string key = textBox_keys.Text;
+                for (int i = 0; i < count; i++) {
                     //textBox1.Text += "\r\n" + i + " "+client.Get<string>(textBox_keys.Text);
-                    client.Get<string>(textBox_keys.Text);
+                    client.Get<string>(key);
+                    
                 }
                 DateTime end = DateTime.Now;
                 TimeSpan ts = end - start;
                 textBox2.Text += DateTime.Now + " " + "test ReadManyTimes[" + count + "] timeSpan[" + ts.TotalMilliseconds +  "]milliseconds \r\n";
+                Console.WriteLine(textBox2.Text);
             }
         }
     }
