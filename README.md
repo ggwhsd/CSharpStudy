@@ -248,10 +248,12 @@ Encoding [示例](./Utils.cs)
 * 日志库，github上的C#语言开源项目Simple Logger，库文件为SimpleLogger.dll。  一般用log4j的也很多。但是Simple这个代码较为简单。
 [示例](./LoggerTest.cs)
 
-* 使用servicestack.redis库访问redis的示例。据说是微软推荐的redis库。此处的servicestack的redis库并非nuget下载，而是下载的源代码，修改了其中读写频率限制之后编译的dll。
+* 使用servicestack.redis库访问redis的示例。据说是微软推荐的redis库。
+此处的servicestack的redis库并非nuget下载，而是下载的源代码，修改了其中读写频率限制之后编译的dll。
+包含了常用的字符串、list、hash、set等数据类型和使用方法。
+也包含了pub/sub、数字自增等场景。
 [示例](./redisTest.cs)
 
-* StackExchange.redis 是另一个库，据网上说有一点点小瑕疵，并非微软官方推荐的redis库。[示例](./StackExchangeRedisTest.cs)
 
 
 * ActiveMQ的Topic使用示例

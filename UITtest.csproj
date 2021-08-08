@@ -355,12 +355,6 @@
     <Compile Include="SpliterTest.Designer.cs">
       <DependentUpon>SpliterTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="StackExchangeRedisTest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="StackExchangeRedisTest.Designer.cs">
-      <DependentUpon>StackExchangeRedisTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="tableLayOutTest.cs">
       <SubType>Form</SubType>
     </Compile>
