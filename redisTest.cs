@@ -270,5 +270,55 @@ namespace MarketRiskUI
             //语义：出队. 在列表的最右边出去
             textBox1.Text += "\r\n " + client.DequeueItemFromList("list:name");
         }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            client.AddItemToSet("set:name", DateTime.Now.ToLongTimeString());
+            client.AddItemToSet("set:name", "set1");
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            StringBuilder sbr = new StringBuilder();
+            textBox1.Text += "\r\n" + client.GetSetCount("set:name");
+            foreach (string p in client.GetAllItemsFromSet("set:name"))
+            {
+                sbr.Append(p).Append(" ");
+            }
+            textBox1.Text += "\r\n" + sbr.ToString();
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            client.PopItemFromSet("set:name");
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            textBox1.Text="\r\n"+client.GetRandomItemFromSet("set:name");
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            client.RemoveItemFromSet("set:name","set1");
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            client.MoveBetweenSets("set:name", "set2:name","set1");
+            ;
+
+            StringBuilder sbr = new StringBuilder();
+
+            
+            foreach (string p in client.GetAllItemsFromSet("set2:name"))
+            {
+                sbr.Append(p).Append(" ");
+            }
+            textBox1.Text += "\r\n" + sbr.ToString();
+
+            //client.StoreUnionFromSets 并集合放到新的集合中。
+            //client.StoreDifferencesFromSet 将不同的数据放到新的集合中。
+        }
     }
 }
