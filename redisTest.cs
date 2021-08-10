@@ -233,6 +233,7 @@ namespace MarketRiskUI
         {
             StringBuilder sbr = new StringBuilder();
             sbr.Append("\r\n");
+            
             foreach (string item in client.GetRangeFromList("list:name",2,-1))
             {
                 sbr.Append(item).Append(" ");
@@ -306,11 +307,9 @@ namespace MarketRiskUI
         private void button26_Click(object sender, EventArgs e)
         {
             client.MoveBetweenSets("set:name", "set2:name","set1");
-            ;
 
             StringBuilder sbr = new StringBuilder();
 
-            
             foreach (string p in client.GetAllItemsFromSet("set2:name"))
             {
                 sbr.Append(p).Append(" ");
@@ -319,6 +318,105 @@ namespace MarketRiskUI
 
             //client.StoreUnionFromSets 并集合放到新的集合中。
             //client.StoreDifferencesFromSet 将不同的数据放到新的集合中。
+        }
+
+        private void button27_Click(object sender, EventArgs e)
+        {
+            client.AddItemToSortedSet("sortset:name", "ssn1", 1);
+            client.AddItemToSortedSet("sortset:name", "ssn2", 3);
+            client.AddItemToSortedSet("sortset:name", "ssn3", 2);
+            client.AddRangeToSet("sortset:name", new List<string> { "ssn4","ssn5"});
+
+        }
+
+        private void button29_Click(object sender, EventArgs e)
+        {
+
+            StringBuilder sbr = new StringBuilder();
+            foreach (var value in client.GetAllItemsFromSortedSet("sortset:name"))
+            {
+                sbr.Append(value).Append(" ");
+            }
+            textBox1.Text +="\r\n"+ sbr.ToString();
+
+            sbr.Clear();
+            foreach (var value in client.GetAllItemsFromSortedSetDesc("sortset:name"))
+            {
+                sbr.Append(value).Append(" ");
+            }
+            textBox1.Text += "\r\n" + sbr.ToString();
+            sbr.Clear();
+            foreach (var value in client.GetAllWithScoresFromSortedSet("sortset:name"))
+            {
+                sbr.Append(value.Key).Append("-" + value.ToString()).Append(" ");
+            }
+            textBox1.Text += "\r\n" + sbr.ToString();
+        }
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+            client.RemoveItemFromSortedSet("sortset:name", "ssn2");
+        }
+
+        private void button31_Click(object sender, EventArgs e)
+        {
+            textBox1.Text +="\r\n"+ client.GetItemIndexInSortedSet("sortset:name", "ssn4");
+        }
+
+        private void button33_Click(object sender, EventArgs e)
+        {
+            StringBuilder sbr = new StringBuilder();
+            //GetRangeWithScoresFromSortedSetByHighestScore
+            foreach (var value in client.GetRangeFromSortedSetByHighestScore("sortset:name",1,10))
+            {
+                sbr.Append(value).Append(" ");
+            }
+            textBox1.Text += "\r\n" + sbr.ToString();
+        }
+
+        private void button34_Click(object sender, EventArgs e)
+        {
+            StringBuilder sbr = new StringBuilder();
+            //GetRangeWithScoresFromSortedSetByLowestScore
+            foreach (var value in client.GetRangeFromSortedSetByLowestScore("sortset:name", 1, 10))
+            {
+                sbr.Append(value).Append(" ");
+            }
+            textBox1.Text += "\r\n" + sbr.ToString();
+        }
+
+        private void button35_Click(object sender, EventArgs e)
+        {
+            StringBuilder sbr = new StringBuilder();
+          
+            foreach (var value in client.GetRangeFromSortedSet("sortset:name", 1, 10))
+            {
+                sbr.Append(value).Append(" ");
+            }
+            textBox1.Text += "\r\n" + sbr.ToString();
+        }
+
+        private void button30_Click(object sender, EventArgs e)
+        {
+            //按照排名删除
+            client.RemoveRangeFromSortedSet("sortset:name", 1, 2);
+            //按分数删除 RemoveRangeFromSortedSetByScore
+            //删除分数最大的 PopItemWithHighestScoreFromSortedSet
+            //删除分数最小的 PopItemWithLowestScoreFromSortedSet
+            
+        }
+
+        private void button32_Click(object sender, EventArgs e)
+        {
+            client.SortedSetContainsItem("sortset:name", "ssn4");
+        }
+
+        private void button36_Click(object sender, EventArgs e)
+        {
+            //某个元素增加分数   client.IncrementItemInSortedSet(key, value, scoreBy);
+            //将多个keys合并到newkey中 交集  StoreIntersectFromSortedSets(newkey,keys);
+            //将多个keys合并到newkey中  并集 StoreUnionFromSortedSets(newkey, keys);
+
         }
     }
 }

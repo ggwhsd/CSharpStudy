@@ -64,28 +64,28 @@
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button26 = new System.Windows.Forms.Button();
+            this.button21 = new System.Windows.Forms.Button();
+            this.button25 = new System.Windows.Forms.Button();
+            this.button23 = new System.Windows.Forms.Button();
+            this.button22 = new System.Windows.Forms.Button();
+            this.button24 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
-            this.button25 = new System.Windows.Forms.Button();
-            this.button26 = new System.Windows.Forms.Button();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.button27 = new System.Windows.Forms.Button();
-            this.button28 = new System.Windows.Forms.Button();
-            this.button29 = new System.Windows.Forms.Button();
-            this.button30 = new System.Windows.Forms.Button();
-            this.button31 = new System.Windows.Forms.Button();
-            this.button32 = new System.Windows.Forms.Button();
-            this.button33 = new System.Windows.Forms.Button();
-            this.button34 = new System.Windows.Forms.Button();
             this.button35 = new System.Windows.Forms.Button();
+            this.button34 = new System.Windows.Forms.Button();
+            this.button33 = new System.Windows.Forms.Button();
+            this.button31 = new System.Windows.Forms.Button();
+            this.button29 = new System.Windows.Forms.Button();
+            this.button28 = new System.Windows.Forms.Button();
+            this.button27 = new System.Windows.Forms.Button();
+            this.button30 = new System.Windows.Forms.Button();
+            this.button32 = new System.Windows.Forms.Button();
             this.button36 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -463,6 +463,66 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "set";
             // 
+            // button26
+            // 
+            this.button26.Location = new System.Drawing.Point(6, 106);
+            this.button26.Name = "button26";
+            this.button26.Size = new System.Drawing.Size(188, 23);
+            this.button26.TabIndex = 2;
+            this.button26.Text = "从set1删除并且放到set2中";
+            this.button26.UseVisualStyleBackColor = true;
+            this.button26.Click += new System.EventHandler(this.button26_Click);
+            // 
+            // button21
+            // 
+            this.button21.Location = new System.Drawing.Point(6, 20);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(75, 23);
+            this.button21.TabIndex = 0;
+            this.button21.Text = "添加一个";
+            this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
+            // 
+            // button25
+            // 
+            this.button25.Location = new System.Drawing.Point(6, 78);
+            this.button25.Name = "button25";
+            this.button25.Size = new System.Drawing.Size(122, 23);
+            this.button25.TabIndex = 1;
+            this.button25.Text = "删除指定value";
+            this.button25.UseVisualStyleBackColor = true;
+            this.button25.Click += new System.EventHandler(this.button25_Click);
+            // 
+            // button23
+            // 
+            this.button23.Location = new System.Drawing.Point(6, 49);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(75, 23);
+            this.button23.TabIndex = 0;
+            this.button23.Text = "查询所有";
+            this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
+            // 
+            // button22
+            // 
+            this.button22.Location = new System.Drawing.Point(87, 20);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(75, 23);
+            this.button22.TabIndex = 0;
+            this.button22.Text = "随机删除一个";
+            this.button22.UseVisualStyleBackColor = true;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
+            // 
+            // button24
+            // 
+            this.button24.Location = new System.Drawing.Point(87, 49);
+            this.button24.Name = "button24";
+            this.button24.Size = new System.Drawing.Size(107, 23);
+            this.button24.TabIndex = 0;
+            this.button24.Text = "查询随机一个";
+            this.button24.UseVisualStyleBackColor = true;
+            this.button24.Click += new System.EventHandler(this.button24_Click);
+            // 
             // groupBox4
             // 
             this.groupBox4.Location = new System.Drawing.Point(457, 327);
@@ -521,102 +581,64 @@
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // button21
-            // 
-            this.button21.Location = new System.Drawing.Point(6, 20);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(75, 23);
-            this.button21.TabIndex = 0;
-            this.button21.Text = "添加一个";
-            this.button21.UseVisualStyleBackColor = true;
-            this.button21.Click += new System.EventHandler(this.button21_Click);
-            // 
-            // button22
-            // 
-            this.button22.Location = new System.Drawing.Point(87, 20);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(75, 23);
-            this.button22.TabIndex = 0;
-            this.button22.Text = "随机删除一个";
-            this.button22.UseVisualStyleBackColor = true;
-            this.button22.Click += new System.EventHandler(this.button22_Click);
-            // 
-            // button23
-            // 
-            this.button23.Location = new System.Drawing.Point(6, 49);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(75, 23);
-            this.button23.TabIndex = 0;
-            this.button23.Text = "查询所有";
-            this.button23.UseVisualStyleBackColor = true;
-            this.button23.Click += new System.EventHandler(this.button23_Click);
-            // 
-            // button24
-            // 
-            this.button24.Location = new System.Drawing.Point(87, 49);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(107, 23);
-            this.button24.TabIndex = 0;
-            this.button24.Text = "查询随机一个";
-            this.button24.UseVisualStyleBackColor = true;
-            this.button24.Click += new System.EventHandler(this.button24_Click);
-            // 
-            // button25
-            // 
-            this.button25.Location = new System.Drawing.Point(6, 78);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(122, 23);
-            this.button25.TabIndex = 1;
-            this.button25.Text = "删除指定value";
-            this.button25.UseVisualStyleBackColor = true;
-            this.button25.Click += new System.EventHandler(this.button25_Click);
-            // 
-            // button26
-            // 
-            this.button26.Location = new System.Drawing.Point(6, 106);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(188, 23);
-            this.button26.TabIndex = 2;
-            this.button26.Text = "从set1删除并且放到set2中";
-            this.button26.UseVisualStyleBackColor = true;
-            this.button26.Click += new System.EventHandler(this.button26_Click);
-            // 
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.button36);
+            this.groupBox8.Controls.Add(this.button32);
+            this.groupBox8.Controls.Add(this.button30);
             this.groupBox8.Controls.Add(this.button35);
             this.groupBox8.Controls.Add(this.button34);
             this.groupBox8.Controls.Add(this.button33);
-            this.groupBox8.Controls.Add(this.button32);
             this.groupBox8.Controls.Add(this.button31);
-            this.groupBox8.Controls.Add(this.button30);
             this.groupBox8.Controls.Add(this.button29);
             this.groupBox8.Controls.Add(this.button28);
             this.groupBox8.Controls.Add(this.button27);
             this.groupBox8.Location = new System.Drawing.Point(36, 595);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(200, 198);
+            this.groupBox8.Size = new System.Drawing.Size(200, 249);
             this.groupBox8.TabIndex = 2;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "zset有序集合";
             // 
-            // button27
+            // button35
             // 
-            this.button27.Location = new System.Drawing.Point(6, 20);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(75, 23);
-            this.button27.TabIndex = 0;
-            this.button27.Text = "添加";
-            this.button27.UseVisualStyleBackColor = true;
+            this.button35.Location = new System.Drawing.Point(0, 164);
+            this.button35.Name = "button35";
+            this.button35.Size = new System.Drawing.Size(163, 23);
+            this.button35.TabIndex = 0;
+            this.button35.Text = "获取某分数段数据";
+            this.button35.UseVisualStyleBackColor = true;
+            this.button35.Click += new System.EventHandler(this.button35_Click);
             // 
-            // button28
+            // button34
             // 
-            this.button28.Location = new System.Drawing.Point(88, 20);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(75, 23);
-            this.button28.TabIndex = 0;
-            this.button28.Text = "删除";
-            this.button28.UseVisualStyleBackColor = true;
+            this.button34.Location = new System.Drawing.Point(6, 135);
+            this.button34.Name = "button34";
+            this.button34.Size = new System.Drawing.Size(157, 23);
+            this.button34.TabIndex = 0;
+            this.button34.Text = "低到高";
+            this.button34.UseVisualStyleBackColor = true;
+            this.button34.Click += new System.EventHandler(this.button34_Click);
+            // 
+            // button33
+            // 
+            this.button33.Location = new System.Drawing.Point(6, 106);
+            this.button33.Name = "button33";
+            this.button33.Size = new System.Drawing.Size(157, 23);
+            this.button33.TabIndex = 0;
+            this.button33.Text = "某分数段从高到底显示";
+            this.button33.UseVisualStyleBackColor = true;
+            this.button33.Click += new System.EventHandler(this.button33_Click);
+            // 
+            // button31
+            // 
+            this.button31.Location = new System.Drawing.Point(6, 78);
+            this.button31.Name = "button31";
+            this.button31.Size = new System.Drawing.Size(156, 23);
+            this.button31.TabIndex = 0;
+            this.button31.Text = "获取某个值的排名";
+            this.button31.UseVisualStyleBackColor = true;
+            this.button31.Click += new System.EventHandler(this.button31_Click);
             // 
             // button29
             // 
@@ -626,69 +648,57 @@
             this.button29.TabIndex = 0;
             this.button29.Text = "查询";
             this.button29.UseVisualStyleBackColor = true;
+            this.button29.Click += new System.EventHandler(this.button29_Click);
+            // 
+            // button28
+            // 
+            this.button28.Location = new System.Drawing.Point(88, 20);
+            this.button28.Name = "button28";
+            this.button28.Size = new System.Drawing.Size(75, 23);
+            this.button28.TabIndex = 0;
+            this.button28.Text = "删除";
+            this.button28.UseVisualStyleBackColor = true;
+            this.button28.Click += new System.EventHandler(this.button28_Click);
+            // 
+            // button27
+            // 
+            this.button27.Location = new System.Drawing.Point(6, 20);
+            this.button27.Name = "button27";
+            this.button27.Size = new System.Drawing.Size(75, 23);
+            this.button27.TabIndex = 0;
+            this.button27.Text = "添加";
+            this.button27.UseVisualStyleBackColor = true;
+            this.button27.Click += new System.EventHandler(this.button27_Click);
             // 
             // button30
             // 
             this.button30.Location = new System.Drawing.Point(88, 49);
             this.button30.Name = "button30";
             this.button30.Size = new System.Drawing.Size(75, 23);
-            this.button30.TabIndex = 0;
-            this.button30.Text = "添加集合";
+            this.button30.TabIndex = 1;
+            this.button30.Text = "删除一段";
             this.button30.UseVisualStyleBackColor = true;
-            // 
-            // button31
-            // 
-            this.button31.Location = new System.Drawing.Point(6, 78);
-            this.button31.Name = "button31";
-            this.button31.Size = new System.Drawing.Size(75, 23);
-            this.button31.TabIndex = 0;
-            this.button31.Text = "button27";
-            this.button31.UseVisualStyleBackColor = true;
+            this.button30.Click += new System.EventHandler(this.button30_Click);
             // 
             // button32
             // 
-            this.button32.Location = new System.Drawing.Point(88, 78);
+            this.button32.Location = new System.Drawing.Point(6, 193);
             this.button32.Name = "button32";
-            this.button32.Size = new System.Drawing.Size(75, 23);
-            this.button32.TabIndex = 0;
-            this.button32.Text = "button27";
+            this.button32.Size = new System.Drawing.Size(156, 23);
+            this.button32.TabIndex = 2;
+            this.button32.Text = "判断某个元素存在";
             this.button32.UseVisualStyleBackColor = true;
-            // 
-            // button33
-            // 
-            this.button33.Location = new System.Drawing.Point(6, 106);
-            this.button33.Name = "button33";
-            this.button33.Size = new System.Drawing.Size(75, 23);
-            this.button33.TabIndex = 0;
-            this.button33.Text = "button27";
-            this.button33.UseVisualStyleBackColor = true;
-            // 
-            // button34
-            // 
-            this.button34.Location = new System.Drawing.Point(87, 106);
-            this.button34.Name = "button34";
-            this.button34.Size = new System.Drawing.Size(75, 23);
-            this.button34.TabIndex = 0;
-            this.button34.Text = "button27";
-            this.button34.UseVisualStyleBackColor = true;
-            // 
-            // button35
-            // 
-            this.button35.Location = new System.Drawing.Point(6, 135);
-            this.button35.Name = "button35";
-            this.button35.Size = new System.Drawing.Size(75, 23);
-            this.button35.TabIndex = 0;
-            this.button35.Text = "button27";
-            this.button35.UseVisualStyleBackColor = true;
+            this.button32.Click += new System.EventHandler(this.button32_Click);
             // 
             // button36
             // 
-            this.button36.Location = new System.Drawing.Point(88, 135);
+            this.button36.Location = new System.Drawing.Point(6, 220);
             this.button36.Name = "button36";
             this.button36.Size = new System.Drawing.Size(75, 23);
-            this.button36.TabIndex = 0;
-            this.button36.Text = "button27";
+            this.button36.TabIndex = 3;
+            this.button36.Text = "其他";
             this.button36.UseVisualStyleBackColor = true;
+            this.button36.Click += new System.EventHandler(this.button36_Click);
             // 
             // redisTest
             // 
@@ -769,15 +779,15 @@
         private System.Windows.Forms.Button button25;
         private System.Windows.Forms.Button button26;
         private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.Button button36;
         private System.Windows.Forms.Button button35;
         private System.Windows.Forms.Button button34;
         private System.Windows.Forms.Button button33;
-        private System.Windows.Forms.Button button32;
         private System.Windows.Forms.Button button31;
-        private System.Windows.Forms.Button button30;
         private System.Windows.Forms.Button button29;
         private System.Windows.Forms.Button button28;
         private System.Windows.Forms.Button button27;
+        private System.Windows.Forms.Button button30;
+        private System.Windows.Forms.Button button32;
+        private System.Windows.Forms.Button button36;
     }
 }
