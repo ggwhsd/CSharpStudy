@@ -418,5 +418,163 @@ namespace MarketRiskUI
             //将多个keys合并到newkey中  并集 StoreUnionFromSortedSets(newkey, keys);
 
         }
+
+        private void button37_Click(object sender, EventArgs e)
+        {
+            client.SetEntryInHash("hash:name", "h1", "h1name");
+            client.SetEntryInHash("hash:name", "h2", "h1name");
+            client.SetEntryInHash("hash:name", "h3", "h1name");
+            client.SetEntryInHashIfNotExists("hash:name", "h3", "h1name");
+        }
+
+    
+
+        private void button38_Click(object sender, EventArgs e)
+        {
+            var rtn = client.GetAllEntriesFromHash("hash:name");
+            //GetHashKeys(hashid);
+            //GetHashValues(hashid);
+            foreach (KeyValuePair<string, string> entry in rtn)
+            {
+                textBox1.Text += "\r\n" + entry.Key + "-" + entry.Value;
+            }
+        }
+
+        private void button39_Click(object sender, EventArgs e)
+        {
+            client.RemoveEntryFromHash("hash:name", "h1");
+            
+        }
+
+        private void button42_Click(object sender, EventArgs e)
+        {
+            textBox1.Text +="\r\n"+ client.GetValueFromHash("hash:name", "h1");
+            //GetValuesFromHash(hashid, keys);获取多个key对应的多个value
+        }
+
+        private void button43_Click(object sender, EventArgs e)
+        {
+            client.Remove("hash:name");
+        }
+
+        private void button44_Click(object sender, EventArgs e)
+        {
+            textBox1.Text += "\r\n"+ client.HashContainsEntry("hash:name", "h1").ToString();
+            //IncrementValueInHash(hashid, key, countBy);  对hashid中某个key进行增
+        }
+
+        private void button40_Click(object sender, EventArgs e)
+        {
+            client.FlushAll();
+        }
+
+        private void button41_Click(object sender, EventArgs e)
+        {
+            using (var trans = client.CreateTransaction())
+            {
+                try
+                {
+                    
+                    trans.QueueCommand(p =>
+                    {
+                        client.Set<int>("name", 123);
+                        long value = client.IncrementValueBy("name", 3);
+
+                    });
+                    trans.Commit();
+                }
+                catch(Exception err)
+                {
+                    
+                    
+                }
+            }
+
+        }
+
+        private void button45_Click(object sender, EventArgs e)
+        {
+            client.Set("lock", 1);
+            using (client.AcquireLock("lock"))
+            {
+                client.Set("lock", 2);
+
+            }
+            textBox1.Text = client.Get<int>("lock").ToString();
+
+
+        }
+        IRedisSubscription subscription = null;
+        public void Sub()
+        {
+            if (redisClientManager == null)
+            {
+                redisClientManager = new PooledRedisClientManager(textBox_passwd.Text + "@" + textBox_ip.Text.ToString() + ":" + textBox_port.Text.ToString());
+            }
+            subscription = redisClientManager.GetClient().CreateSubscription();
+            subscription.OnMessage = (channel, msg) =>
+            {
+                Console.WriteLine($"从频道：{channel}上接受到消息：{msg},时间：{DateTime.Now.ToString("yyyyMMdd HH:mm:ss")}");
+                Console.WriteLine($"频道订阅数目：{subscription.SubscriptionCount}");
+            };
+            subscription.OnSubscribe = (channel) =>
+            {
+                Console.WriteLine("订阅客户端：开始订阅" + channel);
+                
+            };
+            subscription.OnUnSubscribe = (a) => { Console.WriteLine("订阅客户端：取消订阅"); subscription.Dispose(); };
+            subscription.SubscribeToChannels("channel1");
+           
+        }
+        private Thread t = null;
+        private void button46_Click(object sender, EventArgs e)
+        {
+            t = new Thread(new ThreadStart(Sub));
+            t.IsBackground = true;
+            t.Start();
+        }
+        IRedisClientsManager redisClientManager = null;
+        RedisPubSubServer pubSubServer = null;
+        //发布直接用client.PublishMessage即可发布消息，但是如下方式可以起到监听发布者的功能
+        private void button47_Click(object sender, EventArgs e)
+        {
+            redisClientManager = new PooledRedisClientManager(textBox_passwd.Text +"@"+ textBox_ip.Text.ToString()+":"+textBox_port.Text.ToString());
+            
+            pubSubServer = new RedisPubSubServer(redisClientManager, "channel1")
+            {
+                OnMessage = (channel, msg) =>
+                {
+                    Console.WriteLine($"pubServer {channel} 发布服务发布消息 {msg}");
+                },
+                OnStart = () =>
+                {
+                    Console.WriteLine($"pubServer 发布服务start ");
+                },
+                OnStop = () => { Console.WriteLine("pubServer 发布服务停止"); },
+                OnUnSubscribe = (channel) => { Console.WriteLine("pubServer 取消订阅 "+channel); },
+                OnError = (err) => { Console.WriteLine("pubServer " + err.Message); },
+                OnFailover = (s) => { Console.WriteLine("pubServer " + s); }
+            };
+            pubSubServer.Start();
+        }
+
+        private void button48_Click(object sender, EventArgs e)
+        {
+            client.PublishMessage("channel1", "消息时间【"+DateTime.Now.ToString()+"】");
+            
+        }
+
+        private void button49_Click(object sender, EventArgs e)
+        {
+            pubSubServer.Stop();
+        }
+
+        private void button50_Click(object sender, EventArgs e)
+        {
+            //订阅者的订阅和取消订阅都是blocking方法
+            new Thread(()=> { subscription.UnSubscribeFromChannels("channel1"); }).Start();
+        }
     }
+
+ 
 }
