@@ -287,6 +287,9 @@ Encoding [示例](./Utils.cs)
 [示例](./OtherProjects/DemoService1/DemoService1.sln)
 
 
+* libvlc库的使用播放视频
+[示例](./OtherProjects/LivVlcPlayer/VLCDemo/Form1.cs)
+
 
 
 
