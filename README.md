@@ -290,6 +290,9 @@ Encoding [示例](./Utils.cs)
 * libvlc库的使用播放视频
 [示例](./OtherProjects/LivVlcPlayer/VLCDemo/Form1.cs)
 
+* 控制台小游戏：俄罗斯方块。熟悉最基本的游戏开发模式。
+[示例](./OtherProjects/GameTetris/GameTetris/MyTetrisGame.cs)
+
 
 
 

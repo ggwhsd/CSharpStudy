@@ -21,7 +21,7 @@ namespace GameTetris
 
         private bool isOver;
 
-        //用于搜索一个指定的窗口
+        //用于搜索一个指定窗口名的窗口
         [DllImport("User32.dll")]
         private static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
         //当前的窗口句柄
@@ -110,7 +110,7 @@ namespace GameTetris
         {
             SetTitle("测试游戏框架！");
             //设置游戏画面刷新率 每毫秒一次  
-            SetUpdateRate(30);
+            SetUpdateRate(1000);
             //设置光标隐藏  
             SetCursorVisible(false);
             Console.WriteLine("游戏初始化成功!");

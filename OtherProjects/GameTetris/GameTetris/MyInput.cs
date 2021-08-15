@@ -21,6 +21,7 @@ namespace GameTetris
 
         private bool IsKeyDown(MyKeys k)
         {
+            //判断k建是否被按下过
             return 0 != (GetAsyncKeyState((int)k) & KEY_STATE);
         }
 

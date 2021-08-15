@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GameTetris
 {
-    class MyKeyboardEventArgs: EventArgs
+    public sealed class MyKeyboardEventArgs: EventArgs
     {
         private MyKeys key;
         public MyKeyboardEventArgs(MyKeys key) : base()

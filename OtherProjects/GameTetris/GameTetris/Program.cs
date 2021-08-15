@@ -10,6 +10,11 @@ namespace GameTetris
     {
         static void Main(string[] args)
         {
+            MyTetrisGame newGame = new MyTetrisGame();
+            newGame.Run();
+
+
+
         }
     }
 }

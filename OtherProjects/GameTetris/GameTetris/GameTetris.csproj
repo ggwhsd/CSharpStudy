@@ -43,12 +43,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MyDraw.cs" />
     <Compile Include="MyGame.cs" />
     <Compile Include="MyInput.cs" />
     <Compile Include="MyKeyboardEventArgs.cs" />
     <Compile Include="MyKeys.cs" />
+    <Compile Include="MyMap.cs" />
+    <Compile Include="MyPoint.cs" />
+    <Compile Include="MyRect.cs" />
+    <Compile Include="MyScore.cs" />
+    <Compile Include="MySize.cs" />
+    <Compile Include="MySymbol.cs" />
+    <Compile Include="MyTetrisGame.cs" />
+    <Compile Include="MyText.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TetrisBlock.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
