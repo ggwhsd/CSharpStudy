@@ -286,12 +286,16 @@ Encoding [示例](./Utils.cs)
 [说明文档](./OtherProjects/DemoService1/c#windows服务开发说明文档.docx)
 [示例](./OtherProjects/DemoService1/DemoService1.sln)
 
-
 * libvlc库的使用播放视频
 [示例](./OtherProjects/LivVlcPlayer/VLCDemo/Form1.cs)
 
 * 控制台小游戏：俄罗斯方块。熟悉最基本的游戏开发模式。
 [示例](./OtherProjects/GameTetris/GameTetris/MyTetrisGame.cs)
+
+* 控制台小游戏：炸弹人。进阶最典型的游戏元素，有这个基础可以做个rpg游戏了。如果再用unity等游戏框架就更容易了。
+[示例](./OtherProjects/GameBomber/Bomber/GameCore.cs)
+
+
 
 
 

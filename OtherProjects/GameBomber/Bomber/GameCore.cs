@@ -80,6 +80,9 @@ namespace Bomber
             else
                 return false;
         }
+        /// <summary>
+        /// 加载地图，地图上有些格子会出现多个元素，比如草丛，一个草丛里面可能有一些加速符、门等。
+        /// </summary>
         public void LoadMapData()
         {
             FileStream fileStream = new FileStream(mapFilePath, FileMode.Open, FileAccess.Read);

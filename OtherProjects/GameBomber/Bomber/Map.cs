@@ -12,7 +12,11 @@ namespace Bomber
         private char[,] mapframe = new char[20, 50];
 
         public char[,] Mapframe { get => mapframe; set => mapframe = value; }
-
+        /// <summary>
+        /// 参数没啥意义，这里没有使用，这个函数只是根据mapframe上的数据绘画各个元素。
+        /// Background()函数才是从容器中获取元素并映射到地图上。
+        /// </summary>
+        /// <param name="objectmanager"></param>
         public void ShowMap(ObjectManager objectmanager)
         {
             for (int i = 0; i < 20; i++)
@@ -91,7 +95,7 @@ namespace Bomber
             }
         }
         /// <summary>
-        /// 不同的游戏对象，需要不同的图形展示
+        /// 不同的游戏对象，需要不同的图形展示，记录不同的展示坐标和展示层次
         /// </summary>
         /// <param name="objectlist"></param>
         public void Background(Dictionary<int, Objects> objectlist)

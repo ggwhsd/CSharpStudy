@@ -8,7 +8,7 @@ namespace Bomber
 {
     class Objects
     {
-        private int existTime;
+        private int existTime; // 主要是给炸弹使用的
         private int id;
         private int x;
         private int y;
