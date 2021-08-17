@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Bomber
 {
     /// <summary>
-    /// 炸弹人，亦玩家，主要属性：威力、移动速度、是否赢、位置xy、元素唯一Id、显示层级（不同显示层级对应炸弹的处理逻辑不一样，且碰撞检测也不一样）
+    /// 炸弹人，亦玩家，主要属性：炸弹爆炸长度、移动速度、是否赢、位置xy、元素唯一Id、显示层级（不同显示层级对应炸弹的处理逻辑不一样，且碰撞检测也不一样）
     /// 炸弹人的行为有 上下左右移动，啥都不做，放置炸弹。
     /// @Author: GUGW
     /// </summary>
@@ -17,7 +17,7 @@ namespace Bomber
         private int speed = 0;
         private int win;
 
-        public int Damage { get => damage; set => damage = value; }
+        public int DamageLength { get => damage; set => damage = value; }
         public int Speed { get => speed; set => speed = value; }
         public int Win { get => win; set => win = value; }
         public SuperBomber(int x, int y)
@@ -157,7 +157,7 @@ namespace Bomber
                         }
                         else if (pair.Value is DamageBuff)
                         {
-                            this.Damage+=2;
+                            this.DamageLength+=2;
                         }
                         else
                         {

@@ -13,7 +13,7 @@ namespace Bomber
 
         public char[,] Mapframe { get => mapframe; set => mapframe = value; }
         /// <summary>
-        /// 参数没啥意义，这里没有使用，这个函数只是根据mapframe上的数据绘画各个元素。
+        /// 参数没啥意义，这里没有使用，这个函数只是根据mapframe上的数据绘画各个元素,以及颜色。
         /// Background()函数才是从容器中获取元素并映射到地图上。
         /// </summary>
         /// <param name="objectmanager"></param>

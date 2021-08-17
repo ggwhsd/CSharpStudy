@@ -152,7 +152,7 @@ namespace Bomber
         }
 
         /// <summary>
-        /// 
+        /// 判断地图坐标x和y的坐标，有没有砖块。 实际上是检查所有对象，有没有谁的坐标是x y的。
         /// </summary>
         /// <param name="x"></param>
         /// <param name="y"></param>
@@ -176,7 +176,7 @@ namespace Bomber
             return false;
         }
         /// <summary>
-        /// 
+        /// 判断坐标x和y上是否有草
         /// </summary>
         /// <param name="x"></param>
         /// <param name="y"></param>
@@ -203,6 +203,7 @@ namespace Bomber
         }
         /// <summary>
         /// 爆炸之后，调用以下方法删除游戏对象(不包含炸弹本身，为了显示炸弹效果)
+        /// 只针对 炸弹人、草、怪物有效
         /// </summary>
         /// <param name="x"></param>
         /// <param name="y"></param>
@@ -233,25 +234,30 @@ namespace Bomber
         /// <summary>
         /// 炸弹爆炸
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="objectmanager"></param>
-        /// <param name="character"></param>
+        /// <param name="id">炸弹对应的元素对象id</param>
+        /// <param name="objectmanager">元素容器</param>
+        /// <param name="player">炸弹人</param>
         private void Boomeffect(int id, ObjectManager objectmanager, SuperBomber player)
         {
-            int i = player.Damage;
+            int damageLength = player.DamageLength;
             int x = objectmanager.Objectdict[id].X;
             int y = objectmanager.Objectdict[id].Y;
+            //x轴上对应的是y坐标
             Console.SetCursorPosition(2 * y, x);
             Console.ForegroundColor = ConsoleColor.Red;
+            //炸弹图显示效果
             Console.Write("※");
             Console.ForegroundColor = ConsoleColor.Gray;
+            //将爆炸了的炸弹删除
             KillObject(x, y, objectmanager);
-            //炸弹伤害范围，左范围
-            for (int j = 1; j <= i; j++) 
+            //计算炸弹伤害范围，左范围
+            for (int j = 1; j <= damageLength; j++) 
             {
                 int t = 0;
+                //超出边界，则不计算
                 if (x > 18 || x < 1 || y - j > 48 || y - j < 0)
                     break;
+                //砖头无法炸毁，则不计算
                 if (ExistBrick(x, y - j, objectmanager))
                     break;
                 Console.SetCursorPosition(2 * (y - j), x);
@@ -265,7 +271,7 @@ namespace Bomber
                     break;
             }
             //上范围
-            for (int j = 1; j <= i; j++)
+            for (int j = 1; j <= damageLength; j++)
             {
                 int t = 0;
                 if (x - j > 18 || x - j < 1 || y > 48 || y < 0)
@@ -283,7 +289,7 @@ namespace Bomber
                     break;
             }
             //右范围
-            for (int j = 1; j <= i; j++)
+            for (int j = 1; j <= damageLength; j++)
             {
                 int t = 0;
                 if (x > 18 || x < 1 || y + j > 48 || y + j < 0)
@@ -301,7 +307,7 @@ namespace Bomber
                     break;
             }
             //下范围
-            for (int j = 1; j <= i; j++)
+            for (int j = 1; j <= damageLength; j++)
             {
                 int t = 0;
                 if (x + j > 18 || x + j < 1 || y > 48 || y < 0)
@@ -342,18 +348,21 @@ namespace Bomber
                 {
                     if (pair.Value is Boom)
                     {
+                        //炸弹有时间倒计时
                         if (pair.Value.ExistTime > 0)
                         {
                             pair.Value.ExistTime -= 1;
                         }
                         else if (pair.Value.ExistTime == 0)
                         {
+                            //时间到了，就爆炸
                             boomed.Add(pair.Value.Id);
                         }
                     }
                 }
                 for (int i = 0; i < boomed.Count; i++)
                 {
+                    //计算爆炸影响范围，绘画炸弹的效果，如果有其他可以被炸毁的元素，则从元素中删除
                     Boomeffect(boomed[i], objectmanager, player);
                 }
                 #endregion
@@ -361,18 +370,23 @@ namespace Bomber
 
                 while (Console.KeyAvailable)
                 {
+                    //判断是否有用户输入
                     max++;
                     ConsoleKeyInfo key = Console.ReadKey(true);
                     if (key.Key == ConsoleKey.Escape)
                     {
+                        
                         break;
                     }
 
                     tempdict.Clear();
-                    //玩家接收到按键后移动
+                    //缓存玩家移动前的所有元素id和位置
                     BufferRecord(objectmanager, tempdict);
+                    //玩家接收到按键后移动,元素容器用于检索玩家是否可以移动。
                     player.Move(objectmanager,key);
+                    //更新玩家信息
                     ShowPlayerInfo();
+                    //检查之前缓存的数据和当前的数据，若有变化，则重绘那个变化的元素，只有一个元素变化
                     BufferShow(objectmanager, tempdict);
 
                     if (max > player.Speed)
@@ -387,7 +401,7 @@ namespace Bomber
                     }
 
                 }
-                //怪物移动
+                //怪物移动，每次循环一个怪物变化
                 foreach (var gameObject in monsters)
                 {
                     tempdict.Clear();
@@ -406,6 +420,7 @@ namespace Bomber
 
                 for (int i = 0; i < boomed.Count; i++)
                 {
+                    //删除炸弹爆炸的效果
                     Boomharm(boomed[i], objectmanager, player);
                 }
                 if (isPlayerDie() || player.Win == 1)
@@ -547,7 +562,7 @@ namespace Bomber
         /// <param name="player"></param>
         private void Boomharm(int id, ObjectManager objectmanager, SuperBomber player)
         {
-            int i = player.Damage;
+            int i = player.DamageLength;
             int x = objectmanager.Objectdict[id].X;
             int y = objectmanager.Objectdict[id].Y;
             objectmanager.RemoveObjectByid(id);
