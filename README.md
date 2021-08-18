@@ -83,7 +83,7 @@ Encoding [示例](./Utils.cs)
 * 异步接收网络数据的示例
 [示例](./AsyncNetworkStream.cs)
 
-* Form2中增加了一个压力测试用的功能，读取文件中的报文，构造简单格式进行发送。
+* AsyncNetworkStream中增加了一个压力测试用的功能，读取文件中的报文，构造简单格式进行发送。
 
 
 * 正则表达式
@@ -100,6 +100,11 @@ Encoding [示例](./Utils.cs)
 
 * 简单配置ini文件读写，key=value
 [示例](./INIHelper.cs)
+
+* 使用Winform自带的Setting设置配置信息，该信息通过运行程序修改之后，只能有效作用于当前环境，若更换其他电脑，则重新读取配置的默认数据。
+常用于运行环境数据，比如是否第一次打开，窗体默认位置等个性化的数据等。
+[示例](./Utils.cs)
+
 
 ## 界面 ##
 
@@ -294,6 +299,7 @@ Encoding [示例](./Utils.cs)
 
 * 控制台小游戏：炸弹人。进阶最典型的游戏元素，有这个基础可以做个rpg游戏了。如果再用unity等游戏框架就更容易了。
 [示例](./OtherProjects/GameBomber/Bomber/GameCore.cs)
+
 
 
 

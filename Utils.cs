@@ -1281,5 +1281,12 @@ namespace MarketRiskUI
             }
         }
 
+        private void button42_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(Properties.Settings.Default.WelcomeMsg);
+            Properties.Settings.Default.WelcomeMsg = "欢迎━(*｀∀´*)ノ亻!";
+            //对于Scope为User的属性，可以修改并保存。 Application的属性无法修改。
+            Properties.Settings.Default.Save();
+        }
     }
 }

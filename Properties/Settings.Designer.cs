@@ -22,5 +22,17 @@ namespace MarketRiskUI.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Hello World")]
+        public string WelcomeMsg {
+            get {
+                return ((string)(this["WelcomeMsg"]));
+            }
+            set {
+                this["WelcomeMsg"] = value;
+            }
+        }
     }
 }

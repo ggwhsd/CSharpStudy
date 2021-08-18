@@ -83,6 +83,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button42 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -643,11 +644,22 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "线程Thread类";
             // 
+            // button42
+            // 
+            this.button42.Location = new System.Drawing.Point(578, 121);
+            this.button42.Name = "button42";
+            this.button42.Size = new System.Drawing.Size(198, 23);
+            this.button42.TabIndex = 37;
+            this.button42.Text = "setting文件";
+            this.button42.UseVisualStyleBackColor = true;
+            this.button42.Click += new System.EventHandler(this.button42_Click);
+            // 
             // Utils
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1081, 794);
+            this.Controls.Add(this.button42);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.button40);
             this.Controls.Add(this.textBoxString);
@@ -749,5 +761,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button button42;
     }
 }
