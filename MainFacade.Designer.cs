@@ -79,10 +79,11 @@
             this.fluentSchedulerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formsExToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.日历ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.子窗口ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox_test = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.子窗口ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gridviewcustomComboxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -170,7 +171,8 @@
             this.iNI配置文件读写ToolStripMenuItem,
             this.gDIRefreshAutoToolStripMenuItem,
             this.进程管理ToolStripMenuItem,
-            this.gridviewdatabindToolStripMenuItem});
+            this.gridviewdatabindToolStripMenuItem,
+            this.gridviewcustomComboxToolStripMenuItem});
             this.formsToolStripMenuItem.Name = "formsToolStripMenuItem";
             this.formsToolStripMenuItem.Size = new System.Drawing.Size(56, 21);
             this.formsToolStripMenuItem.Text = "Forms";
@@ -178,132 +180,132 @@
             // form1ToolStripMenuItem
             // 
             this.form1ToolStripMenuItem.Name = "form1ToolStripMenuItem";
-            this.form1ToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.form1ToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.form1ToolStripMenuItem.Text = "历史主窗口";
             this.form1ToolStripMenuItem.Click += new System.EventHandler(this.form1ToolStripMenuItem_Click);
             // 
             // gDIlineToolStripMenuItem
             // 
             this.gDIlineToolStripMenuItem.Name = "gDIlineToolStripMenuItem";
-            this.gDIlineToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.gDIlineToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.gDIlineToolStripMenuItem.Text = "GDI_line";
             this.gDIlineToolStripMenuItem.Click += new System.EventHandler(this.gDIlineToolStripMenuItem_Click);
             // 
             // gDIToolStripMenuItem
             // 
             this.gDIToolStripMenuItem.Name = "gDIToolStripMenuItem";
-            this.gDIToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.gDIToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.gDIToolStripMenuItem.Text = "GDI";
             this.gDIToolStripMenuItem.Click += new System.EventHandler(this.gDIToolStripMenuItem_Click);
             // 
             // jsonFormToolStripMenuItem
             // 
             this.jsonFormToolStripMenuItem.Name = "jsonFormToolStripMenuItem";
-            this.jsonFormToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.jsonFormToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.jsonFormToolStripMenuItem.Text = "json";
             // 
             // 常用工具ToolStripMenuItem
             // 
             this.常用工具ToolStripMenuItem.Name = "常用工具ToolStripMenuItem";
-            this.常用工具ToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.常用工具ToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.常用工具ToolStripMenuItem.Text = "常用工具";
             this.常用工具ToolStripMenuItem.Click += new System.EventHandler(this.常用工具ToolStripMenuItem_Click);
             // 
             // gridviewnodatabindToolStripMenuItem
             // 
             this.gridviewnodatabindToolStripMenuItem.Name = "gridviewnodatabindToolStripMenuItem";
-            this.gridviewnodatabindToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.gridviewnodatabindToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.gridviewnodatabindToolStripMenuItem.Text = "gridview_nodatabind";
             this.gridviewnodatabindToolStripMenuItem.Click += new System.EventHandler(this.gridviewnodatabindToolStripMenuItem_Click);
             // 
             // gridviewvirtualModeToolStripMenuItem
             // 
             this.gridviewvirtualModeToolStripMenuItem.Name = "gridviewvirtualModeToolStripMenuItem";
-            this.gridviewvirtualModeToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.gridviewvirtualModeToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.gridviewvirtualModeToolStripMenuItem.Text = "gridview_virtualMode";
             this.gridviewvirtualModeToolStripMenuItem.Click += new System.EventHandler(this.gridviewvirtualModeToolStripMenuItem_Click);
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(200, 22);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(221, 22);
             this.toolStripMenuItem4.Text = "gridview_list";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
             // log4NetToolStripMenuItem
             // 
             this.log4NetToolStripMenuItem.Name = "log4NetToolStripMenuItem";
-            this.log4NetToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.log4NetToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.log4NetToolStripMenuItem.Text = "log4Net";
             this.log4NetToolStripMenuItem.Click += new System.EventHandler(this.log4NetToolStripMenuItem_Click);
             // 
             // 颜色ToolStripMenuItem
             // 
             this.颜色ToolStripMenuItem.Name = "颜色ToolStripMenuItem";
-            this.颜色ToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.颜色ToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.颜色ToolStripMenuItem.Text = "颜色";
             this.颜色ToolStripMenuItem.Click += new System.EventHandler(this.颜色ToolStripMenuItem_Click);
             // 
             // redisTestToolStripMenuItem
             // 
             this.redisTestToolStripMenuItem.Name = "redisTestToolStripMenuItem";
-            this.redisTestToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.redisTestToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.redisTestToolStripMenuItem.Text = "redisTest";
             this.redisTestToolStripMenuItem.Click += new System.EventHandler(this.redisTestToolStripMenuItem_Click);
             // 
             // 拖拽ToolStripMenuItem
             // 
             this.拖拽ToolStripMenuItem.Name = "拖拽ToolStripMenuItem";
-            this.拖拽ToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.拖拽ToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.拖拽ToolStripMenuItem.Text = "拖拽";
             this.拖拽ToolStripMenuItem.Click += new System.EventHandler(this.拖拽ToolStripMenuItem_Click);
             // 
             // csv文件读写库ToolStripMenuItem
             // 
             this.csv文件读写库ToolStripMenuItem.Name = "csv文件读写库ToolStripMenuItem";
-            this.csv文件读写库ToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.csv文件读写库ToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.csv文件读写库ToolStripMenuItem.Text = "csv文件读写库";
             this.csv文件读写库ToolStripMenuItem.Click += new System.EventHandler(this.csv文件读写库ToolStripMenuItem_Click);
             // 
             // activeMQToolStripMenuItem
             // 
             this.activeMQToolStripMenuItem.Name = "activeMQToolStripMenuItem";
-            this.activeMQToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.activeMQToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.activeMQToolStripMenuItem.Text = "activeMQ_topic";
             this.activeMQToolStripMenuItem.Click += new System.EventHandler(this.activeMQToolStripMenuItem_Click);
             // 
             // activeMQQueueToolStripMenuItem
             // 
             this.activeMQQueueToolStripMenuItem.Name = "activeMQQueueToolStripMenuItem";
-            this.activeMQQueueToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.activeMQQueueToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.activeMQQueueToolStripMenuItem.Text = "activeMQ_Queue";
             this.activeMQQueueToolStripMenuItem.Click += new System.EventHandler(this.activeMQQueueToolStripMenuItem_Click);
             // 
             // iNI配置文件读写ToolStripMenuItem
             // 
             this.iNI配置文件读写ToolStripMenuItem.Name = "iNI配置文件读写ToolStripMenuItem";
-            this.iNI配置文件读写ToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.iNI配置文件读写ToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.iNI配置文件读写ToolStripMenuItem.Text = "INI配置文件读写";
             this.iNI配置文件读写ToolStripMenuItem.Click += new System.EventHandler(this.iNI配置文件读写ToolStripMenuItem_Click);
             // 
             // gDIRefreshAutoToolStripMenuItem
             // 
             this.gDIRefreshAutoToolStripMenuItem.Name = "gDIRefreshAutoToolStripMenuItem";
-            this.gDIRefreshAutoToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.gDIRefreshAutoToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.gDIRefreshAutoToolStripMenuItem.Text = "GDI_RefreshAuto";
             this.gDIRefreshAutoToolStripMenuItem.Click += new System.EventHandler(this.gDIRefreshAutoToolStripMenuItem_Click);
             // 
             // 进程管理ToolStripMenuItem
             // 
             this.进程管理ToolStripMenuItem.Name = "进程管理ToolStripMenuItem";
-            this.进程管理ToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.进程管理ToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.进程管理ToolStripMenuItem.Text = "进程管理";
             this.进程管理ToolStripMenuItem.Click += new System.EventHandler(this.进程管理ToolStripMenuItem_Click);
             // 
             // gridviewdatabindToolStripMenuItem
             // 
             this.gridviewdatabindToolStripMenuItem.Name = "gridviewdatabindToolStripMenuItem";
-            this.gridviewdatabindToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.gridviewdatabindToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.gridviewdatabindToolStripMenuItem.Text = "gridview_databind";
             this.gridviewdatabindToolStripMenuItem.Click += new System.EventHandler(this.gridviewdatabindToolStripMenuItem_Click);
             // 
@@ -381,7 +383,7 @@
             // tPL并行编程ToolStripMenuItem
             // 
             this.tPL并行编程ToolStripMenuItem.Name = "tPL并行编程ToolStripMenuItem";
-            this.tPL并行编程ToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.tPL并行编程ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tPL并行编程ToolStripMenuItem.Text = "异步编程/并发编程";
             this.tPL并行编程ToolStripMenuItem.Click += new System.EventHandler(this.tPL并行编程ToolStripMenuItem_Click);
             // 
@@ -397,7 +399,7 @@
             this.task7多任务ToolStripMenuItem,
             this.task8io型task返回ToolStripMenuItem});
             this.task基本使用ToolStripMenuItem.Name = "task基本使用ToolStripMenuItem";
-            this.task基本使用ToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.task基本使用ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.task基本使用ToolStripMenuItem.Text = "Task基本使用";
             this.task基本使用ToolStripMenuItem.Click += new System.EventHandler(this.task基本使用ToolStripMenuItem_Click);
             // 
@@ -460,7 +462,7 @@
             // action和FuncToolStripMenuItem
             // 
             this.action和FuncToolStripMenuItem.Name = "action和FuncToolStripMenuItem";
-            this.action和FuncToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.action和FuncToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.action和FuncToolStripMenuItem.Text = "Action和Func";
             this.action和FuncToolStripMenuItem.Click += new System.EventHandler(this.action和FuncToolStripMenuItem_Click);
             // 
@@ -475,7 +477,7 @@
             // fluentSchedulerToolStripMenuItem
             // 
             this.fluentSchedulerToolStripMenuItem.Name = "fluentSchedulerToolStripMenuItem";
-            this.fluentSchedulerToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.fluentSchedulerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.fluentSchedulerToolStripMenuItem.Text = "fluentScheduler";
             this.fluentSchedulerToolStripMenuItem.Click += new System.EventHandler(this.fluentSchedulerToolStripMenuItem_Click);
             // 
@@ -494,6 +496,13 @@
             this.日历ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.日历ToolStripMenuItem.Text = "日历";
             this.日历ToolStripMenuItem.Click += new System.EventHandler(this.日历ToolStripMenuItem_Click);
+            // 
+            // 子窗口ToolStripMenuItem
+            // 
+            this.子窗口ToolStripMenuItem.Name = "子窗口ToolStripMenuItem";
+            this.子窗口ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.子窗口ToolStripMenuItem.Text = "子窗口";
+            this.子窗口ToolStripMenuItem.Click += new System.EventHandler(this.子窗口ToolStripMenuItem_Click);
             // 
             // button1
             // 
@@ -522,12 +531,12 @@
             this.panel1.Size = new System.Drawing.Size(800, 425);
             this.panel1.TabIndex = 3;
             // 
-            // 子窗口ToolStripMenuItem
+            // gridviewcustomComboxToolStripMenuItem
             // 
-            this.子窗口ToolStripMenuItem.Name = "子窗口ToolStripMenuItem";
-            this.子窗口ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.子窗口ToolStripMenuItem.Text = "子窗口";
-            this.子窗口ToolStripMenuItem.Click += new System.EventHandler(this.子窗口ToolStripMenuItem_Click);
+            this.gridviewcustomComboxToolStripMenuItem.Name = "gridviewcustomComboxToolStripMenuItem";
+            this.gridviewcustomComboxToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.gridviewcustomComboxToolStripMenuItem.Text = "gridview_customCombox";
+            this.gridviewcustomComboxToolStripMenuItem.Click += new System.EventHandler(this.gridviewcustomComboxToolStripMenuItem_Click);
             // 
             // MainFacade
             // 
@@ -605,5 +614,6 @@
         private System.Windows.Forms.ToolStripMenuItem 日历ToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem 子窗口ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gridviewcustomComboxToolStripMenuItem;
     }
 }

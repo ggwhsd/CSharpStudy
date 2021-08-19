@@ -308,5 +308,11 @@ namespace MarketRiskUI
             Form4 f = new Form4();
             f.Show();
         }
+
+        private void gridviewcustomComboxToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_datagridview3 f = new Form_datagridview3();
+            f.Show();
+        }
     }
 }

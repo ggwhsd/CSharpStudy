@@ -127,6 +127,9 @@ Encoding [示例](./Utils.cs)
 * datagridview的bindlist使用。[示例3](./datagridviewBindList.cs)
 * datagridview与list、datatable、普通变量等的绑定方式，BindList的使用，文本控件的数据源绑定等。[示例4](./datagridviewBindMethod.cs)
 
+* datagridview 自定义单元格，点击显示下拉框、日历等。
+[示例](./Form_datagridview3.cs)
+
 * 蜡烛图 滑动条 点状图 阶梯和柱状图 图形上箭头指示*
 [示例](./NPlotTest.cs)
 
