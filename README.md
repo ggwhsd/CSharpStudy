@@ -127,7 +127,7 @@ Encoding [示例](./Utils.cs)
 * datagridview的bindlist使用。[示例3](./datagridviewBindList.cs)
 * datagridview与list、datatable、普通变量等的绑定方式，BindList的使用，文本控件的数据源绑定等。[示例4](./datagridviewBindMethod.cs)
 
-* datagridview 自定义单元格，点击显示下拉框、日历等。
+* datagridview 自定义单元格，点击显示下拉框、日历等。使用DataGridViewComboxColumn的话，则绑定数据最好使用datatable，如果使用list可能会出DataGridviewComboxCell值无效异常
 [示例](./Form_datagridview3.cs)
 
 * 蜡烛图 滑动条 点状图 阶梯和柱状图 图形上箭头指示*
@@ -297,11 +297,14 @@ Encoding [示例](./Utils.cs)
 * libvlc库的使用播放视频
 [示例](./OtherProjects/LivVlcPlayer/VLCDemo/Form1.cs)
 
-* 控制台小游戏：俄罗斯方块。熟悉最基本的游戏开发模式。
+* 控制台小游戏：俄罗斯方块（实时）。熟悉最基本的游戏开发模式。
 [示例](./OtherProjects/GameTetris/GameTetris/MyTetrisGame.cs)
 
-* 控制台小游戏：炸弹人。进阶最典型的游戏元素，有这个基础可以做个rpg游戏了。如果再用unity等游戏框架就更容易了。
+* 控制台小游戏：炸弹人（实时）。进阶最典型的游戏元素，有这个基础可以做个rpg游戏了。如果再用unity等游戏框架就更容易了。
 [示例](./OtherProjects/GameBomber/Bomber/GameCore.cs)
+
+* 控制台小游戏: 回合制游戏。最适合讲故事的游戏模式。
+[示例](./OtherProjects/GameTurnBaseStrategy/Program.cs)
 
 
 
