@@ -33,9 +33,9 @@ namespace GameTurnBaseStrateg
         public int matUp = 0;
         //物理防御提升
         public int defUp = 0;
-        //模仿防御提升
+        //魔法防御提升
         public int menUp = 0;
-        //状态类型
+        //表示当前的状态属于的状态类型
         public StateType type;
         //第一次执行状态时调用
         public StateEffect AddState = null;

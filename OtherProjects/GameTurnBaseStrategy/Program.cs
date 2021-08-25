@@ -8,6 +8,9 @@ namespace GameTurnBaseStrateg
 {
     static class Program
     {
+        public static Random random = new Random();
+        public static int width = 100;
+        public static int height = 30;
         /// <summary>
         /// 应用程序的主入口点。
         /// </summary>
