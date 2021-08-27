@@ -44,7 +44,8 @@ namespace GameTurnBaseStrateg
         MagicBeDamageIncrease,
         Dizzy,
         ForbidHeal,
-        Taunt,
+        ///嘲讽
+        Taunt,  
     }
 
     public enum CharacterType

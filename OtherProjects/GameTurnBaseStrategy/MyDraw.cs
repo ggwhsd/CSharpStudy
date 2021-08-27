@@ -317,19 +317,36 @@ namespace GameTurnBaseStrateg
             Thread.Sleep(100);
         }
 
+        /// 播放添加状态时候的闪烁的效果
+        public static void DrawEffectAnimation(BaseCharacter one, int index)
+        {
+            DrawCharacterInfoOpsColor(one, index, 15, 9);
+            Thread.Sleep(100);
+            DrawCharacterInfo(one, index);
+            Thread.Sleep(100);
+            DrawCharacterInfoOpsColor(one, index, 15, 9);
+            Thread.Sleep(100);
+            DrawCharacterInfo(one, index);
+            Thread.Sleep(100);
+        }
+
+
+
+      
+
         /// <summary>
         /// 按照指定颜色显示角色信息，第一个int是玩家信息的颜色，第二个是敌人的颜色，用于闪烁
         /// </summary>
         /// <param name="one"></param>
         /// <param name="index"></param>
-        /// <param name="color1"></param>
-        /// <param name="color2"></param>
-        private static void DrawCharacterInfoOpsColor(BaseCharacter one, int index, int color1, int color2)
+        /// <param name="playColor"></param>
+        /// <param name="EnemyColor"></param>
+        private static void DrawCharacterInfoOpsColor(BaseCharacter one, int index, int playColor, int EnemyColor)
         {
             ClearCharacterInfo(one, index);
             if (one.type == CharacterType.Player)
             {
-                Console.ForegroundColor = (ConsoleColor)(color1);
+                Console.ForegroundColor = (ConsoleColor)(playColor);
                 Console.SetCursorPosition(0, 4 * index + 2);
                 Console.Write(one.Name);
                 Console.SetCursorPosition(0, 4 * index + 3);
@@ -339,7 +356,7 @@ namespace GameTurnBaseStrateg
             }
             if (one.type == CharacterType.Enemy)
             {
-                Console.ForegroundColor = (ConsoleColor)(color2);
+                Console.ForegroundColor = (ConsoleColor)(EnemyColor);
                 int temp = GetLength(one.Name);
                 Console.SetCursorPosition(Program.width - temp, 4 * index + 2);
                 Console.Write(one.Name);
@@ -388,6 +405,107 @@ namespace GameTurnBaseStrateg
             }
             Console.SetCursorPosition(0, 0);
         }
+
+        /// <summary>
+        /// 显示战斗信息
+        /// </summary>
+        /// <param name="text"></param>
+        public static void DrawBattleMessageDelay(string text)
+        {
+            DrawBattleMessage(text);
+            Console.SetCursorPosition(0, 0);
+            Thread.Sleep(1000);
+        }
+
+        public static void DrawBattleMessage(string text)
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            ClearLine(1);
+            Console.SetCursorPosition(0, 1);
+            Console.Write(text);
+            Console.SetCursorPosition(0, 0);
+        }
+
+        /// <summary>
+        /// 显示位于上方的回合数
+        /// </summary>
+        /// <param name="counts"></param>
+        public static void DrawCounts(int counts)
+        {
+            ClearChoiceText();
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.SetCursorPosition(42, 0);
+            Console.Write("第" + counts + "回合，开始！");
+            Console.SetCursorPosition(0, 0);
+        }
+
+        /// <summary>
+        /// 清空下方行动提示，选择项和对应的说明文字
+        /// </summary>
+        public static void ClearChoiceText()
+        {
+            ClearLine(19);
+            ClearLine(20);
+            ClearLine(21);
+            Console.SetCursorPosition(0, 0);
+        }
+
+        /// <summary>
+        /// 显示位于下方的行动提示文字
+        /// </summary>
+        /// <param name="text"></param>
+        public static void DrawIntroText(string text)
+        {
+            Console.SetCursorPosition(0, 19);
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write(text);
+            Console.SetCursorPosition(0, 0);
+        }
+
+        /// <summary>
+        /// 显示下方的单个选择项
+        /// </summary>
+        /// <param name="index"></param>
+        /// <param name="name"></param>
+        /// <param name="pos"></param>
+        public static void DrawChoiceText(int index, string name, int pos)
+        {
+            Console.SetCursorPosition(pos, 20);
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write((index + 1) + "." + name + "  ");
+            Console.SetCursorPosition(0, 0);
+        }
+
+        /// <summary>
+        /// 显示下方的选择项的说明文字
+        /// </summary>
+        /// <param name="s"></param>
+        public static void DrawChoiceInfo(Skill s)
+        {
+            Console.SetCursorPosition(0, 21);
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.Write(s.description);
+            Console.SetCursorPosition(0, 0);
+        }
+
+        /// <summary>
+        /// 显示当前选中的文字
+        /// </summary>
+        /// <param name="index"></param>
+        /// <param name="name"></param>
+        /// <param name="pos"></param>
+        public static void DrawChoiced(int index, string name, int pos)
+        {
+            //反色处理
+            Console.BackgroundColor = (ConsoleColor)(15 - (int)ConsoleColor.Black);
+            Console.ForegroundColor = (ConsoleColor)(15 - (int)ConsoleColor.Cyan);
+            Console.SetCursorPosition(pos, 20);
+            Console.Write((index + 1) + "." + name);
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.SetCursorPosition(0, 0);
+        }
+
+
 
     }
 }

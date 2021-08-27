@@ -50,8 +50,17 @@ namespace GameTurnBaseStrateg
         /// <returns></returns>
         public bool CanUseSkill(BaseCharacter attacker)
         {
-            //TODO:
-            return false;
+            if (attacker.Hp <= hpCost || attacker.Mp < mpCost)
+            {
+                MyDraw.DrawBattleMessage("无法使用技能：Hp或者mp不满足技能的最小消耗！");
+                return false;
+            }
+            if (attacker.IsSilence() && type != SkillType.NormalAttack)
+            {
+                MyDraw.DrawBattleMessage(attacker.Name + " 无法使用技能: 被沉默了！");
+                return false;
+            }
+            return true;
         }
         /// <summary>
         /// 群体释放技能
