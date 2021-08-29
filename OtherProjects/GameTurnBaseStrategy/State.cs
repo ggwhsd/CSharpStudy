@@ -17,9 +17,14 @@ namespace GameTurnBaseStrateg
         public string name;
         //状态由哪个技能生成
         public string skillName;
-        //状态生效次数,回合数是客观时间，次数是根据触发情况而来,比如由的buff持续五回合，但是只要触发一次就失效
+        ///<summary>
+        ///状态生效次数,回合数是客观时间，
+        ///次数是根据触发情况而来,比如由的buff持续五回合，但是只要触发一次就失效
+        ///</summary>
         public int times = 0;
-        //状态生效回合数
+        ///<summary>
+        ///状态生效回合数
+        ///</summary>
         public int counts = 0;
 
         public int damage = 0;

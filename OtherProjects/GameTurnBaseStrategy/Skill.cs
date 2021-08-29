@@ -24,7 +24,9 @@ namespace GameTurnBaseStrateg
         public int mpCost = 0;
         /// 释放一次技能的攻击次数或恢复次数
         public int hitTimes = 1;
+        /// <summary>
         /// 技能伤害的离散度
+        /// </summary>
         public int dispersion = 0;
         /// 技能是否能对自己释放
         public bool self = false;

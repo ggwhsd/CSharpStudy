@@ -34,7 +34,10 @@ namespace GameTurnBaseStrateg
         public int Def { get; set; }
         ///魔法攻击
         public int Mat { get; set; }
+
+        ///<summary>
         ///魔法防御
+        ///</summary>
         public int Men { get; set; }
         ///命中率
         public int HitRatio { get; set; }
