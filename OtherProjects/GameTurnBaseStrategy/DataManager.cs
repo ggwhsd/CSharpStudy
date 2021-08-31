@@ -694,7 +694,111 @@ namespace GameTurnBaseStrateg
             return slime;
         }
 
+        /// <summary>
+        /// 创造一个蓝色史莱姆
+        /// </summary>
+        /// <returns></returns>
+        public static BaseCharacter CreateCharSlimeBlue()
+        {
+            BaseCharacter slime = new BaseCharacter();
+            slime.Name = "蓝色史莱姆";
+            slime.MaxHp = 952;
+            slime.MaxMp = 502;
+            slime.Hp = 952;
+            slime.Mp = 502;
+            slime.Atk = 20;
+            slime.Def = 20;
+            slime.Mat = 40;
+            slime.Men = 40;
+            slime.HitRatio = 80;
+            slime.CriticalChance = 0;
+            slime.Level = 15;
+            slime.type = CharacterType.Enemy;
+            slime.actionType = ActionMode.MinHP;
 
+            Skill normalAttack = CreateAttackSkill(1, 10, DamageType.Magic, TargetType.EnemySingle);
+            normalAttack.skillDamage = (BaseCharacter attacker, BaseCharacter target) =>
+            {
+                return attacker.Mat * 2 - target.Men;
+            };
+            slime.skill.Add(normalAttack);
+
+            Skill magReflect = CreateStateSkill("魔法反射", 0, 30, TargetType.Self);
+            magReflect.skillEffect = (BaseCharacter attacker, BaseCharacter target) =>
+            {
+                State magrefState = CreateSpecialState("魔法反射", 1, 0);
+                magrefState.skillName = magReflect.name;
+                magrefState.type = StateType.MagicReflect;
+                target.AddState(magrefState);
+            };
+            slime.skill.Add(magReflect);
+
+            Skill forbidHeal = CreateStateSkill("禁疗", 0, 30, TargetType.EnemyMulti);
+            forbidHeal.skillEffect = (BaseCharacter attacker, BaseCharacter target) =>
+            {
+                State forbidHealState = CreateSpecialState("禁疗", 0, 4);
+                forbidHealState.skillName = forbidHeal.name;
+                forbidHealState.type = StateType.ForbidHeal;
+                target.AddState(forbidHealState);
+            };
+            slime.skill.Add(forbidHeal);
+
+            Skill magicBullet = CreateDamageSkill("魔法爆弹", 0, 10, 1, 5, TargetType.EnemySingle, DamageType.Magic);
+            magicBullet.skillDamage = (BaseCharacter attacker, BaseCharacter target) =>
+            {
+                int temp = Convert.ToInt32(attacker.Mat * 2.75 - target.Men);
+                return temp > 0 ? temp : 1;
+            };
+            slime.skill.Add(magicBullet);
+
+            Skill heal = CreateHealSkill("治疗", 0, 20, 1, 0, TargetType.PartySingle);
+            heal.skillDamage = (BaseCharacter attacker, BaseCharacter target) =>
+            {
+                int temp = Convert.ToInt32(attacker.Men * 3.3);
+                return temp > 0 ? temp : 1;
+            };
+            slime.skill.Add(heal);
+
+            slime.GetRandomSkill = (BaseCharacter bc, List<BaseCharacter> bcList, int counts) =>
+            {
+                //从第三回合开始每7回合一次禁疗
+                if (counts % 7 == 3)
+                {
+                    if (bc.skill[2].CanUseSkill(bc))
+                        return bc.skill[2];
+                }
+
+                //从第二回合开始，每四回合检测一次血量并选择释放回血技能
+                if (counts % 4 == 2)
+                {
+                    for (int i = 0; i < bcList.Count; i++)
+                    {
+                        if (bcList[i].Hp < bcList[i].MaxHp / 2)
+                        {
+                            if (bc.skill[4].CanUseSkill(bc) && bcList[i].CanBeTarget(bc.skill[4]))
+                                return bc.skill[4];
+                        }
+                    }
+                }
+
+                //从第一回合开始每5回合一次魔法反射
+                if (counts % 5 == 1)
+                {
+                    if (!bc.HasState(StateType.MagicReflect))
+                    {
+                        if (bc.skill[1].CanUseSkill(bc))
+                            return bc.skill[1];
+                    }
+                }
+
+                //其他情况能用魔法爆弹就用魔法爆弹
+                if (bc.skill[3].CanUseSkill(bc))
+                    return bc.skill[3];
+
+                return bc.skill[0];
+            };
+            return slime;
+        }
         /// <summary>
         /// 创造一个史莱姆王
         /// </summary>

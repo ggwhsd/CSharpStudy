@@ -179,7 +179,14 @@ namespace GameTurnBaseStrateg
             return len;
         }
 
+
+        /// <summary>
         /// 播放玩家攻击怪物时的动画效果
+        /// </summary>
+        /// <param name="attacker"></param>
+        /// <param name="att_index"></param>
+        /// <param name="target"></param>
+        /// <param name="tar_index"></param>
         public static void DrawAttackAnimation(BaseCharacter attacker, int att_index, BaseCharacter target, int tar_index)
         {
             int x1 = GetLength("HP:" + attacker.Hp);
@@ -241,7 +248,13 @@ namespace GameTurnBaseStrateg
         }
 
 
+        /// <summary>
         /// 播放怪物攻击玩家时的动画效果
+        /// </summary>
+        /// <param name="attacker"></param>
+        /// <param name="att_index"></param>
+        /// <param name="target"></param>
+        /// <param name="tar_index"></param>
         public static void DrawAttackAnimationEnemy(BaseCharacter attacker, int att_index, BaseCharacter target, int tar_index)
         {
             int xStart = Program.width - GetLength("HP:" + attacker.Hp) - 2;
@@ -304,7 +317,11 @@ namespace GameTurnBaseStrateg
             Console.Write("  ");
         }
 
+        /// <summary>
         /// 播放受到伤害时候的动画
+        /// </summary>
+        /// <param name="one"></param>
+        /// <param name="index"></param>
         public static void DrawDamageAnimation(BaseCharacter one, int index)
         {
             DrawCharacterInfoOpsColor(one, index, 5, 3);
@@ -316,8 +333,11 @@ namespace GameTurnBaseStrateg
             DrawCharacterInfo(one, index);
             Thread.Sleep(100);
         }
-
+        /// <summary>
         /// 播放添加状态时候的闪烁的效果
+        /// </summary>
+        /// <param name="one"></param>
+        /// <param name="index"></param>
         public static void DrawEffectAnimation(BaseCharacter one, int index)
         {
             DrawCharacterInfoOpsColor(one, index, 15, 9);
@@ -384,9 +404,9 @@ namespace GameTurnBaseStrateg
                 Console.SetCursorPosition(0, 4 * index + 2);
                 Console.Write(one.Name);
                 Console.SetCursorPosition(0, 4 * index + 3);
-                Console.Write("HP:" + one.Hp);
+                Console.Write("HP:" + one.Hp + "/" + one.MaxHp);
                 Console.SetCursorPosition(0, 4 * index + 4);
-                Console.Write("MP:" + one.Mp);
+                Console.Write("MP:" + one.Mp+"/" + one.MaxMp);
                 DrawState(one, index);
             }
             if (one.type == CharacterType.Enemy)
@@ -395,12 +415,12 @@ namespace GameTurnBaseStrateg
                 int temp = GetLength(one.Name);
                 Console.SetCursorPosition(Program.width - temp, 4 * index + 2);
                 Console.Write(one.Name);
-                temp = GetLength("HP:" + one.Hp);
+                temp = GetLength("HP:" + one.Hp + "/" + one.MaxHp);
                 Console.SetCursorPosition(Program.width - temp, 4 * index + 3);
-                Console.Write("HP:" + one.Hp);
-                temp = GetLength("MP:" + one.Mp);
+                Console.Write("HP:" + one.Hp + "/" + one.MaxHp);
+                temp = GetLength("MP:" + one.Mp + "/" + one.MaxMp);
                 Console.SetCursorPosition(Program.width - temp, 4 * index + 4);
-                Console.Write("MP:" + one.Mp);
+                Console.Write("MP:" + one.Mp + "/" + one.MaxMp);
                 DrawState(one, index);
             }
             Console.SetCursorPosition(0, 0);

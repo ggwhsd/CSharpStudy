@@ -224,7 +224,10 @@ namespace GameTurnBaseStrateg
                 CleanUpState();
             return temp;
         }
-
+        /// <summary>
+        /// 是否被嘲讽
+        /// </summary>
+        /// <returns></returns>
         public double IsTaunt()
         {
             foreach (State s in state)
