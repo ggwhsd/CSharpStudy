@@ -51,10 +51,19 @@
     <Compile Include="SevenSegment.Designer.cs">
       <DependentUpon>SevenSegment.cs</DependentUpon>
     </Compile>
+    <Compile Include="SevenSegmentArray.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SevenSegmentArray.Designer.cs">
+      <DependentUpon>SevenSegmentArray.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="SevenSegment.resx">
       <DependentUpon>SevenSegment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SevenSegmentArray.resx">
+      <DependentUpon>SevenSegmentArray.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

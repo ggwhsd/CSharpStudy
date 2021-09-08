@@ -16,7 +16,11 @@ namespace SevenSegment
         public SevenSegment()
         {
             InitializeComponent();
-            this.Padding = new Padding(6, 6, 6, 6);
+            this.SuspendLayout();
+            this.Size = new System.Drawing.Size(32, 64);
+            this.Padding = new Padding(12, 4, 8, 4);
+            this.TabStop = false;
+            this.ResumeLayout(false);
             //每根灯管是一个六边形，需要六个点，一共7个LED灯管
             segPoints = new Point[7][];
             for (int i = 0; i < 7; i++) segPoints[i] = new Point[6];

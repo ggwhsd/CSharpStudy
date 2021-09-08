@@ -306,8 +306,11 @@ Encoding [示例](./Utils.cs)
 * 控制台小游戏: 回合制游戏。最适合讲故事的游戏模式。
 [示例](./OtherProjects/GameTurnBaseStrategy/Program.cs)
 
-* 七彩灯，熟悉画图控件的制作。
-[示例](./OtherProjects/)
+* 七段LED显示，熟悉画图控件的制作。
+[示例](./OtherProjects/SevenSegment/SevenSegment.cs)
+
+* 多位七段LED显示
+[示例](./OtherProjects/SevenSegment/SevenSegment.cs)
 
 
 

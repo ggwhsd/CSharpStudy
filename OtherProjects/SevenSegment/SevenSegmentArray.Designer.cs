@@ -1,6 +1,6 @@
 ﻿namespace SevenSegment
 {
-    partial class SevenSegment
+    partial class SevenSegmentArray
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -30,16 +30,12 @@
         {
             this.SuspendLayout();
             // 
-            // SevenSegment
+            // SevenSegmentArray
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Aqua;
-            this.DoubleBuffered = true;
-            this.Name = "SevenSegment";
-            this.Size = new System.Drawing.Size(81, 112);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.SevenSegment_Paint);
-            this.Resize += new System.EventHandler(this.SevenSegment_Resize);
+            this.Name = "SevenSegmentArray";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.SevenSegmentArray_Paint);
             this.ResumeLayout(false);
 
         }
