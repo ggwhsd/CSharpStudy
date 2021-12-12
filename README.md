@@ -184,7 +184,8 @@ Encoding [示例](./Utils.cs)
 * 菜单保留历史文件打开记录 
 [示例](./MenuContext.cs)
 
-
+* PropertiyGrid的使用
+[示例](./PropertyGridTest.cs)
 
 
 # CSharp访问C++的dll的方法：Marsheling机制。指针、数组、回调等均有示例。参考[项目](./CSharpInvokeCPP/CSharpInvokeCPP.sln)

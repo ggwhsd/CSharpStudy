@@ -314,5 +314,11 @@ namespace MarketRiskUI
             Form_datagridview3 f = new Form_datagridview3();
             f.Show();
         }
+
+        private void propertiesGridToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PropertyGridTest t = new PropertyGridTest();
+            t.Show();
+        }
     }
 }
