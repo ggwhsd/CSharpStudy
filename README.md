@@ -106,6 +106,12 @@ Encoding [示例](./Utils.cs)
 [示例](./Utils.cs)
 
 
+* ConditionAttribute的使用
+[示例](./TestAttribute.cs)
+
+* 索引器[,,]的使用，可以实现类似除了数组以外的多参数索引方式。
+[示例](./Utils.cs)
+
 ## 界面 ##
 
 * datagridview界面 * 
@@ -203,6 +209,7 @@ Encoding [示例](./Utils.cs)
 
 * Attribute的自定义使用
 [示例](./LittleExamples/AttributeExample.cs)
+
 
 * IO基础说明,
 * 按存储位置分，FileStream, MemoryStream, BufferedStream

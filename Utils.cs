@@ -1288,5 +1288,41 @@ namespace MarketRiskUI
             //对于Scope为User的属性，可以修改并保存。 Application的属性无法修改。
             Properties.Settings.Default.Save();
         }
+
+        private void button43_Click(object sender, EventArgs e)
+        {
+            IndexersExample<int> ie = new IndexersExample<int>();
+            ie[1, 2, 3] = 100;
+            Console.WriteLine(ie[1, 2, 3]);
+            ie["100"] = 100;
+            Console.WriteLine(ie["100"]);
+        }
+
+        class IndexersExample<T>
+        {
+            // [] Indexers
+            private T[] arr = new T[100];
+            private Dictionary<String, T> dict = new Dictionary<string, T>();
+            public T this[int i]
+            {
+                get { return arr[i]; }
+                set { arr[i] = value; }
+            }
+            public T this[int i, int j]
+            {
+                get { return arr[i + j]; }
+                set { arr[i + j] = value; }
+            }
+            public T this[int i, int j, int k]
+            {
+                get { return arr[i + j + k]; }
+                set { arr[i + j + k] = value; }
+            }
+            public T this[string s]
+            {
+                get { return dict[s]; }
+                set { dict[s] = value; }
+            }
+        }
     }
 }
