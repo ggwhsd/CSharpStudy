@@ -249,6 +249,8 @@ Encoding [示例](./Utils.cs)
 * webbrowser配合Echart.js进行图表展示
 [示例](./OtherProjects/EChartByOther/EChartByOther/Form1.cs)
 
+* webview2的示例，一种替代webbrowser的组件
+[示例](./OtherProjects/WinFormsAppWebView2/WindowsFormsApp1/Form1.cs)
 
 # 进阶使用知识：
 
