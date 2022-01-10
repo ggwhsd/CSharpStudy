@@ -336,7 +336,7 @@ DesignPattern
 
 packages/
 
-packages.config
+# packages.config
 
 
 EncodingsTools/
