@@ -32,6 +32,8 @@ namespace WindowsFormsApp1
             this.webView = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.addressBar = new System.Windows.Forms.TextBox();
             this.goButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.webView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,17 +47,18 @@ namespace WindowsFormsApp1
             this.webView.Source = new System.Uri("https://docs.microsoft.com/en-us/microsoft-edge/webview2/get-started/winforms", System.UriKind.Absolute);
             this.webView.TabIndex = 0;
             this.webView.ZoomFactor = 1D;
+            this.webView.NavigationStarting += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2NavigationStartingEventArgs>(this.webView_NavigationStarting);
             // 
             // addressBar
             // 
             this.addressBar.Location = new System.Drawing.Point(12, 46);
             this.addressBar.Name = "addressBar";
-            this.addressBar.Size = new System.Drawing.Size(668, 21);
+            this.addressBar.Size = new System.Drawing.Size(593, 21);
             this.addressBar.TabIndex = 1;
             // 
             // goButton
             // 
-            this.goButton.Location = new System.Drawing.Point(695, 44);
+            this.goButton.Location = new System.Drawing.Point(611, 44);
             this.goButton.Name = "goButton";
             this.goButton.Size = new System.Drawing.Size(75, 23);
             this.goButton.TabIndex = 2;
@@ -63,11 +66,33 @@ namespace WindowsFormsApp1
             this.goButton.UseVisualStyleBackColor = true;
             this.goButton.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(692, 44);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "注册事件";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(284, 12);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.goButton);
             this.Controls.Add(this.addressBar);
             this.Controls.Add(this.webView);
@@ -84,6 +109,8 @@ namespace WindowsFormsApp1
         private Microsoft.Web.WebView2.WinForms.WebView2 webView;
         private System.Windows.Forms.TextBox addressBar;
         private System.Windows.Forms.Button goButton;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 
