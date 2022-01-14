@@ -11,10 +11,13 @@ using System.Windows.Forms;
 using System.Speech;
 using System.Speech.Synthesis;
 using System.Globalization;
-using System.Runtime.Remoting.Messaging;
+
 using System.Text.RegularExpressions;
 using System.Security.Cryptography;
 using System.IO;
+using System.Reflection;
+using System.Runtime.Remoting.Messaging;
+using Newtonsoft.Json;
 
 namespace MarketRiskUI
 {
@@ -1323,6 +1326,150 @@ namespace MarketRiskUI
                 get { return dict[s]; }
                 set { dict[s] = value; }
             }
+        }
+
+        private void button44_Click(object sender, EventArgs e)
+        {
+            //以下都是从当前程序集中获取信息
+
+            //方法1:直接根据类名获取Type
+            //Type t = typeof(ReflectExample);
+            
+            //方法2:也可以根据字符串获取,先获取当前程序集
+            Assembly ass = typeof(Utils).Assembly;
+            Type t = ass.GetType("MarketRiskUI.ReflectExample");
+
+            string msg = $"{t.Name} {t.FullName} {t.Assembly}";
+            MessageBox.Show("类信息："+msg);
+            //获取构造函数,
+            ConstructorInfo[] ci = t.GetConstructors(BindingFlags.Public | BindingFlags.Instance);
+            msg=getMembers<ConstructorInfo>(ci);
+            MessageBox.Show("获取构造函数:" + msg);
+            //对于非public的，获取不了。
+            MemberInfo[] memberInfos = t.GetMembers();
+            msg = getMembers<MemberInfo>(memberInfos);
+            MessageBox.Show("获取所有成员,默认包含（方法+字段+属性):" + msg);
+
+            MethodInfo[] mi = t.GetMethods();
+            msg = getMembers<MethodInfo>(mi);
+            MessageBox.Show("获取方法:" + msg);
+
+            FieldInfo[] fi = t.GetFields();
+            msg = getMembers<FieldInfo>(fi);
+            MessageBox.Show("获取字段:" + msg);
+
+            PropertyInfo[] pi = t.GetProperties();
+            msg = getMembers<PropertyInfo>(pi);
+            MessageBox.Show("获取属性:" + msg);
+
+            EventInfo[] ei = t.GetEvents(BindingFlags.NonPublic);
+            msg = getMembers<EventInfo>(ei);
+            MessageBox.Show("获取事件:" + msg);
+
+            
+
+
+        }
+
+        public string getMembers<T>(T[] ms)
+        {
+            string value="";
+            foreach (T m in ms)
+            {
+                value +=string.Format("{0}{1}", "     ", m.ToString());
+            }
+            return value;
+        }
+
+        private void button45_Click(object sender, EventArgs e)
+        {
+            Assembly ass = typeof(Utils).Assembly;
+            Type t = ass.GetType("MarketRiskUI.ReflectExample");
+            var obj = Activator.CreateInstance(t) as ReflectExample;
+            obj.value1 = "value1";
+            MessageBox.Show("执行反射创建的实例：" + obj.Show());
+            
+        }
+
+        private void button46_Click(object sender, EventArgs e)
+        {
+            //将对象序列化字符串
+            ReflectExample r = new ReflectExample();
+            r.value1 = "v1";
+            r.value2 = 2;
+            r.property1 = "p1";
+            string json = JsonConvert.SerializeObject(r, Formatting.Indented);
+            //告知字符串表示的对象类型名
+            string json_type = r.GetType().FullName;
+
+
+            //==========================>
+            
+            Type t = typeof(ReflectExample);
+            if (json_type == t.FullName)
+            {
+                ReflectExample value = JsonConvert.DeserializeObject<ReflectExample>(json);
+                MessageBox.Show(value.Show());
+            }
+            
+        }
+
+        private string SendObjectToStr<T>(T value)
+        {
+            string json_type = typeof(T).FullName;
+            string json = JsonConvert.SerializeObject(value, Formatting.Indented);
+            return json_type+":"+json;
+        }
+        private string GetTypeStr(string json)
+        {
+            string header = json.Substring(0, json.IndexOf(":"));
+            return header;
+        }
+
+        private T GetObject<T>(string json_v)
+        {
+
+             T value = JsonConvert.DeserializeObject<T>(json_v);
+            return value;
+            
+        }
+
+        private void button47_Click(object sender, EventArgs e)
+        {
+            ReflectExample r = new ReflectExample();
+            r.value1 = "v1";
+            r.value2 = 2;
+            r.property1 = "p1";
+            //转换为字符串
+            string jsonpheader = SendObjectToStr<ReflectExample>(r);
+
+
+            //转换为对象
+            if (GetTypeStr(jsonpheader) == r.GetType().FullName)
+            {
+                ReflectExample v= GetObject<ReflectExample>(jsonpheader.Substring(jsonpheader.IndexOf(":")));
+            }
+        }
+    }
+
+    class ReflectExample
+    {
+        private string value0;
+        public string value1;
+        public int value2;
+        public string property1 { get; set; }
+        private event Action evt1;
+        public ReflectExample()
+        { 
+        }
+
+        public ReflectExample(string def)
+        { 
+        }
+
+        public string Show()
+        {
+            return value0+":"+value1 + "-" + value2.ToString();
         }
     }
 }

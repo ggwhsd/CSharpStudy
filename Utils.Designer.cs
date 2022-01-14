@@ -85,6 +85,10 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button42 = new System.Windows.Forms.Button();
             this.button43 = new System.Windows.Forms.Button();
+            this.button44 = new System.Windows.Forms.Button();
+            this.button45 = new System.Windows.Forms.Button();
+            this.button46 = new System.Windows.Forms.Button();
+            this.button47 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -665,11 +669,55 @@
             this.button43.UseVisualStyleBackColor = true;
             this.button43.Click += new System.EventHandler(this.button43_Click);
             // 
+            // button44
+            // 
+            this.button44.Location = new System.Drawing.Point(680, 177);
+            this.button44.Name = "button44";
+            this.button44.Size = new System.Drawing.Size(108, 23);
+            this.button44.TabIndex = 39;
+            this.button44.Text = "反射获取类的信息";
+            this.button44.UseVisualStyleBackColor = true;
+            this.button44.Click += new System.EventHandler(this.button44_Click);
+            // 
+            // button45
+            // 
+            this.button45.Location = new System.Drawing.Point(680, 206);
+            this.button45.Name = "button45";
+            this.button45.Size = new System.Drawing.Size(108, 23);
+            this.button45.TabIndex = 40;
+            this.button45.Text = "通过反射实例化类";
+            this.button45.UseVisualStyleBackColor = true;
+            this.button45.Click += new System.EventHandler(this.button45_Click);
+            // 
+            // button46
+            // 
+            this.button46.Location = new System.Drawing.Point(680, 235);
+            this.button46.Name = "button46";
+            this.button46.Size = new System.Drawing.Size(108, 23);
+            this.button46.TabIndex = 41;
+            this.button46.Text = "json序列化+反射";
+            this.button46.UseVisualStyleBackColor = true;
+            this.button46.Click += new System.EventHandler(this.button46_Click);
+            // 
+            // button47
+            // 
+            this.button47.Location = new System.Drawing.Point(680, 264);
+            this.button47.Name = "button47";
+            this.button47.Size = new System.Drawing.Size(108, 23);
+            this.button47.TabIndex = 42;
+            this.button47.Text = "json序列化+泛型";
+            this.button47.UseVisualStyleBackColor = true;
+            this.button47.Click += new System.EventHandler(this.button47_Click);
+            // 
             // Utils
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1081, 794);
+            this.Controls.Add(this.button47);
+            this.Controls.Add(this.button46);
+            this.Controls.Add(this.button45);
+            this.Controls.Add(this.button44);
             this.Controls.Add(this.button43);
             this.Controls.Add(this.button42);
             this.Controls.Add(this.groupBox3);
@@ -775,5 +823,9 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button42;
         private System.Windows.Forms.Button button43;
+        private System.Windows.Forms.Button button44;
+        private System.Windows.Forms.Button button45;
+        private System.Windows.Forms.Button button46;
+        private System.Windows.Forms.Button button47;
     }
 }
