@@ -1450,6 +1450,33 @@ namespace MarketRiskUI
                 ReflectExample v= GetObject<ReflectExample>(jsonpheader.Substring(jsonpheader.IndexOf(":")));
             }
         }
+        /// <summary>
+        /// 根据字符串输入的如下:类名、方法名、方法参数类型。 通过反射进行调用执行类的对应方法。
+        /// 反射相比直接定义和调用来说，更适合编译器中的编写，以及注解Attribute的调用，但是性能开销也相比多些。
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button48_Click(object sender, EventArgs e)
+        {
+            Assembly ass = typeof(Utils).Assembly;
+            Type t = ass.GetType("MarketRiskUI.ReflectExample");
+
+           
+
+            object[] ps = new object[]{ "construct 1" };
+            //调用有参数的构造函数
+            object obj = Activator.CreateInstance(t, ps);
+            //获取方法，有两个参数类型
+            MethodInfo method = t.GetMethod("Show",new Type[] { Type.GetType("System.String"), Type.GetType("System.Int32") });
+            BindingFlags flag = BindingFlags.Public | BindingFlags.Instance; //这个其实是GetMethod默认设置
+            object[] ps2 = new object[] { "p1",2 };
+            //执行方法
+            object rtn = method.Invoke(obj, flag, Type.DefaultBinder, ps2, null);
+            MessageBox.Show(rtn.ToString());
+
+
+
+        }
     }
 
     class ReflectExample
@@ -1464,12 +1491,17 @@ namespace MarketRiskUI
         }
 
         public ReflectExample(string def)
-        { 
+        {
+            Console.WriteLine("构造函数调用："+ def);
         }
 
         public string Show()
         {
             return value0+":"+value1 + "-" + value2.ToString();
+        }
+        public string Show(string v1, int v2)
+        {
+            return v1+v2.ToString();
         }
     }
 }
