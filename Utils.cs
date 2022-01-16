@@ -1477,6 +1477,81 @@ namespace MarketRiskUI
 
 
         }
+
+        private void button49_Click(object sender, EventArgs e)
+        {
+            string str_log = "";
+            str_log +="Host domain: " + AppDomain.CurrentDomain.FriendlyName + "\r\n";
+            str_log +="Creating new AppDomain.\r\n";
+            AppDomain domain = AppDomain.CreateDomain("MyDomain");
+            str_log +="child domain: " + domain.FriendlyName;
+            MessageBox.Show(str_log);
+        }
+
+        private void button50_Click(object sender, EventArgs e)
+        {
+            string str_log = "";
+            str_log += "Host domain: " + AppDomain.CurrentDomain.FriendlyName + "\r\n";
+            str_log += "Creating new AppDomain.\r\n";
+            AppDomain domain = AppDomain.CreateDomain("MyDomain");
+            str_log += "child domain: " + domain.FriendlyName + "\r\n";
+            
+            try
+            {
+                AppDomain.Unload(domain);
+
+                str_log += domain.FriendlyName;
+
+            }
+            catch (AppDomainUnloadedException err)
+            {
+                str_log += err.GetType().FullName;
+            }
+
+
+            MessageBox.Show(str_log);
+        }
+
+        private void button52_Click(object sender, EventArgs e)
+        {
+            string str_log = "";
+            AppDomainSetup domaininfo = new AppDomainSetup();
+            domaininfo.ApplicationBase = @"d:\domainTest\";
+            str_log += "Host domain: " + AppDomain.CurrentDomain.FriendlyName + "\r\n";
+            str_log += "Creating new AppDomain.\r\n";
+            AppDomain domain = AppDomain.CreateDomain("MyDomain");
+            str_log += "child domain: " + domain.FriendlyName + "\r\n";
+            str_log += "Application base is: " + domain.SetupInformation.ApplicationBase +"\r\n";
+            try
+            {
+                
+                AppDomain.Unload(domain);
+
+            }
+            catch (AppDomainUnloadedException err)
+            {
+                
+            }
+
+
+            MessageBox.Show(str_log);
+        }
+
+        private void button53_Click(object sender, EventArgs e)
+        {
+            string str_log = "";
+            str_log = AppDomain.CurrentDomain.BaseDirectory + "\r\n";
+            AppDomainSetup domaininfo = new AppDomainSetup();
+            domaininfo.ApplicationBase = AppDomain.CurrentDomain.BaseDirectory;
+            AppDomain domain = AppDomain.CreateDomain("mydomain", null, domaininfo);
+            domain.CreateInstanceFrom()
+            
+
+        }
+
+        //https://www.cnblogs.com/weifeng123/p/8855629.html  程序集
+
+
     }
 
     class ReflectExample
