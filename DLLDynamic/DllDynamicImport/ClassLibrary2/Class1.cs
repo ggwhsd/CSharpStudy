@@ -9,7 +9,7 @@ namespace ClassLibrary2
 {
     public class Class1 : InterfaceTest
     {
-        void InterfaceTest.Run()
+        public void Run()
         {
             throw new Exception(this.GetType().ToString());
         }

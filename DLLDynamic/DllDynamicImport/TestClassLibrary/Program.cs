@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -11,11 +12,11 @@ namespace TestClassLibrary
     {
         static List<InterfaceTest> list = new List<InterfaceTest>();
 
-        static void Main(string[] args)
+        private static void LoadAssemblyInDefaultAppDomain()
         {
-            string dir = AppContext.BaseDirectory +@"\Libs\";
+            string dir = AppContext.BaseDirectory + @"Libs\";
             Console.WriteLine(dir);
-           
+
             string assemblyName = "ClassLibrary";
             for (int i = 0; i < 2; i++)
             {
@@ -29,11 +30,29 @@ namespace TestClassLibrary
                 }
                 catch (Exception err)
                 {
-                    Console.WriteLine(err.Message);
+                    Console.WriteLine("异常啦:" + err.Message);
                 }
             }
             System.Console.ReadLine();
-            
+        }
+
+        private static void LoadAssemblyInNewAppDomain()
+        {
+            MyAssemblyDynamicLoader adl = new MyAssemblyDynamicLoader();
+            string modulesPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Libs/");
+            adl.remoteLoader.LoadAssembly(Path.Combine("Libs/", "ClassLibrary1.dll"));
+            adl.remoteLoader.ExecuteMothod("ClassLibrary1.Class1", "Run");
+            adl.Unload();
+        }
+        /// <summary>
+        /// 动态加载dll到默认程序集中
+        /// </summary>
+        /// <param name="args"></param>
+        static void Main(string[] args)
+        {
+            //LoadAssemblyInDefaultAppDomain();
+            LoadAssemblyInNewAppDomain();
+
         }
     }
 }
