@@ -1544,8 +1544,9 @@ namespace MarketRiskUI
             AppDomainSetup domaininfo = new AppDomainSetup();
             domaininfo.ApplicationBase = AppDomain.CurrentDomain.BaseDirectory;
             AppDomain domain = AppDomain.CreateDomain("mydomain", null, domaininfo);
-            domain.CreateInstanceFrom()
-            
+            //TODO：未完成 ，等待某天吧，可以参考 DLLDynamic\DllDynamicImport\TestClassLibrary\MyAssemblyDynamicLoader.cs
+
+
 
         }
 

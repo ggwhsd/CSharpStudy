@@ -320,5 +320,11 @@ namespace MarketRiskUI
             PropertyGridTest t = new PropertyGridTest();
             t.Show();
         }
+
+
+        private void 记录RecordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //C# 10才支持
+        }
     }
 }

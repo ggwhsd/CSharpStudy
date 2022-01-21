@@ -56,6 +56,7 @@
             this.进程管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridviewdatabindToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridviewcustomComboxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.propertiesGridToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.webExamplesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.webClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.webRequestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,7 +85,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBox_test = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.propertiesGridToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.记录RecordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -318,6 +319,13 @@
             this.gridviewcustomComboxToolStripMenuItem.Text = "gridview_customCombox";
             this.gridviewcustomComboxToolStripMenuItem.Click += new System.EventHandler(this.gridviewcustomComboxToolStripMenuItem_Click);
             // 
+            // propertiesGridToolStripMenuItem
+            // 
+            this.propertiesGridToolStripMenuItem.Name = "propertiesGridToolStripMenuItem";
+            this.propertiesGridToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.propertiesGridToolStripMenuItem.Text = "propertiesGrid";
+            this.propertiesGridToolStripMenuItem.Click += new System.EventHandler(this.propertiesGridToolStripMenuItem_Click);
+            // 
             // webExamplesToolStripMenuItem
             // 
             this.webExamplesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -335,56 +343,57 @@
             // webClientToolStripMenuItem
             // 
             this.webClientToolStripMenuItem.Name = "webClientToolStripMenuItem";
-            this.webClientToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.webClientToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.webClientToolStripMenuItem.Text = "WebClient";
             this.webClientToolStripMenuItem.Click += new System.EventHandler(this.webClientToolStripMenuItem_Click);
             // 
             // webRequestToolStripMenuItem
             // 
             this.webRequestToolStripMenuItem.Name = "webRequestToolStripMenuItem";
-            this.webRequestToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.webRequestToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.webRequestToolStripMenuItem.Text = "WebRequest";
             this.webRequestToolStripMenuItem.Click += new System.EventHandler(this.webRequestToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(176, 22);
             this.toolStripMenuItem1.Text = "GuessEncode";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // getGoldPriceToolStripMenuItem
             // 
             this.getGoldPriceToolStripMenuItem.Name = "getGoldPriceToolStripMenuItem";
-            this.getGoldPriceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.getGoldPriceToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.getGoldPriceToolStripMenuItem.Text = "GetGoldPrice";
             this.getGoldPriceToolStripMenuItem.Click += new System.EventHandler(this.getGoldPriceToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(176, 22);
             this.toolStripMenuItem2.Text = "Crawl";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // getBaiduSuggestToolStripMenuItem
             // 
             this.getBaiduSuggestToolStripMenuItem.Name = "getBaiduSuggestToolStripMenuItem";
-            this.getBaiduSuggestToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.getBaiduSuggestToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.getBaiduSuggestToolStripMenuItem.Text = "GetBaiduSuggest";
             this.getBaiduSuggestToolStripMenuItem.Click += new System.EventHandler(this.getBaiduSuggestToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(176, 22);
             // 
             // cToolStripMenuItem
             // 
             this.cToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tPL并行编程ToolStripMenuItem,
             this.task基本使用ToolStripMenuItem,
-            this.action和FuncToolStripMenuItem});
+            this.action和FuncToolStripMenuItem,
+            this.记录RecordToolStripMenuItem});
             this.cToolStripMenuItem.Name = "cToolStripMenuItem";
             this.cToolStripMenuItem.Size = new System.Drawing.Size(36, 21);
             this.cToolStripMenuItem.Text = "C#";
@@ -486,7 +495,7 @@
             // fluentSchedulerToolStripMenuItem
             // 
             this.fluentSchedulerToolStripMenuItem.Name = "fluentSchedulerToolStripMenuItem";
-            this.fluentSchedulerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fluentSchedulerToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.fluentSchedulerToolStripMenuItem.Text = "fluentScheduler";
             this.fluentSchedulerToolStripMenuItem.Click += new System.EventHandler(this.fluentSchedulerToolStripMenuItem_Click);
             // 
@@ -502,14 +511,14 @@
             // 日历ToolStripMenuItem
             // 
             this.日历ToolStripMenuItem.Name = "日历ToolStripMenuItem";
-            this.日历ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.日历ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.日历ToolStripMenuItem.Text = "日历";
             this.日历ToolStripMenuItem.Click += new System.EventHandler(this.日历ToolStripMenuItem_Click);
             // 
             // 子窗口ToolStripMenuItem
             // 
             this.子窗口ToolStripMenuItem.Name = "子窗口ToolStripMenuItem";
-            this.子窗口ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.子窗口ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.子窗口ToolStripMenuItem.Text = "子窗口";
             this.子窗口ToolStripMenuItem.Click += new System.EventHandler(this.子窗口ToolStripMenuItem_Click);
             // 
@@ -540,12 +549,12 @@
             this.panel1.Size = new System.Drawing.Size(800, 425);
             this.panel1.TabIndex = 3;
             // 
-            // propertiesGridToolStripMenuItem
+            // 记录RecordToolStripMenuItem
             // 
-            this.propertiesGridToolStripMenuItem.Name = "propertiesGridToolStripMenuItem";
-            this.propertiesGridToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.propertiesGridToolStripMenuItem.Text = "propertiesGrid";
-            this.propertiesGridToolStripMenuItem.Click += new System.EventHandler(this.propertiesGridToolStripMenuItem_Click);
+            this.记录RecordToolStripMenuItem.Name = "记录RecordToolStripMenuItem";
+            this.记录RecordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.记录RecordToolStripMenuItem.Text = "记录Record";
+            this.记录RecordToolStripMenuItem.Click += new System.EventHandler(this.记录RecordToolStripMenuItem_Click);
             // 
             // MainFacade
             // 
@@ -625,5 +634,6 @@
         private System.Windows.Forms.ToolStripMenuItem 子窗口ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gridviewcustomComboxToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem propertiesGridToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 记录RecordToolStripMenuItem;
     }
 }

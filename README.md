@@ -116,7 +116,7 @@ Encoding [示例](./Utils.cs)
 这样可以实现根据字符串动态创建和执行不同的类和方法
 [示例](./Utils.cs)
 
-* 应用程序域、程序集
+* 应用程序域、程序集的基础使用。
 [示例](./Utils.cs)
 
 ## 界面 ##
@@ -263,7 +263,9 @@ Encoding [示例](./Utils.cs)
 
 * 使用CodeDom技术 动态生成dll或者exe。[示例](./DLLDynamic/ClassCompileLoad)
 
-* 动态加载dll，[示例](./DLLDynamic/DllDynamicImport)
+* 程序域上动态加载程序集，如dll，[示例](./DLLDynamic/DllDynamicImport)
+
+* 新建程序域上，动态加载程序集. [实例](./DLLDynamic/DllDynamicImport/TestClassLibrary/MyAssemblyDynamicLoader.cs)
 
 * 调用线程新的方式，当前推荐的异步调用模式，Task async wait [示例]（./TaskAsyncDemo.cs)
 
