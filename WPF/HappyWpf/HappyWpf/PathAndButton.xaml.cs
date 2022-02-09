@@ -10,39 +10,38 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp2
+namespace HappyWpf
 {
     /// <summary>
-    /// MainWindow.xaml 的交互逻辑
+    /// PathAndButton.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class PathAndButton : Window
     {
-        public MainWindow()
+        public PathAndButton()
         {
             InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-           
+
             PathGeometry pg = path_data3.Data as PathGeometry;
             PathFigure pf = pg.Figures[0] as PathFigure;
-            
-             Console.WriteLine(((LineSegment)pf.Segments[0]).Point);
+
+            Console.WriteLine(((LineSegment)pf.Segments[0]).Point);
             LineSegment ls = (LineSegment)pf.Segments[0];
-            ls.Point = new Point(ls.Point.X+1, ls.Point.Y+1);
+            ls.Point = new Point(ls.Point.X + 1, ls.Point.Y + 1);
 
 
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            
+
             Task.Run(async () => {
-                bool isReturn=false;
+                bool isReturn = false;
                 while (true)
                 {
                     await Task.Delay(1000);
@@ -50,16 +49,10 @@ namespace WpfApp2
                     if (isReturn)
                         break;
                 }
-            });  
-            
-           
+            });
 
-        }
 
-        private void Btn_createForm_Click(object sender, RoutedEventArgs e)
-        {
-            Form1 f1 = new Form1();
-            f1.Show();
+
         }
     }
 }

@@ -13,29 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp2
+namespace HappyWpf
 {
     /// <summary>
     /// UserControl1.xaml 的交互逻辑
     /// </summary>
-    public partial class UserControl1 : UserControl
+    public partial class UCSalaryForm : UserControl
     {
-        public UserControl1()
+        public UCSalaryForm()
         {
             InitializeComponent();
         }
-
-        private void Grid_MouseEnter(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        public void Add()
-        {
-            if(pBar.Value+1 < pBar.Maximum)
-                pBar.Value += 1;
-        }
     }
-
-    
 }

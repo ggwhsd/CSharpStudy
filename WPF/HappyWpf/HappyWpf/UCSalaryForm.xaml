@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="HappyWpf.UCSalaryForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HappyWpf"
+             mc:Ignorable="d" Height="197.346" Width="283.38">
+    <Canvas Width="240" Height="160" Background="Cyan">
+        <Label Name="label1" Content="基本工资:" Canvas.Left="10" Canvas.Top="10"/>
+        <Label Name="label2" Content="岗位工资:" Canvas.Left="10" Canvas.Top="46"/>
+        <Label Name="label3" Content="实际工资:" Canvas.Left="10" Canvas.Top="80"/>
+        <TextBox Name="textbox1" Height="22" Canvas.Left="90" TextWrapping="Wrap" Text="TextBox" Canvas.Top="20" Width="120"/>
+        <TextBox Name="textbox2" Height="22" Canvas.Left="90" TextWrapping="Wrap" Text="TextBox" Canvas.Top="50" Width="120"/>
+        <TextBox Name="textbox3" Height="22" Canvas.Left="90" TextWrapping="Wrap" Text="TextBox" Canvas.Top="84" Width="120"/>
+    </Canvas>
+</UserControl>
