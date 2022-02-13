@@ -61,6 +61,21 @@
     <Compile Include="PathAndButton.xaml.cs">
       <DependentUpon>PathAndButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="StudyCanvas.xaml.cs">
+      <DependentUpon>StudyCanvas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StudyDockPanel.xaml.cs">
+      <DependentUpon>StudyDockPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StudyGrid.xaml.cs">
+      <DependentUpon>StudyGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StudyStackpanel.xaml.cs">
+      <DependentUpon>StudyStackpanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StudyWrapPanel.xaml.cs">
+      <DependentUpon>StudyWrapPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UCSalaryForm.xaml.cs">
       <DependentUpon>UCSalaryForm.xaml</DependentUpon>
     </Compile>
@@ -90,6 +105,26 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="PathAndButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StudyCanvas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StudyDockPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StudyGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StudyStackpanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StudyWrapPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -47,5 +47,34 @@ namespace HappyWpf
             Window2 w2 = new Window2();
             w2.Show();
         }
+
+        private void btn_DockPanel_Click(object sender, RoutedEventArgs e)
+        {
+            StudyDockPanel sdp = new StudyDockPanel();
+            sdp.Show();
+        }
+
+        private void btn_Canvas_Click(object sender, RoutedEventArgs e)
+        {
+            StudyCanvas sc = new StudyCanvas();
+            sc.Show();
+        }
+
+        private void btn_Grid_Click(object sender, RoutedEventArgs e)
+        {
+            StudyGrid sg = new StudyGrid();
+            sg.Show();
+        }
+
+        private void btn_StackPanel_Click(object sender, RoutedEventArgs e)
+        {
+            StudyStackpanel ssp = new StudyStackpanel();
+            ssp.Show();
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

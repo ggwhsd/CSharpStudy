@@ -1,0 +1,18 @@
+﻿<Window x:Class="HappyWpf.StudyWrapPanel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HappyWpf"
+        mc:Ignorable="d"
+        Title="StudyWrapPanel" Height="450" Width="800">
+    <Grid>
+        <WrapPanel Background="LightBlue" Height="200" Margin="121,160,383,59">
+            <TextBlock Background="Yellow" Width="100" Height="100" >
+                A1|</TextBlock>
+            <TextBlock Background="Red" Width="100" Height="100"> B1|</TextBlock>
+            <TextBlock Background="Green" Width="100"  Height="100" >
+                 C1|</TextBlock>
+        </WrapPanel>
+    </Grid>
+</Window>
