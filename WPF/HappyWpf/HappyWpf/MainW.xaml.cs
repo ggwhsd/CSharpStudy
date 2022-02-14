@@ -74,7 +74,38 @@ namespace HappyWpf
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
+            StudyWrapPanel swp = new StudyWrapPanel();
+            swp.Show();
+        }
 
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            StudyBinding sb = new StudyBinding();
+            sb.Show();
+        }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            StudyGraphic sg = new StudyGraphic();
+            sg.Show();
+        }
+
+        private void Btn_image_Click(object sender, RoutedEventArgs e)
+        {
+            StudyImage si = new StudyImage();
+            si.Show();
+        }
+
+        private void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+            StudyView3D sv3D = new StudyView3D();
+            sv3D.Show();
+        }
+
+        private void Button_Click_8(object sender, RoutedEventArgs e)
+        {
+            StudyAnimation sa = new StudyAnimation();
+            sa.Show();
         }
     }
 }

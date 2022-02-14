@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,11 +56,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Entity\Person.cs" />
     <Compile Include="MainW.xaml.cs">
       <DependentUpon>MainW.xaml</DependentUpon>
     </Compile>
     <Compile Include="PathAndButton.xaml.cs">
       <DependentUpon>PathAndButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StudyAnimation.xaml.cs">
+      <DependentUpon>StudyAnimation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StudyBinding.xaml.cs">
+      <DependentUpon>StudyBinding.xaml</DependentUpon>
     </Compile>
     <Compile Include="StudyCanvas.xaml.cs">
       <DependentUpon>StudyCanvas.xaml</DependentUpon>
@@ -67,11 +75,20 @@
     <Compile Include="StudyDockPanel.xaml.cs">
       <DependentUpon>StudyDockPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="StudyGraphic.xaml.cs">
+      <DependentUpon>StudyGraphic.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StudyGrid.xaml.cs">
       <DependentUpon>StudyGrid.xaml</DependentUpon>
     </Compile>
+    <Compile Include="StudyImage.xaml.cs">
+      <DependentUpon>StudyImage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StudyStackpanel.xaml.cs">
       <DependentUpon>StudyStackpanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StudyView3D.xaml.cs">
+      <DependentUpon>StudyView3D.xaml</DependentUpon>
     </Compile>
     <Compile Include="StudyWrapPanel.xaml.cs">
       <DependentUpon>StudyWrapPanel.xaml</DependentUpon>
@@ -108,6 +125,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="StudyAnimation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StudyBinding.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="StudyCanvas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -116,11 +141,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="StudyGraphic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="StudyGrid.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="StudyImage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="StudyStackpanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StudyView3D.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -170,6 +207,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="sampleImages\20210828.JPG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

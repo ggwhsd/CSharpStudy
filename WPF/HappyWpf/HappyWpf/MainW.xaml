@@ -19,6 +19,11 @@
         <Button x:Name="btn_Grid"   Content="Grid容器" HorizontalAlignment="Left" Margin="39,171,0,0" VerticalAlignment="Top" Width="142" Click="btn_Grid_Click"/>
         <Button x:Name="btn_StackPanel"  Content="StackPanel容器" HorizontalAlignment="Left" Margin="39,195,0,0" VerticalAlignment="Top" Width="142" Click="btn_StackPanel_Click"/>
         <Button x:Name="btn_wrapPanel" Content="WrapPanel" HorizontalAlignment="Left" Margin="39,219,0,0" VerticalAlignment="Top" Width="142" Click="Button_Click_4"/>
+        <Button Content="数据绑定简单示例" HorizontalAlignment="Left" Margin="42,249,0,0" VerticalAlignment="Top" Width="139" Click="Button_Click_5"/>
+        <Button Content="二维形状库" HorizontalAlignment="Left" Margin="42,277,0,0" VerticalAlignment="Top" Width="136" Click="Button_Click_6"/>
+        <Button x:Name="btn_image" Content="Image" HorizontalAlignment="Left" Margin="44,301,0,0" VerticalAlignment="Top" Width="136" Click="Btn_image_Click"/>
+        <Button Content="3D" HorizontalAlignment="Left" Margin="325,24,0,0" VerticalAlignment="Top" Width="128" Click="Button_Click_7"/>
+        <Button Content="动画" HorizontalAlignment="Left" Margin="325,49,0,0" VerticalAlignment="Top" Width="127" Click="Button_Click_8"/>
 
     </Grid>
 </Window>
