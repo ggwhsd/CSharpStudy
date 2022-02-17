@@ -10,20 +10,37 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Content="弹出MainWindow" Click="Button_Click" HorizontalAlignment="Left" Margin="39,23,0,0" VerticalAlignment="Top" Width="142" Height="19"/>
-        <Button Content="弹出PathAndButton" HorizontalAlignment="Left" Margin="39,47,0,0" VerticalAlignment="Top" Width="142" Click="Button_Click_1"/>
-        <Button Content="Slider示例" HorizontalAlignment="Left" Margin="39,71,0,0" VerticalAlignment="Top" Width="142" Click="Button_Click_2" Height="23"/>
-        <Button Content="UserControl使用" HorizontalAlignment="Left" Margin="39,99,0,0" VerticalAlignment="Top" Width="142" Click="Button_Click_3"/>
-        <Button x:Name="btn_DockPanel" Content="Dockpanel容器" HorizontalAlignment="Left" Margin="39,123,0,0" VerticalAlignment="Top" Width="142" Click="btn_DockPanel_Click"/>
-        <Button x:Name="btn_Canvas" Content="Canvas容器" HorizontalAlignment="Left" Margin="39,147,0,0" VerticalAlignment="Top" Width="142" Click="btn_Canvas_Click"/>
-        <Button x:Name="btn_Grid"   Content="Grid容器" HorizontalAlignment="Left" Margin="39,171,0,0" VerticalAlignment="Top" Width="142" Click="btn_Grid_Click"/>
-        <Button x:Name="btn_StackPanel"  Content="StackPanel容器" HorizontalAlignment="Left" Margin="39,195,0,0" VerticalAlignment="Top" Width="142" Click="btn_StackPanel_Click"/>
-        <Button x:Name="btn_wrapPanel" Content="WrapPanel" HorizontalAlignment="Left" Margin="39,219,0,0" VerticalAlignment="Top" Width="142" Click="Button_Click_4"/>
-        <Button Content="数据绑定简单示例" HorizontalAlignment="Left" Margin="42,249,0,0" VerticalAlignment="Top" Width="139" Click="Button_Click_5"/>
-        <Button Content="二维形状库" HorizontalAlignment="Left" Margin="42,277,0,0" VerticalAlignment="Top" Width="136" Click="Button_Click_6"/>
-        <Button x:Name="btn_image" Content="Image" HorizontalAlignment="Left" Margin="44,301,0,0" VerticalAlignment="Top" Width="136" Click="Btn_image_Click"/>
-        <Button Content="3D" HorizontalAlignment="Left" Margin="325,24,0,0" VerticalAlignment="Top" Width="128" Click="Button_Click_7"/>
-        <Button Content="动画" HorizontalAlignment="Left" Margin="325,49,0,0" VerticalAlignment="Top" Width="127" Click="Button_Click_8"/>
+
+        <GroupBox Header="入门综合" HorizontalAlignment="Left" Height="378" Margin="10,10,0,0" VerticalAlignment="Top" Width="157">
+
+            <StackPanel>
+                <Button Content="弹出MainWindow" Click="Button_Click" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="142" Height="19"/>
+                <Button Content="弹出PathAndButton" HorizontalAlignment="Left" VerticalAlignment="Top" Width="142" Click="Button_Click_1"/>
+                <Button Content="Slider示例" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="142" Click="Button_Click_2" Height="23"/>
+                <Button Content="UserControl使用" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="142" Click="Button_Click_3"/>
+                <Button x:Name="btn_DockPanel" Content="Dockpanel容器" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="142" Click="btn_DockPanel_Click"/>
+                <Button x:Name="btn_Canvas" Content="Canvas容器" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="142" Click="btn_Canvas_Click"/>
+                <Button x:Name="btn_Grid"   Content="Grid容器" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="142" Click="btn_Grid_Click"/>
+                <Button x:Name="btn_StackPanel"  Content="StackPanel容器" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="142" Click="btn_StackPanel_Click"/>
+                <Button x:Name="btn_wrapPanel" Content="WrapPanel" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="142" Click="Button_Click_4"/>
+                <Button Content="数据绑定简单示例" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="142" Click="Button_Click_5"/>
+                <Button Content="二维形状库" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="142" Click="Button_Click_6"/>
+                <Button x:Name="btn_image" Content="Image" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="142" Click="Btn_image_Click"/>
+                <Button Content="3D" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="142" Click="Button_Click_7"/>
+                <Button Content="动画" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="142" Click="Button_Click_8"/>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="逐个控件使用" HorizontalAlignment="Left" Height="378" Margin="172,10,0,0" VerticalAlignment="Top" Width="211">
+            <StackPanel HorizontalAlignment="Left"   VerticalAlignment="Top" Height="378" Width="211">
+                <Button Content="groupBox TabItem"/>
+                <Button Content="Button"/>
+                <Button Content="Button"/>
+                <Button Content="Button"/>
+                <Button Content="Button"/>
+                <Button Content="Button"/>
+                <Button Content="Button"/>
+            </StackPanel>
+        </GroupBox>
 
     </Grid>
 </Window>

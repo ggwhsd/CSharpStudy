@@ -56,6 +56,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ControlExample\StudyGroupBox.xaml.cs">
+      <DependentUpon>StudyGroupBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Entity\Person.cs" />
     <Compile Include="MainW.xaml.cs">
       <DependentUpon>MainW.xaml</DependentUpon>
@@ -105,6 +108,10 @@
     <Compile Include="Window2.xaml.cs">
       <DependentUpon>Window2.xaml</DependentUpon>
     </Compile>
+    <Page Include="ControlExample\StudyGroupBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainW.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
