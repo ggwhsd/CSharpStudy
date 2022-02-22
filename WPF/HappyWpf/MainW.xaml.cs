@@ -107,5 +107,16 @@ namespace HappyWpf
             StudyAnimation sa = new StudyAnimation();
             sa.Show();
         }
+
+        private void Button_Click_9(object sender, RoutedEventArgs e)
+        {
+            ControlExample.StudyGroupBox sgb = new ControlExample.StudyGroupBox();
+            sgb.Show();
+        }
+
+        private void Button_Click_10(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

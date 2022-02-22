@@ -32,8 +32,8 @@
         </GroupBox>
         <GroupBox Header="逐个控件使用" HorizontalAlignment="Left" Height="378" Margin="172,10,0,0" VerticalAlignment="Top" Width="211">
             <StackPanel HorizontalAlignment="Left"   VerticalAlignment="Top" Height="378" Width="211">
-                <Button Content="groupBox TabItem"/>
-                <Button Content="Button"/>
+                <Button Content="groupBox TabItem" Click="Button_Click_9"/>
+                <Button Content="DataGrid" Click="Button_Click_10"/>
                 <Button Content="Button"/>
                 <Button Content="Button"/>
                 <Button Content="Button"/>

@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1000
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyWpf", "HappyWpf\HappyWpf.csproj", "{A7CF2E7E-45D1-4363-8A76-06B4B77FD6D7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyWpf", "HappyWpf.csproj", "{346399D4-CFFE-4A07-904D-41FA1A5C96AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A7CF2E7E-45D1-4363-8A76-06B4B77FD6D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A7CF2E7E-45D1-4363-8A76-06B4B77FD6D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A7CF2E7E-45D1-4363-8A76-06B4B77FD6D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A7CF2E7E-45D1-4363-8A76-06B4B77FD6D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{346399D4-CFFE-4A07-904D-41FA1A5C96AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{346399D4-CFFE-4A07-904D-41FA1A5C96AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{346399D4-CFFE-4A07-904D-41FA1A5C96AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{346399D4-CFFE-4A07-904D-41FA1A5C96AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {86CE8661-B2BB-48E0-819E-8570B02CBA30}
+		SolutionGuid = {DF9A27B2-01C7-4DDE-B575-AB1E4361D248}
 	EndGlobalSection
 EndGlobal
