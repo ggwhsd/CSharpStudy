@@ -28,6 +28,7 @@
                 <Button x:Name="btn_image" Content="Image" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="142" Click="Btn_image_Click"/>
                 <Button Content="3D" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="142" Click="Button_Click_7"/>
                 <Button Content="动画" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="142" Click="Button_Click_8"/>
+                <Button Content="数据绑定1" Click="Button_Click_11"/>
             </StackPanel>
         </GroupBox>
         <GroupBox Header="逐个控件使用" HorizontalAlignment="Left" Height="378" Margin="172,10,0,0" VerticalAlignment="Top" Width="211">

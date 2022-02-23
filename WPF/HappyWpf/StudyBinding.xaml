@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="StudyBinding" Height="450" Width="800">
     <Grid>
-        <TextBox Name="personNameTextBox" Text="{Binding Path=Name}" Width="100" Height="100" Background="SkyBlue" TextChanged="PersonNameTextBox_TextChanged"/>
+        <TextBox Name="personNameTextBox" Text="{Binding Path=Name,FallbackValue='Not found'}" Width="100" Height="100" Background="SkyBlue" TextChanged="PersonNameTextBox_TextChanged"/>
+        <Button Content="修改Person属性，观察下列文本框是否变化" HorizontalAlignment="Center" Margin="0,122,0,0" VerticalAlignment="Top" Click="Button_Click"/>
     </Grid>
 </Window>

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HappyWpf.Entity;
+using HappyWpf.MyViewModelBase;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,20 +14,26 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace HappyWpf.ControlExample
+namespace HappyWpf
 {
     /// <summary>
-    /// StudyDataGrid.xaml 的交互逻辑
+    /// StudyBinding1.xaml 的交互逻辑
     /// </summary>
-    public partial class StudyDataGrid : Window
+    public partial class StudyBinding1 : Window
     {
-        private gridViewModelmain gvm;
-        public StudyDataGrid()
+        
+        public StudyBinding1()
         {
-            gvm= new gridViewModelmain();
-            gvm.Query();
+            data = new Bind1ModelView();
             InitializeComponent();
-            this.DataContext = gvm;
+
+            this.DataContext = data;
         }
+        private Bind1ModelView data;
+
+       
+
+
+        
     }
 }

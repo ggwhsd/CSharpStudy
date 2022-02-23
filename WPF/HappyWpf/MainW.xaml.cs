@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HappyWpf.ControlExample;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -116,7 +117,14 @@ namespace HappyWpf
 
         private void Button_Click_10(object sender, RoutedEventArgs e)
         {
+            StudyDataGrid sg = new StudyDataGrid();
+            sg.Show();
+        }
 
+        private void Button_Click_11(object sender, RoutedEventArgs e)
+        {
+            StudyBinding1 sb1 = new StudyBinding1();
+            sb1.Show();
         }
     }
 }

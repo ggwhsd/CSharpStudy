@@ -8,10 +8,40 @@
         Title="StudyDataGrid" Height="450" Width="800">
  
     <Grid>
-        <DataGrid x:Name="dataGrid"  HorizontalAlignment="Left"  Margin="10,10,0,0" VerticalAlignment="Top" Height="320" Width="400" AutoGenerateColumns="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Search"  VerticalAlignment="Center"/>
+            <TextBox Width="200" Text="{Binding Search}" Height="25" Margin="10 0 0 0"/>
+            <Button Content="Query" Command="{Binding QueryCommand}" Width="70" Height="25" Margin="0 0 0 0"/>
+            <Button Content="Reset" Command="{Binding ResetCommand}" Width="70" Height="25" Margin="0 0 0 0"/>
+            <Button Content="Add" Width="70" Height="25" Margin="0 0 0 0"/>
+            <Button Content="TestPerformance" Command="{Binding TestCommand}" Width="70" Height="25" Margin="0 0 0 0"/>
+
+        </StackPanel>
+        <!--ColumnWidth=* 表示自适应，这个是性能开销较大的绘图操作，对于频繁刷新界面显示的场景，要做好测试 -->
+        <DataGrid Grid.Row="1" ColumnWidth="*" AutoGenerateColumns="False" 
+                  ItemsSource="{Binding GridModelList}"
+                  CanUserAddRows="False">
             <DataGrid.Columns>
-             
+                <DataGridTextColumn Header="序号" Binding="{Binding Id}"></DataGridTextColumn>
+                <DataGridTextColumn Header="姓名"  Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="操作">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="modify" Height="25" Width="60" Background="White" Foreground="Black"></Button>
+                                <Button Content="delete" Height="25" Width="60" Background="Red" Foreground="White"></Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
+            
         </DataGrid>
     </Grid>
 </Window>

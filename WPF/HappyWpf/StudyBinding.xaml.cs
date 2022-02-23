@@ -22,19 +22,27 @@ namespace HappyWpf
     {
         public StudyBinding()
         {
-            InitializeComponent();
-
             //创建数据源，这里是一个类对象
             person = new Person();
 
+            person.Name = "已改，当前时间为" + DateTime.Now.ToString();
+            InitializeComponent();
             //设置窗口的数据源绑定对象，这样在窗口中获取Name属性，则就是person的Name属性了。 这种方式只能单向绑定，即数据到UI。
             this.DataContext = person;
+
 
         }
         Person person;
         private void PersonNameTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            Console.WriteLine(person.Name);
+            Console.WriteLine(person?.Name);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            
+            person.Name = "已改，当前时间为" + DateTime.Now.ToString();
+            
         }
     }
 }
