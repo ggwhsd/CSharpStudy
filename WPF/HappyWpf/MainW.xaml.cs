@@ -126,5 +126,13 @@ namespace HappyWpf
             StudyBinding1 sb1 = new StudyBinding1();
             sb1.Show();
         }
+
+        private void Button_Click_12(object sender, RoutedEventArgs e)
+        {
+            StudySytleAndTrigger s = new StudySytleAndTrigger();
+            s.Show();
+        }
+
+       
     }
 }

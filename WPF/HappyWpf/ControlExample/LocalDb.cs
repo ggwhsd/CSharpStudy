@@ -16,7 +16,7 @@ namespace HappyWpf.ControlExample
         private void init()
         {
             students = new List<gridViewModelStudent>();
-            for (int i = 0; i < 30; i++)
+            for (int i = 0; i < 3000; i++)
             {
                 students.Add(new gridViewModelStudent()
                 {
@@ -53,6 +53,21 @@ namespace HappyWpf.ControlExample
             return students
                 .Where(q => q.Name.Contains(name))
                 .ToList();
+        }
+
+        public gridViewModelStudent GetStudentById(int id)
+        {
+            var model =students.FirstOrDefault(t => t.Id == id);
+            if (model != null)
+            {
+                return new gridViewModelStudent
+                {
+                    Id = model.Id,
+                    Name = model.Name
+                };
+            }
+            return null;
+
         }
     }
 }
