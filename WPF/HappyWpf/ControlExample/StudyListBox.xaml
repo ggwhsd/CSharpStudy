@@ -1,0 +1,62 @@
+﻿<Window x:Class="HappyWpf.ControlExample.StudyListBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HappyWpf.ControlExample"
+        mc:Ignorable="d"
+        Title="StudyListBox" Height="450" Width="800">
+
+    <Window.Resources>
+        <!-- DataTemplate数据模板在ListBox和ComboBox的使用 -->
+        <DataTemplate x:Key="comTemplate">
+            <StackPanel Orientation="Horizontal" Margin="5,0">
+                <Border Width="10" Height="10" Background="{Binding Code}" CornerRadius="5"></Border>
+                <TextBlock Text="{Binding Code}" Margin="5,0"></TextBlock>
+                <Button Width="10" Height="10" Background="Red"></Button>
+            </StackPanel>
+        </DataTemplate>
+
+        <DataTemplate x:Key="comTemplate2">
+            <StackPanel Orientation="Horizontal" Margin="5,0">
+                <Border Width="10" Height="10" Background="{Binding Code}" CornerRadius="5"></Border>
+                <TextBlock Text="{Binding Code}" Margin="5,0"></TextBlock>
+               
+            </StackPanel>
+        </DataTemplate>
+        
+        
+        
+        
+    </Window.Resources>
+    <Grid>
+       
+        
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <!-- combobox 绑定数据模板 -->
+            <ComboBox x:Name="cob" Width="120" Height="30" ItemTemplate="{StaticResource comTemplate}">
+                
+            </ComboBox>
+            <!-- combobox 绑定数据模板 -->
+            <ListBox x:Name="lib" Width="120" Height="100" Margin="5,0"  ItemTemplate="{StaticResource comTemplate2}"/>
+
+            <!-- 通过itemcontrol进行设置数据和控件 -->
+            <ItemsControl x:Name="ic">
+                <!-- 声明容器panel-->
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel ></WrapPanel>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <!-- 数据模板 -->
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Width="10" Height="10" Background="{Binding Code}" CornerRadius="5"></Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+        </StackPanel>
+
+    </Grid>
+</Window>

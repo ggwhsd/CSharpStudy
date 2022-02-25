@@ -76,6 +76,7 @@
             <Button Style="{StaticResource defaultButtonStyle}"  Content="Hello World"></Button>
             <Button Style="{StaticResource defaultButtonStyle}"  Content="Hello World"></Button>
             <Button Style="{StaticResource buttonStyle2}"  Content="变大变小"></Button>
+        
         </StackPanel>
 
     </Grid>

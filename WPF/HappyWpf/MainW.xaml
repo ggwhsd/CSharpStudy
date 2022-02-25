@@ -30,14 +30,15 @@
                 <Button Content="动画" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="142" Click="Button_Click_8"/>
                 <Button Content="数据绑定1" Click="Button_Click_11"/>
                 <Button Content="样式and触发器" Click="Button_Click_12"/>
-      
+                <Button Content="模板" Click="Button_Click_14"/>
+
             </StackPanel>
         </GroupBox>
         <GroupBox Header="逐个控件使用" HorizontalAlignment="Left" Height="378" Margin="172,10,0,0" VerticalAlignment="Top" Width="211">
             <StackPanel HorizontalAlignment="Left"   VerticalAlignment="Top" Height="378" Width="211">
                 <Button Content="groupBox TabItem" Click="Button_Click_9"/>
                 <Button Content="DataGrid" Click="Button_Click_10"/>
-                <Button Content="Button"/>
+                <Button Content="ListBox and ComboBox" Click="Button_Click_15"/>
                 <Button Content="Button"/>
                 <Button Content="Button"/>
                 <Button Content="Button"/>

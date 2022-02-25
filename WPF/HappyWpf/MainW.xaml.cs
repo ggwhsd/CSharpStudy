@@ -133,6 +133,21 @@ namespace HappyWpf
             s.Show();
         }
 
-       
+        private void Button_Click_13(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_14(object sender, RoutedEventArgs e)
+        {
+            StudyTemplate st = new StudyTemplate();
+            st.Show();
+        }
+
+        private void Button_Click_15(object sender, RoutedEventArgs e)
+        {
+            StudyListBox sl = new StudyListBox();
+            sl.Show();
+        }
     }
 }
