@@ -331,6 +331,9 @@ Encoding [示例](./Utils.cs)
 * 多位七段LED显示
 [示例](./OtherProjects/SevenSegment/SevenSegment.cs)
 
+* 坐标系的制作
+[示例](./OtherProjects/画坐标/WindowsFormsApp1/AxisControl.cs)
+
 
 # WPF
 
