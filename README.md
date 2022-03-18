@@ -334,10 +334,16 @@ Encoding [示例](./Utils.cs)
 * 坐标系的制作
 [示例](./OtherProjects/画坐标/WindowsFormsApp1/AxisControl.cs)
 
+* 自定义TextBox，通过底层WndProc重绘界面以及控制输入、占位提示功能。这些功能实际上等价于OnPaint、OnFoucs、OnKeyPress的一些组合。
+[示例](./OtherProjects/CustomTextBox/Form1.cs)
+
 
 # WPF
 
 [示例](./WPF/HappyWpf/MainW.xaml)
+
+
+
 
 
 
