@@ -326,5 +326,10 @@ namespace MarketRiskUI
         {
             //C# 10才支持
         }
+
+        private void 特性ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MarketRiskUI.LittleExamples.UseDefaultAttribute.Demo();
+        }
     }
 }

@@ -92,7 +92,7 @@ Encoding [示例](./Utils.cs)
 * List、arrayList、Dictionary集合以及自定义比较
 [示例](./Utils.cs)
 
-* 重写equals方法，用于集合查找自定义类的相等
+* 重写equals方法，用于集合查找自定义类的相等，IComparable接口
 [示例](./Utils.cs)
 
 * LINQ的简单使用
@@ -214,7 +214,7 @@ Encoding [示例](./Utils.cs)
 * 排块游戏
 [示例](./LittleExamples/GridGame.cs)
 
-* Attribute的自定义使用
+* Attribute的自定义使用,特性。
 [示例](./LittleExamples/AttributeExample.cs)
 
 

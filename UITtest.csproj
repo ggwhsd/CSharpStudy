@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>MarketRiskUI</RootNamespace>
     <AssemblyName>MarketRiskUI</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
@@ -95,8 +95,9 @@
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="NPlot">
-      <HintPath>..\nplot-master\bin\NPlot.dll</HintPath>
+    <Reference Include="NPlot, Version=0.9.11.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\NPlot.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -112,8 +113,9 @@
     <Reference Include="ServiceStack.Redis, Version=4.0.62.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\ServiceStack.Redis.4.0.62\lib\net40\ServiceStack.Redis.dll</HintPath>
     </Reference>
-    <Reference Include="ServiceStack.Text, Version=4.0.62.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\ServiceStack.Text.4.0.62\lib\net40\ServiceStack.Text.dll</HintPath>
+    <Reference Include="ServiceStack.Text, Version=4.0.26.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ServiceStack.Text.dll</HintPath>
     </Reference>
     <Reference Include="SimpleLogger">
       <HintPath>.\SimpleLogger.dll</HintPath>
@@ -362,7 +364,6 @@
     <Compile Include="PropertyGridTest.Designer.cs">
       <DependentUpon>PropertyGridTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="RecordExample.cs" />
     <Compile Include="RedisHelper.cs" />
     <Compile Include="redisTest.cs">
       <SubType>Form</SubType>

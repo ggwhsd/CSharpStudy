@@ -1,17 +1,21 @@
-﻿using System;
+﻿using DllDynamicImport;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DllDynamicImport;
+
 namespace ClassLibrary1
 {
+    /// <summary>
+    /// 采用特性方式来定义
+    /// </summary>
     [MyInterfaceAttribute(true, "InterfaceTest")]
-    public class Class1 : InterfaceTest
+    class Class3
     {
         public void Run()
         {
-            throw new Exception(this.GetType().ToString());
+            Console.WriteLine(this.GetType().FullName);
         }
     }
 }

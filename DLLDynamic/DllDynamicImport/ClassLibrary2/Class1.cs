@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary2
 {
+    
     public class Class1 : InterfaceTest
     {
         public void Run()

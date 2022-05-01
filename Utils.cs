@@ -118,7 +118,7 @@ namespace MarketRiskUI
             public int Age { get => age; set => age = value; }
             public string Name { get => name; set => name = value; }
 
-            public string ToString()
+            public override string ToString()
             {
                 return Name + "-" + Age;
             }

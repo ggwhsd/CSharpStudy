@@ -1,9 +1,14 @@
-﻿using System;
+﻿#define XXX
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Reflection;
 using System.Threading;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
 
 
 
@@ -78,6 +83,60 @@ Example("https://ggw.com/about/class")]
                 ExampleAttribute attre = (ExampleAttribute)v;
                 Console.WriteLine("{0} {1}",attre.Url,attre.Topic);
             }
+        }
+
+        
+    }
+
+
+
+
+    /// <summary>
+    /// 演示基础库默认的特性。Obsolete,Conditional,CallerMemberName,CallerFilePath,CallerLineNumber
+    /// </summary>
+    public class UseDefaultAttribute
+    {
+        [Obsolete("不推荐后续使用，请注意改为调用use方法")]
+        private static void useObsolete()
+        { 
+
+        }
+        /// <summary>
+        /// 文件首行定义了  #define XXX，如下方法才能使用
+        /// </summary>
+        [Conditional("XXX")]
+        private static void useDebugConditional()
+        {
+            Console.WriteLine("define XXX");
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="memberName"></param>
+        /// <param name="sourceFilePath"></param>
+        /// <param name="sourceLineNumber"></param>
+        private static void WriteLog(object message,
+        [CallerMemberName] string memberName = "",
+        [CallerFilePath] string sourceFilePath = "",
+        [CallerLineNumber] int sourceLineNumber = 0)
+        {
+            Console.WriteLine("文件:{0} 行号:{1} 方法名:{2},消息:{3}", sourceFilePath, sourceLineNumber, memberName, message);
+        }
+        private static void use()
+        {
+
+        }
+
+        public static void Demo()
+        {
+            UseDefaultAttribute.useObsolete();
+            UseDefaultAttribute.useDebugConditional();
+            UseDefaultAttribute.WriteLog("记录一行信息，并显示对应文件名、行号和方法名。");
+
+
+
         }
     }
 }
