@@ -217,6 +217,12 @@
       <DependentUpon>Form_datagridview3.cs</DependentUpon>
     </Compile>
     <Compile Include="ListViewCommon.cs" />
+    <Compile Include="ListViewTest2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListViewTest2.Designer.cs">
+      <DependentUpon>ListViewTest2.cs</DependentUpon>
+    </Compile>
     <Compile Include="NetworkSocket.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -485,6 +491,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_datagridview3.resx">
       <DependentUpon>Form_datagridview3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListViewTest2.resx">
+      <DependentUpon>ListViewTest2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NetworkSocket.resx">
       <DependentUpon>NetworkSocket.cs</DependentUpon>

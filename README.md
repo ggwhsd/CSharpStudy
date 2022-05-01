@@ -233,6 +233,9 @@ Encoding [示例](./Utils.cs)
 * listView的使用。
 [示例](./ListViewTest.cs)
 
+* listView的组的使用，以及在listview上添加按钮。
+[示例](./ListViewTest.cs)
+
 # Web方面的代码
 
 * WebClient的使用，当然，比较好的，还是用webbrowser，因为webbrowser几乎是一个浏览器。
