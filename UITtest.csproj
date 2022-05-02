@@ -205,6 +205,7 @@
       <DependentUpon>DragExample.cs</DependentUpon>
     </Compile>
     <Compile Include="ExcelOp.cs" />
+    <Compile Include="ExtensionMethodExample.cs" />
     <Compile Include="FluentScheduler\SchedulerHelloExample.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

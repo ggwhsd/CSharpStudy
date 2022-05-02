@@ -119,6 +119,9 @@ Encoding [示例](./Utils.cs)
 * 应用程序域、程序集的基础使用。
 [示例](./Utils.cs)
 
+* C#的扩展方法。可以通过一种方式去扩展一个类的方法，而无需修改那个类。这种机制可以用于最小化设计原则，然后后续扩展都可以在其他类中完成，而无需修改原有类，从而完成一个灵活扩展。
+[示例](./ExtensionMethodExample.cs)
+
 ## 界面 ##
 
 * datagridview界面 * 
@@ -201,7 +204,6 @@ Encoding [示例](./Utils.cs)
 [示例](./PropertyGridTest.cs)
 
 
-# CSharp访问C++的dll的方法：Marsheling机制。指针、数组、回调等均有示例。参考[项目](./CSharpInvokeCPP/CSharpInvokeCPP.sln)
 
 # 一些小例子,以下代码的例子都是来自于 唐大仕 老师的关于C#的书中的例子。
 
@@ -340,6 +342,9 @@ Encoding [示例](./Utils.cs)
 * 自定义TextBox，通过底层WndProc重绘界面以及控制输入、占位提示功能。这些功能实际上等价于OnPaint、OnFoucs、OnKeyPress的一些组合。
 [示例](./OtherProjects/CustomTextBox/Form1.cs)
 
+
+
+# CSharp访问C++的dll的方法【P/Invoke】：Marsheling机制。指针、数组、回调等均有示例。参考[项目](./CSharpInvokeCPP/CSharpInvokeCPP.sln)
 
 # WPF
 

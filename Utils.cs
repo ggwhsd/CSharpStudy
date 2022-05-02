@@ -1546,11 +1546,16 @@ namespace MarketRiskUI
             AppDomain domain = AppDomain.CreateDomain("mydomain", null, domaininfo);
             //TODO：未完成 ，等待某天吧，可以参考 DLLDynamic\DllDynamicImport\TestClassLibrary\MyAssemblyDynamicLoader.cs
 
-
+            //https://www.cnblogs.com/weifeng123/p/8855629.html  程序集
 
         }
 
-        //https://www.cnblogs.com/weifeng123/p/8855629.html  程序集
+        private void button51_Click(object sender, EventArgs e)
+        {
+            TestExtensionMethod.Example();
+        }
+
+   
 
 
     }
