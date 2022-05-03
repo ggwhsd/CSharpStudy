@@ -99,20 +99,26 @@ namespace CSharpDemo
         }
         static void Main(string[] args)
         {
+            TestOne();
 
+            //获取系统时间函数
             Demo1 d1 = new Demo1();
             d1.Test();
 
+            //托管内存和非托管内存之间的创建和拷贝
             Demo2 d2 = new Demo2();
             //d2.Test();
             d2.Test3();
             GC.Collect();
 
+            //创建非托管程序中指针的对应托管指针，从而为后续访问非托管对象提供方便。
             Demo3 d3 = new Demo3();
             d3.Test();
-
+            
+            //回调函数的示例
             Demo4 d4 = new Demo4();
             d4.Test();
+
 
             Demo5 d5 = new Demo5();
             d5.Test();
@@ -120,6 +126,7 @@ namespace CSharpDemo
             d5.Test2();
             d5.Test3();
 
+            //字符串数组
             Demo6 d6 = new Demo6();
             d6.Test();
 

@@ -7,6 +7,14 @@ using System.Threading.Tasks;
 
 namespace CSharpDemo
 {
+
+    /// <summary>
+    /// 值传递和引用传递的实现。 
+    /// 值传递都是从托管拷贝到非托管或者非托管拷贝到托管。
+    /// 引用传递一般用指针，所以只是指针拷贝。但是如果需要访问获取指针指向数据，还是会进行值传递的，所以，如果要看数据，最终都是值传递，毕竟托管和非托管两个内存是不一样的
+    /// 双指针的实现。
+    /// 
+    /// </summary>
     class Demo5
     {
         //by value方式
@@ -71,12 +79,14 @@ namespace CSharpDemo
             Marshal.Copy(array2, 0, buffer, 10);
 
             int sum2 = Demo5.TestRefArrayOfInts(ref buffer, ref size);
+            Console.WriteLine("\nInteger array passed ByRef after call:");
             Console.WriteLine("\nSum of elements:" + sum2);
             if (size > 0)
             {
                 int[] arrayRes = new int[size];
+                //从非托管拷贝到托管内存。
                 Marshal.Copy(buffer, arrayRes, 0, size);
-                Console.WriteLine("\nInteger array passed ByRef after call:");
+                
                 foreach (int i in arrayRes)
                 {
                     Console.Write(" " + i);

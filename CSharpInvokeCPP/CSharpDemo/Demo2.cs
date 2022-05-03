@@ -64,7 +64,9 @@ namespace CSharpDemo
             Marshal.FreeHGlobal(dptr);
             Marshal.FreeHGlobal(sptr);
         }
-
+        /// <summary>
+        /// HandleRef的使用
+        /// </summary>
         public void Test2()
         {
 

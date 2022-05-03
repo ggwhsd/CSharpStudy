@@ -10,9 +10,11 @@ namespace CSharpDemo
     class Demo6
     {
         // Declares a managed prototype for an array of strings by value.
+        //等价于  MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPArray, SizeParamIndex=1, ArraySubType=System.Runtime.InteropServices.UnmanagedType.LPStr)
         [DllImport("CSharpInvokeCPP.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         static extern int TestArrayOfStrings(
             [In, Out] string[] stringArray, int size);
+
 
         public void Test()
         {

@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace CSharpDemo
 {
+    /// <summary>
+    /// 回调函数的示例
+    /// </summary>
     class Demo4
     {
         //必须声明，否则执行一次就会程序终止退出。
@@ -23,7 +26,8 @@ namespace CSharpDemo
             int i = 0;
             while (i < 3)
             {
-                processCallback(25, myDelegate);
+                processCallback(25, myDelegate); //创建委托方式
+                processCallback(26, CallbackFunc); //直接填入函数方式
                 i++;
                 Thread.Sleep(1000);
             }
