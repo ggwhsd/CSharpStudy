@@ -74,12 +74,17 @@ namespace MarketRiskUI
             }
 
             Process[] processes = Process.GetProcesses();
-            richTextBox1.Text += $"进程信息，pid\t name\t ";
+            richTextBox1.Text += $"进程信息，pid\t name\t ptMem\t VirMem\r\n";
             foreach (Process process in processes)
             {
-                richTextBox1.Text += $"{process.Id}\t {process.ProcessName}\t \r\n";
+                if (txtBox_processName.Text == "")
+                    richTextBox1.Text += $"{process.Id}\t {process.ProcessName}\t{process.PrivateMemorySize64/ 1024 / 1024}MB\t{process.PagedMemorySize64 / 1024 / 1024}MB \r\n";
+                else if (txtBox_processName.Text == process.ProcessName)
+                {
+                    //process.PrivateMemorySize64 和  process.PagedMemorySize64 是一样的数值。跟内存中显示提交内存是一样的。
+                    richTextBox1.Text += $"{process.Id}\t {process.ProcessName}\t{process.PrivateMemorySize64/1024/1024}MB\t{process.PagedMemorySize64 / 1024 / 1024}MB\t{process.WorkingSet64/ 1024 / 1024} \r\n";
+                }
             }
-
         }
 
         private void button3_Click(object sender, EventArgs e)
