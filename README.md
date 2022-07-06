@@ -270,7 +270,7 @@ Encoding [示例](./Utils.cs)
 
 * 程序域上动态加载程序集，如dll，[示例](./DLLDynamic/DllDynamicImport)
 
-* 新建程序域上，动态加载程序集. [实例](./DLLDynamic/DllDynamicImport/TestClassLibrary/MyAssemblyDynamicLoader.cs)
+* 新建程序域上（在netcore5上已经取消了该功能），动态加载程序集.  [实例](./DLLDynamic/DllDynamicImport/TestClassLibrary/MyAssemblyDynamicLoader.cs)
 
 * 调用线程新的方式，当前推荐的异步调用模式，Task async wait [示例]（./TaskAsyncDemo.cs)
 
@@ -342,7 +342,9 @@ Encoding [示例](./Utils.cs)
 * 自定义TextBox，通过底层WndProc重绘界面以及控制输入、占位提示功能。这些功能实际上等价于OnPaint、OnFoucs、OnKeyPress的一些组合。
 [示例](./OtherProjects/CustomTextBox/Form1.cs)
 
-
+* TCP的Socket的Client和Server示例，演示客户端自动重连、大量客户端连接、服务端定时自动关闭客户端连接等应用场景。
+[客户端示例](./OtherProjects/NetworkTest/ConsoleApp1/Program.cs)
+[服务端示例](./OtherProjects/NetworkTest/ConsoleApp2/Program.cs)
 
 # CSharp访问C++的dll的方法【P/Invoke】：Marsheling机制。指针、数组、回调等均有示例。参考[项目](./CSharpInvokeCPP/CSharpInvokeCPP.sln)
 
