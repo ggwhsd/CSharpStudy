@@ -346,6 +346,9 @@ Encoding [示例](./Utils.cs)
 [客户端示例](./OtherProjects/NetworkTest/ConsoleApp1/Program.cs)
 [服务端示例](./OtherProjects/NetworkTest/ConsoleApp2/Program.cs)
 
+* 使用windows自带的TTS功能和语音转文字功能
+[示例](./OtherProjects/SpeechAndSynthesis/Form1.cs)
+
 # CSharp访问C++的dll的方法【P/Invoke】：Marsheling机制。指针、数组、回调等均有示例。参考[项目](./CSharpInvokeCPP/CSharpInvokeCPP.sln)
 
 # WPF
