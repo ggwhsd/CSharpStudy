@@ -1555,9 +1555,10 @@ namespace MarketRiskUI
             TestExtensionMethod.Example();
         }
 
-   
-
-
+        private void button54_Click(object sender, EventArgs e)
+        {
+            TestDisposable.Example();
+        }
     }
 
     class ReflectExample

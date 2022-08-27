@@ -407,6 +407,7 @@
     <Compile Include="TaskBaseExample.cs" />
     <Compile Include="TestAttribute.cs" />
     <Compile Include="Testdata.cs" />
+    <Compile Include="TestDisposable.cs" />
     <Compile Include="TreeListTest.cs">
       <SubType>Form</SubType>
     </Compile>

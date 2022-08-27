@@ -106,8 +106,6 @@ Encoding [示例](./Utils.cs)
 [示例](./Utils.cs)
 
 
-* ConditionAttribute的使用
-[示例](./TestAttribute.cs)
 
 * 索引器[,,]的使用，可以实现类似除了数组以外的多参数索引方式。
 [示例](./Utils.cs)
@@ -121,6 +119,9 @@ Encoding [示例](./Utils.cs)
 
 * C#的扩展方法。可以通过一种方式去扩展一个类的方法，而无需修改那个类。这种机制可以用于最小化设计原则，然后后续扩展都可以在其他类中完成，而无需修改原有类，从而完成一个灵活扩展。
 [示例](./ExtensionMethodExample.cs)
+
+* IDisposable接口的一般用法，用于释放非托管资源。
+[示例](./TestDisposable.cs)
 
 ## 界面 ##
 
@@ -219,6 +220,9 @@ Encoding [示例](./Utils.cs)
 * Attribute的自定义使用,特性。
 [示例](./LittleExamples/AttributeExample.cs)
 
+* ConditionAttribute的使用
+[示例](./TestAttribute.cs)
+
 
 * IO基础说明,
 * 按存储位置分，FileStream, MemoryStream, BufferedStream
@@ -264,6 +268,9 @@ Encoding [示例](./Utils.cs)
 * webview2的示例，一种替代webbrowser的组件，以selenium3+edgedriver
 [示例](./OtherProjects/WinFormsAppWebView2/WindowsFormsApp1/Form1.cs)
 
+* 除了webclient，后面又出现了httpclient，更加灵活和易于使用。
+[示例](./OtherProjects/HttpClientTest/Form1.cs)
+
 # 进阶使用知识：
 
 * 使用CodeDom技术 动态生成dll或者exe。[示例](./DLLDynamic/ClassCompileLoad)
@@ -305,7 +312,7 @@ Encoding [示例](./Utils.cs)
 
 * 微软的workflow功能的使用，用于流程性的开发框架。
 
-* 进程启动，进程查看等，查看内存、cpu等信息。
+* 进程启动，进程查看等，查看内存、cpu等性能信息。
 [示例](./ProcessForm.cs)
 
 * 通过日期判断所属周的开始和结束。

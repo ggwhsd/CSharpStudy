@@ -97,6 +97,7 @@
             this.button50 = new System.Windows.Forms.Button();
             this.button49 = new System.Windows.Forms.Button();
             this.button51 = new System.Windows.Forms.Button();
+            this.button54 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -807,11 +808,22 @@
             this.button51.UseVisualStyleBackColor = false;
             this.button51.Click += new System.EventHandler(this.button51_Click);
             // 
+            // button54
+            // 
+            this.button54.Location = new System.Drawing.Point(174, 242);
+            this.button54.Name = "button54";
+            this.button54.Size = new System.Drawing.Size(75, 60);
+            this.button54.TabIndex = 42;
+            this.button54.Text = "Disposed非托管资源接口";
+            this.button54.UseVisualStyleBackColor = true;
+            this.button54.Click += new System.EventHandler(this.button54_Click);
+            // 
             // Utils
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1081, 794);
+            this.Controls.Add(this.button54);
             this.Controls.Add(this.button51);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -934,5 +946,6 @@
         private System.Windows.Forms.Button button50;
         private System.Windows.Forms.Button button49;
         private System.Windows.Forms.Button button51;
+        private System.Windows.Forms.Button button54;
     }
 }
