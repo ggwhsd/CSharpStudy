@@ -408,6 +408,7 @@
     <Compile Include="TestAttribute.cs" />
     <Compile Include="Testdata.cs" />
     <Compile Include="TestDisposable.cs" />
+    <Compile Include="TestPriorityQueue.cs.cs" />
     <Compile Include="TreeListTest.cs">
       <SubType>Form</SubType>
     </Compile>

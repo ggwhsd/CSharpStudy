@@ -123,6 +123,9 @@ Encoding [示例](./Utils.cs)
 * IDisposable接口的一般用法，用于释放非托管资源。
 [示例](./TestDisposable.cs)
 
+* 优先队列的实现。程序集唯一递增序列ID的实现。
+[示例](./TestPriorityQueue.cs)
+
 ## 界面 ##
 
 * datagridview界面 * 
