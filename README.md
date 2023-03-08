@@ -359,6 +359,15 @@ Encoding [示例](./Utils.cs)
 * 使用windows自带的TTS功能和语音转文字功能
 [示例](./OtherProjects/SpeechAndSynthesis/Form1.cs)
 
+* .Net自带的Chart的示例
+[示例](./OtherProjects/ChartExample/Form1.cs)
+
+* 综合界面布局和颜色的设计案例1
+[示例](./OtherProjects/UIDesignDemo2/Form1.cs)
+
+* 综合界面布局和颜色的设计案例2
+[示例](./OtherProjects/UIDesignWinformExample1/Form1.cs)
+
 # CSharp访问C++的dll的方法【P/Invoke】：Marsheling机制。指针、数组、回调等均有示例。参考[项目](./CSharpInvokeCPP/CSharpInvokeCPP.sln)
 
 # WPF

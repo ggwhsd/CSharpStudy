@@ -1559,6 +1559,12 @@ namespace MarketRiskUI
         {
             TestDisposable.Example();
         }
+
+        private void button55_Click(object sender, EventArgs e)
+        {
+            TestPriorityQueue t = new TestPriorityQueue();
+            t.Test();
+        }
     }
 
     class ReflectExample

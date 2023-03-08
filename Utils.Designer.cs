@@ -98,6 +98,7 @@
             this.button49 = new System.Windows.Forms.Button();
             this.button51 = new System.Windows.Forms.Button();
             this.button54 = new System.Windows.Forms.Button();
+            this.button55 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -818,11 +819,22 @@
             this.button54.UseVisualStyleBackColor = true;
             this.button54.Click += new System.EventHandler(this.button54_Click);
             // 
+            // button55
+            // 
+            this.button55.Location = new System.Drawing.Point(680, 159);
+            this.button55.Name = "button55";
+            this.button55.Size = new System.Drawing.Size(75, 23);
+            this.button55.TabIndex = 43;
+            this.button55.Text = "优先队列";
+            this.button55.UseVisualStyleBackColor = true;
+            this.button55.Click += new System.EventHandler(this.button55_Click);
+            // 
             // Utils
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1081, 794);
+            this.Controls.Add(this.button55);
             this.Controls.Add(this.button54);
             this.Controls.Add(this.button51);
             this.Controls.Add(this.groupBox5);
@@ -947,5 +959,6 @@
         private System.Windows.Forms.Button button49;
         private System.Windows.Forms.Button button51;
         private System.Windows.Forms.Button button54;
+        private System.Windows.Forms.Button button55;
     }
 }
