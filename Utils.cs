@@ -18,6 +18,7 @@ using System.IO;
 using System.Reflection;
 using System.Runtime.Remoting.Messaging;
 using Newtonsoft.Json;
+using System.Configuration;
 
 namespace MarketRiskUI
 {
@@ -1564,6 +1565,53 @@ namespace MarketRiskUI
         {
             TestPriorityQueue t = new TestPriorityQueue();
             t.Test();
+        }
+
+        private void button56_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("获取Setting1.Default.ID" + Properties.Settings1.Default.ID);
+        }
+
+        private void button57_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(Properties.Resources.color);
+        }
+
+        private void button58_Click(object sender, EventArgs e)
+        {
+            StringBuilder message = new StringBuilder();
+            //获取默认App.config文件下（应用程序.exe.config）的 appSettings 节下的数据。
+            message.AppendLine(String.Join(",", ConfigurationManager.AppSettings.AllKeys));
+            message.AppendLine(ConfigurationManager.AppSettings["k1"] + "," + ConfigurationManager.AppSettings["k2"]);
+
+            MessageBox.Show(message.ToString());
+
+
+            string file = System.Windows.Forms.Application.ExecutablePath;
+            Configuration config = ConfigurationManager.OpenExeConfiguration(file);
+            message.Clear();
+            foreach (string key in config.AppSettings.Settings.AllKeys)
+            {
+
+                message.AppendLine(config.AppSettings.Settings[key].Value.ToString());
+
+            }
+            MessageBox.Show(message.ToString());
+
+            ExeConfigurationFileMap configFileMap = new ExeConfigurationFileMap()
+            {
+                ExeConfigFilename = @".\App2.config"
+            };
+
+            Configuration config2 = ConfigurationManager.OpenMappedExeConfiguration(configFileMap, ConfigurationUserLevel.None);
+            message.Clear();
+            foreach (string key in config2.AppSettings.Settings.AllKeys)
+            {
+
+                message.AppendLine(config2.AppSettings.Settings[key].Value.ToString());
+
+            }
+            MessageBox.Show(message.ToString());
         }
     }
 

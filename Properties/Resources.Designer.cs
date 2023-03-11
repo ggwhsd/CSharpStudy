@@ -59,5 +59,14 @@ namespace MarketRiskUI.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   查找类似 blue 的本地化字符串。
+        /// </summary>
+        internal static string color {
+            get {
+                return ResourceManager.GetString("color", resourceCulture);
+            }
+        }
     }
 }

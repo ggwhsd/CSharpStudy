@@ -99,11 +99,16 @@
             this.button51 = new System.Windows.Forms.Button();
             this.button54 = new System.Windows.Forms.Button();
             this.button55 = new System.Windows.Forms.Button();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.button58 = new System.Windows.Forms.Button();
+            this.button57 = new System.Windows.Forms.Button();
+            this.button56 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -663,11 +668,11 @@
             // 
             // button42
             // 
-            this.button42.Location = new System.Drawing.Point(578, 121);
+            this.button42.Location = new System.Drawing.Point(25, 22);
             this.button42.Name = "button42";
-            this.button42.Size = new System.Drawing.Size(198, 23);
+            this.button42.Size = new System.Drawing.Size(120, 27);
             this.button42.TabIndex = 37;
-            this.button42.Text = "setting文件";
+            this.button42.Text = "默认setting文件";
             this.button42.UseVisualStyleBackColor = true;
             this.button42.Click += new System.EventHandler(this.button42_Click);
             // 
@@ -829,18 +834,61 @@
             this.button55.UseVisualStyleBackColor = true;
             this.button55.Click += new System.EventHandler(this.button55_Click);
             // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.button58);
+            this.groupBox6.Controls.Add(this.button57);
+            this.groupBox6.Controls.Add(this.button56);
+            this.groupBox6.Controls.Add(this.button42);
+            this.groupBox6.Location = new System.Drawing.Point(690, 267);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(200, 166);
+            this.groupBox6.TabIndex = 44;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "配置资源";
+            // 
+            // button58
+            // 
+            this.button58.Location = new System.Drawing.Point(41, 127);
+            this.button58.Name = "button58";
+            this.button58.Size = new System.Drawing.Size(153, 23);
+            this.button58.TabIndex = 38;
+            this.button58.Text = "获取多个config文件数据";
+            this.button58.UseVisualStyleBackColor = true;
+            this.button58.Click += new System.EventHandler(this.button58_Click);
+            // 
+            // button57
+            // 
+            this.button57.Location = new System.Drawing.Point(41, 94);
+            this.button57.Name = "button57";
+            this.button57.Size = new System.Drawing.Size(75, 23);
+            this.button57.TabIndex = 38;
+            this.button57.Text = "获取资源设置";
+            this.button57.UseVisualStyleBackColor = true;
+            this.button57.Click += new System.EventHandler(this.button57_Click);
+            // 
+            // button56
+            // 
+            this.button56.Location = new System.Drawing.Point(0, 55);
+            this.button56.Name = "button56";
+            this.button56.Size = new System.Drawing.Size(200, 27);
+            this.button56.TabIndex = 37;
+            this.button56.Text = "工程手工添加setting文件";
+            this.button56.UseVisualStyleBackColor = true;
+            this.button56.Click += new System.EventHandler(this.button56_Click);
+            // 
             // Utils
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1081, 794);
+            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.button55);
             this.Controls.Add(this.button54);
             this.Controls.Add(this.button51);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.button43);
-            this.Controls.Add(this.button42);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.button40);
             this.Controls.Add(this.textBoxString);
@@ -882,6 +930,7 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -960,5 +1009,9 @@
         private System.Windows.Forms.Button button51;
         private System.Windows.Forms.Button button54;
         private System.Windows.Forms.Button button55;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button button56;
+        private System.Windows.Forms.Button button58;
+        private System.Windows.Forms.Button button57;
     }
 }
