@@ -349,8 +349,11 @@ Encoding [示例](./Utils.cs)
 * 多位七段LED显示
 [示例](./OtherProjects/SevenSegment/SevenSegment.cs)
 
-* 坐标系的制作
+* GDI坐标系的制作
 [示例](./OtherProjects/画坐标/WindowsFormsApp1/AxisControl.cs)
+
+* GDI画移动线
+[示例](./OtherProjects/画移动线/DrawLineOnSelect)
 
 * 自定义TextBox，通过底层WndProc重绘界面以及控制输入、占位提示功能。这些功能实际上等价于OnPaint、OnFoucs、OnKeyPress的一些组合。
 [示例](./OtherProjects/CustomTextBox/Form1.cs)
