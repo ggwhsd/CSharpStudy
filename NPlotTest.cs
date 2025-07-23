@@ -191,6 +191,8 @@ namespace MarketRiskUI
 
             }
             
+
+
         }
         NPlot.Windows.PlotSurface2D.Interactions.VerticalDrag vdrag = new NPlot.Windows.PlotSurface2D.Interactions.VerticalDrag();
         private void checkBox4_CheckedChanged(object sender, EventArgs e)
@@ -554,7 +556,7 @@ namespace MarketRiskUI
 
             double Y = myPlot.PhysicalYAxis1Cache.PhysicalToWorld(e.Location, false);
             double X = myPlot.PhysicalXAxis1Cache.PhysicalToWorld(e.Location, false);
-            toolTip1.SetToolTip(myPlot, X + "," + Y);
+            toolTip1.SetToolTip(myPlot, "update "+ X + "," + Y);
 
             toolTip1.AutoPopDelay = 10 * 1000;
             ///////垂直线///////////
@@ -568,9 +570,9 @@ namespace MarketRiskUI
 
             lineH2.OrdinateValue = Y;
             lineV2.AbscissaValue = X;
-            myPlot.Refresh();
+            myPlot.Invalidate();
         }
-
-      
+        
+       
     }
 }
