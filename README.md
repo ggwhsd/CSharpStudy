@@ -105,6 +105,9 @@ Encoding [示例](./Utils.cs)
 常用于运行环境数据，比如是否第一次打开，窗体默认位置等个性化的数据等。
 [示例](./Utils.cs)
 
+* 使用配置方式打开多个.config文件。以及使用Resource资源。
+[示例](./Utils.cs)
+
 
 
 * 索引器[,,]的使用，可以实现类似除了数组以外的多参数索引方式。
@@ -346,8 +349,11 @@ Encoding [示例](./Utils.cs)
 * 多位七段LED显示
 [示例](./OtherProjects/SevenSegment/SevenSegment.cs)
 
-* 坐标系的制作
+* GDI坐标系的制作
 [示例](./OtherProjects/画坐标/WindowsFormsApp1/AxisControl.cs)
+
+* GDI画移动线
+[示例](./OtherProjects/画移动线/DrawLineOnSelect)
 
 * 自定义TextBox，通过底层WndProc重绘界面以及控制输入、占位提示功能。这些功能实际上等价于OnPaint、OnFoucs、OnKeyPress的一些组合。
 [示例](./OtherProjects/CustomTextBox/Form1.cs)

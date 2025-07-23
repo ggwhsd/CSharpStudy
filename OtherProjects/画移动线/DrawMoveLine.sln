@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33214.272
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawLineOnSelect", "DrawLineOnSelect.csproj", "{6936BFFF-A2E1-4810-841D-3FAE7C1187AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6936BFFF-A2E1-4810-841D-3FAE7C1187AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6936BFFF-A2E1-4810-841D-3FAE7C1187AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6936BFFF-A2E1-4810-841D-3FAE7C1187AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6936BFFF-A2E1-4810-841D-3FAE7C1187AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {056616B7-F5D3-4AA3-ABEC-7B49DE30DAED}
+	EndGlobalSection
+EndGlobal
