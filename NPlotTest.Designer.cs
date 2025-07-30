@@ -483,7 +483,7 @@
             this.checkBox14.TabIndex = 19;
             this.checkBox14.Text = "水平线";
             this.checkBox14.UseVisualStyleBackColor = true;
-            this.checkBox14.CheckedChanged += new System.EventHandler(this.checkBox14_CheckedChanged);
+            //this.checkBox14.CheckedChanged += new System.EventHandler(this.checkBox14_CheckedChanged);
             // 
             // checkBox15
             // 

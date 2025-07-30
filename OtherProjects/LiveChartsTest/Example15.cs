@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Markup;
 
 namespace LiveChartsTest
 {
@@ -31,7 +32,7 @@ namespace LiveChartsTest
 
             var ax = new Axis();
             ax.RangeChanged += AxOnRangeChanged;
-
+            
             cartesianChart1.AxisX.Add(ax);
         }
 
